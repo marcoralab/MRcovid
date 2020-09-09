@@ -1,0 +1,13 @@
+SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
+rs12630663	3	28007315	T	C	0.4335	0.045586	0.035565	1.2817657809644314	0.1999	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs34464850	3	141721762	G	C	0.1457	0.090525	0.049237	1.8385563702093952	0.06598	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs2301718	4	106009763	G	A	0.2307	0.011863	0.041173	0.28812571345299104	0.7733	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs386424	5	81092787	T	G	0.3033	0.0093804	0.038363	0.24451685217527305	0.8068	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs7715167	5	170778824	T	C	0.6142	-0.024912	0.038164	-0.6527617650141495	0.5139	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs2802295	6	108926496	A	G	0.6431	-0.026256	0.036639	-0.7166134446900844	0.4736	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs11759026	6	126792095	A	G	0.2249	0.0731	0.041681	1.7537966939372853	0.07947	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs12357321	10	21790476	G	A	0.324	-0.005527300000000001	0.037266	-0.1483201846186873	0.8821	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs1628768	10	105012994	T	C	0.236	0.052124000000000004	0.041487	1.2563935690698291	0.209	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs10876864	12	56401085	G	A	0.5765	0.042302	0.03514	1.2038133181559476	0.2287	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs10878349	12	66327632	A	G	0.483	0.018667	0.034992	0.5334647919524462	0.5937	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs79600142	17	43897722	T	C	0.2112	0.067044	0.042874	1.5637449269953818	0.1179	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid

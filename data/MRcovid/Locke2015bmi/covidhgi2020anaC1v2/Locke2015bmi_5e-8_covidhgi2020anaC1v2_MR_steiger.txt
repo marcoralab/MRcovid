@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+8ZSVlT	NUMoRU	Locke2015bmi	covidhgi2020anaC1v2	0.013474889146164676	0.005685023217087386	TRUE	7.105427357601002e-15	FALSE	5e-8

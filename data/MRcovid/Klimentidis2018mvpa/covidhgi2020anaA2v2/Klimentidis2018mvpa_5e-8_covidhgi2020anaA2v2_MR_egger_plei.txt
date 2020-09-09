@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+xAd9Vl	v49dAx	covidhgi2020anaA2v2	Klimentidis2018mvpa	5e-8	FALSE	-0.16001073235254915	0.12213293021332408	0.2075772632843608
+xAd9Vl	v49dAx	covidhgi2020anaA2v2	Klimentidis2018mvpa	5e-8	TRUE	-0.11374949227471627	0.10314033792493957	0.2874677299875393

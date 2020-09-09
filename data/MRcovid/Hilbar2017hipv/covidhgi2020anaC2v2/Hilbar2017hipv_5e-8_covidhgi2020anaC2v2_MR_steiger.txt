@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+scHMgI	LkDfCG	Hilbar2017hipv	covidhgi2020anaC2v2	0.010134570031052541	2.4722567119833905e-4	TRUE	0	TRUE	5e-8
+scHMgI	LkDfCG	Hilbar2017hipv	covidhgi2020anaC2v2	0.013162192356299375	4.0235394076699836e-4	TRUE	0	FALSE	5e-8

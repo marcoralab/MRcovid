@@ -1,0 +1,2 @@
+target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
+rs6951574,rs6969458,0.984059,1,CA/TG,NA,7,153489725,G,A,0.455691,-0.032283,0.046671,-0.6917143408112104,0.4891,3,covid_vs._lab/self-reported_negative__woUKBB,C,A,T,G,C,T,TRUE

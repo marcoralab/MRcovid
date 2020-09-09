@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+buKFFv	DVvosq	covidhgi2020anaB2v2	Dashti2019slepdur	5e-8	FALSE	0	60.91078964285225	0.7657

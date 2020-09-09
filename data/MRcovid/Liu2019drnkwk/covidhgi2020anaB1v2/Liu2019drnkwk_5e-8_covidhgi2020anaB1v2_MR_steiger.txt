@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+VxMZPX	oCnUI9	Liu2019drnkwk	covidhgi2020anaB1v2	0.005066352145965237	0.014224079579847768	FALSE	0.008530610061594057	FALSE	5e-8

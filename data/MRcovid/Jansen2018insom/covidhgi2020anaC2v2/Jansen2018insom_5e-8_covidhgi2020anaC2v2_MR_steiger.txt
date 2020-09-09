@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+jC4SQl	cqxibo	Jansen2018insom	covidhgi2020anaC2v2	9.989243542318615e-4	5.245995487738154e-4	TRUE	3.3856893066896987e-6	TRUE	5e-8
+jC4SQl	cqxibo	Jansen2018insom	covidhgi2020anaC2v2	0.0010970778674235361	7.707656117993814e-4	TRUE	0.004209427214181494	FALSE	5e-8

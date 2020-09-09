@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+52hKfK	OXFZi4	covidhgi2020anaC1v2	Klimentidis2018mvpa	5e-8	FALSE	Inverse variance weighted (fixed effects)	21	0	0.3047208828882928	0.5399767259315961	0.5725348391547671
+52hKfK	OXFZi4	covidhgi2020anaC1v2	Klimentidis2018mvpa	5e-8	FALSE	Weighted median	21	0	0.41338966476678	0.7616302491458445	0.5872885197318534
+52hKfK	OXFZi4	covidhgi2020anaC1v2	Klimentidis2018mvpa	5e-8	FALSE	Weighted mode	21	0	0.9236315598447753	1.3860674960539603	0.5127898238981494
+52hKfK	OXFZi4	covidhgi2020anaC1v2	Klimentidis2018mvpa	5e-8	FALSE	MR Egger	21	0	-0.539734276167931	2.074414720152017	0.7975188412112062

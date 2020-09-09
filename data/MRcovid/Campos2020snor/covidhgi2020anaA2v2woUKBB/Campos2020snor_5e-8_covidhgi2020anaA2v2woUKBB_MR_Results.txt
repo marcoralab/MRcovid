@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+G5UYf4	ROjMoD	covidhgi2020anaA2v2woUKBB	Campos2020snor	5e-8	FALSE	Inverse variance weighted (fixed effects)	34	0	0.49993383255341045	2.2292663015291128	0.8225554973919693
+G5UYf4	ROjMoD	covidhgi2020anaA2v2woUKBB	Campos2020snor	5e-8	FALSE	Weighted median	34	0	0.120690779775535	3.047157846697236	0.9684059236233549
+G5UYf4	ROjMoD	covidhgi2020anaA2v2woUKBB	Campos2020snor	5e-8	FALSE	Weighted mode	34	0	-0.4349844818770876	6.092088669593921	0.9435091704198116
+G5UYf4	ROjMoD	covidhgi2020anaA2v2woUKBB	Campos2020snor	5e-8	FALSE	MR Egger	34	0	-18.839081695537885	13.223971415714528	0.16394844944832698

@@ -1,0 +1,15 @@
+SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
+rs10127497	1	67050144	A	T	0.128312	0.12768	0.11617999999999999	1.0989843346531245	0.2718	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs6699744	1	72825144	A	T	0.610849	-0.231	0.091528	-2.5238178480902023	0.011609999999999999	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs7548151	1	177026983	G	A	0.114659	-0.034977999999999995	0.12629	-0.27696571383324087	0.7818	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs30266	5	103972357	G	A	0.323315	-0.0022806	0.091235	-0.0249969858058859	0.9801	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs11961509	6	28989210	A	G	0.0469884	-0.16871	0.15093	-1.1178029550122572	0.2636	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs3132685	6	29945949	G	A	0.114682	-0.12728	0.20293	-0.6272113536687528	0.5305	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs112348907	6	73587953	A	G	0.268937	0.14503	0.092189	1.5731811821366974	0.1157	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs3807865	7	12250402	G	A	0.374498	0.0068756	0.08494700000000001	0.0809398801605707	0.9355	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs2402273	7	117600424	T	C	0.490217	-0.0049299	0.087285	-0.056480494930400416	0.955	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs263575	9	17033840	G	A	0.444929	0.020586	0.08446100000000001	0.24373379429559203	0.8074	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs1021363	10	106610839	A	G	0.653651	0.038676	0.0908	0.42594713656387667	0.6701	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs10501696	11	88748162	A	G	0.475219	0.084491	0.08472	0.9972969782813975	0.3186	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs9530139	13	31847324	C	T	0.201162	0.066471	0.10932	0.6080406147091109	0.5431	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
+rs28541419	15	88945878	C	G	0.22785	0.014495	0.10544	0.1374715477996965	0.8907	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB

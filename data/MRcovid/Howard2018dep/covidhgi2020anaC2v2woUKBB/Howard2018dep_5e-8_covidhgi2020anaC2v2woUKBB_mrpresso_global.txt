@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+8q11vG	wSZbPr	covidhgi2020anaC2v2woUKBB	Howard2018dep	5e-8	FALSE	0	14.959254289508271	0.4502

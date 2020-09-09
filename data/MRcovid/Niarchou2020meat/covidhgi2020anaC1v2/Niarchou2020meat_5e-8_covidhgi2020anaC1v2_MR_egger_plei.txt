@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+MFnGxk	q9z9k7	covidhgi2020anaC1v2	Niarchou2020meat	5e-8	FALSE	0.019849103173895554	0.04752420625014238	0.6806432752627072
+MFnGxk	q9z9k7	covidhgi2020anaC1v2	Niarchou2020meat	5e-8	TRUE	-0.0027882737669785215	0.042335138514691444	0.9482137558360603

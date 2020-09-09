@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+vNzPgl	bumKUP	covidhgi2020anaC2v2	Locke2015bmi	5e-8	FALSE	Inverse variance weighted (fixed effects)	67	0	0.38849084853981114	0.11081911864029563	4.555276494711107e-4
+vNzPgl	bumKUP	covidhgi2020anaC2v2	Locke2015bmi	5e-8	FALSE	Weighted median	67	0	0.40864171031691193	0.16375858162922582	0.012581836180279428
+vNzPgl	bumKUP	covidhgi2020anaC2v2	Locke2015bmi	5e-8	FALSE	Weighted mode	67	0	0.11334660253907769	0.2748270131428571	0.681361711895138
+vNzPgl	bumKUP	covidhgi2020anaC2v2	Locke2015bmi	5e-8	FALSE	MR Egger	67	0	0.3120954205617629	0.3291017409275368	0.3464765401507479

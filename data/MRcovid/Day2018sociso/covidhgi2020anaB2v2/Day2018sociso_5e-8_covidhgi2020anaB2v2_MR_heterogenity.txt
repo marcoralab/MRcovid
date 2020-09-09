@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+4CSUVB	iN92yx	covidhgi2020anaB2v2	Day2018sociso	5e-8	FALSE	MR Egger	19.33119642488915	13	0.11318740199467268
+4CSUVB	iN92yx	covidhgi2020anaB2v2	Day2018sociso	5e-8	FALSE	Inverse variance weighted	20.118012291826687	14	0.12646445315723634

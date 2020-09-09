@@ -1,0 +1,34 @@
+__default__:
+  project: acc_LOAD
+  partition: bode
+  queue: premium
+  cores: 1
+  mem: 16000
+  time: '60'
+  name: $(basename $(pwd)):{rule}:{wildcards}
+  output: logs/{rule}:{wildcards}.stdout
+  error: logs/{rule}:{wildcards}.stderr
+Harmonize:
+  time: 5
+  cores: 1
+  mem: 4000
+MrPresso:
+  time: '90:00'
+  mem: 16000
+  cores: 2
+MRPRESSO_wo_outliers:
+  time: '72:00'
+  mem: 16000
+  cores: 2
+ssimp:
+  mem: 8000
+  cores: 2
+  time: '24:00'
+FormatExposure:
+  mem: 16000
+  cores: 2
+  time: '24:00'
+FormatOutcome:
+  mem: 16000
+  cores: 2
+  time: '24:00'

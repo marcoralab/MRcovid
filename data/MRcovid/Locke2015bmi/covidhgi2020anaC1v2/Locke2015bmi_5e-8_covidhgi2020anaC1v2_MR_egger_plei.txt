@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
+8ZSVlT	NUMoRU	covidhgi2020anaC1v2	Locke2015bmi	5e-8	FALSE	0.014336498502349382	0.013239135533090978	0.2828590189243241	NA

@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+1pT8Cr	65fSUg	Niarchou2020fish	covidhgi2020anaB1v2	0.006269430255502737	0.02109271171498215	FALSE	2.937717716937627e-4	FALSE	5e-8

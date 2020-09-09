@@ -1,0 +1,21 @@
+outcome,exposure,outcome.name,exposure.name,pt,nsnp,n_outliers,snp_r2.exposure,snp_r2.outcome,correct_causal_direction,steiger_pval,IVW,qval,MR-Egger,Weighted median,Weighted mode,MRPRESSO.pval,Egger.pval,pass
+covidhgi2020anaC1v2,Locke2015bmi,covid vs. lab/self-reported negative,"BMI, Locke",5e-8,67,0,0.013474889146164676,0.005685023217087386,TRUE,7.105427357601002e-15,"0.48
+(0.16)",0.087,"-0.014
+(0.49) ","0.14
+(0.25) ","-0.19
+(0.47) ",0.4209,0.28,FALSE
+covidhgi2020anaC2v2,Yengo2018bmi,covid vs. population,BMI,5e-8,505,0,0.05346677579354122,0.020137158565965308,TRUE,0,"0.31
+(0.067)",6.23e-04,"0.27
+(0.18) ","0.28
+(0.12)*","0.33
+(0.2) ",0.16448,0.83,TRUE
+covidhgi2020anaC2v2,Locke2015bmi,covid vs. population,"BMI, Locke",5e-8,67,0,0.013474889146164676,0.002348442539815731,TRUE,0,"0.39
+(0.11)",0.019,"0.31
+(0.33) ","0.41
+(0.16)*","0.11
+(0.27) ",0.8579,0.81,TRUE
+covidhgi2020anaB2v2,Yengo2018bmi,hospitalized covid vs. population,BMI,5e-8,504,0,0.05346677579354122,0.051395188737866936,TRUE,0.002838954854963882,"0.41
+(0.1)",0.004,"0.25
+(0.29) ","0.5
+(0.17)**","0.51
+(0.3).",0.009,0.55,TRUE

@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+T9obNW	MasgyG	covidhgi2020anaB2v2	Willer2013tc	5e-8	FALSE	-0.00729577495515808	0.008230280003452481	0.37790312118920333
+T9obNW	MasgyG	covidhgi2020anaB2v2	Willer2013tc	5e-8	TRUE	-0.007980503489816125	0.007754769381399069	0.3064180984805256

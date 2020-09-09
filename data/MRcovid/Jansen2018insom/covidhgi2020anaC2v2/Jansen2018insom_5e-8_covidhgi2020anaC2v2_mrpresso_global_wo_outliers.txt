@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	TRUE	1	16.63083877983477	0.237
