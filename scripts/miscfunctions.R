@@ -63,19 +63,27 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Lee2018educ", "Psychosocial", "Educational Attainment", 30038396, FALSE, 775120, NA, NA, NA,
                   "Chauhan2019bi", "Neuropathology", "Brain Infarcts", 30651383, TRUE, 21682, 3726, 17956, 0.2,
                   "Revez2020vit250hd", "Health", "25 hydroxyvitamin D", 32242144, FALSE, 417580, NA, NA, NA,
-                  "covidhgi2020anaA2v2", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 329927, 536, 329391, 0.00162,
-                  "covidhgi2020anaB1v2", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 2956, 928, 2028, 0.314,
-                  "covidhgi2020anaB2v2", "Diagnosis", "hospitalized covid vs. population", 9999, TRUE, 900687, 3199, 897488, 0.00355,
-                  "covidhgi2020anaC1v2", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE, 40157, 3523, 36634, 0.0877,
-                  "covidhgi2020anaC2v2", "Diagnosis", "covid vs. population", 9999, TRUE, 1079768, 6696, 1073072, 0.00620,
-                  "covidhgi2020anaD1v2", "Diagnosis", "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid", 9999, TRUE, 31039, 1865, 29174, 0.0601,
+                  "Okada2014rartis", "Diagnosis", "Rheumatoid Arthritis", 24390342, TRUE, 58284, 14361, 43923, 0.005,
+                  # Datafreez v3
+                  "covidhgi2020anaA2v3", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 287444, 2972, 284472,  0.01,
+                  "covidhgi2020anaB1v3", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 7268, 1389, 5879, 0.19,
+                  "covidhgi2020anaB2v3", "Diagnosis", "hospitalized covid vs. population", 9999, TRUE, 1019301, 6492, 1012809, 0.0063,
+                  "covidhgi2020anaC1v3", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE, 127637, 11181, 116456, 0.087,
+                  "covidhgi2020anaC2v3", "Diagnosis", "covid vs. population", 9999, TRUE, 1362941, 17607, 1362941, 0.012,
+                  "covidhgi2020anaD1v3", "Diagnosis", "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid", 9999, TRUE, 20672, 1777, 18895, 0.09,
+                  # Datafreez v2
+                  # "covidhgi2020anaA2v2", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 329927, 536, 329391, 0.00162,
+                  # "covidhgi2020anaB1v2", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 2956, 928, 2028, 0.314,
+                  # "covidhgi2020anaB2v2", "Diagnosis", "hospitalized covid vs. population", 9999, TRUE, 900687, 3199, 897488, 0.00355,
+                  # "covidhgi2020anaC1v2", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE, 40157, 3523, 36634, 0.0877,
+                  # "covidhgi2020anaC2v2", "Diagnosis", "covid vs. population", 9999, TRUE, 1079768, 6696, 1073072, 0.00620,
+                  # "covidhgi2020anaD1v2", "Diagnosis", "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid", 9999, TRUE, 31039, 1865, 29174, 0.0601,
                   "covidhgi2020anaA2v2woUKBB", "Diagnosis", "very severe respiratory confirmed covid vs. population wo/ UKBB", 9999, TRUE, 4422, 428, 3994, 0.096,
                   "covidhgi2020anaB1v2woUKBB", "Diagnosis", "hospitalized covid vs. not hospitalized covid wo/ UKBB", 9999, TRUE,  1766, 144, 1622, 0.081,
                   "covidhgi2020anaB2v2woUKBB", "Diagnosis", "hospitalized covid vs. population wo/ UKBB", 9999, TRUE,  480156, 2415, 477741, 0.005,
                   "covidhgi2020anaC1v2woUKBB", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE,  33580, 2213, 31367, 0.065,
                   "covidhgi2020anaC2v2woUKBB", "Diagnosis", "covid vs. population wo/ UKBB", 9999, TRUE,  643725, 5386, 638339, 0.0083
                   )
-
 
 ## negate
 `%nin%` = Negate(`%in%`)

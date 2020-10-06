@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-R3CO1n	HMWUHR	covidhgi2020anaC1v2woUKBB	Day2018sociso	5e-8	FALSE	0	13.609485721906644	0.6181
+Dbxtgz	SgFO2D	covidhgi2020anaC1v2woUKBB	Day2018sociso	5e-8	FALSE	0	13.609485721906644	0.6181

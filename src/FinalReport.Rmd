@@ -46,13 +46,13 @@ mrpresso_global_wo_outliers.path = glue("results/{model}/All/global_mrpresso_wo_
 egger_comb.path = glue("results/{model}/All/pleiotropy.txt")
 power.path = glue("results/{model}/All/power.txt")
 steiger.path = glue("results/{model}/All/steiger.txt")
-exposures = c("Dashti2019slepdur", "Day2018sociso", "Evangelou2018dbp", "Evangelou2018pp", "Evangelou2018sbp", 
-              "Howard2019dep23andMe", "Jansen2018insomnia23andMe", "Klimentidis2018mvpa", "Lee2018education23andMe", 
-              "Liu2019drnkwk23andMe", "Liu2019smkcpd23andMe", "Liu2019smkint23andMe", "Niarchou2020fish", "Niarchou2020meat", 
-              "SanchezRoige2019auditt23andMe", "Wells2019hdiff", "Willer2013hdl", "Willer2013ldl", "Willer2013tc", 
+exposures = c("Dashti2019slepdur", "Day2018sociso", "Evangelou2018dbp", "Evangelou2018pp", "Evangelou2018sbp",
+              "Howard2019dep23andMe", "Jansen2018insomnia23andMe", "Klimentidis2018mvpa", "Lee2018education23andMe",
+              "Liu2019drnkwk23andMe", "Liu2019smkcpd23andMe", "Liu2019smkint23andMe", "Niarchou2020fish", "Niarchou2020meat",
+              "SanchezRoige2019auditt23andMe", "Wells2019hdiff", "Willer2013hdl", "Willer2013ldl", "Willer2013tc",
               "Willer2013tg", "Xue2018diab", "Yengo2018bmi")
 outcomes = c("Beecham2014braak4 Beecham2014npany", "Beecham2014vbiany", "Deming2017ab42", "Deming2017ptau", "Deming2017tau",
-             "Grasby2020surfarea", "Grasby2020thickness", "Hilbar2015hipv", "Hilbar2017hipv", 
+             "Grasby2020surfarea", "Grasby2020thickness", "Hilbar2015hipv", "Hilbar2017hipv",
              "Huang2017aaos", "Kunkle2019load", "Lambert2013load")
 ```
 
@@ -103,11 +103,13 @@ MRdat.raw <- read_csv(MRdat.path, guess_max = 100000) %>%
   filter(exposure %in% exposures, outcome %in% outcomes)
 
 message(glue("\n Loading: ", mrpresso_global.path))
-mrpresso_global <- read_tsv(mrpresso_global.path) %>%
+mrpresso_global <- read_tsv(mrpresso_global.path,
+    col_types = cols(pval = col_character())) %>%
   filter(exposure %in% exposures, outcome %in% outcomes)
 
 message(glue("\n Loading: ", mrpresso_global_wo_outliers.path))
-mrpresso_global_wo_outliers <- read_tsv(mrpresso_global_wo_outliers.path) %>%
+mrpresso_global_wo_outliers <- read_tsv(mrpresso_global_wo_outliers.path,
+    col_types = cols(pval = col_character())) %>%
   filter(exposure %in% exposures, outcome %in% outcomes)
 
 mrpresso_global_comb <- bind_rows(mrpresso_global, mrpresso_global_wo_outliers)
@@ -316,13 +318,13 @@ mrresults.methods <- MRsummary %>%
 mrresults.methods_presso <- mrresults.methods %>%
   left_join(power) %>%
   myspread(outliers_removed,
-           c(nsnp, n_outliers, pve.exposure, F, Power, RSSobs, MRPRESSO.pval, 
-             egger_intercept, egger_se, Egger.pval, 
+           c(nsnp, n_outliers, pve.exposure, F, Power, RSSobs, MRPRESSO.pval,
+             egger_intercept, egger_se, Egger.pval,
              snp_r2.exposure, snp_r2.outcome, correct_causal_direction, steiger_pval,
-             IVW_b, IVW_MR.pval, IVW_se, 
-             Egger_b, Egger_MR.pval, Egger_se, 
+             IVW_b, IVW_MR.pval, IVW_se,
+             Egger_b, Egger_MR.pval, Egger_se,
              WME_b, WME_MR.pval, WME_se,
-             WMBE_b, WMBE_MR.pval, WMBE_se, 
+             WMBE_b, WMBE_MR.pval, WMBE_se,
              IVW_Signif, Egger_Signif, WME_Signif, WMBE_Signif)) %>%
   arrange(pt, outcome, exposure) %>%
   arrange(outcome.name, exposure.name, pt) %>%
@@ -377,27 +379,27 @@ Reportining the Median (min, max) for nsnps, PVE, F-statistic and power, for eac
 
 
 ```{r power}
-power_dsc <- mrresults.methods_presso %>% 
+power_dsc <- mrresults.methods_presso %>%
   select(outcome.name, exposure.name, pt, nsnp, pve.exposure, F, Power) %>%
   mutate_at(vars("nsnp", "pve.exposure", "F", "Power"), as.numeric) %>%
- # filter(pt == 5e-8) %>% 
-  group_by(exposure.name, pt) %>% 
-  summarise(min_nsnp = min(nsnp), 
+ # filter(pt == 5e-8) %>%
+  group_by(exposure.name, pt) %>%
+  summarise(min_nsnp = min(nsnp),
             med_nsnp = median(nsnp),
             max_nsnp = max(nsnp),
-            min_pve.exposure = min(pve.exposure), 
-            med_pve.exposure = median(pve.exposure), 
-            max_pve.exposure = max(pve.exposure), 
-            min_Power = min(Power), 
-            med_Power = median(Power), 
-            max_Power = max(Power), 
-            min_F = min(F), 
+            min_pve.exposure = min(pve.exposure),
+            med_pve.exposure = median(pve.exposure),
+            max_pve.exposure = max(pve.exposure),
+            min_Power = min(Power),
+            med_Power = median(Power),
+            max_Power = max(Power),
+            min_F = min(F),
             med_F = median(F),
-            max_F = max(F)) %>% 
-  mutate(nsnp = glue("{med_nsnp} ({min_nsnp}, {max_nsnp})"), 
-         pve = glue("{med_pve.exposure} ({min_pve.exposure}, {max_pve.exposure})"), 
-         F = glue("{med_F} ({min_F}, {max_F})"), 
-         power = glue("{med_Power} ({min_Power}, {max_Power})")) %>% 
+            max_F = max(F)) %>%
+  mutate(nsnp = glue("{med_nsnp} ({min_nsnp}, {max_nsnp})"),
+         pve = glue("{med_pve.exposure} ({min_pve.exposure}, {max_pve.exposure})"),
+         F = glue("{med_F} ({min_F}, {max_F})"),
+         power = glue("{med_Power} ({min_Power}, {max_Power})")) %>%
   select(exposure.name, pt, nsnp, pve, F, power)
 
 
@@ -408,17 +410,17 @@ write_csv(power_dsc, glue("results/{model}/All/{model}_DescriptivesPower_{DATE}.
 ```
 
 ```{r plot-power}
-plc <- pals::polychrome() %>% .[3:36] %>% as.character() 
-plc_df <- tibble(plc_colour = pals::polychrome() %>% .[3:36] %>% names(), 
+plc <- pals::polychrome() %>% .[3:36] %>% as.character()
+plc_df <- tibble(plc_colour = pals::polychrome() %>% .[3:36] %>% names(),
                  plc_values = pals::polychrome() %>% .[3:36] %>% as.character())
 
-mrresults.methods_presso %>% 
+mrresults.methods_presso %>%
   select(outcome.name, exposure.name, pt, nsnp, pve.exposure, F, Power) %>%
   pivot_longer(cols = c(nsnp, pve.exposure, F, Power), names_to = "var", values_to = "value") %>%
-  ggplot(., aes(x = value, y = exposure.name, colour = outcome.name)) + 
-  geom_point() + facet_grid(pt ~ var, scales = "free") + 
+  ggplot(., aes(x = value, y = exposure.name, colour = outcome.name)) +
+  geom_point() + facet_grid(pt ~ var, scales = "free") +
   scale_color_manual(values = plc) +
-  theme_bw() 
+  theme_bw()
 ```
 
 

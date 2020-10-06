@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-LpQR37	cOZMXU	Kunkle2019load	covidhgi2020anaC1v2woUKBB	0.07052898334173681	0.003372838397309096	TRUE	0	FALSE	5e-8
+d7hPqL	f5b4P2	Kunkle2019load	covidhgi2020anaC1v2woUKBB	0.07052898334173681	0.003372838397309096	TRUE	0	FALSE	5e-8

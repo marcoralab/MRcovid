@@ -22,7 +22,7 @@ EXCLUSION:
 ## Blacklist alcohol consumption onto Kunkle 2019 (LOAD) and Hilbar 2017 (HV) in line with data use aggreements
 ## Blacklist all other phenotypes onto Lambert 2013 (LOAD) and Hilbar 2015 (HV)
 missing: [
-   {"Project" : "MR_ADphenome", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "Lambert2013load", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovid", "ExposureCode" : "Grasby2020thickness", "OutcomeCode" : "covidhgi2020anaC2v3", "Pthreshold" : "5e-8"},
    ]
 
 
@@ -504,12 +504,29 @@ EXPOSURES:
       Z: Z
       N: N
       TRAIT: TRAIT
+  -
+    CODE: Okada2014rartis
+    NAME: 'Rheumatoid Arthritis'
+    FILE: raw/GWAS/Okada2014rartis.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
 
 OUTCOMES:
   -
-    CODE: covidhgi2020anaA2v2
+    CODE: covidhgi2020anaA2v3
     NAME: "very severe respiratory confirmed covid vs. population"
-    FILE: raw/GWAS/covidhgi2020anaA2v2.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaA2v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -524,9 +541,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaB1v2
+    CODE: covidhgi2020anaB1v3
     NAME: "hospitalized covid vs. not hospitalized covid"
-    FILE: raw/GWAS/covidhgi2020anaB1v2.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaB1v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -541,9 +558,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaB2v2
+    CODE: covidhgi2020anaB2v3
     NAME: "hospitalized covid vs. population"
-    FILE: raw/GWAS/covidhgi2020anaB2v2.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaB2v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -558,9 +575,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaC1v2
+    CODE: covidhgi2020anaC1v3
     NAME: "covid vs. lab/self-reported negative"
-    FILE: raw/GWAS/covidhgi2020anaC1v2.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaC1v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -575,9 +592,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaC2v2
+    CODE: covidhgi2020anaC2v3
     NAME: "covid vs. population"
-    FILE: raw/GWAS/covidhgi2020anaC2v2.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaC2v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -592,9 +609,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaD1v2
+    CODE: covidhgi2020anaD1v3
     NAME: "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid"
-    FILE: raw/GWAS/covidhgi2020anaD1v2.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaD1v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -608,6 +625,108 @@ OUTCOMES:
       Z: Z
       N: N
       TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaA2v2
+  #   NAME: "very severe respiratory confirmed covid vs. population"
+  #   FILE: raw/GWAS/covidhgi2020anaA2v2.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaB1v2
+  #   NAME: "hospitalized covid vs. not hospitalized covid"
+  #   FILE: raw/GWAS/covidhgi2020anaB1v2.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaB2v2
+  #   NAME: "hospitalized covid vs. population"
+  #   FILE: raw/GWAS/covidhgi2020anaB2v2.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaC1v2
+  #   NAME: "covid vs. lab/self-reported negative"
+  #   FILE: raw/GWAS/covidhgi2020anaC1v2.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaC2v2
+  #   NAME: "covid vs. population"
+  #   FILE: raw/GWAS/covidhgi2020anaC2v2.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaD1v2
+  #   NAME: "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid"
+  #   FILE: raw/GWAS/covidhgi2020anaD1v2.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
   -
     CODE: covidhgi2020anaA2v2woUKBB
     NAME: "very severe respiratory confirmed covid vs. population wo/ UKBB"

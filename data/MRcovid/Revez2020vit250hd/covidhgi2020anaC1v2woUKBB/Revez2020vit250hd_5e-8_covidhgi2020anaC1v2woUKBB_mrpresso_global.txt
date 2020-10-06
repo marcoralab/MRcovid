@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-J3xWZf	4SfuOY	covidhgi2020anaC1v2woUKBB	Revez2020vit250hd	5e-8	FALSE	0	108.50302458399122	0.5192
+FuPOeS	9l8BTU	covidhgi2020anaC1v2woUKBB	Revez2020vit250hd	5e-8	FALSE	0	108.50302458399122	0.5192

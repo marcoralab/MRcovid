@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
-Gxk9H4	RHuYPr	covidhgi2020anaC2v2woUKBB	Day2018sociso	5e-8	FALSE	-0.025348137319372233	0.03988824105818234	0.5361425580830437	NA
+igUU53	F2h23y	covidhgi2020anaC2v2woUKBB	Day2018sociso	5e-8	FALSE	-0.025348137319372233	0.03988824105818234	0.5361425580830437	NA
