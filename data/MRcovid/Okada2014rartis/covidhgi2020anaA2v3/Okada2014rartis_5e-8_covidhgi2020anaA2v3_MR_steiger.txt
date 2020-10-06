@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+x6ZVZS	3zAJ98	Okada2014rartis	covidhgi2020anaA2v3	0.024888544422969096	0.0039368112408572084	TRUE	0	TRUE	5e-8
+x6ZVZS	3zAJ98	Okada2014rartis	covidhgi2020anaA2v3	0.02673082700729414	0.005469623561340134	TRUE	0	FALSE	5e-8

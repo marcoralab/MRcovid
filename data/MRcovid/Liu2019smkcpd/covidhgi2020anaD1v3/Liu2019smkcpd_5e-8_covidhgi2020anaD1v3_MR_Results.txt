@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+DoRg8K	7zwfRJ	covidhgi2020anaD1v3	Liu2019smkcpd	5e-8	FALSE	Inverse variance weighted (fixed effects)	16	0	-0.05778104627441744	0.23909534283267203	0.8090395240519475
+DoRg8K	7zwfRJ	covidhgi2020anaD1v3	Liu2019smkcpd	5e-8	FALSE	Weighted median	16	0	-0.04724133600492637	0.29004587375731217	0.8706165447388954
+DoRg8K	7zwfRJ	covidhgi2020anaD1v3	Liu2019smkcpd	5e-8	FALSE	Weighted mode	16	0	-0.061291968697806176	0.2823027073580553	0.8310447157343519
+DoRg8K	7zwfRJ	covidhgi2020anaD1v3	Liu2019smkcpd	5e-8	FALSE	MR Egger	16	0	-0.05389216310310968	0.4437184873929395	0.9050561152227526

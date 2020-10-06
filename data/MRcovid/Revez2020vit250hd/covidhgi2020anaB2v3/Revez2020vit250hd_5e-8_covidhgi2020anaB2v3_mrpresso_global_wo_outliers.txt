@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+SixqX9	e9FEms	covidhgi2020anaB2v3	Revez2020vit250hd	5e-8	TRUE	1	93.39400728228694	0.2334

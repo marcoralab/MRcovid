@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+Rip7VS	p0tGrw	covidhgi2020anaB2v3	Okada2014rartis	5e-8	FALSE	0.01102603908854901	0.009873728070871916	0.2719503366274246
+Rip7VS	p0tGrw	covidhgi2020anaB2v3	Okada2014rartis	5e-8	TRUE	0.01667965981468068	0.008491218109194693	0.05795829206374013

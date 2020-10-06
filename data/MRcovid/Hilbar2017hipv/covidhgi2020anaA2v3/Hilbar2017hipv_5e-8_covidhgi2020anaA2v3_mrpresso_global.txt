@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+v80Opj	fEdlIP	covidhgi2020anaA2v3	Hilbar2017hipv	5e-8	FALSE	0	15.266700759882346	0.0801

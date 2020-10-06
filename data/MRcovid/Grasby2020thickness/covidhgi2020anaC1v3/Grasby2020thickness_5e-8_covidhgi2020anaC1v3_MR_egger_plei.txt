@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
+ilhxdE	UTfPPs	covidhgi2020anaC1v3	Grasby2020thickness	5e-8	FALSE	0.04094830026653527	0.050266642339065554	0.46100797305629587	NA

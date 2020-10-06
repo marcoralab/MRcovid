@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+5pPGr5	1qrWUZ	Okada2014rartis	covidhgi2020anaC1v3	0.07782659926621799	8.939407265861825e-4	TRUE	0	FALSE	5e-8

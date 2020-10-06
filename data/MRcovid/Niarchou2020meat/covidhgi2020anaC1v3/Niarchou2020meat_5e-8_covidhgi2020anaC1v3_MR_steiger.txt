@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+bSddYw	EM28XS	Niarchou2020meat	covidhgi2020anaC1v3	0.002055990801189799	7.667834140447965e-4	TRUE	7.658324507886505e-8	FALSE	5e-8

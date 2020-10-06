@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+lQ8Vkp	OQmli2	covidhgi2020anaC1v3	Locke2015bmi	5e-8	FALSE	MR Egger	52.84184549247285	50	0.36489950068521043
+lQ8Vkp	OQmli2	covidhgi2020anaC1v3	Locke2015bmi	5e-8	FALSE	Inverse variance weighted	52.95174410584851	51	0.3987037571612202

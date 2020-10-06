@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+IAU1vd	BJl2En	covidhgi2020anaC1v2woUKBB	Okada2014rartis	5e-8	TRUE	0	NA	NA

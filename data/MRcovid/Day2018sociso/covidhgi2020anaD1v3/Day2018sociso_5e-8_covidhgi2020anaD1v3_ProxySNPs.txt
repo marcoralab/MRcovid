@@ -1,0 +1,14 @@
+SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
+rs6430286	2	148834364	G	A	0.4878	0.026356	0.026907999999999998	0.9794856548238443	0.3273	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs74338595	2	212749786	T	C	0.4743	-0.013013999999999998	0.032494999999999996	-0.4004923834436067	0.6888	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs4465966	3	82009703	A	G	0.4981	-0.036131	0.026485	-1.3642061544270343	0.1725	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs30266	5	103972357	G	A	0.4859	0.021578999999999997	0.028204000000000003	0.7651042405332575	0.4442	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs2069117	5	152244551	A	C	0.5068	0.0019952999999999998	0.02707	0.07370890284447727	0.9412	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs10456089	6	11959836	G	A	0.4788	-0.07578	0.052382000000000005	-1.4466801573059447	0.14800000000000002	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs7770860	6	131186393	T	C	0.4976	0.009463899999999999	0.027022000000000004	0.3502294426763377	0.7262	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs773020	9	77768122	G	A	0.4994	-0.009173200000000001	0.057678	-0.15904157564409308	0.8736	35962	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs10992800	9	96373818	G	A	0.4927	0.0085262	0.027006	0.31571502629045395	0.7522	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs11605348	11	47606483	G	A	0.5193	-0.015412	0.030826999999999997	-0.499951341356603	0.6171	33249	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs1966836	11	57982229	A	G	0.4653	0.020191999999999998	0.03244	0.6224414303329223	0.5337	33249	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs62085660	17	66097739	C	G	0.4903	0.0066985	0.032996	0.20300945569159898	0.8391	35962	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
+rs613872	18	53210302	G	T	0.5274	0.015133	0.033874	0.44674381531558127	0.6551	38632	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid

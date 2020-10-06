@@ -1,0 +1,5 @@
+target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
+rs34634095,rs510388,0.935389,1,CT/AG,NA,11,111451869,T,G,0.4729,-0.02389,0.03235,-0.7384853168469863,0.4602,33249,predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid,C,T,A,G,A,C,TRUE
+rs12721051,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+rs380743,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+rs2425026,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

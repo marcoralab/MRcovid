@@ -1,0 +1,13 @@
+SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
+rs12630663	3	28007315	T	C	0.3789	-0.040168	0.052984	-0.7581156575569984	0.4484	277276	very_severe_respiratory_confirmed_covid_vs._population
+rs34464850	3	141721762	G	C	0.1663	-0.1112	0.046335	-2.3999136721700656	0.0164	287332	very_severe_respiratory_confirmed_covid_vs._population
+rs2301718	4	106009763	G	A	0.3586	0.010304	0.06025	0.1710207468879668	0.8642	277276	very_severe_respiratory_confirmed_covid_vs._population
+rs386424	5	81092787	T	G	0.3587	-0.015903	0.036983999999999996	-0.4299967553536665	0.6672	286929	very_severe_respiratory_confirmed_covid_vs._population
+rs7715167	5	170778824	T	C	0.5832	-0.019877000000000002	0.05413099999999999	-0.36720178825441996	0.7135	249899	very_severe_respiratory_confirmed_covid_vs._population
+rs12357321	10	21790476	G	A	0.2901	0.032313999999999996	0.055784	0.579270041588986	0.5624	277276	very_severe_respiratory_confirmed_covid_vs._population
+rs1628768	10	105012994	T	C	0.2977	-0.033088	0.06009	-0.5506407056082543	0.5819	277276	very_severe_respiratory_confirmed_covid_vs._population
+rs10876864	12	56401085	G	A	0.5933	0.034851	0.032764	1.0636979611769015	0.2875	287332	very_severe_respiratory_confirmed_covid_vs._population
+rs10878349	12	66327632	A	G	0.51	-0.099945	0.053029	-1.8847234532048502	0.05947	277276	very_severe_respiratory_confirmed_covid_vs._population
+rs79600142	17	43897722	T	C	0.08968	-0.1102	0.039647	-2.7795293464827098	0.005442	287332	very_severe_respiratory_confirmed_covid_vs._population
+rs2802295	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+rs11759026	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA

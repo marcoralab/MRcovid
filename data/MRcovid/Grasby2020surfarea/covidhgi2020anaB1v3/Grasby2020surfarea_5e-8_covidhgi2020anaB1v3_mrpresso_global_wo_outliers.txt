@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+rg8d85	gGDsL0	covidhgi2020anaB1v3	Grasby2020surfarea	5e-8	TRUE	0	NA	NA
