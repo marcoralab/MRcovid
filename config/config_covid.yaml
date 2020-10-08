@@ -645,7 +645,7 @@ EXPOSURES:
 OUTCOMES:
   -
     CODE: covidhgi2020anaA2v3
-    NAME: "very severe respiratory confirmed covid vs. population"
+    NAME: "COVID: A2"
     FILE: raw/GWAS/covidhgi2020anaA2v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
@@ -662,7 +662,7 @@ OUTCOMES:
       TRAIT: TRAIT
   -
     CODE: covidhgi2020anaB1v3
-    NAME: "hospitalized covid vs. not hospitalized covid"
+    NAME: "COVID: B1"
     FILE: raw/GWAS/covidhgi2020anaB1v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
@@ -679,7 +679,7 @@ OUTCOMES:
       TRAIT: TRAIT
   -
     CODE: covidhgi2020anaB2v3
-    NAME: "hospitalized covid vs. population"
+    NAME: "COVID: B2"
     FILE: raw/GWAS/covidhgi2020anaB2v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
@@ -696,7 +696,7 @@ OUTCOMES:
       TRAIT: TRAIT
   -
     CODE: covidhgi2020anaC1v3
-    NAME: "covid vs. lab/self-reported negative"
+    NAME: "COVID: C1"
     FILE: raw/GWAS/covidhgi2020anaC1v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
@@ -713,7 +713,7 @@ OUTCOMES:
       TRAIT: TRAIT
   -
     CODE: covidhgi2020anaC2v3
-    NAME: "covid vs. population"
+    NAME: "COVID: C2"
     FILE: raw/GWAS/covidhgi2020anaC2v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
@@ -730,7 +730,7 @@ OUTCOMES:
       TRAIT: TRAIT
   -
     CODE: covidhgi2020anaD1v3
-    NAME: "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid"
+    NAME: "COVID: D1"
     FILE: raw/GWAS/covidhgi2020anaD1v3.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID

@@ -1,20 +1,11 @@
 ## ================================================================================ ##
 ##                                Misc functions                                    ##
 
-outcomes = c("Lambert2013load", "Kunkle2019load", "Huang2017aaos",
-             "Deming2017ab42", "Deming2017ptau", "Deming2017tau",
-             "Hilbar2017hipv", "Hilbar2015hipv", "Grasby2020surfarea", "Grasby2020thickness",
-             "Beecham2014npany", "Beecham2014braak4", "Beecham2014vbiany", "Beecham2014status",
-             "Chauhan2019bi")
+outcomes = c("covidhgi2020anaA2v3", "covidhgi2020anaB1v3", "covidhgi2020anaB2v3", 
+             "covidhgi2020anaC1v3", "covidhgi2020anaC2v3", "covidhgi2020anaD1v3")
+
 ## Exposures to include in the results
-exposures = c("Yengo2018bmi", "Xue2018diab",
-              "Niarchou2020meat", "Niarchou2020fish",
-              "Wells2019hdiff","Willer2013hdl", "Willer2013ldl", "Willer2013tc",
-              "Willer2013tg", "Dashti2019slepdur",  "Day2018sociso",
-              "Klimentidis2018mvpa", "Evangelou2018dbp", "Evangelou2018sbp",
-              "Evangelou2018pp", "Liu2019drnkwk23andMe", "Liu2019smkcpd23andMe", "Liu2019smkint23andMe",
-              "Jansen2018insomnia23andMe", "Howard2019dep23andMe", "SanchezRoige2019auditt23andMe",
-              "Lee2018education23andMe")
+exposures = c("Campos2020snor", "Dashti2019slepdur", "Day2018sociso", "Evangelou2018dbp", "Evangelou2018pp", "Evangelou2018sbp", "Grasby2020surfarea", "Grasby2020thickness", "Hilbar2017hipv", "Howard2018dep", "Jansen2018insom", "Klimentidis2018mvpa", "Kunkle2019load", "Lee2018educ", "Ligthart2018crp", "Liu2019drnkwk", "Liu2019smkaoi", "Liu2019smkces", "Liu2019smkcpd", "Liu2019smkint", "Locke2015bmi", "Nalls2019pd", "Niarchou2020fish", "Niarchou2020meat", "Okada2014rartis", "Okbay2016educ", "Revez2020vit250hd", "Wells2019hdiff", "Willer2013hdl", "Willer2013ldl", "Willer2013tc", "Willer2013tg", "Wood2014height", "Xue2018diab", "Yengo2018bmi", "Yengo2018height")
 
 ## Sample Sizes
 samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~ncase, ~ncontrol, ~prevelance,
@@ -69,16 +60,16 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Okada2014rartis", "Diagnosis", "Rheumatoid Arthritis", 24390342, TRUE, 58284, 14361, 43923, 0.005,
                   "Nalls2019pd", "Diagnosis", "Parkinsons Disease", 31701892, TRUE, 1474097, 56306, 1417791, 0.005,
                   "Huang2017aaos", "Diagnosis", "AAOS", 28628103, TRUE, 40255, 14406, 25849, 0.31,
-                  "Ligthart2018crp", "Health", "AAOS", 30388399, FALSE, 204402, NA, NA, NA,
-                  "Yengo2018height", "Health", "AAOS", 30124842, FALSE, 693529, NA, NA, NA,
-                  "Wood2014height", "Health", "AAOS", 25282103, FALSE, 253288, NA, NA, NA,
+                  "Ligthart2018crp", "Health", "CRP", 30388399, FALSE, 204402, NA, NA, NA,
+                  "Yengo2018height", "Health", "Height", 30124842, FALSE, 693529, NA, NA, NA,
+                  "Wood2014height", "Health", "Height, Wood", 25282103, FALSE, 253288, NA, NA, NA,
                   # Datafreez v3
-                  "covidhgi2020anaA2v3", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 287444, 2972, 284472,  0.01,
-                  "covidhgi2020anaB1v3", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 7268, 1389, 5879, 0.19,
-                  "covidhgi2020anaB2v3", "Diagnosis", "hospitalized covid vs. population", 9999, TRUE, 1019301, 6492, 1012809, 0.0063,
-                  "covidhgi2020anaC1v3", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE, 127637, 11181, 116456, 0.087,
-                  "covidhgi2020anaC2v3", "Diagnosis", "covid vs. population", 9999, TRUE, 1362941, 17607, 1362941, 0.012,
-                  "covidhgi2020anaD1v3", "Diagnosis", "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid", 9999, TRUE, 20672, 1777, 18895, 0.09,
+                  "covidhgi2020anaA2v3", "Diagnosis", "COVID: A2", 9999, TRUE, 287444, 2972, 284472,  0.01,
+                  "covidhgi2020anaB1v3", "Diagnosis", "COVID: B1", 9999, TRUE, 7268, 1389, 5879, 0.19,
+                  "covidhgi2020anaB2v3", "Diagnosis", "COVID: B2", 9999, TRUE, 1019301, 6492, 1012809, 0.0063,
+                  "covidhgi2020anaC1v3", "Diagnosis", "COVID: C1", 9999, TRUE, 127637, 11181, 116456, 0.087,
+                  "covidhgi2020anaC2v3", "Diagnosis", "COVID: C2", 9999, TRUE, 1362941, 17607, 1362941, 0.012,
+                  "covidhgi2020anaD1v3", "Diagnosis", "COVID: D1", 9999, TRUE, 20672, 1777, 18895, 0.09,
                   # Datafreez v2
                   # "covidhgi2020anaA2v2", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 329927, 536, 329391, 0.00162,
                   # "covidhgi2020anaB1v2", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 2956, 928, 2028, 0.314,

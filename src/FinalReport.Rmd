@@ -35,7 +35,7 @@ editor_options:
 # model <- "MR_ADphenome_wo_apoe"
 model <- "MR_ADbidir"
 # DATE = "2020-07-27"
-rwd = "/sc/arion/projects/LOAD/shea/Projects/MR_ADPhenome/"
+rwd = "/sc/arion/projects/LOAD/shea/Projects/MRcovid/"
 DATE = Sys.Date()
 setwd(rwd)
 
@@ -137,19 +137,11 @@ exposures_outcomes <- expand_grid(exposures, outcomes) %>%
   left_join(select(samplesize, code, trait, domain), by = c('exposures.name' = 'code')) %>%
   rename(exposure.name = trait, domain.exposure = domain) %>%
   left_join(select(samplesize, code, trait, domain), by = c('outcomes.name' = 'code')) %>%
-  rename(outcome.name = trait, domain.outcome = domain)
-
-if(model == "MR_ADbidir"){
-  exposures_outcomes <- exposures_outcomes %>%
-  mutate(domain.outcome = fct_relevel(domain.outcome, "Psychosocial", "Health", "Lifestyle"),
-         domain.exposure = fct_relevel(domain.exposure, "Diagnosis", "CSF", "Neuropathology", "Neuroimaging")) %>%
-         select(-exposures.name, -outcomes.name)
-} else if(str_detect(model, "MR_ADphenome")){
-  exposures_outcomes <- exposures_outcomes %>%
+  rename(outcome.name = trait, domain.outcome = domain) %>%
   mutate(domain.exposure = fct_relevel(domain.exposure, "Psychosocial", "Health", "Lifestyle"),
-         domain.outcome = fct_relevel(domain.outcome, "Diagnosis", "CSF", "Neuropathology", "Neuroimaging")) %>%
+         domain.outcome = fct_relevel(domain.outcome, "Diagnosis")) %>%
          select(-exposures.name, -outcomes.name)
-}
+
 
 ```
 
