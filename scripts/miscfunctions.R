@@ -54,6 +54,8 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Liu2019smkcpd", "Lifestyle", "Cigarettes per Day", 30643251, FALSE, 263954, NA, NA, NA,
                   "Liu2019smkint23andMe", "Lifestyle", "Smoking Initiation", 30643251, TRUE, 1232091, 557337, 674754, 0.45,
                   "Liu2019smkint", "Lifestyle", "Smoking Initiation", 30643251, TRUE, 632802, 311628, 321174, 0.45,
+                  "Liu2019smkaoi", "Lifestyle", "Smoking AOI", 30643251, FALSE, 262990, NA, NA, NA,
+                  "Liu2019smkces", "Lifestyle", "Smoking cessation", 30643251, TRUE, 312821, 139453, 407766, 0.44,
                   "Jansen2018insomnia23andMe", "Psychosocial", "Insomnia Symptoms", 30804565, TRUE, 1331010, 397972, 933038, 0.29,
                   "Jansen2018insom", "Psychosocial", "Insomnia Symptoms", 30804565, TRUE, 386533, 108229, 278304, 0.28,
                   "Howard2019dep23andMe", "Psychosocial", "Depression", 30718901, TRUE, 807553, 246363, 561190, 0.32,
@@ -61,9 +63,15 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "SanchezRoige2019auditt23andMe", "Lifestyle", "AUDIT", 30336701, FALSE, 141932, NA, NA, NA,
                   "Lee2018education23andMe", "Psychosocial", "Educational Attainment", 30038396, FALSE, 1131881, NA, NA, NA,
                   "Lee2018educ", "Psychosocial", "Educational Attainment", 30038396, FALSE, 775120, NA, NA, NA,
+                  "Okbay2016educ", "Psychosocial", "Education, Okbay", 27225129, FALSE, 293723, NA, NA, NA,
                   "Chauhan2019bi", "Neuropathology", "Brain Infarcts", 30651383, TRUE, 21682, 3726, 17956, 0.2,
                   "Revez2020vit250hd", "Health", "25 hydroxyvitamin D", 32242144, FALSE, 417580, NA, NA, NA,
                   "Okada2014rartis", "Diagnosis", "Rheumatoid Arthritis", 24390342, TRUE, 58284, 14361, 43923, 0.005,
+                  "Nalls2019pd", "Diagnosis", "Parkinsons Disease", 31701892, TRUE, 1474097, 56306, 1417791, 0.005,
+                  "Huang2017aaos", "Diagnosis", "AAOS", 28628103, TRUE, 40255, 14406, 25849, 0.31,
+                  "Ligthart2018crp", "Health", "AAOS", 30388399, FALSE, 204402, NA, NA, NA,
+                  "Yengo2018height", "Health", "AAOS", 30124842, FALSE, 693529, NA, NA, NA,
+                  "Wood2014height", "Health", "AAOS", 25282103, FALSE, 253288, NA, NA, NA,
                   # Datafreez v3
                   "covidhgi2020anaA2v3", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 287444, 2972, 284472,  0.01,
                   "covidhgi2020anaB1v3", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 7268, 1389, 5879, 0.19,
@@ -78,11 +86,11 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   # "covidhgi2020anaC1v2", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE, 40157, 3523, 36634, 0.0877,
                   # "covidhgi2020anaC2v2", "Diagnosis", "covid vs. population", 9999, TRUE, 1079768, 6696, 1073072, 0.00620,
                   # "covidhgi2020anaD1v2", "Diagnosis", "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid", 9999, TRUE, 31039, 1865, 29174, 0.0601,
-                  "covidhgi2020anaA2v2woUKBB", "Diagnosis", "very severe respiratory confirmed covid vs. population wo/ UKBB", 9999, TRUE, 4422, 428, 3994, 0.096,
-                  "covidhgi2020anaB1v2woUKBB", "Diagnosis", "hospitalized covid vs. not hospitalized covid wo/ UKBB", 9999, TRUE,  1766, 144, 1622, 0.081,
-                  "covidhgi2020anaB2v2woUKBB", "Diagnosis", "hospitalized covid vs. population wo/ UKBB", 9999, TRUE,  480156, 2415, 477741, 0.005,
-                  "covidhgi2020anaC1v2woUKBB", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE,  33580, 2213, 31367, 0.065,
-                  "covidhgi2020anaC2v2woUKBB", "Diagnosis", "covid vs. population wo/ UKBB", 9999, TRUE,  643725, 5386, 638339, 0.0083
+                  # "covidhgi2020anaA2v2woUKBB", "Diagnosis", "very severe respiratory confirmed covid vs. population wo/ UKBB", 9999, TRUE, 4422, 428, 3994, 0.096,
+                  # "covidhgi2020anaB1v2woUKBB", "Diagnosis", "hospitalized covid vs. not hospitalized covid wo/ UKBB", 9999, TRUE,  1766, 144, 1622, 0.081,
+                  # "covidhgi2020anaB2v2woUKBB", "Diagnosis", "hospitalized covid vs. population wo/ UKBB", 9999, TRUE,  480156, 2415, 477741, 0.005,
+                  # "covidhgi2020anaC1v2woUKBB", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE,  33580, 2213, 31367, 0.065,
+                  # "covidhgi2020anaC2v2woUKBB", "Diagnosis", "covid vs. population wo/ UKBB", 9999, TRUE,  643725, 5386, 638339, 0.0083
                   )
 
 ## negate
