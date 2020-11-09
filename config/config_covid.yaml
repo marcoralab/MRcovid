@@ -80,40 +80,6 @@ EXPOSURES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: Niarchou2020meat
-    NAME: 'Meat related diet'
-    FILE: raw/GWAS/Niarchou2020meat.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: Niarchou2020fish
-    NAME: 'Fish and plant related diet'
-    FILE: raw/GWAS/Niarchou2020fish.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
     CODE: Willer2013hdl
     NAME: 'HDL cholesterol'
     FILE: raw/GWAS/Willer2013hdl.chrall.CPRA_b37.tsv.gz
@@ -199,23 +165,6 @@ EXPOSURES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: Campos2020snor
-    NAME: 'Snoring'
-    FILE: raw/GWAS/Campos2020snor.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
     CODE: Klimentidis2018mvpa
     NAME: 'Moderate-Vigours Physical Activity'
     FILE: raw/GWAS/Klimentidis2018mvpa.chrall.CPRA_b37.tsv.gz
@@ -236,23 +185,6 @@ EXPOSURES:
     CODE: Day2018sociso
     NAME: 'Social Isolation'
     FILE: raw/GWAS/Day2018sociso.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: Wells2019hdiff
-    NAME: 'Hearing Difficulty'
-    FILE: raw/GWAS/Wells2019hdiff.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -420,40 +352,6 @@ EXPOSURES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: Liu2019smkaoi
-    NAME: 'Smoking AOI'
-    FILE: raw/GWAS/Liu2019smkaoi.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: Liu2019smkces
-    NAME: 'Smoking cessation'
-    FILE: raw/GWAS/Liu2019smkces.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
     CODE: Liu2019drnkwk
     NAME: 'Alcohol Consumption'
     FILE: raw/GWAS/Liu2019drnkwk.chrall.CPRA_b37.tsv.gz
@@ -474,57 +372,6 @@ EXPOSURES:
     CODE: Kunkle2019load
     NAME: LOAD
     FILE: raw/GWAS/Kunkle2019load.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: Hilbar2017hipv
-    NAME: 'Hippocampal Volume'
-    FILE: raw/GWAS/Hilbar2017hipv.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: Grasby2020thickness
-    NAME: 'Cortical Thickness'
-    FILE: raw/GWAS/Grasby2020thickness.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: Grasby2020surfarea
-    NAME: 'Cortical Surface Area'
-    FILE: raw/GWAS/Grasby2020surfarea.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -640,13 +487,165 @@ EXPOSURES:
       Z: Z
       N: N
       TRAIT: TRAIT
-
+  -
+    CODE: Betham2015lupus
+    NAME: 'Lupus'
+    FILE: raw/GWAS/Betham2015lupus.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Patsopoulos2019multscler
+    NAME: 'Multiple Sclerosis'
+    FILE: raw/GWAS/Patsopoulos2019multscler.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Malik2018as
+    NAME: 'Stroke'
+    FILE: raw/GWAS/Malik2018as.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Wuttke2019egfr
+    NAME: 'eGFR'
+    FILE: raw/GWAS/Wuttke2019egfr.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Wuttke2019ckd
+    NAME: 'CKD'
+    FILE: raw/GWAS/Wuttke2019ckd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Nikpay2015cad
+    NAME: 'coronary artery disease'
+    FILE: raw/GWAS/Nikpay2015cad.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Shah2020heartfailure
+    NAME: 'Heart Failure'
+    FILE: raw/GWAS/Shah2020heartfailure.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Olafsdottir2020asthma
+    NAME: 'Asthma'
+    FILE: raw/GWAS/Olafsdottir2020asthma.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Allen2020ipf
+    NAME: 'IPF'
+    FILE: raw/GWAS/Allen2020ipf.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
 
 OUTCOMES:
   -
-    CODE: covidhgi2020anaA2v3
+    CODE: covidhgi2020anaA2v4
     NAME: "COVID: A2"
-    FILE: raw/GWAS/covidhgi2020anaA2v3.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaA2v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -661,9 +660,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaB1v3
+    CODE: covidhgi2020anaB1v4
     NAME: "COVID: B1"
-    FILE: raw/GWAS/covidhgi2020anaB1v3.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaB1v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -678,9 +677,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaB2v3
+    CODE: covidhgi2020anaB2v4
     NAME: "COVID: B2"
-    FILE: raw/GWAS/covidhgi2020anaB2v3.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaB2v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -695,9 +694,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaC1v3
+    CODE: covidhgi2020anaC1v4
     NAME: "COVID: C1"
-    FILE: raw/GWAS/covidhgi2020anaC1v3.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaC1v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -712,9 +711,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaC2v3
+    CODE: covidhgi2020anaC2v4
     NAME: "COVID: C2"
-    FILE: raw/GWAS/covidhgi2020anaC2v3.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaC2v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -729,9 +728,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaD1v3
+    CODE: covidhgi2020anaD1v4
     NAME: "COVID: D1"
-    FILE: raw/GWAS/covidhgi2020anaD1v3.chrall.CPRA_b37.tsv.gz
+    FILE: raw/GWAS/covidhgi2020anaD1v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -745,6 +744,108 @@ OUTCOMES:
       Z: Z
       N: N
       TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaA2v3
+  #   NAME: "COVID: A2"
+  #   FILE: raw/GWAS/covidhgi2020anaA2v3.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaB1v3
+  #   NAME: "COVID: B1"
+  #   FILE: raw/GWAS/covidhgi2020anaB1v3.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaB2v3
+  #   NAME: "COVID: B2"
+  #   FILE: raw/GWAS/covidhgi2020anaB2v3.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaC1v3
+  #   NAME: "COVID: C1"
+  #   FILE: raw/GWAS/covidhgi2020anaC1v3.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaC2v3
+  #   NAME: "COVID: C2"
+  #   FILE: raw/GWAS/covidhgi2020anaC2v3.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaD1v3
+  #   NAME: "COVID: D1"
+  #   FILE: raw/GWAS/covidhgi2020anaD1v3.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
   # -
   #   CODE: covidhgi2020anaA2v2
   #   NAME: "very severe respiratory confirmed covid vs. population"

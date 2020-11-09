@@ -1,7 +1,7 @@
 ## ================================================================================ ##
 ##                                Misc functions                                    ##
 
-outcomes = c("covidhgi2020anaA2v3", "covidhgi2020anaB1v3", "covidhgi2020anaB2v3", 
+outcomes = c("covidhgi2020anaA2v3", "covidhgi2020anaB1v3", "covidhgi2020anaB2v3",
              "covidhgi2020anaC1v3", "covidhgi2020anaC2v3", "covidhgi2020anaD1v3")
 
 ## Exposures to include in the results
@@ -30,8 +30,7 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Wells2019hdiff", "Health", "Hearing Difficulties", 31564434, FALSE, 250389, 87056, 163333, 0.35,
                   "Willer2013hdl", "Health", "High-density lipoproteins", 24097068, FALSE, 188577, NA, NA, NA,
                   "Willer2013ldl", "Health", "Low-density lipoproteins", 24097068, FALSE, 188577, NA, NA, NA,
-                  "Willer2013tc", "Health", "Total Cholesterol", 24097068, FALSE, 188577, NA, NA, NA,
-                  "Willer2013tg", "Health", "Triglycerides", 24097068, FALSE, 188577, NA, NA, NA,
+                  "Willer2013tc", "Health", "Total Cholesterol", 24097068, FALSE, 188577, NA, NA, NA,                  "Willer2013tg", "Health", "Triglycerides", 24097068, FALSE, 188577, NA, NA, NA,
                   "Dashti2019slepdur",  "Psychosocial", "Sleep Duration", 30846698, FALSE, 446118, NA, NA, NA,
                   "Campos2020snor",  "Psychosocial", "Snoring", 32060260, FALSE, 408317, NA, NA, NA,
                   "Day2018sociso", "Psychosocial", "Social Isolation", 29970889, FALSE, 452302, NA, NA, NA,
@@ -63,13 +62,30 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Ligthart2018crp", "Health", "CRP", 30388399, FALSE, 204402, NA, NA, NA,
                   "Yengo2018height", "Health", "Height", 30124842, FALSE, 693529, NA, NA, NA,
                   "Wood2014height", "Health", "Height, Wood", 25282103, FALSE, 253288, NA, NA, NA,
+                  "Betham2015lupus", "Diagnosis", "Lupus", 26502338, TRUE, 23210, 7219, 15991, 0.0024,
+                  "Beecham2013multscler", "Diagnosis", "Multiple Sclerosis", 24076602, TRUE, 38589, 14498, 24091, 0.0045,
+                  "Patsopoulos2019multscler", "Diagnosis", "Multiple Sclerosis", 31604244, TRUE, 115803, 47429, 68374, 0.0045,
+                  "Malik2018as", "Diagnosis", "Stroke", 29531354, TRUE, 446696, 40585, 406111, 0.055,
+                  "Wuttke2019egfr", "Health", "eGFR", 31152163, FALSE, 765286, NA, NA, NA,
+                  "Wuttke2019ckd", "Diagnosis", "CKD", 31152163, TRUE, 659525, 53339, 606186, 0.08,
+                  "Nikpay2015cad", "Diagnosis", "coronary artery disease", 26343387, TRUE, 184305, 60801, 123504, 0.05,
+                  "Shah2020heartfailure", "Diagnosis", "Heart Failure", 31919418, TRUE, 977323, 47309, 930014, 0.025,
+                  "Olafsdottir2020asthma", "Diagnosis", "Asthma", 31959851, TRUE, 771388, 69189, 702199, 0.09,
+                  "Allen2020ipf", "Diagnosis", "IPF", 31710517, TRUE, 11259, 2668, 8591, 0.0002,
+                  # Datafreez v4
+                  "covidhgi2020anaA2v4", "Diagnosis", "COVID: A2", 9999, TRUE, 628238, 4336, 623902, 0.007,
+                  "covidhgi2020anaB1v4", "Diagnosis", "COVID: B1", 9999, TRUE, 10908, 2430, 8478,  0.22,
+                  "covidhgi2020anaB2v4", "Diagnosis", "COVID: B2", 9999, TRUE, 969689, 7885, 961804,  0.008,
+                  "covidhgi2020anaC1v4", "Diagnosis", "COVID: C1", 9999, TRUE, 127879, 11085, 116794,  0.086,
+                  "covidhgi2020anaC2v4", "Diagnosis", "COVID: C2", 9999, TRUE, 1388512, 17965, 1370547,  0.013,
+                  "covidhgi2020anaD1v4", "Diagnosis", "COVID: D1", 9999, TRUE, 38932, 3204, 35728,  0.082,
                   # Datafreez v3
-                  "covidhgi2020anaA2v3", "Diagnosis", "COVID: A2", 9999, TRUE, 287444, 2972, 284472,  0.01,
-                  "covidhgi2020anaB1v3", "Diagnosis", "COVID: B1", 9999, TRUE, 7268, 1389, 5879, 0.19,
-                  "covidhgi2020anaB2v3", "Diagnosis", "COVID: B2", 9999, TRUE, 1019301, 6492, 1012809, 0.0063,
-                  "covidhgi2020anaC1v3", "Diagnosis", "COVID: C1", 9999, TRUE, 127637, 11181, 116456, 0.087,
-                  "covidhgi2020anaC2v3", "Diagnosis", "COVID: C2", 9999, TRUE, 1362941, 17607, 1362941, 0.012,
-                  "covidhgi2020anaD1v3", "Diagnosis", "COVID: D1", 9999, TRUE, 20672, 1777, 18895, 0.09,
+                  # "covidhgi2020anaA2v3", "Diagnosis", "COVID: A2", 9999, TRUE, 287444, 2972, 284472,  0.01,
+                  # "covidhgi2020anaB1v3", "Diagnosis", "COVID: B1", 9999, TRUE, 7268, 1389, 5879, 0.19,
+                  # "covidhgi2020anaB2v3", "Diagnosis", "COVID: B2", 9999, TRUE, 1019301, 6492, 1012809, 0.0063,
+                  # "covidhgi2020anaC1v3", "Diagnosis", "COVID: C1", 9999, TRUE, 127637, 11181, 116456, 0.087,
+                  # "covidhgi2020anaC2v3", "Diagnosis", "COVID: C2", 9999, TRUE, 1362941, 17607, 1362941, 0.012,
+                  # "covidhgi2020anaD1v3", "Diagnosis", "COVID: D1", 9999, TRUE, 20672, 1777, 18895, 0.09,
                   # Datafreez v2
                   # "covidhgi2020anaA2v2", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 329927, 536, 329391, 0.00162,
                   # "covidhgi2020anaB1v2", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 2956, 928, 2028, 0.314,
