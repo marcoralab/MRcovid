@@ -1,3 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-09TMGD	S8yuLa	Kunkle2019load	covidhgi2020anaC1v3	0.009048941507669373	5.203775368737136e-4	TRUE	0	TRUE	5e-8
-09TMGD	S8yuLa	Kunkle2019load	covidhgi2020anaC1v3	0.010126790868585004	6.280402962072557e-4	TRUE	0	FALSE	5e-8

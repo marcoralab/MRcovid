@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+1RyEvg	ytZ24L	covidhgi2020anaA2v4	Yengo2018height	5e-8	FALSE	-0.0016200470846026585	0.0028424214587856574	0.5688682953517223
+1RyEvg	ytZ24L	covidhgi2020anaA2v4	Yengo2018height	5e-8	TRUE	-0.002071003285643137	0.002824837856817552	0.46368612148100274

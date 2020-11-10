@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+HKDKQJ	6OVKVS	covidhgi2020anaB1v4	Shah2020heartfailure	5e-8	TRUE	0	NA	NA

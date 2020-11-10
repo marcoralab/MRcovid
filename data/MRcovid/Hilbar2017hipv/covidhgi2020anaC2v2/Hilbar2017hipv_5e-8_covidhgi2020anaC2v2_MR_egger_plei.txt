@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-scHMgI	LkDfCG	covidhgi2020anaC2v2	Hilbar2017hipv	5e-8	FALSE	-9.647390530915979e-5	0.043425898646012775	0.9983338202123262
-scHMgI	LkDfCG	covidhgi2020anaC2v2	Hilbar2017hipv	5e-8	TRUE	-0.024252359353876603	0.027879569757997727	0.44836656397274627

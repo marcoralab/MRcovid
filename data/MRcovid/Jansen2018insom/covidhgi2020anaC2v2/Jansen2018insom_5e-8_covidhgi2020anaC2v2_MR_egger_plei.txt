@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	FALSE	0.04658057764554397	0.02700690372026961	0.11251715233335315
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	TRUE	0.050568065945466596	0.02211535668128917	0.045277910994664404

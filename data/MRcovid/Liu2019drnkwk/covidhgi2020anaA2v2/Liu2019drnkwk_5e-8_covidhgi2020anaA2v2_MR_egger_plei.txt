@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
-MByA5A	sCVmT8	covidhgi2020anaA2v2	Liu2019drnkwk	5e-8	FALSE	-0.02545367067077732	0.018955858666406988	0.18823748765448362	NA

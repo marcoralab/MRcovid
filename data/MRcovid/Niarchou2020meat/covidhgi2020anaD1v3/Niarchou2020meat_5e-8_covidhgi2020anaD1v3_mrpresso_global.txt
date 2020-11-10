@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-SGehWV	dmSM5S	covidhgi2020anaD1v3	Niarchou2020meat	5e-8	FALSE	0	14.466416530753657	0.6924

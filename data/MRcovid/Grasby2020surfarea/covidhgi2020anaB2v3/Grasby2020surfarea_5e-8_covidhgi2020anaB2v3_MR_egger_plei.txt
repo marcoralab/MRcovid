@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-nJntMC	OKbLsU	covidhgi2020anaB2v3	Grasby2020surfarea	5e-8	FALSE	-0.04899343766246403	0.03004789839022259	0.13404688044728819
-nJntMC	OKbLsU	covidhgi2020anaB2v3	Grasby2020surfarea	5e-8	TRUE	-0.03517518747982621	0.036382666189832914	0.3619525960595316

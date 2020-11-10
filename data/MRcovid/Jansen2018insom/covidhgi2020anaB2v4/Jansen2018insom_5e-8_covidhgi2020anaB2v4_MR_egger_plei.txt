@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+tnHEJr	arCDIx	covidhgi2020anaB2v4	Jansen2018insom	5e-8	FALSE	0.06347325770563275	0.03257682929244294	0.07732573772242124
+tnHEJr	arCDIx	covidhgi2020anaB2v4	Jansen2018insom	5e-8	TRUE	0.06586224950880465	0.024745827731713514	0.0238357984385752

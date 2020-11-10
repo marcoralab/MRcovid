@@ -1,9 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	FALSE	Inverse variance weighted (fixed effects)	13	1	0.07804888173799746	0.1824250904372274	0.6687670896003028
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	FALSE	Weighted median	13	1	0.2520917358988314	0.2761706983659219	0.3613417909611129
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	FALSE	Weighted mode	13	1	0.4005425028853882	0.5779820203166475	0.5015010719808983
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	FALSE	MR Egger	13	1	-1.0962204973603724	0.7164768580994418	0.15424830973115217
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	TRUE	Inverse variance weighted (fixed effects)	12	1	0.23997747880454073	0.19113585892018345	0.20928514562481834
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	TRUE	Weighted median	12	1	0.371506272627772	0.28606902959903546	0.194060797160623
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	TRUE	Weighted mode	12	1	0.4095546490782649	0.5893542381880084	0.5015200922933924
-jC4SQl	cqxibo	covidhgi2020anaC2v2	Jansen2018insom	5e-8	TRUE	MR Egger	12	1	-1.0268868509805291	0.5860909117917906	0.11030646098251592

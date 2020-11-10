@@ -1,5 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
-buKFFv	DVvosq	covidhgi2020anaB2v2	Dashti2019slepdur	5e-8	FALSE	Inverse variance weighted (fixed effects)	69	0	0.22651514395175798	0.2835877533399911	0.4244365620358369
-buKFFv	DVvosq	covidhgi2020anaB2v2	Dashti2019slepdur	5e-8	FALSE	Weighted median	69	0	0.03085784730371686	0.44094234180935055	0.9442083107272833
-buKFFv	DVvosq	covidhgi2020anaB2v2	Dashti2019slepdur	5e-8	FALSE	Weighted mode	69	0	-0.12115741207800568	0.7726122738002836	0.8758550962235809
-buKFFv	DVvosq	covidhgi2020anaB2v2	Dashti2019slepdur	5e-8	FALSE	MR Egger	69	0	-0.33245453731757524	1.0862937205698313	0.7605195036991617

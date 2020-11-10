@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-xW3QEf	zzAcKJ	covidhgi2020anaC1v2	Grasby2020thickness	5e-8	FALSE	0	5.858104797640478	0.5402

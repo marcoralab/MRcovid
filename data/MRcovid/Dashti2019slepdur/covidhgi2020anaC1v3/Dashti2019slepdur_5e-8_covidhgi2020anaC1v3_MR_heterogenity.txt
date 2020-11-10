@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-1ooUqD	6AxiKo	covidhgi2020anaC1v3	Dashti2019slepdur	5e-8	FALSE	MR Egger	76.81308213054389	62	0.09752137931103602
-1ooUqD	6AxiKo	covidhgi2020anaC1v3	Dashti2019slepdur	5e-8	FALSE	Inverse variance weighted	77.15925131296483	63	0.10822229480848257

@@ -1,6 +1,0 @@
-SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
-rs6738528	2	27149258	T	A	0.421779	0.044371	0.084137	0.5273660815099184	0.5979	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
-rs533577	3	39489651	C	T	0.449239	0.13245	0.084333	1.5705595674291204	0.1163	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
-rs35021943	4	121643239	A	C	0.224119	-0.19466	0.10002	-1.9462107578484305	0.051629999999999995	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
-rs7824177	8	110585288	A	G	0.113266	-0.0035361	0.10368	-0.03410590277777778	0.9728	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB
-rs2316766	17	43919105	G	T	0.147859	0.0079509	0.095805	0.08299044935024268	0.9339	2	very_severe_respiratory_confirmed_covid_vs._population__woUKBB

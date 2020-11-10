@@ -1,7 +1,0 @@
-SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
-rs2268894	2	162856148	C	T	0.5361	-0.034827	0.034874	-0.9986522911051211	0.318	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
-rs2289881	5	66084260	G	T	0.3511	-0.081678	0.036486000000000005	-2.2386120703831605	0.02518	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
-rs11979341	7	155797978	C	G	0.2894	-0.010075	0.0423	-0.2381796690307329	0.8117	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
-rs7020341	9	119247974	G	C	0.3679	0.065898	0.036133	1.8237622118285224	0.06819	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
-rs61921502	12	65832468	T	G	0.1827	-0.044081	0.045511	-0.9685790248511349	0.3328	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid
-rs77956314	12	117323367	T	C	0.08445	0.0057783	0.06263300000000001	0.09225647821435984	0.9265	31039	predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid

@@ -1,2 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-RZvKbw	pveQAK	Revez2020vit250hd	covidhgi2020anaD1v3	0.02478323239540325	0.015033806955674588	TRUE	6.228880318204233e-7	FALSE	5e-8

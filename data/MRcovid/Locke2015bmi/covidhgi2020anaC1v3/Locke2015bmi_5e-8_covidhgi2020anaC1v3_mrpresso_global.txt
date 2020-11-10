@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-lQ8Vkp	OQmli2	covidhgi2020anaC1v3	Locke2015bmi	5e-8	FALSE	0	54.6748204580396	0.4186

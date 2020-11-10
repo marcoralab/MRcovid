@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+X5MfJI	cg0j5j	covidhgi2020anaA2v4	Ligthart2018crp	5e-8	FALSE	0.021282180411582207	0.010095850312137195	0.04063167470780026
+X5MfJI	cg0j5j	covidhgi2020anaA2v4	Ligthart2018crp	5e-8	TRUE	0.015136243345454001	0.009346388946909262	0.11249155903759947

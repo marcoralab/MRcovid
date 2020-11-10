@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+qsweX3	D7Wn5g	Nalls2019pd	covidhgi2020anaA2v4	0.023812148281968495	0.001974489838326928	TRUE	0	TRUE	5e-8
+qsweX3	D7Wn5g	Nalls2019pd	covidhgi2020anaA2v4	0.02680533692503822	0.0026816749359942537	TRUE	0	FALSE	5e-8

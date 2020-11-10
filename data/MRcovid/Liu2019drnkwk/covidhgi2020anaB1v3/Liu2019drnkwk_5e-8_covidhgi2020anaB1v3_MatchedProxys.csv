@@ -1,2 +1,0 @@
-target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
-rs6951574,rs2533196,0.956827,1,CA/TG,NA,7,153489530,G,A,0.4716,-0.081683,0.070654,-1.1560987346788576,0.2476,4214,COVID:_hospitalized_vs._not_hospitalized,C,A,T,G,C,T,TRUE

@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
-xW3QEf	zzAcKJ	covidhgi2020anaC1v2	Grasby2020thickness	5e-8	FALSE	0.10571734543960953	0.07033843928812838	0.2072686719395411	NA

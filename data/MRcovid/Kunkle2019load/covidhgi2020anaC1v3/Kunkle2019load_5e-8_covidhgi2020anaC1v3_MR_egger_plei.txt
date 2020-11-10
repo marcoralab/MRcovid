@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-09TMGD	S8yuLa	covidhgi2020anaC1v3	Kunkle2019load	5e-8	FALSE	-0.026537817943883994	0.025905556651276647	0.32978552431905983
-09TMGD	S8yuLa	covidhgi2020anaC1v3	Kunkle2019load	5e-8	TRUE	-0.027413114697272804	0.019254095862230605	0.18824877126877604

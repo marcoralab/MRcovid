@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
+dVWdte	yz6Yc0	covidhgi2020anaB1v4	Yengo2018height	5e-8	FALSE	-0.0011417743060508996	0.0035090932503934295	0.744981579412964	NA

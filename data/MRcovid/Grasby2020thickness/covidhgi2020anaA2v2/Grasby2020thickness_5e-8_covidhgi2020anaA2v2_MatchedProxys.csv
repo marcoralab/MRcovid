@@ -1,2 +1,0 @@
-target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
-rs11692435,rs74855351,0.823753,0.919606,AC/GT,NA,2,98380681,T,C,0.07968,0.17018,0.17559,0.9691895893843613,0.3325,328264,very_severe_respiratory_confirmed_covid_vs._population,A,C,G,T,A,G,TRUE

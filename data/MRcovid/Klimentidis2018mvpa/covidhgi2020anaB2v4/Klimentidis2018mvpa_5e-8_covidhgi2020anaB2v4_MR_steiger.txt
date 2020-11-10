@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+DhikFG	MZ3ya3	Klimentidis2018mvpa	covidhgi2020anaB2v4	0.0018996629573603224	0.0011062329879733012	TRUE	7.095854215322106e-8	FALSE	5e-8

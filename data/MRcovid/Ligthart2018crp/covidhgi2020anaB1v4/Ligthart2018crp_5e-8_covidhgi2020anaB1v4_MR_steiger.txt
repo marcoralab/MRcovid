@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+Af2N97	qT680M	Ligthart2018crp	covidhgi2020anaB1v4	0.031384369861443384	0.013023983078998273	TRUE	5.566036520576745e-11	FALSE	5e-8

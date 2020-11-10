@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-T9obNW	MasgyG	covidhgi2020anaB2v2	Willer2013tc	5e-8	TRUE	1	100.71250273055841	0.1375

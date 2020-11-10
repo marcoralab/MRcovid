@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-wcMnka	zSpR9v	covidhgi2020anaC1v3	Grasby2020surfarea	5e-8	FALSE	0	9.583786286597642	0.7174

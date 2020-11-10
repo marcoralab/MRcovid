@@ -1,2 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-0FwHqv	kXwvB4	Grasby2020surfarea	covidhgi2020anaC1v2	0.019895276891179488	4.020841104903076e-4	TRUE	0	FALSE	5e-8

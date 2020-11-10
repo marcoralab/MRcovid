@@ -1,6 +1,0 @@
-target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
-rs147114641,rs190174223,0.922148,1,AA/CG,NA,17,43748492,G,A,0.01729,-0.13451,0.1374,-0.978966521106259,0.3276,31039,predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid,A,A,C,G,A,C,TRUE
-rs2696429,rs2696531,0.964432,1,AG/GC,NA,17,44355634,C,G,0.2237,0.06663,0.062668,1.0632220591051253,0.2877,21703,predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid,A,G,G,C,A,G,TRUE
-rs553223732,rs140912760,1,1,CC/GT,NA,17,44289046,T,C,0.01003,-0.27631999999999995,0.20379,-1.3559055890868048,0.1751,26682,predicted_covid_from_self-reported_symptoms_vs._predicted_or_self-reported_non-covid,C,C,G,T,C,G,TRUE
-rs538476570,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-rs547290689,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

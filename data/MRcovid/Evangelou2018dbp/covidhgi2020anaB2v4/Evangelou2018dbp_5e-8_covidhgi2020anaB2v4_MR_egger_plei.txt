@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+utMIwR	II42gr	covidhgi2020anaB2v4	Evangelou2018dbp	5e-8	FALSE	3.363681824914458e-4	0.0035483562008880817	0.9245200309040299
+utMIwR	II42gr	covidhgi2020anaB2v4	Evangelou2018dbp	5e-8	TRUE	-8.712557178552086e-4	0.0034278200597220487	0.7994809172594912

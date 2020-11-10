@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-JHc22V	ENqMF2	covidhgi2020anaD1v2	Evangelou2018sbp	5e-8	FALSE	MR Egger	373.53998158805183	435	0.9849175484783295
-JHc22V	ENqMF2	covidhgi2020anaD1v2	Evangelou2018sbp	5e-8	FALSE	Inverse variance weighted	374.77830461734345	436	0.9844671261568615
