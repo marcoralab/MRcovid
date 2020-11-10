@@ -1,10 +1,10 @@
-# snakemake -s mr.smk --configfile config/config_covid.yaml -j 4 --keep-going
-# snakejob -s mr.smk --configfile config/config_covid.yaml -j 1000 --max-jobs-per-second 1 --keep-going --notemp
+# snakemake -sworkflow/rules/mr.smk --configfile config/config_covid.yaml -j 4 --keep-going
+# snakejob -s workflow/rules/mr.smk --configfile config/config_covid.yaml -j 1000 --max-jobs-per-second 1 --keep-going --notemp
 
 PROJECT: "MRcovid"
 RLIB: "renv/library/R-3.6/x86_64-pc-linux-gnu"
 
-REF: 'raw/EUR_All_Chr'
+REF: 'data/raw/EUR_All_Chr'
 clumpr2: 0.001 ## Default in TwoSample MR
 clumpkb: 10000 ## 10 MB, default in TwoSampleMR
 Pthreshold: ['5e-8']
@@ -31,7 +31,7 @@ EXPOSURES:
   -
     CODE: Yengo2018bmi
     NAME: BMI
-    FILE: raw/GWAS/Yengo2018bmi.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Yengo2018bmi.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -48,7 +48,7 @@ EXPOSURES:
   -
     CODE: Locke2015bmi
     NAME: "BMI, Locke"
-    FILE: raw/GWAS/Locke2015bmi.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Locke2015bmi.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -65,7 +65,7 @@ EXPOSURES:
   -
     CODE: Xue2018diab
     NAME: Diabetes
-    FILE: raw/GWAS/Xue2018diab.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Xue2018diab.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -82,7 +82,7 @@ EXPOSURES:
   -
     CODE: Willer2013hdl
     NAME: 'HDL cholesterol'
-    FILE: raw/GWAS/Willer2013hdl.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Willer2013hdl.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -99,7 +99,7 @@ EXPOSURES:
   -
     CODE: Willer2013ldl
     NAME: 'LDL cholesterol'
-    FILE: raw/GWAS/Willer2013ldl.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Willer2013ldl.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -116,7 +116,7 @@ EXPOSURES:
   -
     CODE: Willer2013tc
     NAME: 'Total cholesterol'
-    FILE: raw/GWAS/Willer2013tc.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Willer2013tc.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -133,7 +133,7 @@ EXPOSURES:
   -
     CODE: Willer2013tg
     NAME: 'Triglycerides'
-    FILE: raw/GWAS/Willer2013tg.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Willer2013tg.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -150,7 +150,7 @@ EXPOSURES:
   -
     CODE: Dashti2019slepdur
     NAME: 'Sleep Duration'
-    FILE: raw/GWAS/Dashti2019slepdur.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Dashti2019slepdur.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -167,7 +167,7 @@ EXPOSURES:
   -
     CODE: Klimentidis2018mvpa
     NAME: 'Moderate-Vigours Physical Activity'
-    FILE: raw/GWAS/Klimentidis2018mvpa.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Klimentidis2018mvpa.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -184,7 +184,7 @@ EXPOSURES:
   -
     CODE: Day2018sociso
     NAME: 'Social Isolation'
-    FILE: raw/GWAS/Day2018sociso.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Day2018sociso.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -201,7 +201,7 @@ EXPOSURES:
   -
     CODE: Evangelou2018dbp
     NAME: 'Diastolic Blood Pressure'
-    FILE: raw/GWAS/Evangelou2018dbp.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Evangelou2018dbp.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -218,7 +218,7 @@ EXPOSURES:
   -
     CODE: Evangelou2018sbp
     NAME: 'Systolic Blood Pressure'
-    FILE: raw/GWAS/Evangelou2018sbp.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Evangelou2018sbp.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -235,7 +235,7 @@ EXPOSURES:
   -
     CODE: Evangelou2018pp
     NAME: 'Pulse Pressure'
-    FILE: raw/GWAS/Evangelou2018pp.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Evangelou2018pp.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -252,7 +252,7 @@ EXPOSURES:
   -
     CODE: Lee2018educ
     NAME: 'Education'
-    FILE: raw/GWAS/Lee2018educ.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Lee2018educ.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -269,7 +269,7 @@ EXPOSURES:
   -
     CODE: Okbay2016educ
     NAME: "Education, Okbay"
-    FILE: raw/GWAS/Okbay2016educ.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Okbay2016educ.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -286,7 +286,7 @@ EXPOSURES:
   -
     CODE: Howard2018dep
     NAME: 'Depression'
-    FILE: raw/GWAS/Howard2018dep.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Howard2018dep.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -303,7 +303,7 @@ EXPOSURES:
   -
     CODE: Jansen2018insom
     NAME: 'Insomnia'
-    FILE: raw/GWAS/Jansen2018insom.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Jansen2018insom.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -320,7 +320,7 @@ EXPOSURES:
   -
     CODE: Liu2019smkint
     NAME: 'Somking Initiation'
-    FILE: raw/GWAS/Liu2019smkint.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Liu2019smkint.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -337,7 +337,7 @@ EXPOSURES:
   -
     CODE: Liu2019smkcpd
     NAME: 'Smoking Quantity'
-    FILE: raw/GWAS/Liu2019smkcpd.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Liu2019smkcpd.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -354,7 +354,7 @@ EXPOSURES:
   -
     CODE: Liu2019drnkwk
     NAME: 'Alcohol Consumption'
-    FILE: raw/GWAS/Liu2019drnkwk.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Liu2019drnkwk.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -371,7 +371,7 @@ EXPOSURES:
   -
     CODE: Kunkle2019load
     NAME: LOAD
-    FILE: raw/GWAS/Kunkle2019load.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Kunkle2019load.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -388,7 +388,7 @@ EXPOSURES:
   -
     CODE: Revez2020vit250hd
     NAME: 'Vitamin D'
-    FILE: raw/GWAS/Revez2020vit250hd.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Revez2020vit250hd.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -405,7 +405,7 @@ EXPOSURES:
   -
     CODE: Okada2014rartis
     NAME: 'Rheumatoid Arthritis'
-    FILE: raw/GWAS/Okada2014rartis.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Okada2014rartis.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -422,7 +422,7 @@ EXPOSURES:
   -
     CODE: Nalls2019pd
     NAME: 'Parkinsons Disease'
-    FILE: raw/GWAS/Nalls2019pd.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Nalls2019pd.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -439,7 +439,7 @@ EXPOSURES:
   -
     CODE: Ligthart2018crp
     NAME: 'CRP'
-    FILE: raw/GWAS/Ligthart2018crp.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Ligthart2018crp.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -456,7 +456,7 @@ EXPOSURES:
   -
     CODE: Wood2014height
     NAME: 'Height, Wood'
-    FILE: raw/GWAS/Wood2014height.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Wood2014height.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -473,7 +473,7 @@ EXPOSURES:
   -
     CODE: Yengo2018height
     NAME: 'Height'
-    FILE: raw/GWAS/Yengo2018height.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Yengo2018height.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -490,7 +490,7 @@ EXPOSURES:
   -
     CODE: Betham2015lupus
     NAME: 'Lupus'
-    FILE: raw/GWAS/Betham2015lupus.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Betham2015lupus.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -507,7 +507,7 @@ EXPOSURES:
   -
     CODE: Patsopoulos2019multscler
     NAME: 'Multiple Sclerosis'
-    FILE: raw/GWAS/Patsopoulos2019multscler.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Patsopoulos2019multscler.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -524,7 +524,7 @@ EXPOSURES:
   -
     CODE: Malik2018as
     NAME: 'Stroke'
-    FILE: raw/GWAS/Malik2018as.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Malik2018as.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -541,7 +541,7 @@ EXPOSURES:
   -
     CODE: Wuttke2019egfr
     NAME: 'eGFR'
-    FILE: raw/GWAS/Wuttke2019egfr.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Wuttke2019egfr.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -558,7 +558,7 @@ EXPOSURES:
   -
     CODE: Wuttke2019ckd
     NAME: 'CKD'
-    FILE: raw/GWAS/Wuttke2019ckd.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Wuttke2019ckd.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -575,7 +575,7 @@ EXPOSURES:
   -
     CODE: Nikpay2015cad
     NAME: 'coronary artery disease'
-    FILE: raw/GWAS/Nikpay2015cad.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Nikpay2015cad.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -592,7 +592,7 @@ EXPOSURES:
   -
     CODE: Shah2020heartfailure
     NAME: 'Heart Failure'
-    FILE: raw/GWAS/Shah2020heartfailure.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Shah2020heartfailure.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -609,7 +609,7 @@ EXPOSURES:
   -
     CODE: Olafsdottir2020asthma
     NAME: 'Asthma'
-    FILE: raw/GWAS/Olafsdottir2020asthma.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Olafsdottir2020asthma.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -626,7 +626,7 @@ EXPOSURES:
   -
     CODE: Allen2020ipf
     NAME: 'IPF'
-    FILE: raw/GWAS/Allen2020ipf.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/Allen2020ipf.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -645,7 +645,7 @@ OUTCOMES:
   -
     CODE: covidhgi2020anaA2v4
     NAME: "COVID: A2"
-    FILE: raw/GWAS/covidhgi2020anaA2v4.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/covidhgi2020anaA2v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -662,7 +662,7 @@ OUTCOMES:
   -
     CODE: covidhgi2020anaB1v4
     NAME: "COVID: B1"
-    FILE: raw/GWAS/covidhgi2020anaB1v4.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/covidhgi2020anaB1v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -679,58 +679,7 @@ OUTCOMES:
   -
     CODE: covidhgi2020anaB2v4
     NAME: "COVID: B2"
-    FILE: raw/GWAS/covidhgi2020anaB2v4.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: covidhgi2020anaC1v4
-    NAME: "COVID: C1"
-    FILE: raw/GWAS/covidhgi2020anaC1v4.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: covidhgi2020anaC2v4
-    NAME: "COVID: C2"
-    FILE: raw/GWAS/covidhgi2020anaC2v4.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: covidhgi2020anaD1v4
-    NAME: "COVID: D1"
-    FILE: raw/GWAS/covidhgi2020anaD1v4.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/covidhgi2020anaB2v4.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -745,9 +694,60 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   # -
+  #   CODE: covidhgi2020anaC1v4
+  #   NAME: "COVID: C1"
+  #   FILE: data/raw/GWAS/covidhgi2020anaC1v4.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  -
+    CODE: covidhgi2020anaC2v4
+    NAME: "COVID: C2"
+    FILE: data/raw/GWAS/covidhgi2020anaC2v4.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  # -
+  #   CODE: covidhgi2020anaD1v4
+  #   NAME: "COVID: D1"
+  #   FILE: data/raw/GWAS/covidhgi2020anaD1v4.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  # -
   #   CODE: covidhgi2020anaA2v3
   #   NAME: "COVID: A2"
-  #   FILE: raw/GWAS/covidhgi2020anaA2v3.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaA2v3.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -764,7 +764,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaB1v3
   #   NAME: "COVID: B1"
-  #   FILE: raw/GWAS/covidhgi2020anaB1v3.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaB1v3.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -781,7 +781,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaB2v3
   #   NAME: "COVID: B2"
-  #   FILE: raw/GWAS/covidhgi2020anaB2v3.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaB2v3.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -798,7 +798,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaC1v3
   #   NAME: "COVID: C1"
-  #   FILE: raw/GWAS/covidhgi2020anaC1v3.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaC1v3.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -815,7 +815,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaC2v3
   #   NAME: "COVID: C2"
-  #   FILE: raw/GWAS/covidhgi2020anaC2v3.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaC2v3.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -832,7 +832,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaD1v3
   #   NAME: "COVID: D1"
-  #   FILE: raw/GWAS/covidhgi2020anaD1v3.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaD1v3.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -849,7 +849,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaA2v2
   #   NAME: "very severe respiratory confirmed covid vs. population"
-  #   FILE: raw/GWAS/covidhgi2020anaA2v2.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaA2v2.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -866,7 +866,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaB1v2
   #   NAME: "hospitalized covid vs. not hospitalized covid"
-  #   FILE: raw/GWAS/covidhgi2020anaB1v2.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaB1v2.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -883,7 +883,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaB2v2
   #   NAME: "hospitalized covid vs. population"
-  #   FILE: raw/GWAS/covidhgi2020anaB2v2.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaB2v2.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -900,7 +900,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaC1v2
   #   NAME: "covid vs. lab/self-reported negative"
-  #   FILE: raw/GWAS/covidhgi2020anaC1v2.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaC1v2.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -917,7 +917,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaC2v2
   #   NAME: "covid vs. population"
-  #   FILE: raw/GWAS/covidhgi2020anaC2v2.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaC2v2.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -934,7 +934,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaD1v2
   #   NAME: "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid"
-  #   FILE: raw/GWAS/covidhgi2020anaD1v2.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaD1v2.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -952,7 +952,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaA2v2woUKBB
   #   NAME: "very severe respiratory confirmed covid vs. population wo/ UKBB"
-  #   FILE: raw/GWAS/covidhgi2020anaA2v2woUKBB.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaA2v2woUKBB.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -969,7 +969,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaB1v2woUKBB
   #   NAME: "hospitalized covid vs. not hospitalized covid wo/ UKBB"
-  #   FILE: raw/GWAS/covidhgi2020anaB1v2woUKBB.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaB1v2woUKBB.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -986,7 +986,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaB2v2woUKBB
   #   NAME: "hospitalized covid vs. population wo/ UKBB"
-  #   FILE: raw/GWAS/covidhgi2020anaB2v2woUKBB.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaB2v2woUKBB.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -1003,7 +1003,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaC1v2woUKBB
   #   NAME: "covid vs. lab/self-reported negative wo/ UKBB"
-  #   FILE: raw/GWAS/covidhgi2020anaC1v2woUKBB.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaC1v2woUKBB.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM
@@ -1020,7 +1020,7 @@ OUTCOMES:
   # -
   #   CODE: covidhgi2020anaC2v2woUKBB
   #   NAME: "covid vs. population wo/ UKBB"
-  #   FILE: raw/GWAS/covidhgi2020anaC2v2woUKBB.chrall.CPRA_b37.tsv.gz
+  #   FILE: data/raw/GWAS/covidhgi2020anaC2v2woUKBB.chrall.CPRA_b37.tsv.gz
   #   COLUMNS:
   #     SNP: DBSNP_ID
   #     CHROM: CHROM

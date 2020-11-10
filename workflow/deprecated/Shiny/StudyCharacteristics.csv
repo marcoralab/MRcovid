@@ -1,0 +1,35 @@
+code,variable,Trait,Study,PMID,Cohort / Consortium,N,ncase,ncontrol,Age,Females (%)
+Liu2019drnkwk,exposure,Alcohol Consumption,Liu et al 2019,30643251,GSCAN,537349,NA,NA,-,-
+Liu2019smkint,exposure,Smoking Initiation,Liu et al 2019,30643251,GSCAN,262990,NA,NA,-,-
+Liu2019smkcpd,exposure,Cigarettes per Day,Liu et al 2019,30643251,GSCAN,263954,NA,NA,-,-
+SanchezRoige2018auditt,exposure,Alcohol Use Disorder Test,Clarke et al 2017,28937693,UKBB,121600,NA,NA,56.1,52.7
+Walters2018alcdep,exposure,Alcohol Dependence ,Walters et al 2018,30482948,PGC,46568,11569,34999,-,-
+NealeLab2018oilfish,exposure,Oily Fish Intake,NealLab,,UKBB,,NA,NA,56.5*,54.4*
+NealeLab2018hear,exposure,Hearing Problems,NealLab,,UKBB,346635,255838,90797,56.5*,54.4*
+Xu2018diab,exposure,Type 2 Diabetes,Xu et al 2018,30054458,DIAGRAM; UKBB; GERA,659316,62892,596424,-,-
+Yengo2018bmi,exposure,Body Mass Index,Yengo et al 2018,30124842,UKBB; GIANT,690495,NA,NA,-,-
+Willer2013tc,exposure,Total Cholesterol ,Willer et al 2013,24097068,GLC,188577,NA,NA,54.94,56.58
+Willer2013ldl,exposure,LDL Cholesterol,Willer et al 2013,24097068,GLC,188577,NA,NA,54.94,56.58
+Willer2013hdl,exposure,HDL Cholesterol,Willer et al 2013,24097068,GLC,188577,NA,NA,54.94,56.58
+Willer2013tg,exposure,Triglycerides,Willer et al 2013,24097068,GLC,188577,NA,NA,54.94,56.58
+Evangelou2018dbp,exposure,Diastolic Blood Pressure,Evangelou et al 2018,30224653,UKBB; ICBP,757601,NA,NA,-,-
+Evangelou2018sbp,exposure,Systolic Blood Pressure,Evangelou et al 2018,30224653,UKBB; ICBP,757601,NA,NA,-,-
+Evangelou2018pp,exposure,Pulse Pressure,Evangelou et al 2018,30224653,UKBB; ICBP,757601,NA,NA,-,-
+Howard2018dep,exposure,Broad Depression Symptoms,Howard et al 2018,29662059,UKBB,322580,113769,208811,-,-
+Wray2018mdd,exposure,Major Depression Disorder,Wray et al 2018,29700475,PGC; deCODE; iPSYCH; GeneScotland; GERA; UKBB; 23andMe,480359,135458,344901,-,-
+Jansen2018insom,exposure,Insomnia Symptoms,Jansen et al 2018,30804565,UKBB,386533,109402,277131,56.7,54
+Dashti2019slepdur,exposure,Sleep Duration,Dashti et al 2019,30846698,UKBB,446118,NA,NA,57.3,54.1
+Day2018sociso,exposure,Social Isolation,Day et al 2018,29970889,UKBB,452302,NA,NA,-,-
+Lee2018educ,exposure,Educational Attainment,Lee et al 2018,30038396,UKBB; SSGAC,766345,NA,NA,63.8,54.7
+Klimentidis2018mvpa,exposure,Moderate-to-vigorous PA,Klimentidis et al 2018,29899525,UKBB,377234,NA,NA,,
+Lambert2013load,outcome,Late Onset Alzheimers disease,Lambert et al 2013,24162737,IGAP,54162,17008,37154,71,58.4
+Kunkle2019load,outcome,Late Onset Alzheimers disease,Kunkle et al 2019,30820047,IGAP,63926,21982,41944,72.6,58.5
+Huang2017aaos,outcome,Alzheimers Age of Onset Survival,Huang et al 2017,28628103,IGAP,40255,14406,25849,77.5,60.35
+Deming2017ab42,outcome,CSF Ab42,Deming et al 2017,28247064,Knight-ADRC,3146,NA,NA,71.8,49.57
+Deming2017ptau,outcome,CSF Ptau181,Deming et al 2017,28247064,Knight-ADRC,3146,NA,NA,71.8,49.57
+Deming2017tau,outcome,CSF Tau,Deming et al 2017,28247064,Knight-ADRC,3146,NA,NA,71.8,49.57
+Hilbar2015hipv,outcome,Hippocampul Volume,Hibar et al 2015,25607358,ENIGMA,13688,NA,NA,39.9,51.8
+Hilbar2017hipv,outcome,Hippocampul Volume,Hibar et al 2017,28098162,ENIGMA; CHARGE,26814,NA,NA,54.3,55.3
+Beecham2014npany,outcome,Neuritic Plaques,Beecham et al 2014,25188341,ADGC,4914,3426,620,74.7,65.4
+Beecham2014braak4,outcome,Neurofibrillary tangles,Beecham et al 2014,25188341,ADGC,4914,NA,NA,74.7,65.4
+Beecham2014vbiany,outcome,Vascular Brain Injury,Beecham et al 2014,25188341,ADGC,4914,992,1772,74.7,65.4

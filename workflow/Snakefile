@@ -1,0 +1,68 @@
+# snakejob -j 1000 --max-jobs-per-second 1 --keep-going --notemp
+# snakemake --max-jobs-per-second 1 --keep-going --notemp
+
+from datetime import date
+today_date = date.today()
+shell.prefix('module load plink/1.90 R/3.6.3; ')
+
+# subworkflow test:
+#     workdir:
+#         "../"
+#     snakefile:
+#         "rules/mr.smk"
+#     configfile:
+#         "config/config_mr_test.yaml"
+
+# snakemake -s workflow/rules/prs.smk --configfile config/config_prs_adgc.yaml --keep-going --notemp
+subworkflow prs_adgc:
+    workdir:
+        "../"
+    snakefile:
+        "rules/prs.smk"
+    configfile:
+        "config/config_prs_adgc.yaml"
+
+# snakemake -s workflow/rules/prs.smk --configfile config/config_prs_adgc_wo_apoe.yaml --keep-going --notemp
+subworkflow prs_adgcNOapoe:
+    workdir:
+        "../"
+    snakefile:
+        "rules/prs.smk"
+    configfile:
+        "config/config_prs_adgc_wo_apoe.yaml"
+
+# snakemake -s workflow/rules/mr.smk --configfile config/config_mr.yaml --keep-going --notemp
+subworkflow mr_fwd_apoe:
+    workdir:
+        "../"
+    snakefile:
+        "rules/mr.smk"
+    configfile:
+        "config/config_mr.yaml"
+
+# snakemake -s workflow/rules/mr.smk --configfile config/config_mr_wo_apoe.yaml --keep-going --notemp
+subworkflow mr_fwd_wo_apoe:
+    workdir:
+        "../"
+    snakefile:
+        "rules/mr.smk"
+    configfile:
+        "config/config_mr_wo_apoe.yaml"
+
+# snakemake -s workflow/rules/mr.smk --configfile config/config_mr_bidir.yaml --keep-going --notemp
+subworkflow mr_bidir:
+    workdir:
+        "../"
+    snakefile:
+        "rules/mr.smk"
+    configfile:
+        "config/config_mr_bidir.yaml"
+
+rule all:
+    input:
+        # test(expand("results/test/All/test_MR_Analaysis_{DATE}.html", DATE = today_date)),
+        prs_adgc("results/adgc/output_adgc_rsq0.001_10000kb.html"),
+        prs_adgcNOapoe("results/adgcNOapoe/output_adgcNOapoe_rsq0.001_10000kb.html"),
+        mr_fwd_apoe(expand("results/MR_ADphenome/All/MR_ADphenome_MR_Analaysis_{DATE}.html", DATE = today_date)),
+        mr_fwd_wo_apoe(expand("results/MR_ADphenome_wo_apoe/All/MR_ADphenome_wo_apoe_MR_Analaysis_{DATE}.html", DATE = today_date)),
+        mr_bidir(expand("results/MR_ADbidir/All/MR_ADbidir_MR_Analaysis_{DATE}.html", DATE = today_date))

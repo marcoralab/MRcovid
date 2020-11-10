@@ -1,0 +1,351 @@
+---
+title: "Assocation of Modifiable PRS with AD"
+author: "Shea Andrews"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    keep_md: false
+    toc: true
+    number_sections: false
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+res.path = snakemake@input[["association"]]
+prsice.path = snakemake@input[["prsice"]]
+sum.path = snakemake@input[["summary"]]
+model = snakemake@params[["model"]]
+rwd = snakemake@params[["rwd"]]
+r2 = snakemake@params[["r2"]]
+window = snakemake@params[["window"]]
+todaydate = Sys.Date()
+
+
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = rwd)
+# knitr::opts_knit$set(root.dir = "/sc/arion/projects/LOAD/shea/Projects/AD_PRS")
+
+library(tidyverse)
+library(broom)
+library(glue)
+library(scales)
+
+## Function for spreading multiple columns
+# https://community.rstudio.com/t/spread-with-multiple-value-columns/5378
+myspread <- function(df, key, value) {
+  # quote key
+  keyq <- rlang::enquo(key)
+  # break value vector into quotes
+  valueq <- rlang::enquo(value)
+  s <- rlang::quos(!!valueq)
+  df %>% gather(variable, value, !!!s) %>%
+    unite(temp, !!keyq, variable) %>%
+    spread(temp, value)
+}
+
+```
+
+# Objective
+We evaluated the association of 22 PRS for potentially modifiable risk factors with AD in ADGC.
+
+```{r traits, echo=FALSE}
+traits <- tibble(
+  code = c('Liu2019drnkwk23andMe', 'Liu2019smkint23andMe', 'Liu2019smkcpd23andMe', 'SanchezRoige2019auditt23andMe',
+           "Niarchou2020meat", "Niarchou2020fish", 'Wells2019hdiff', 'Xue2018diab',
+           'Yengo2018bmi', 'Willer2013tc', 'Willer2013ldl', 'Willer2013hdl',
+           'Willer2013tg', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp',
+           'Howard2019dep23andMe', 'Jansen2018insomnia23andMe', 'Dashti2019slepdur',
+           'Day2018sociso', 'Lee2018education23andMe', 'Huang2017aaos', 'Deming2017ab42',
+           'Hilbar2017hipv', 'Hilbar2015hipv', 'Lambert2013load', 'Kunkle2019load',
+           'Beecham2014braak4', 'Beecham2014npany', 'Deming2017ptau', 'Deming2017tau',
+           'Beecham2014vbiany', 'Klimentidis2018mvpa'),
+  trait = c("Alcohol Consumption", "Smoking Initiation", "Cigarettes per Day",
+            "AUDIT", "Meat diet", "Fish and Plant diet", "Hearing Difficulties",
+            "Type 2 Diabetes", 'BMI', "Total Cholesterol", "Low-density lipoproteins",
+            "High-density lipoproteins", "Triglycerides", "Diastolic Blood Pressure",
+            "Systolic Blood Pressure", "Pulse Pressure", "Depressive Symptoms",
+            "Insomnia Symptoms", "Sleep Duration",
+            "Social Isolation", "Educational Attainment", "AAOS", "AB42",
+            "Hippocampal Volume", "Hippocampal Volume", "LOAD", "LOAD",
+            "Neurofibrillary Tangles", "Neuritic Plaques", "Ptau181", "Tau",
+            "Vascular Brain Injury", "Moderate-to-vigorous PA"),
+  abb = c("Alcohol Consumption", "Smoking", "Cigarettes per Day",
+            "AUDIT", "Meat diet", "Fish & Plant diet", "Hearing Difficulties",
+            "Diabetes", 'BMI', "Total Cholesterol", "LDL-cholesterol",
+            "HDL-cholesterol", "Triglycerides", "DBP",
+            "SBP", "PP", "Depression",
+            "Insomnia", "Sleep",
+            "Social Isolation", "Education", "AAOS", "AB42",
+            "Hippocampal Volume", "Hippocampal Volume", "LOAD", "LOAD",
+            "Neurofibrillary Tangles", "Neuritic Plaques", "Ptau181", "Tau",
+            "Vascular Brain Injury", "Moderate-to-vigorous PA"))
+
+traits %>% knitr::kable()
+
+```
+
+# Methods
+The software package PRSice-2 was used to construct polygenic risk scores for each of the exposures of interest in ADGC. PRSice generates PRS as the sum of all alleles associated with the exposure of interest exceeding a given P-value threshold (Pt), weighted by their effect size estimated in an independent GWAS on the trait. SNPs were clumped to obtain variants in linkage equilibrium with an r2 > 0.001 within a 10MB window and PRS were constructed across a range of Pt (Pt  = 5e-8, 1e-6, 1e-5, 1e-4, 1e-3, 0.01, 0.05, 0.1, 0.2, 0.3, 0.4, and 0.5). The optimal P-value threshold was determined according to the results of a linear regression (PRSice uses linear regression with binary traits to avoid issues of perfect separation during permutation) testing the association of the trait PRS and the AD outcome, adjusted for age, sex, APOE ε4 dose, and 10 principal components; the PRS Pt with the smallest P-value of association is selected for association analysis. To guard against overfitting, 1000 permutations were conducted to obtain an empirical P-value for each PRS-AD association. PRS were standardized to have a mean of 0 and SD of 1. After obtaining the optimal Pt the association between each exposure PRS and AD was evaluated using logistic regression adjusting for age, sex, APOE ε4 dose, and 10 principal components. The Benjamini & Hochberg false discovery rate was used to account for the multiple testing across the 22 different exposures.
+
+```{r read_ind_data, echo=FALSE, cache=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
+## GLM association statistics
+res.files <- list.files(pattern = 'association.tsv', recursive = T)
+res <- map_dfr(res.files, read_tsv) %>%
+  mutate(OR = exp(estimate),
+         LCI = exp(estimate-std.error*1.96),
+         UCI = exp(estimate+std.error*1.96))
+
+## Summary files of output from PRSice
+prsice.files <- list.files(pattern = '.prsice', recursive = T) %>%
+  map_dfr(., function(x){read_tsv(x) %>% mutate(Phenotype = str_extract(x, pattern = '(?<=prs_)[A-Za-z,0-9]+(?=_)'))}) %>%
+  filter(Threshold == 5e-8)
+
+## Summary files of output from PRSice
+sum.files <- list.files(pattern = '.summary', recursive = T) %>%
+  map_dfr(., function(x){read_tsv(x) %>% mutate(Phenotype = str_extract(x, pattern = '(?<=prs_)[A-Za-z,0-9]+(?=_)'))})
+
+```
+
+```{r read_data, echo=FALSE, cache=TRUE, message=FALSE, warning=FALSE}
+res <- read_csv(res.path)
+prsice.files <- read_csv(prsice.path)
+sum.files <- read_csv(sum.path)
+```
+
+
+# Results
+## GWS
+```{r tab-gws, echo=F, message=FALSE, warning=FALSE}
+message("GWS")
+# Genome-wide Significant
+res.gws <- res %>%
+  filter(str_detect(model, 'GWS'), str_detect(term, 'prs')) %>%
+  mutate(fdr = p.adjust(p.value, method = 'BH')) %>%
+  mutate(model = 'GWS') %>%
+  left_join(select(prsice.files, Phenotype, Num_SNP), by = c('exposure' = 'Phenotype')) %>%
+  arrange(fdr)
+```
+
+```{r print-tab-gws, echo=F}
+res.gws %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(estimate = round(estimate, 3),
+         std.error = round(std.error, 3),
+         b_se = paste0(estimate, ' (', std.error, ')'),
+         OR = round(OR, 2),
+         LCI = round(LCI, 2),
+         UCI = round(UCI, 2),
+         out = paste0(OR, ' [', LCI, ', ', UCI, ']'),
+         pt = ifelse(pt < 0.001, scientific(pt , digits = 2), pt),
+         fdr = ifelse(fdr < 0.001, scientific(fdr , digits = 2), round(fdr, 3)),
+         p.value = ifelse(p.value < 0.001, scientific(p.value , digits = 2), round(p.value, 3))) %>%
+  select(trait, model, pt, Num_SNP, b_se, p.value, fdr, out) %>%
+  arrange(as.numeric(p.value)) %>%
+  select(trait, "n SNP" = Num_SNP, "b (se)" = b_se, "OR (95% CI)" = out, p.value, fdr) %>%
+  knitr::kable(caption = "Assoction of GWS PRS with AD", format = "html") %>%
+  kableExtra::kable_styling()
+```
+
+```{r plot-gws, echo=FALSE}
+## Genome Wide Significant Results
+p.gws <- res.gws %>%
+  arrange(OR) %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(exposure = fct_inorder(exposure),
+         trait = fct_inorder(trait)) %>%
+  ggplot(., aes(x = OR, y = trait, colour = fdr < 0.05)) +
+  geom_vline(xintercept = 1, linetype = 2, colour = 'grey75') +
+  geom_point() +
+  geom_errorbarh(aes(xmax = UCI, xmin = LCI), height = 0) +
+  scale_color_manual(values = c('black', 'red')) +
+  theme_bw() + theme(legend.position = 'none', axis.title.y = element_blank())
+
+p.gws
+
+ggsave(glue("results/{model}_coeffplot_gws_{todaydate}_rsq{r2}_{window}kb.jpg"),
+       plot = p.gws, height = 3, width = 3, units = 'in')
+```
+
+## Best Pt
+```{r tab-best, echo=F}
+# Best Pt
+res.best <- res %>%
+  filter(str_detect(model, 'best'), str_detect(term, 'prs')) %>%
+  mutate(fdr = p.adjust(p.value, method = 'BH'))  %>%
+  mutate(model = 'best') %>%
+  arrange(fdr) %>%
+  left_join(select(sum.files, Phenotype, Num_SNP), by = c('exposure' = 'Phenotype'))
+
+```
+
+```{r print-tab-best, echo=F}
+res.best %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(estimate = round(estimate, 3),
+         std.error = round(std.error, 3),
+         b_se = paste0(estimate, ' (', std.error, ')'),
+         OR = round(OR, 2),
+         LCI = round(LCI, 2),
+         UCI = round(UCI, 2),
+         out = paste0(OR, ' [', LCI, ', ', UCI, ']'),
+         pt = ifelse(pt < 0.001, scientific(pt , digits = 2), pt),
+         fdr = ifelse(fdr < 0.001, scientific(fdr , digits = 2), round(fdr, 3)),
+         p.value = ifelse(p.value < 0.001, scientific(p.value , digits = 2), round(p.value, 3))) %>%
+  select(trait, model, pt, Num_SNP, b_se, p.value, fdr, out) %>%
+  arrange(as.numeric(p.value)) %>%
+  select(trait, "n SNP" = Num_SNP, "b (se)" = b_se, "OR (95% CI)" = out, p.value, fdr) %>%
+  knitr::kable(caption = "Assoction of best PRS threshold with AD", format = "html") %>%
+  kableExtra::kable_styling()
+
+```
+
+```{r plot-best, echo=FALSE}
+## Plot
+p.best <- res.best %>%
+  arrange(OR) %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(exposure = fct_inorder(exposure),
+         trait = fct_inorder(trait)) %>%
+  ggplot(., aes(x = OR, y = trait, colour = fdr < 0.05)) +
+  geom_vline(xintercept = 1, linetype = 2, colour = 'grey75') +
+  geom_point() +
+  geom_errorbarh(aes(xmax = UCI, xmin = LCI), height = 0) +
+  scale_color_manual(values = c('black', 'red')) +
+  theme_bw() + theme(legend.position = 'none',
+                     axis.title.y = element_blank(),
+                     text = element_text(size=10))
+
+p.best
+
+ggsave(glue("results/{model}_coeffplot_best_{todaydate}_rsq{r2}_{window}kb.jpg"),
+       plot = p.best, height = 3, width = 3, units = 'in')
+```
+
+## PRS-PCA
+
+```{r tab-pca, echo=F}
+# Best Pt
+res.pca <- res %>%
+  filter(str_detect(model, 'PCA'), str_detect(term, 'prs')) %>%
+  mutate(fdr = p.adjust(p.value, method = 'BH'))  %>%
+  mutate(model = 'PCA') %>%
+  arrange(fdr) %>%
+  left_join(select(sum.files, Phenotype, Num_SNP), by = c('exposure' = 'Phenotype'))
+
+```
+
+```{r print-tab-pca, echo=F}
+res.pca %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(estimate = round(estimate, 3),
+         std.error = round(std.error, 3),
+         b_se = paste0(estimate, ' (', std.error, ')'),
+         OR = round(OR, 2),
+         LCI = round(LCI, 2),
+         UCI = round(UCI, 2),
+         out = paste0(OR, ' [', LCI, ', ', UCI, ']'),
+         pt = ifelse(pt < 0.001, scientific(pt , digits = 2), pt),
+         fdr = ifelse(fdr < 0.001, scientific(fdr , digits = 2), round(fdr, 3)),
+         p.value = ifelse(p.value < 0.001, scientific(p.value , digits = 2), round(p.value, 3))) %>%
+  select(trait, model, pt, Num_SNP, b_se, p.value, fdr, out) %>%
+  arrange(as.numeric(p.value)) %>%
+  select(trait, "n SNP" = Num_SNP, "b (se)" = b_se, "OR (95% CI)" = out, p.value, fdr) %>%
+  knitr::kable(caption = "Assoction of best PRS threshold with AD", format = "html") %>%
+  kableExtra::kable_styling()
+
+```
+
+```{r plot-pca, echo=FALSE}
+## Plot
+p.pca <- res.pca %>%
+  arrange(OR) %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(exposure = fct_inorder(exposure),
+         trait = fct_inorder(trait)) %>%
+  ggplot(., aes(x = OR, y = trait, colour = fdr < 0.05)) +
+  geom_vline(xintercept = 1, linetype = 2, colour = 'grey75') +
+  geom_point() +
+  geom_errorbarh(aes(xmax = UCI, xmin = LCI), height = 0) +
+  scale_color_manual(values = c('black', 'red')) +
+  theme_bw() + theme(legend.position = 'none',
+                     axis.title.y = element_blank(),
+                     text = element_text(size=10))
+
+p.pca
+
+ggsave(glue("results/{model}_coeffplot_best_{todaydate}_rsq{r2}_{window}kb.jpg"),
+       plot = p.pca, height = 3, width = 3, units = 'in')
+```
+
+## GWS vs Best vs PCA
+
+```{r write_out, echo=FALSE}
+## Output results
+out <- bind_rows(res.gws, res.best, res.pca) %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(estimate = round(estimate, 3),
+         std.error = round(std.error, 3),
+         b_se = paste0(estimate, ' (', std.error, ')'),
+         OR = round(OR, 2),
+         LCI = round(LCI, 2),
+         UCI = round(UCI, 2),
+         out = paste0(OR, ' [', LCI, ', ', UCI, ']'),
+         pt = ifelse(pt < 0.001, scientific(pt , digits = 2), pt),
+         fdr = ifelse(fdr < 0.001, scientific(fdr , digits = 2), round(fdr, 3)),
+         p.value = ifelse(p.value < 0.001, scientific(p.value , digits = 2), round(p.value, 3))) %>%
+  select(trait, model, pt, Num_SNP, b_se, p.value, fdr, out) %>%
+  pivot_wider(names_from = model, values_from = c(pt, Num_SNP, b_se, p.value, fdr, out)) %>%
+  arrange(as.numeric(p.value_GWS)) %>%
+  select(trait, Num_SNP_GWS, b_se_GWS, p.value_GWS, fdr_GWS, out_GWS,
+         pt_best, Num_SNP_best, b_se_best, p.value_best, fdr_best, out_best,
+         b_se_PCA, p.value_PCA, fdr_PCA, out_PCA)
+
+write_csv(out, glue("results/{model}_rsq{r2}_{window}kb_table1_{todaydate}.csv"))
+
+```
+
+```{r print-tab-join, echo=FALSE}
+# pt = best_pt, "n SNP" = best_Num_SNP, "b (se)" = best_b_se, "OR (95% CI)" = best_out, p = best_p.value, fdr = GWS_fdr
+
+out %>%
+  rename( "n SNP" = Num_SNP_GWS, "b (se)" = b_se_GWS, "OR (95% CI)" = out_GWS, p = p.value_GWS, fdr = fdr_GWS) %>%
+  knitr::kable(caption = "Comparison of GWS and Best pt Results", format = "html") %>%
+  kableExtra::kable_styling() %>%
+  kableExtra::add_header_above(c(" " = 1, "GWS" = 5, "Best Pt" = 6, "PRS-PCA" = 4)) %>%
+  kableExtra::scroll_box(width = "100%")
+```
+
+
+```{r plot-join, echo=F}
+## Joint Plot
+p.joint <- bind_rows(res.gws, res.best, res.pca) %>%
+  left_join(traits, by = c('exposure' = 'code')) %>%
+  mutate(model = fct_relevel(model, 'GWS', 'best', 'PCA')) %>%
+  arrange(model, OR) %>%
+  mutate(exposure = fct_inorder(exposure),
+         trait = fct_inorder(trait),
+         signif = case_when(fdr < 0.05 ~ "*",
+                            fdr < 0.1 ~ ".",
+                            fdr >= 0.1 ~ " ")) %>%
+  ggplot(., aes(x = OR, y = trait, colour = signif)) +
+  geom_vline(xintercept = 1, linetype = 2, colour = 'grey75') +
+  geom_point() +
+  geom_errorbarh(aes(xmax = UCI, xmin = LCI), height = 0) +
+  scale_color_manual(values = c(" " = 'black', "." = "orange", "*" = 'red')) +
+  facet_grid(cols = vars(model)) +
+  theme_bw() +
+  theme(legend.position = 'none', axis.title.y = element_blank())
+
+p.joint
+
+ggsave(glue("results/{model}_coeffplot_joint_{todaydate}_rsq{r2}_{window}kb.jpg"),
+            plot = p.joint, height = 5, width = 8, units = 'in')
+
+```
