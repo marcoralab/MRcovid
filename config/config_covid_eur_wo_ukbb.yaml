@@ -1,7 +1,7 @@
 # snakemake -s workflow/rules/mr.smk --configfile config/config_covid.yaml -j 1 --use-conda --keep-going --notemp
-# snakejob -s workflow/rules/mr.smk --configfile config/config_covid.yaml --use-conda -j 1000 --keep-going --notemp
+# snakejob -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml --use-conda -j 1000 --keep-going --notemp
 
-PROJECT: "MRcovid"
+PROJECT: "MRcovideurwoukbb"
 RLIB: "renv/library/R-3.6/x86_64-pc-linux-gnu"
 
 REF: 'data/raw/EUR_All_Chr'
@@ -488,23 +488,6 @@ EXPOSURES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: Yengo2018height
-    NAME: 'Height'
-    FILE: data/raw/GWAS/Yengo2018height.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
     CODE: Betham2015lupus
     NAME: 'Lupus'
     FILE: data/raw/GWAS/Betham2015lupus.chrall.CPRA_b37.tsv.gz
@@ -660,9 +643,9 @@ EXPOSURES:
 
 OUTCOMES:
   -
-    CODE: covidhgi2020anaA2v4
+    CODE: covidhgi2020anaA2v4eurwoukbb
     NAME: "COVID: A2"
-    FILE: data/raw/GWAS/covidhgi2020anaA2v4.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/covidhgi2020anaA2v4eurwoukbb.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -677,26 +660,9 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaB1v4
-    NAME: "COVID: B1"
-    FILE: data/raw/GWAS/covidhgi2020anaB1v4.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
-  -
-    CODE: covidhgi2020anaB2v4
+    CODE: covidhgi2020anaB2v4eurwoukbb
     NAME: "COVID: B2"
-    FILE: data/raw/GWAS/covidhgi2020anaB2v4.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/covidhgi2020anaB2v4eurwoukbb.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -710,27 +676,10 @@ OUTCOMES:
       Z: Z
       N: N
       TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaC1v4
-  #   NAME: "COVID: C1"
-  #   FILE: data/raw/GWAS/covidhgi2020anaC1v4.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaC2v4
+    CODE: covidhgi2020anaC2v4eurwoukbb
     NAME: "COVID: C2"
-    FILE: data/raw/GWAS/covidhgi2020anaC2v4.chrall.CPRA_b37.tsv.gz
+    FILE: data/raw/GWAS/covidhgi2020anaC2v4eurwoukbb.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -744,310 +693,3 @@ OUTCOMES:
       Z: Z
       N: N
       TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaD1v4
-  #   NAME: "COVID: D1"
-  #   FILE: data/raw/GWAS/covidhgi2020anaD1v4.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaA2v3
-  #   NAME: "COVID: A2"
-  #   FILE: data/raw/GWAS/covidhgi2020anaA2v3.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaB1v3
-  #   NAME: "COVID: B1"
-  #   FILE: data/raw/GWAS/covidhgi2020anaB1v3.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaB2v3
-  #   NAME: "COVID: B2"
-  #   FILE: data/raw/GWAS/covidhgi2020anaB2v3.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaC1v3
-  #   NAME: "COVID: C1"
-  #   FILE: data/raw/GWAS/covidhgi2020anaC1v3.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaC2v3
-  #   NAME: "COVID: C2"
-  #   FILE: data/raw/GWAS/covidhgi2020anaC2v3.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaD1v3
-  #   NAME: "COVID: D1"
-  #   FILE: data/raw/GWAS/covidhgi2020anaD1v3.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaA2v2
-  #   NAME: "very severe respiratory confirmed covid vs. population"
-  #   FILE: data/raw/GWAS/covidhgi2020anaA2v2.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaB1v2
-  #   NAME: "hospitalized covid vs. not hospitalized covid"
-  #   FILE: data/raw/GWAS/covidhgi2020anaB1v2.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaB2v2
-  #   NAME: "hospitalized covid vs. population"
-  #   FILE: data/raw/GWAS/covidhgi2020anaB2v2.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaC1v2
-  #   NAME: "covid vs. lab/self-reported negative"
-  #   FILE: data/raw/GWAS/covidhgi2020anaC1v2.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaC2v2
-  #   NAME: "covid vs. population"
-  #   FILE: data/raw/GWAS/covidhgi2020anaC2v2.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaD1v2
-  #   NAME: "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid"
-  #   FILE: data/raw/GWAS/covidhgi2020anaD1v2.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  ## REMOVING UKBB
-  # -
-  #   CODE: covidhgi2020anaA2v2woUKBB
-  #   NAME: "very severe respiratory confirmed covid vs. population wo/ UKBB"
-  #   FILE: data/raw/GWAS/covidhgi2020anaA2v2woUKBB.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaB1v2woUKBB
-  #   NAME: "hospitalized covid vs. not hospitalized covid wo/ UKBB"
-  #   FILE: data/raw/GWAS/covidhgi2020anaB1v2woUKBB.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaB2v2woUKBB
-  #   NAME: "hospitalized covid vs. population wo/ UKBB"
-  #   FILE: data/raw/GWAS/covidhgi2020anaB2v2woUKBB.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaC1v2woUKBB
-  #   NAME: "covid vs. lab/self-reported negative wo/ UKBB"
-  #   FILE: data/raw/GWAS/covidhgi2020anaC1v2woUKBB.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
-  # -
-  #   CODE: covidhgi2020anaC2v2woUKBB
-  #   NAME: "covid vs. population wo/ UKBB"
-  #   FILE: data/raw/GWAS/covidhgi2020anaC2v2woUKBB.chrall.CPRA_b37.tsv.gz
-  #   COLUMNS:
-  #     SNP: DBSNP_ID
-  #     CHROM: CHROM
-  #     POS: POS
-  #     REF: REF
-  #     ALT: ALT
-  #     AF: AF
-  #     BETA: BETA
-  #     SE: SE
-  #     P: P
-  #     Z: Z
-  #     N: N
-  #     TRAIT: TRAIT
