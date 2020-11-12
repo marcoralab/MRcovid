@@ -1,0 +1,14 @@
+SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
+rs77217059	2	58989880	G	A	0.106	-0.0079526	0.069376	-0.11463041974169744	0.9087	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs11693221	2	66799986	C	T	0.06124	-0.19163	0.12608	-1.5199079949238579	0.1285	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs55683518	2	147484316	T	G	0.3936	-0.026226	0.048679	-0.5387538774420181	0.5901	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs1456193	3	117637697	T	C	0.7675	0.11395999999999999	0.042282	2.6952367437680333	0.007035	261078	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs77960	5	103964585	G	A	0.2923	-0.012841	0.033568	-0.38253693994280263	0.7021	261078	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs6938026	6	43185733	A	G	0.1753	0.010898	0.039645	0.2748896456047421	0.7834	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs370771	6	105398086	G	T	0.5732	-0.060714	0.03171	-1.9146641438032164	0.05554	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs6984111	8	10211788	C	T	0.8521	-0.021196	0.042801	-0.4952220742506016	0.6204	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs4073582	11	66050712	G	A	0.3319	-0.033586000000000005	0.032861	-1.022062627430693	0.3068	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs9576155	13	37600284	G	A	0.3172	0.036031	0.033137	1.0873343996137248	0.2769	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs6561715	13	53888526	T	A	0.6149	0.08338	0.048919	1.7044502136184305	0.08829	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs4986172	17	43216281	C	T	0.37	0.014266999999999998	0.032237	0.44256599559512355	0.6581	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs7228159	18	53104253	A	T	0.7397	-0.007177800000000001	0.03299	-0.2175750227341619	0.8278	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb

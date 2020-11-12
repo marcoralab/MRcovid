@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+r5ZVY8	o5CJFl	covidhgi2020anaC2v4eur	Ligthart2018crp	5e-8	FALSE	0	53.1304118728439	0.2543

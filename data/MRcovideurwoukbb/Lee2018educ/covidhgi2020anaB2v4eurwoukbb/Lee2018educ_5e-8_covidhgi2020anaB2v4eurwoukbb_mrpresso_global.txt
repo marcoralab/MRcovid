@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+8dW74a	QcB3fS	covidhgi2020anaB2v4eurwoukbb	Lee2018educ	5e-8	FALSE	0	395.55768460879705	4.4e-4

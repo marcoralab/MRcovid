@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+UMPqm0	GiCv7e	covidhgi2020anaA2v4eurwoukbb	Betham2015lupus	5e-8	FALSE	0	46.451542170089525	0.3447

@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+JGMAC6	fl3aLR	covidhgi2020anaB2v4	Yengo2018height	5e-8	MR-PRESSO	809	Raw	0.03394332625993999	0.041971031384038134	0.808732240800946	0.41890723686870124
+JGMAC6	fl3aLR	covidhgi2020anaB2v4	Yengo2018height	5e-8	MR-PRESSO	809	Outlier-corrected	NA	NA	NA	NA

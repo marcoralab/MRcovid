@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+HnmMXE	puy4Nq	covidhgi2020anaB2v4eur	Okbay2016educ	5e-8	FALSE	7.584958074363278e-4	0.02373054116040408	0.9745939519892931
+HnmMXE	puy4Nq	covidhgi2020anaB2v4eur	Okbay2016educ	5e-8	TRUE	0.0018006680243346058	0.019947697200046972	0.9283464755609627

@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+sy3xoC	DZLWcM	covidhgi2020anaB2v4eur	Klimentidis2018mvpa	5e-8	MR-PRESSO	21	Raw	0.26383844157654834	0.4060752025150468	0.6497280305284635	0.523260988833055
+sy3xoC	DZLWcM	covidhgi2020anaB2v4eur	Klimentidis2018mvpa	5e-8	MR-PRESSO	21	Outlier-corrected	NA	NA	NA	NA

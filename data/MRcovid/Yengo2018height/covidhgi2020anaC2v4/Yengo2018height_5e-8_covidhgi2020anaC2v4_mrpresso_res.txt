@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+nf7kTT	Rz8pyb	covidhgi2020anaC2v4	Yengo2018height	5e-8	MR-PRESSO	809	Raw	0.0769196934912495	0.0253886688385589	3.029685958738732	0.0025260752357259726
+nf7kTT	Rz8pyb	covidhgi2020anaC2v4	Yengo2018height	5e-8	MR-PRESSO	809	Outlier-corrected	NA	NA	NA	NA

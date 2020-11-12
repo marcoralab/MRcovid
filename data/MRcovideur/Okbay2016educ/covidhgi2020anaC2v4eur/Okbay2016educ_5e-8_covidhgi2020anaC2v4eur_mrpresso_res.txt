@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+5dnTUa	IGF2PZ	covidhgi2020anaC2v4eur	Okbay2016educ	5e-8	MR-PRESSO	71	Raw	-0.23448156734446557	0.14188036028937823	-1.6526710734749936	0.10287658545565646
+5dnTUa	IGF2PZ	covidhgi2020anaC2v4eur	Okbay2016educ	5e-8	MR-PRESSO	70	Outlier-corrected	-0.29112888255448516	0.13533765939062065	-2.1511298766754154	0.0349699497360018

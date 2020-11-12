@@ -1,7 +1,7 @@
 ---
 title: "Mendelian Randomization Analysis"
 author: "Dr. Shea Andrews"
-date: "2020-11-09"
+date: "2020-11-11"
 output:
   html_document:
     df_print: paged
@@ -147,7 +147,7 @@ Table 6 presents the MR causal estimates of genetically predicted Alcohol Consum
 **Table 6** MR causaul estimates for Alcohol Consumption on COVID: A2
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"Inverse variance weighted (fixed effects)","6":"37","7":"0.5706180","8":"0.2558529","9":"0.02573030"},{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"Weighted median","6":"37","7":"0.7728815","8":"0.3291726","9":"0.01887693"},{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"Weighted mode","6":"37","7":"0.8189601","8":"0.3263443","9":"0.01672852"},{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"MR Egger","6":"37","7":"0.9142014","8":"0.4027492","9":"0.02948005"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"Inverse variance weighted (fixed effects)","6":"37","7":"0.5706180","8":"0.2558529","9":"0.02573030"},{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"Weighted median","6":"37","7":"0.7728815","8":"0.3237991","9":"0.01699034"},{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"Weighted mode","6":"37","7":"0.8189601","8":"0.3105825","9":"0.01227460"},{"1":"8Hpe8i","2":"Is02h9","3":"covidhgi2020anaA2v4","4":"Liu2019drnkwk","5":"MR Egger","6":"37","7":"0.9142014","8":"0.4027492","9":"0.02948005"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <br>

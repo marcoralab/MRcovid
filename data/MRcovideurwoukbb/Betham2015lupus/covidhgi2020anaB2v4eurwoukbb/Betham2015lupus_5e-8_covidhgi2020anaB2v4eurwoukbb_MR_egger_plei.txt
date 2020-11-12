@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
+8dgqrm	s4pgCQ	covidhgi2020anaB2v4eurwoukbb	Betham2015lupus	5e-8	FALSE	-8.798886381447238e-4	0.014630637197092625	0.9523434932054592	NA

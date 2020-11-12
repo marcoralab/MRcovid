@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+FBbdhC	GpX4fu	covidhgi2020anaB2v4eur	Okada2014rartis	5e-8	MR-PRESSO	44	Raw	-0.019489306437004226	0.03208360708157076	-0.6074537188868373	0.5467445849937862
+FBbdhC	GpX4fu	covidhgi2020anaB2v4eur	Okada2014rartis	5e-8	MR-PRESSO	42	Outlier-corrected	0.007744891402858713	0.024192938675820806	0.3201302457150112	0.7504953992155853

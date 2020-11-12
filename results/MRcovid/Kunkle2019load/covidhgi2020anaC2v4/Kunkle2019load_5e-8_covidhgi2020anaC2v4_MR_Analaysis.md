@@ -1,7 +1,7 @@
 ---
 title: "Mendelian Randomization Analysis"
 author: "Dr. Shea Andrews"
-date: "2020-11-09"
+date: "2020-11-11"
 output:
   html_document:
     df_print: paged
@@ -147,7 +147,7 @@ Table 6 presents the MR causal estimates of genetically predicted LOAD on COVID:
 **Table 6** MR causaul estimates for LOAD on COVID: C2
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"Inverse variance weighted (fixed effects)","6":"21","7":"-0.007748592","8":"0.01622093","9":"0.6328701"},{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"Weighted median","6":"21","7":"0.006818930","8":"0.02019904","9":"0.7356745"},{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"Weighted mode","6":"21","7":"0.004819045","8":"0.02168882","9":"0.8264189"},{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"MR Egger","6":"21","7":"0.015641851","8":"0.02160900","9":"0.4779715"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"Inverse variance weighted (fixed effects)","6":"21","7":"-0.007748592","8":"0.01622093","9":"0.6328701"},{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"Weighted median","6":"21","7":"0.006818930","8":"0.02160094","9":"0.7522474"},{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"Weighted mode","6":"21","7":"0.004819045","8":"0.02257266","9":"0.8331058"},{"1":"R1KCW3","2":"xGhcSs","3":"covidhgi2020anaC2v4","4":"Kunkle2019load","5":"MR Egger","6":"21","7":"0.015641851","8":"0.02160900","9":"0.4779715"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <br>

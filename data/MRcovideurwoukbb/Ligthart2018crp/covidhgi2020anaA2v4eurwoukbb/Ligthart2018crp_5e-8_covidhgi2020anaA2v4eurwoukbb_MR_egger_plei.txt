@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
+vK1cAW	WUNs9R	covidhgi2020anaA2v4eurwoukbb	Ligthart2018crp	5e-8	FALSE	0.009605546487114371	0.01251290897500565	0.4467947238953709
+vK1cAW	WUNs9R	covidhgi2020anaA2v4eurwoukbb	Ligthart2018crp	5e-8	TRUE	0.0030756678683983266	0.012043760686944838	0.7996515552709282

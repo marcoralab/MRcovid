@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+ubbono	GAOd62	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	MR Egger	100.22798179896269	68	0.006689650319380645
+ubbono	GAOd62	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	Inverse variance weighted	100.71494472595782	69	0.00764297874331205
+ubbono	GAOd62	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	TRUE	MR Egger	84.61199660692215	67	0.07188127370651289
+ubbono	GAOd62	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	TRUE	Inverse variance weighted	85.53241018082072	68	0.07398061126310636

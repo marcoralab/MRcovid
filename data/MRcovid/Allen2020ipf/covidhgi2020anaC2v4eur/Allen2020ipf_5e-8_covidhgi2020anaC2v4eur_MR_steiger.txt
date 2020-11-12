@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+Tl1KRl	zrjNab	Allen2020ipf	covidhgi2020anaC2v4eur	0.05787143920166487	3.702631591831122e-4	TRUE	0	TRUE	5e-8
+Tl1KRl	zrjNab	Allen2020ipf	covidhgi2020anaC2v4eur	0.12382685286484957	0.0010888024734463542	TRUE	0	FALSE	5e-8

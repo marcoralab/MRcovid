@@ -1,0 +1,2 @@
+target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
+rs28420834,rs8037224,0.855081,0.995297,AG/GA,NA,15,82464530,G,A,0.5878,-0.016812999999999998,0.015522,-1.0831722716144825,0.2787,1288654,covid_vs._population__eur,A,G,G,A,G,A,TRUE

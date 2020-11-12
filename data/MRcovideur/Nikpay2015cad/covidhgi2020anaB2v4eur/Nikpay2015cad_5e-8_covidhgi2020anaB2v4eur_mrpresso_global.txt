@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+Vyk7YE	Popcm7	covidhgi2020anaB2v4eur	Nikpay2015cad	5e-8	FALSE	2	74.26247443371652	7e-4

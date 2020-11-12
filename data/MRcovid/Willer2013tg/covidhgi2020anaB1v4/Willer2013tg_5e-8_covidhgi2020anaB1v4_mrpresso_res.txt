@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+p4bw7k	Zzs5Rk	covidhgi2020anaB1v4	Willer2013tg	5e-8	MR-PRESSO	54	Raw	0.2631186538483514	0.11845967578513165	2.221166418905365	0.03063467574264183
+p4bw7k	Zzs5Rk	covidhgi2020anaB1v4	Willer2013tg	5e-8	MR-PRESSO	54	Outlier-corrected	NA	NA	NA	NA

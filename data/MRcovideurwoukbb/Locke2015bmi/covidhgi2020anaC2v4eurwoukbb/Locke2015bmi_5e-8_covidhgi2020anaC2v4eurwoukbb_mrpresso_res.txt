@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+KRRDHl	75aB9B	covidhgi2020anaC2v4eurwoukbb	Locke2015bmi	5e-8	MR-PRESSO	67	Raw	0.1879697836655808	0.0839049230103192	2.2402712131976212	0.028445447538111474
+KRRDHl	75aB9B	covidhgi2020anaC2v4eurwoukbb	Locke2015bmi	5e-8	MR-PRESSO	67	Outlier-corrected	NA	NA	NA	NA

@@ -1,0 +1,16 @@
+SNP	CHROM	POS	REF	ALT	AF	BETA	SE	Z	P	N	TRAIT
+rs78238620	3	44902386	T	A	0.04133	0.06124299999999999	0.067624	0.9056400094640954	0.3651	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs12696304	3	169481271	C	G	0.2869	0.011956	0.034962	0.34197128310737374	0.7324	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs2013701	4	89885086	G	T	0.5011	-0.05651799999999999	0.031597	-1.7887141184289646	0.07366	261078	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs7725218	5	1282414	G	A	0.3615	0.0012864	0.032086	0.040092252072555006	0.968	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs2076295	6	7563232	T	G	0.3853	0.095662	0.045513	2.1018610067453256	0.03557	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs12699415	7	1909479	A	G	0.5855	-0.094297	0.031511000000000004	-2.992510551870775	0.0027670000000000004	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs2897075	7	99630342	C	T	0.3863	0.1108	0.031891	3.474334451726192	5.122000000000001e-4	261078	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs28513081	8	120934126	A	G	0.4987	-0.08290499999999999	0.045537	-1.8206074181434875	0.06866	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs35705950	11	1241221	G	T	0.1037	-0.28981999999999997	0.076563	-3.785379360787847	1.535e-4	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs9577395	13	113534984	C	G	0.2232	0.13942000000000002	0.03781	3.687384289870405	2.265e-4	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs59424629	15	40720542	G	T	0.5976	0.035163	0.031045	1.1326461588017394	0.2574	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs62023891	15	86097216	G	A	0.3032	0.0069134	0.03555	0.19446976090014065	0.8458	261481	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs17652520	17	44098967	G	A	0.09602	-0.071493	0.053987	-1.3242632485598385	0.1854	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs12610495	19	4717672	A	G	0.3377	0.28867	0.049633	5.816090101343864	6.028e-9	251425	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb
+rs41308092	20	62324391	G	A	0.04374	-0.060533000000000003	0.11827	-0.5118204109241566	0.6088	259599	very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb

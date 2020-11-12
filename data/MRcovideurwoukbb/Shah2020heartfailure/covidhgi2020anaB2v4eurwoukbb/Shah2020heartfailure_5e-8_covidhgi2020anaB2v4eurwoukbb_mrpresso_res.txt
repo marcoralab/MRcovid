@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	MR-PRESSO	10	Raw	-0.17059016671450697	0.29866684777172586	-0.5711720868493941	0.5818630167332055
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	MR-PRESSO	9	Outlier-corrected	-0.34539142145306023	0.22946255647521896	-1.5052190943857158	0.17068457071984167

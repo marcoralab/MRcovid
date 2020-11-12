@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+1RyEvg	ytZ24L	covidhgi2020anaA2v4	Yengo2018height	5e-8	MR-PRESSO_wo_outliers	807	Raw	0.010188468550607796	0.06002480315622221	0.16973764202259867	0.8652590620944737
+1RyEvg	ytZ24L	covidhgi2020anaA2v4	Yengo2018height	5e-8	MR-PRESSO_wo_outliers	807	Outlier-corrected	NA	NA	NA	NA

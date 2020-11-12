@@ -1,7 +1,7 @@
 ---
 title: "Mendelian Randomization Analysis"
 author: "Dr. Shea Andrews"
-date: "2020-11-09"
+date: "2020-11-11"
 output:
   html_document:
     df_print: paged
@@ -147,7 +147,7 @@ Table 6 presents the MR causal estimates of genetically predicted Lupus on COVID
 **Table 6** MR causaul estimates for Lupus on COVID: C2
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"Inverse variance weighted (fixed effects)","6":"43","7":"-0.01076060","8":"0.007430777","9":"0.1475858"},{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"Weighted median","6":"43","7":"-0.01301256","8":"0.011358219","9":"0.2519395"},{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"Weighted mode","6":"43","7":"-0.01401834","8":"0.014432294","9":"0.3369512"},{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"MR Egger","6":"43","7":"-0.02254585","8":"0.018019897","9":"0.2179669"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"Inverse variance weighted (fixed effects)","6":"43","7":"-0.01076060","8":"0.007430777","9":"0.1475858"},{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"Weighted median","6":"43","7":"-0.01301256","8":"0.011275985","9":"0.2484976"},{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"Weighted mode","6":"43","7":"-0.01401834","8":"0.014635099","9":"0.3436163"},{"1":"nVplPo","2":"PptIzO","3":"covidhgi2020anaC2v4","4":"Betham2015lupus","5":"MR Egger","6":"43","7":"-0.02254585","8":"0.018019897","9":"0.2179669"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <br>

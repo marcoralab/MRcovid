@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+aJT6zG	pELVSQ	covidhgi2020anaB2v4eur	Wood2014height	5e-8	FALSE	Inverse variance weighted (fixed effects)	365	0	0.06807611523186186	0.04818475723225822	0.15771032535157345
+aJT6zG	pELVSQ	covidhgi2020anaB2v4eur	Wood2014height	5e-8	FALSE	Weighted median	365	0	0.03464544552000867	0.07554701624187109	0.6465253928634048
+aJT6zG	pELVSQ	covidhgi2020anaB2v4eur	Wood2014height	5e-8	FALSE	Weighted mode	365	0	0.0013622767308181238	0.15327228200354082	0.9929134025422572
+aJT6zG	pELVSQ	covidhgi2020anaB2v4eur	Wood2014height	5e-8	FALSE	MR Egger	365	0	0.07675056644656818	0.13062812209085348	0.5571996084802331

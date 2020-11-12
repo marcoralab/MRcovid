@@ -1,0 +1,9 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	Inverse variance weighted (fixed effects)	10	1	-0.17059016671450697	0.17703280612888364	0.33524266878773357
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	Weighted median	10	1	-0.4057720570612663	0.26021582369129864	0.11890946154680512
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	Weighted mode	10	1	-0.527915753105443	0.3153694561418046	0.1284637584683917
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	MR Egger	10	1	-1.14401198430927	0.8604495803154274	0.22032670796563888
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	TRUE	Inverse variance weighted (fixed effects)	9	1	-0.34539142145306023	0.18349928129158768	0.05980215429392586
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	TRUE	Weighted median	9	1	-0.4545940469811759	0.26871182661471454	0.09069307257978274
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	TRUE	Weighted mode	9	1	-0.562229608063401	0.33271014050219966	0.12952677639392746
+3bdYIY	3gynRF	covidhgi2020anaB2v4eurwoukbb	Shah2020heartfailure	5e-8	TRUE	MR Egger	9	1	-1.0026494661427126	0.6487066922005968	0.16611586747051782

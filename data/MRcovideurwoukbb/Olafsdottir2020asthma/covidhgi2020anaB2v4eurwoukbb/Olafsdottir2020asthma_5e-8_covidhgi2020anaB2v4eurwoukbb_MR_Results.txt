@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+m05Lzv	Z1xLeP	covidhgi2020anaB2v4eurwoukbb	Olafsdottir2020asthma	5e-8	FALSE	Inverse variance weighted (fixed effects)	75	0	0.0276945676816374	0.06338518191211488	0.6621657741386525
+m05Lzv	Z1xLeP	covidhgi2020anaB2v4eurwoukbb	Olafsdottir2020asthma	5e-8	FALSE	Weighted median	75	0	0.03315654096182072	0.10351993671675354	0.7487474747932368
+m05Lzv	Z1xLeP	covidhgi2020anaB2v4eurwoukbb	Olafsdottir2020asthma	5e-8	FALSE	Weighted mode	75	0	0.2899725451701656	0.20270321471228256	0.15677483520782567
+m05Lzv	Z1xLeP	covidhgi2020anaB2v4eurwoukbb	Olafsdottir2020asthma	5e-8	FALSE	MR Egger	75	0	0.08476035241314675	0.1635081086217752	0.6057565727643175

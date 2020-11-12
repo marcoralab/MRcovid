@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+a1W2lj	MKQRLI	covidhgi2020anaC2v4eurwoukbb	Wood2014height	5e-8	MR-PRESSO	364	Raw	0.08920657049905147	0.031075824662709032	2.8706099183941944	0.004336939356206577
+a1W2lj	MKQRLI	covidhgi2020anaC2v4eurwoukbb	Wood2014height	5e-8	MR-PRESSO	364	Outlier-corrected	NA	NA	NA	NA

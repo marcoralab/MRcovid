@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+Tl1KRl	zrjNab	covidhgi2020anaC2v4eur	Allen2020ipf	5e-8	TRUE	3	19.95054096809203	0.1237

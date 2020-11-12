@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
+7pKd8F	RhoEu7	covidhgi2020anaC2v4eurwoukbb	Olafsdottir2020asthma	5e-8	FALSE	-0.003515934430459917	0.005965427420228893	0.557398089015106	NA

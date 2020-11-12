@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+8s9hhU	DkyS3B	Wood2014height	covidhgi2020anaC2v4eur	0.11788548364499232	0.00627099525513946	TRUE	0	FALSE	5e-8
