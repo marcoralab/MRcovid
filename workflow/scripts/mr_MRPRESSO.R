@@ -4,13 +4,12 @@
 ## ========================================================================== ##
 
 ### ===== Command Line Arguments ===== ##
-args = commandArgs(trailingOnly = TRUE) # Set arguments from the command line
-
-infile = args[1] # Exposure summary statistics
-out = args[2]
+infile = snakemake@input[["mrdat"]] # Exposure summary statistics
+out = snakemake@params[["out"]]
 
 ### ===== Load packages ===== ###
 suppressMessages(library(tidyverse))   ## For data wrangling
+suppressMessages(library(magrittr))   ## For data wrangling
 suppressMessages(library(MRPRESSO)) ## For detecting pleitropy
 
 ### ===== READ IN DATA ===== ###
@@ -81,6 +80,20 @@ mrpresso.dat <- tibble(id.exposure = as.character(mrdat[1,'id.exposure']),
                        RSSobs = RSSobs,
                        pval = mrpresso.p)
 
+# Write MR-PRESSO results out
+mrpresso.res <- extract2(mrpresso.out, 1) %>% 
+  as_tibble() %>% 
+  mutate(id.exposure = as.character(mrdat[1,'id.exposure']),
+         id.outcome = as.character(mrdat[1,'id.outcome']),
+         outcome = as.character(mrdat[1,'outcome']),
+         exposure = as.character(mrdat[1,'exposure']),
+         pt = mrdat.raw %>% slice(1) %>% pull(pt), 
+         method = "MR-PRESSO", 
+         nsnp	= c(nrow(mrdat), sum(mrdat.out$mrpresso_keep == T, na.rm = T))
+  ) %>%
+  select(id.exposure, id.outcome, outcome, exposure,	pt, method, nsnp,
+         outliers_removed = `MR Analysis`, b = `Causal Estimate`, sd = Sd, t.stat = `T-stat`, pval = `P-value`) 
+
 ### ===== EXPORTING ===== ###
 message("\n EXPORTING REPORTS \n")
 sink(paste0(out, '.txt'), append=FALSE, split=FALSE)
@@ -88,4 +101,5 @@ mrpresso.out
 sink()
 
 write_tsv(mrpresso.dat, paste0(out, '_global.txt'))
+write_tsv(mrpresso.res, paste0(out, '_res.txt'))
 write_csv(mrdat.out, paste0(out, '_MRdat.csv'))

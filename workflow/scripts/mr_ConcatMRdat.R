@@ -5,9 +5,8 @@
 
 library(tidyverse)
 
-args = commandArgs(trailingOnly = TRUE) # Set arguments from the command line
-output = args[1]
-input = args[2:length(args)] # Outcome Summary statistics
+input = snakemake@input[["dat"]] # Outcome Summary statistics
+output = snakemake@output[["out"]]
 
 mrpresso_MRdat <- input %>%
   map(., function(x){

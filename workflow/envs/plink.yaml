@@ -1,0 +1,4 @@
+channels:
+    - bioconda
+dependencies:
+    - plink=1.90b6.18

@@ -6,7 +6,7 @@ import pandas as pd
 from datetime import date
 RWD = os.getcwd()
 
-shell.prefix('module load plink/1.90 R/3.6.3; ')
+shell.prefix('module load R/3.6.3; ')
 
 
 REF = config['REF']
@@ -84,6 +84,7 @@ rule FormatExposure:
         z_col = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['COLUMNS']['Z'],
         n_col = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['COLUMNS']['N'],
         trait_col = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['COLUMNS']['TRAIT']
+    # conda: "../envs/r.yaml"
     script:
         '../scripts/mr_FormatGwas.R'
 
@@ -107,6 +108,7 @@ rule FormatOutcome:
         z_col = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['COLUMNS']['Z'],
         n_col = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['COLUMNS']['N'],
         trait_col = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['COLUMNS']['TRAIT']
+    # conda: "../envs/r.yaml"
     script:
         '../scripts/mr_FormatGwas.R'
 
@@ -123,6 +125,7 @@ rule clump:
         out =  'data/formated/{ExposureCode}/{ExposureCode}',
         r2 = r2,
         kb = kb
+    conda: "../envs/plink.yaml"
     shell:
         """
         plink --bfile {params.ref} --keep-allele-order --allow-no-sex --clump {input.ss}  --clump-r2 {params.r2} --clump-kb {params.kb} --clump-p1 1 --clump-p2 1 --out {params.out};
@@ -134,15 +137,15 @@ rule clump:
 ## Extract SNPs to be used as instruments in exposure
 rule ExposureSnps:
     input:
-        script = 'workflow/scripts/mr_ExposureData.R',
         summary = "data/formated/{ExposureCode}/{ExposureCode}_formated.txt.gz",
         ExposureClump = 'data/formated/{ExposureCode}/{ExposureCode}.clumped.gz'
     output:
         out = "data/{Project}/{ExposureCode}/{ExposureCode}_{Pthreshold}_SNPs.txt"
     params:
         Pthreshold = '{Pthreshold}'
-    shell:
-        'Rscript {input.script} {input.summary} {params.Pthreshold} {input.ExposureClump} {output.out}'
+    # conda: "../envs/r.yaml"
+    script:
+        '../scripts/mr_ExposureData.R'
 
 ## Plot manhattan plot of exposure gwas highlight instruments
 rule manhattan_plot:
@@ -153,13 +156,13 @@ rule manhattan_plot:
         PlotTitle = "{ExposureCode}"
     output:
         out = 'results/formated/Manhattan/{ExposureCode}_ManhattanPlot.png'
+    # conda: "../envs/r.yaml"
     script:
         "../scripts/manhattan_plot.R"
 
 ## Extract exposure instruments from outcome gwas
 rule OutcomeSnps:
     input:
-        script = 'workflow/scripts/mr_OutcomeData.R',
         ExposureSummary = "data/{Project}/{ExposureCode}/{ExposureCode}_{Pthreshold}_SNPs.txt",
         OutcomeSummary = "data/formated/{OutcomeCode}/{OutcomeCode}_formated.txt.gz"
     output:
@@ -167,8 +170,9 @@ rule OutcomeSnps:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MissingSNPs.txt",
     params:
         Outcome = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}",
-    shell:
-        'Rscript {input.script} {input.ExposureSummary} {input.OutcomeSummary} {params.Outcome}'
+    # conda: "../envs/r.yaml"
+    script:
+        '../scripts/mr_OutcomeData.R'
 
 ## Use plink to identify proxy snps instruments that were not avaliable in the outcome
 rule FindProxySnps:
@@ -179,6 +183,7 @@ rule FindProxySnps:
     params:
         Outcome = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_Proxys",
         ref = REF
+    conda: "../envs/plink.yaml"
     shell:
         """
         if [ $(wc -l < {input.MissingSNPs}) -eq 0 ]; then
@@ -203,6 +208,7 @@ rule ExtractProxySnps:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MatchedProxys.csv",
     params:
         Outcome = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}",
+    # conda: "../envs/r.yaml"
     script:
         '../scripts/mr_ExtractProxySNPs.R'
 
@@ -222,34 +228,37 @@ rule Harmonize:
         regions_start = EXCLUSION["START"],
         regions_stop = EXCLUSION["STOP"],
         rlib = RLIB
+    # conda: "../envs/r.yaml"
     script: "../scripts/mr_DataHarmonization.R"
 
 ## Use MR-PRESSO to conduct a global heterogenity test and
 ## outlier test to identify SNPs that are outliers
 rule MrPresso:
     input:
-        script = 'workflow/scripts/mr_MRPRESSO.R',
         mrdat = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MRdat.csv",
     output:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso.txt",
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_global.txt",
+        "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_res.txt",
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_MRdat.csv"
     params:
         out = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso"
-    shell:
-        'Rscript {input.script} {input.mrdat} {params.out}'
+    # conda: "../envs/r.yaml"
+    script:
+        '../scripts/mr_MRPRESSO.R'
 
 ## Conduct a second MR-PRESSO test after removing outliers
 rule MRPRESSO_wo_outliers:
     input:
-        script = 'workflow/scripts/mr_MRPRESSO_wo_outliers.R',
         mrdat = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_MRdat.csv",
     output:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_global_wo_outliers.txt",
+        "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_res_wo_outliers.txt",
     params:
         out = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso"
-    shell:
-        'Rscript {input.script} {input.mrdat} {params.out}'
+    # conda: "../envs/r.yaml"
+    script:
+        '../scripts/mr_MRPRESSO_wo_outliers.R'
 
 ## Conduct MR analysis
 rule MR_analysis:
@@ -261,6 +270,7 @@ rule MR_analysis:
         'data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MR_Results.txt'
     params:
         out = 'data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}'
+    # conda: "../envs/r.yaml"
     script: '../scripts/mr_analysis.R'
 
 rule steiger:
@@ -271,6 +281,7 @@ rule steiger:
     params:
         rlib = RLIB,
         pt = "{Pthreshold}"
+    # conda: "../envs/r.yaml"
     script: '../scripts/mr_SteigerTest.R'
 
 ## define list of steiger estimates so they can be merged into a single file
@@ -283,13 +294,14 @@ def MR_steiger_input(wildcards):
         Project = Project)
 
 rule merge_steiger:
-        input: mr_steiger = MR_steiger_input
-        output: 'results/{Project}/All/steiger.txt'
-        shell: "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mr_steiger} > {output}"
+    input: mr_steiger = MR_steiger_input
+    output: 'results/{Project}/All/steiger.txt'
+    shell: "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mr_steiger} > {output}"
 
 rule power:
     input: infile = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_MRdat.csv"
     output: outfile = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MR_power.txt"
+    # conda: "../envs/r.yaml"
     script: '../scripts/mr_PowerEstimates.R'
 
 ## define list of power estimates so they can be merged into a single file
@@ -318,11 +330,11 @@ def mrpresso_MRdat_input(wildcards):
 rule merge_mrpresso_MRdat:
     input:
         dat = mrpresso_MRdat_input,
-        script = 'workflow/scripts/mr_ConcatMRdat.R'
     output:
-        'results/{Project}/All/mrpresso_MRdat.csv'
-    shell:
-        'Rscript {input.script} {output} {input.dat}'
+        out = 'results/{Project}/All/mrpresso_MRdat.csv'
+    # conda: "../envs/r.yaml"
+    script:
+        '../scripts/mr_ConcatMRdat.R'
 
 ## define list of global MR-PRESSO tests so they can be merged into a single file
 def mrpresso_global_input(wildcards):
@@ -431,6 +443,7 @@ rule html_Report:
         kbthreshold = kb,
         Exposure = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['NAME'],
         Outcome = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['NAME']
+    # conda: "../envs/r.yaml"
     script: "../scripts/mr_RenderReport.R"
 
 ## Write a html Rmarkdown report
@@ -460,4 +473,5 @@ rule aggregate_Report:
         output_dir = "results/{Project}/All/",
         exposures = EXPOSURES.index,
         outcomes = OUTCOMES.index
+    # conda: "../envs/r.yaml"
     script: "../scripts/mr_RenderFinalReport.R"

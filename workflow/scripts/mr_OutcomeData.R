@@ -4,11 +4,9 @@
 ## ========================================================================== ##
 
 ### ===== Command Line Arguments ===== ##
-args = commandArgs(trailingOnly = TRUE) # Set arguments from the command line
-exposure.summary = args[1] # Exposure summary statistics
-outcome.summary = args[2] # Outcome Summary statistics
-out = args[3]
-
+exposure.summary = snakemake@input[["ExposureSummary"]] # Exposure summary statistics
+outcome.summary = snakemake@input[["OutcomeSummary"]] # Outcome Summary statistics
+out = snakemake@params[["Outcome"]]
 
 ### ===== Load packages ===== ###
 suppressMessages(library(tidyverse))   ## For data wrangling

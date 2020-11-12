@@ -72,12 +72,18 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Shah2020heartfailure", "Diagnosis", "Heart Failure", 31919418, TRUE, 977323, 47309, 930014, 0.025,
                   "Olafsdottir2020asthma", "Diagnosis", "Asthma", 31959851, TRUE, 771388, 69189, 702199, 0.09,
                   "Allen2020ipf", "Diagnosis", "IPF", 31710517, TRUE, 11259, 2668, 8591, 0.0002,
+                  "Nicolas2018als", "Diagnosis", "ALS", 29566793, TRUE, 80610, 20806, 59804, 0.005,
                   # Datafreez v4
                   "covidhgi2020anaA2v4", "Diagnosis", "COVID: A2", 9999, TRUE, 628238, 4336, 623902, 0.007,
+                  "covidhgi2020anaA2v4eurwoukbb", "Diagnosis", "COVID: A2", 9999, TRUE, 22770, 3503, 19267, 0.15,
                   "covidhgi2020anaB1v4", "Diagnosis", "COVID: B1", 9999, TRUE, 10908, 2430, 8478,  0.22,
                   "covidhgi2020anaB2v4", "Diagnosis", "COVID: B2", 9999, TRUE, 969689, 7885, 961804,  0.008,
+                  "covidhgi2020anaB2v4eur", "Diagnosis", "COVID: B2, EUR", 9999, TRUE, 908494, 6406, 902088,  0.007,
+                  "covidhgi2020anaB2v4eurwoukbb", "Diagnosis", "COVID: B2, EUR", 9999, TRUE, 543388, 5641, 537747,  0.01,
                   "covidhgi2020anaC1v4", "Diagnosis", "COVID: C1", 9999, TRUE, 127879, 11085, 116794,  0.086,
                   "covidhgi2020anaC2v4", "Diagnosis", "COVID: C2", 9999, TRUE, 1388512, 17965, 1370547,  0.013,
+                  "covidhgi2020anaC2v4eur", "Diagnosis", "COVID: C2, EUR", 9999, TRUE, 1299010, 14134, 1284876,  0.01,
+                  "covidhgi2020anaC2v4eurwoukbb", "Diagnosis", "COVID: C2, EUR", 9999, TRUE, 927103, 12829, 914274,  0.01,
                   "covidhgi2020anaD1v4", "Diagnosis", "COVID: D1", 9999, TRUE, 38932, 3204, 35728,  0.082,
                   # Datafreez v3
                   # "covidhgi2020anaA2v3", "Diagnosis", "COVID: A2", 9999, TRUE, 287444, 2972, 284472,  0.01,

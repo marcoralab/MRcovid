@@ -4,12 +4,10 @@
 ## ========================================================================== ##
 
 ### ===== Command Line Arguments ===== ##
-args = commandArgs(trailingOnly = TRUE) # Set arguments from the command line
-
-exposure.summary = args[1] # Exposure summary statistics
-p.threshold = as.numeric(args[2])
-exposure.clump = args[3]
-out.file = args[4] # SPECIFY THE OUTPUT FILE
+exposure.summary = snakemake@input[["summary"]] # Exposure summary statistics
+exposure.clump = snakemake@input[["ExposureClump"]]
+p.threshold = as.numeric(snakemake@params[["Pthreshold"]])
+out.file = snakemake@output[["out"]] # SPECIFY THE OUTPUT FILE
 
 ### ===== Load packages ===== ###
 suppressMessages(library(tidyverse))   ## For data wrangling
