@@ -13,56 +13,36 @@ shell.prefix('module load plink/1.90 R/3.6.3; ')
 #     configfile:
 #         "config/config_mr_test.yaml"
 
-# snakemake -s workflow/rules/prs.smk --configfile config/config_prs_adgc.yaml --keep-going --notemp
-subworkflow prs_adgc:
-    workdir:
-        "../"
-    snakefile:
-        "rules/prs.smk"
-    configfile:
-        "config/config_prs_adgc.yaml"
-
-# snakemake -s workflow/rules/prs.smk --configfile config/config_prs_adgc_wo_apoe.yaml --keep-going --notemp
-subworkflow prs_adgcNOapoe:
-    workdir:
-        "../"
-    snakefile:
-        "rules/prs.smk"
-    configfile:
-        "config/config_prs_adgc_wo_apoe.yaml"
-
-# snakemake -s workflow/rules/mr.smk --configfile config/config_mr.yaml --keep-going --notemp
-subworkflow mr_fwd_apoe:
+# snakemake -s workflow/rules/mr.smk --configfile config/config_covid.yaml -j 1 --use-conda --keep-going --notemp
+subworkflow mr_covid:
     workdir:
         "../"
     snakefile:
         "rules/mr.smk"
     configfile:
-        "config/config_mr.yaml"
+        "config/config_covid.yaml"
 
-# snakemake -s workflow/rules/mr.smk --configfile config/config_mr_wo_apoe.yaml --keep-going --notemp
-subworkflow mr_fwd_wo_apoe:
+# snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur.yaml -j 1 --use-conda --keep-going --notemp
+subworkflow mr_covideur:
     workdir:
         "../"
     snakefile:
         "rules/mr.smk"
     configfile:
-        "config/config_mr_wo_apoe.yaml"
+        "config/config_covid.yaml"
 
-# snakemake -s workflow/rules/mr.smk --configfile config/config_mr_bidir.yaml --keep-going --notemp
-subworkflow mr_bidir:
+# snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml -j 1 --use-conda --keep-going --notemp
+subworkflow mr_covideurwoukbb:
     workdir:
         "../"
     snakefile:
         "rules/mr.smk"
     configfile:
-        "config/config_mr_bidir.yaml"
+        "config/config_covid.yaml"
 
 rule all:
     input:
         # test(expand("results/test/All/test_MR_Analaysis_{DATE}.html", DATE = today_date)),
-        prs_adgc("results/adgc/output_adgc_rsq0.001_10000kb.html"),
-        prs_adgcNOapoe("results/adgcNOapoe/output_adgcNOapoe_rsq0.001_10000kb.html"),
-        mr_fwd_apoe(expand("results/MR_ADphenome/All/MR_ADphenome_MR_Analaysis_{DATE}.html", DATE = today_date)),
-        mr_fwd_wo_apoe(expand("results/MR_ADphenome_wo_apoe/All/MR_ADphenome_wo_apoe_MR_Analaysis_{DATE}.html", DATE = today_date)),
-        mr_bidir(expand("results/MR_ADbidir/All/MR_ADbidir_MR_Analaysis_{DATE}.html", DATE = today_date))
+        mr_covid(expand("results/MRcovid/All/MRcovid_MR_Analaysis_{DATE}.html", DATE = today_date)),
+        mr_covideur(expand("results/MRcovideur/AllMRcovideur_MR_Analaysis_{DATE}.html", DATE = today_date)),
+        mr_covideurwoukbb(expand("results/MRcovideurwoukbb/All/MRcovideurwoukbb_MR_Analaysis_{DATE}.html", DATE = today_date)),

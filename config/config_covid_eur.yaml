@@ -1,4 +1,4 @@
-# snakemake -s workflow/rules/mr.smk --configfile config/config_covid.yaml -j 1 --use-conda --keep-going --notemp
+# snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur.yaml -j 1 --use-conda --keep-going --notemp
 # snakejob -s workflow/rules/mr.smk --configfile config/config_covid_eur.yaml --use-conda -j 1000 --keep-going --notemp
 
 PROJECT: "MRcovideur"
