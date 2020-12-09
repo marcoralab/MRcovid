@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-pE37gl	j7kuPO	covidhgi2020anaC2v4eur	Yengo2018height	5e-8	FALSE	MR Egger	887.1997190667223	808	0.02707119069954889
-pE37gl	j7kuPO	covidhgi2020anaC2v4eur	Yengo2018height	5e-8	FALSE	Inverse variance weighted	887.2007743029147	809	0.028636031171017942

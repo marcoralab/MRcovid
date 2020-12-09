@@ -4,7 +4,7 @@ __default__:
   queue: premium
   cores: 1
   mem: 16000
-  time: '60'
+  time: '1:00'
   name: $(basename $(pwd)):{rule}:{wildcards}
   output: logs/{rule}:{wildcards}.stdout
   error: logs/{rule}:{wildcards}.stderr
@@ -13,11 +13,11 @@ Harmonize:
   cores: 1
   mem: 4000
 MrPresso:
-  time: '90:00'
+  time: '12:00'
   mem: 16000
   cores: 2
 MRPRESSO_wo_outliers:
-  time: '72:00'
+  time: '12:00'
   mem: 16000
   cores: 2
 ssimp:
@@ -27,8 +27,12 @@ ssimp:
 FormatExposure:
   mem: 16000
   cores: 2
-  time: '24:00'
+  time: '2:00'
 FormatOutcome:
   mem: 16000
   cores: 2
-  time: '24:00'
+  time: '2:00'
+SUPERGNOVA:
+  mem: 2000
+  cores: 8
+  time: '2:00'

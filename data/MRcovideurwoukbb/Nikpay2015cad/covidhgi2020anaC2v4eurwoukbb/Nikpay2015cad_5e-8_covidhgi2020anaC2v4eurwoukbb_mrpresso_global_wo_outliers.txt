@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-UXDCH2	ZGDheF	covidhgi2020anaC2v4eurwoukbb	Nikpay2015cad	5e-8	TRUE	0	NA	NA
+HePmzS	LicXkl	covidhgi2020anaC2v4eurwoukbb	Nikpay2015cad	5e-8	TRUE	0	NA	NA

@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-dZ3peM	nOhUY2	covidhgi2020anaA2v4	Jansen2018insom	5e-8	MR-PRESSO	13	Raw	0.20498406457374732	0.271947603347164	0.7537630854281437	0.4655249194813986
-dZ3peM	nOhUY2	covidhgi2020anaA2v4	Jansen2018insom	5e-8	MR-PRESSO	13	Outlier-corrected	NA	NA	NA	NA

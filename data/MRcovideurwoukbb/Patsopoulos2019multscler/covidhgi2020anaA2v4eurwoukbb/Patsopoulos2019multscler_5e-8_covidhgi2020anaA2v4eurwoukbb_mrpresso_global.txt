@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-jqP1o9	8MHktk	covidhgi2020anaA2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	1	95.91713019261394	0.0281

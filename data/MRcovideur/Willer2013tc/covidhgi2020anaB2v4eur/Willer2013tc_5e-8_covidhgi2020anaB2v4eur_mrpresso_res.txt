@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-b2Hgzk	LEQbed	covidhgi2020anaB2v4eur	Willer2013tc	5e-8	MR-PRESSO	86	Raw	0.02307723865005216	0.06328071297753925	0.3646804462876889	0.7162556932425108
-b2Hgzk	LEQbed	covidhgi2020anaB2v4eur	Willer2013tc	5e-8	MR-PRESSO	85	Outlier-corrected	-0.006316900058118938	0.05877297379611503	-0.10747967390645279	0.9146647479080761

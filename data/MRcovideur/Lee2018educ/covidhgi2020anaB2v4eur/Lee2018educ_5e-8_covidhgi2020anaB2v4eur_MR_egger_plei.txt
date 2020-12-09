@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-7ydr0p	Mbd29h	covidhgi2020anaB2v4eur	Lee2018educ	5e-8	FALSE	0.014519695564548676	0.007616435308650168	0.057552071137303325
-7ydr0p	Mbd29h	covidhgi2020anaB2v4eur	Lee2018educ	5e-8	TRUE	0.017666618419593043	0.007323181920613484	0.016446709888470926

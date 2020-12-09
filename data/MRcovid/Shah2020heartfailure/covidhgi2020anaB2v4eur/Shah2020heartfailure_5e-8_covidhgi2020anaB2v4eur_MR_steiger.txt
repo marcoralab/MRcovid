@@ -1,3 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-ItSRHz	IKHOEg	Shah2020heartfailure	covidhgi2020anaB2v4eur	0.0018024410365324246	6.171780358767566e-4	TRUE	0	TRUE	5e-8
-ItSRHz	IKHOEg	Shah2020heartfailure	covidhgi2020anaB2v4eur	0.0024006278586506343	0.0015948715840470417	TRUE	4.685949406280088e-10	FALSE	5e-8

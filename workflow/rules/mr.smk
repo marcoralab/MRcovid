@@ -201,8 +201,8 @@ rule FindProxySnps:
 rule ExtractProxySnps:
     input:
         OutcomeSummary = "data/formated/{OutcomeCode}/{OutcomeCode}_formated.txt.gz",
+        OutcomeProxys = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_Proxys.ld",
         OutcomeSNPs = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_SNPs.txt",
-        OutcomeProxys = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_Proxys.ld"
     output:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_ProxySNPs.txt",
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MatchedProxys.csv",
@@ -368,6 +368,22 @@ rule merge_mrpresso_global_wo_outliers:
     shell:
         "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mrpresso_global_wo_outliers} > {output}"
 
+def mrpresso_res_input(wildcards):
+    return expand("data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_res.txt",
+        filtered_product,
+        ExposureCode=EXPOSURES.index.tolist(),
+        OutcomeCode=OUTCOMES.index.tolist(),
+        Pthreshold=Pthreshold,
+        Project = Project)
+
+rule merge_mrpresso_res:
+    input:
+        mrpresso_res = mrpresso_res_input,
+    output:
+        'results/{Project}/All/res_mrpresso.txt'
+    shell:
+        "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mrpresso_res} > {output}"
+
 ## define list of Heterogenity tests so they can be merged into a single file
 def MR_heterogenity_input(wildcards):
     return expand("data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MR_heterogenity.txt",
@@ -452,6 +468,7 @@ rule aggregate_Report:
         markdown = "workflow/scripts/mr_FinalReport.Rmd",
         mrresults = "results/{Project}/All/MRresults.txt",
         mrdat = "results/{Project}/All/mrpresso_MRdat.csv",
+        mrpresso_res = "results/{Project}/All/res_mrpresso.txt",
         mrpresso_global = "results/{Project}/All/global_mrpresso.txt",
         mrpresso_global_wo_outliers = "results/{Project}/All/global_mrpresso_wo_outliers.txt",
         egger = "results/{Project}/All/pleiotropy.txt",

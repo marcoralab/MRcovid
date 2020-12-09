@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-Uq2Xaa	iASt78	covidhgi2020anaB1v4	Betham2015lupus	5e-8	FALSE	0	53.64079138350323	0.1563

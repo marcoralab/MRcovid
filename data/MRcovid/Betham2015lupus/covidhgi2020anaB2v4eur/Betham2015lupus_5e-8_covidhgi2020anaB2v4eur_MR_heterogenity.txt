@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-eEfs7J	dB3PT6	covidhgi2020anaB2v4eur	Betham2015lupus	5e-8	FALSE	MR Egger	46.2789342496949	40	0.22904156417967136
-eEfs7J	dB3PT6	covidhgi2020anaB2v4eur	Betham2015lupus	5e-8	FALSE	Inverse variance weighted	46.303840090368425	41	0.26266510322719994

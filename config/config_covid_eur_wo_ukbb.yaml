@@ -7,7 +7,7 @@ RLIB: "renv/library/R-3.6/x86_64-pc-linux-gnu"
 REF: 'data/raw/EUR_All_Chr'
 clumpr2: 0.001 ## Default in TwoSample MR
 clumpkb: 10000 ## 10 MB, default in TwoSampleMR
-Pthreshold: ['5e-8']
+Pthreshold: ['5e-8', '5e-6']
 
 EXCLUSION:
   -
@@ -18,13 +18,293 @@ EXCLUSION:
     STOP: NULL
 
 
-# Forbidden wildcard combinations
-## Blacklist alcohol consumption onto Kunkle 2019 (LOAD) and Hilbar 2017 (HV) in line with data use aggreements
-## Blacklist all other phenotypes onto Lambert 2013 (LOAD) and Hilbar 2015 (HV)
 missing: [
-   {"Project" : "MRcovid", "ExposureCode" : "Grasby2020thickness", "OutcomeCode" : "covidhgi2020anaC2v3", "Pthreshold" : "5e-8"},
-   {"Project" : "MRcovid", "ExposureCode" : "Liu2019smkces", "OutcomeCode" : "covidhgi2020anaC2v3", "Pthreshold" : "5e-8"},
-   {"Project" : "MRcovid", "ExposureCode" : "Liu2019smkaoi", "OutcomeCode" : "covidhgi2020anaC2v3", "Pthreshold" : "5e-8"},
+    ## covidhgi2020anaB2v4eur23andMe
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Day2018sociso", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Klimentidis2018mvpa", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Lee2018educ", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019drnkwk", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Xue2018diab", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   # {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014sczall", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Barban2016afb", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020anaB2v4eur23andMe", "Pthreshold" : "5e-6"},
+   # covidhgi2020anaB2v4eur
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Day2018sociso", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Klimentidis2018mvpa", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Lee2018educ", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019drnkwk", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Xue2018diab", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   # {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014sczall", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Barban2016afb", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020anaB2v4eur", "Pthreshold" : "5e-6"},
+   # covidhgi2020anaB2v4eurwoukbb
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Day2018sociso", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Klimentidis2018mvpa", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Lee2018educ", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019drnkwk", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Xue2018diab", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   # {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014sczall", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Barban2016afb", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020anaB2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   # covidhgi2020anaC2v4eur23andMe
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Day2018sociso", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Klimentidis2018mvpa", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Lee2018educ", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019drnkwk", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Xue2018diab", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Barban2016afb", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020anaC2v4eur23andMe", "Pthreshold" : "5e-6"},
+   #covidhgi2020anaC2v4eur
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Day2018sociso", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Klimentidis2018mvpa", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Lee2018educ", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019drnkwk", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Xue2018diab", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Barban2016afb", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020anaC2v4eur", "Pthreshold" : "5e-6"},
+   # covidhgi2020anaC2v4eurwoukbb
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Day2018sociso", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Klimentidis2018mvpa", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Lee2018educ", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019drnkwk", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Xue2018diab", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Barban2016afb", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020anaC2v4eurwoukbb", "Pthreshold" : "5e-6"},
+
    ]
 
 EXPOSURES:
@@ -472,7 +752,7 @@ EXPOSURES:
       TRAIT: TRAIT
   -
     CODE: Wood2014height
-    NAME: 'Height, Wood'
+    NAME: 'Height'
     FILE: data/raw/GWAS/Wood2014height.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
@@ -640,12 +920,233 @@ EXPOSURES:
       Z: Z
       N: N
       TRAIT: TRAIT
+  -
+    CODE: Linner2019risk
+    NAME: 'Risk tolerance'
+    FILE: data/raw/GWAS/Linner2019risk.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Demontis2018adhd
+    NAME: 'ADHD'
+    FILE: data/raw/GWAS/Demontis2018adhd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Grove2019asd
+    NAME: 'ASD'
+    FILE: data/raw/GWAS/Grove2019asd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Ripke2014scz
+    NAME: 'Schizophrenia'
+    FILE: data/raw/GWAS/Ripke2014scz.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  # -
+  #   CODE: Ripke2014sczall
+  #   NAME: 'Schizophrenia'
+  #   FILE: data/raw/GWAS/Ripke2014sczall.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  -
+    CODE: Stahl2019bip
+    NAME: 'Bipolar Disorder'
+    FILE: data/raw/GWAS/Stahl2019bip.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Astel2016rbc
+    NAME: 'RBC'
+    FILE: data/raw/GWAS/Astel2016rbc.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Astel2016wbc
+    NAME: 'WBC'
+    FILE: data/raw/GWAS/Astel2016wbc.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Astel2016plt
+    NAME: 'PLT'
+    FILE: data/raw/GWAS/Astel2016plt.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Barban2016afb
+    NAME: 'Age at first birth'
+    FILE: data/raw/GWAS/Barban2016afb.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Mahajan2018t2d
+    NAME: 'Diabetes'
+    FILE: data/raw/GWAS/Mahajan2018t2d.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
 
 OUTCOMES:
+  # -
+  #   CODE: covidhgi2020anaA2v4eurwoukbb
+  #   NAME: "COVID: A2"
+  #   FILE: data/raw/GWAS/covidhgi2020anaA2v4eurwoukbb.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaA2v4eurwoukbb
-    NAME: "COVID: A2"
-    FILE: data/raw/GWAS/covidhgi2020anaA2v4eurwoukbb.chrall.CPRA_b37.tsv.gz
+    CODE: covidhgi2020anaB2v4eur23andMe
+    NAME: "COVID: B2"
+    FILE: data/raw/GWAS/covidhgi2020anaB2v4eur23andMe.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: covidhgi2020anaB2v4eur
+    NAME: "COVID: B2, w/o 23andMe"
+    FILE: data/raw/GWAS/covidhgi2020anaB2v4eur.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
       CHROM: CHROM
@@ -661,7 +1162,7 @@ OUTCOMES:
       TRAIT: TRAIT
   -
     CODE: covidhgi2020anaB2v4eurwoukbb
-    NAME: "COVID: B2"
+    NAME: "COVID: B2, w/o 23andMe, UKB"
     FILE: data/raw/GWAS/covidhgi2020anaB2v4eurwoukbb.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID
@@ -677,8 +1178,42 @@ OUTCOMES:
       N: N
       TRAIT: TRAIT
   -
-    CODE: covidhgi2020anaC2v4eurwoukbb
+    CODE: covidhgi2020anaC2v4eur23andMe
     NAME: "COVID: C2"
+    FILE: data/raw/GWAS/covidhgi2020anaC2v4eur23andMe.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: covidhgi2020anaC2v4eur
+    NAME: "COVID: C2, w/o 23andMe"
+    FILE: data/raw/GWAS/covidhgi2020anaC2v4eur.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: covidhgi2020anaC2v4eurwoukbb
+    NAME: "COVID: C2, w/o 23andMe, UKB"
     FILE: data/raw/GWAS/covidhgi2020anaC2v4eurwoukbb.chrall.CPRA_b37.tsv.gz
     COLUMNS:
       SNP: DBSNP_ID

@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-tk86gr	7gPpM8	covidhgi2020anaA2v4	Okada2014rartis	5e-8	FALSE	1	78.80600350566093	0.0017

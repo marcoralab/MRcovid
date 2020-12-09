@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
-wQewuR	smsYrp	covidhgi2020anaA2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	0.050309264958807054	0.05554281734546643	0.3915183593598641	NA

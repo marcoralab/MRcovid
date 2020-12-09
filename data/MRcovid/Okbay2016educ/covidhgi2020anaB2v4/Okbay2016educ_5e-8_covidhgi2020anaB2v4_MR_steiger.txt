@@ -1,3 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-LfVQEG	8QNXL3	Okbay2016educ	covidhgi2020anaB2v4	0.00958780044524768	0.0037185683687868593	TRUE	0	TRUE	5e-8
-LfVQEG	8QNXL3	Okbay2016educ	covidhgi2020anaB2v4	0.010315841208706305	0.005488721904844489	TRUE	0	FALSE	5e-8

@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-nf7kTT	Rz8pyb	covidhgi2020anaC2v4	Yengo2018height	5e-8	FALSE	0	901.650495233045	0.01412

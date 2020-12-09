@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-qR9oTn	btHe7G	covidhgi2020anaB2v4eur	Nikpay2015cad	5e-8	FALSE	0.020843556243996007	0.015748093660928136	0.19376930941124879
-qR9oTn	btHe7G	covidhgi2020anaB2v4eur	Nikpay2015cad	5e-8	TRUE	0.017682993290462683	0.012629655096610634	0.1702808600414794

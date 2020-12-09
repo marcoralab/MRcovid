@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-5dnTUa	IGF2PZ	covidhgi2020anaC2v4eur	Okbay2016educ	5e-8	FALSE	-0.001771752980885662	0.012971624070186922	0.8917551337378866
-5dnTUa	IGF2PZ	covidhgi2020anaC2v4eur	Okbay2016educ	5e-8	TRUE	-0.0030475005356005364	0.012262034231478475	0.8044723419104441

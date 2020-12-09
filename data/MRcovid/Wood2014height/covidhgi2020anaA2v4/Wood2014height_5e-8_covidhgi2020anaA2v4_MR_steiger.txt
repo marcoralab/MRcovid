@@ -1,2 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-ZV5dgj	5bsOxO	Wood2014height	covidhgi2020anaA2v4	0.11773469484951841	0.0297716007589495	TRUE	0	FALSE	5e-8

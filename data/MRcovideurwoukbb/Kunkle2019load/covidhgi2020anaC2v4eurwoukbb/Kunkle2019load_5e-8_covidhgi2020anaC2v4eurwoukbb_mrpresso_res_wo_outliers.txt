@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-nN7omV	FBA54t	covidhgi2020anaC2v4eurwoukbb	Kunkle2019load	5e-8	MR-PRESSO_wo_outliers	NA	NA	NA	NA	NA	NA
+2HUy4G	YRKDgz	covidhgi2020anaC2v4eurwoukbb	Kunkle2019load	5e-8	MR-PRESSO_wo_outliers	NA	NA	NA	NA	NA	NA

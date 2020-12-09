@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-dBb2UO	uzejkb	covidhgi2020anaB2v4	Revez2020vit250hd	5e-8	MR-PRESSO_wo_outliers	107	Raw	0.09695295791495452	0.0970593510653879	0.9989038341049519	0.32011613531365096
-dBb2UO	uzejkb	covidhgi2020anaB2v4	Revez2020vit250hd	5e-8	MR-PRESSO_wo_outliers	107	Outlier-corrected	NA	NA	NA	NA

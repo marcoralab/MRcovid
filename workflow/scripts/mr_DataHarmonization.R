@@ -82,20 +82,24 @@ mr_outcome.dat$outcome =  OutcomeCode
 
 # Harmonize Datasets
 # Remove Plietropic variatns
-## Exclude variants that are genome-wide significant for outcome
+## Exclude variants that are significant for outcome at a given Pt
 ## Exclude variants within genomic regions
+
+# gws_pt = 5e-8
+gws_pt = 5e-300
+
 if(is.null(regions_chrm)){
   message("Harmonizing data \n")
   harmonized.MRdat <- harmonise_data(mr_exposure.dat, mr_outcome.dat) %>%
     as_tibble() %>%
     mutate(pt = pt,
-      pleitropy_keep = case_when(pval.outcome <= 5e-8 ~ FALSE,
+      pleitropy_keep = case_when(pval.outcome <= gws_pt ~ FALSE,
                                   TRUE ~ TRUE))
 } else {
   harmonized.MRdat <- harmonise_data(mr_exposure.dat, mr_outcome.dat) %>%
     as_tibble() %>%
     mutate(pt = pt,
-      pleitropy_keep = case_when(pval.outcome <= 5e-8 ~ FALSE, TRUE ~ TRUE))
+      pleitropy_keep = case_when(pval.outcome <= gws_pt ~ FALSE, TRUE ~ TRUE))
 
   for(i in 1:length(regions_chrm)){
   message(glue("Harmonizing data and excluding regions: ", regions_chrm[i], ":", regions_start[i], "-", regions_stop[i]))

@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-Tl1KRl	zrjNab	covidhgi2020anaC2v4eur	Allen2020ipf	5e-8	FALSE	0.037762445255300835	0.012069016213142575	0.007990064324010957
-Tl1KRl	zrjNab	covidhgi2020anaC2v4eur	Allen2020ipf	5e-8	TRUE	0.015955520965831818	0.02557685905352016	0.5467074069998952

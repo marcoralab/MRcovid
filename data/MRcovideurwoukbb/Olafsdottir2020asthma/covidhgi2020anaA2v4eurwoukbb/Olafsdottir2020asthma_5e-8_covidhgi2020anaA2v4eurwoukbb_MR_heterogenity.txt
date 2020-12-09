@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-f9l9Qv	tMNeQ7	covidhgi2020anaA2v4eurwoukbb	Olafsdottir2020asthma	5e-8	FALSE	MR Egger	76.34666258592192	73	0.3715120362682194
-f9l9Qv	tMNeQ7	covidhgi2020anaA2v4eurwoukbb	Olafsdottir2020asthma	5e-8	FALSE	Inverse variance weighted	76.34900643923872	74	0.402929050275161

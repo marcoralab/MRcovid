@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-ZDRPkG	RLUGRF	covidhgi2020anaB2v4	Evangelou2018sbp	5e-8	FALSE	-0.0018742493220736897	0.003373889501810063	0.5788280578537353
-ZDRPkG	RLUGRF	covidhgi2020anaB2v4	Evangelou2018sbp	5e-8	TRUE	-0.0015654605388016605	0.0032813848480110304	0.633551295328415

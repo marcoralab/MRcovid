@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
-UFIpaV	ZO2pmv	covidhgi2020anaC2v4	Olafsdottir2020asthma	5e-8	FALSE	-2.0936694466054545e-4	0.005040371409363406	0.9669788716027801	NA

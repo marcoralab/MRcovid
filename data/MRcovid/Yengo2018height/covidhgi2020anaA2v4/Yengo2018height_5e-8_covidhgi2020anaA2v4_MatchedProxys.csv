@@ -1,5 +1,0 @@
-target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
-rs7614810,rs13075308,1,1,GC/AG,NA,3,10034925,G,C,0.1835,0.014288,0.035824,0.3988387673068334,0.69,389415,very_severe_respiratory_confirmed_covid_vs._population,G,C,A,G,G,A,TRUE
-rs6768839,rs1733299,0.887493,1,CC/TG,NA,3,120152050,C,G,0.7541,0.033901,0.030569,1.1089993130295397,0.2674,627723,very_severe_respiratory_confirmed_covid_vs._population,C,C,T,G,T,C,TRUE
-rs9360232,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-rs11204272,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

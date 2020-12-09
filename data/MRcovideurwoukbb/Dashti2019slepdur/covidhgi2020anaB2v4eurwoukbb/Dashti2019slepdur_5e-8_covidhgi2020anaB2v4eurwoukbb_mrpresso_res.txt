@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-OT9yw6	UQIz9u	covidhgi2020anaB2v4eurwoukbb	Dashti2019slepdur	5e-8	MR-PRESSO	66	Raw	-0.007862209564912194	0.2465693651248289	-0.03188640065213231	0.974660354101984
-OT9yw6	UQIz9u	covidhgi2020anaB2v4eurwoukbb	Dashti2019slepdur	5e-8	MR-PRESSO	66	Outlier-corrected	NA	NA	NA	NA
+DIETDl	R7WGYy	covidhgi2020anaB2v4eurwoukbb	Dashti2019slepdur	5e-8	MR-PRESSO	66	Raw	-0.007862209564912194	0.2465693651248289	-0.03188640065213231	0.974660354101984
+DIETDl	R7WGYy	covidhgi2020anaB2v4eurwoukbb	Dashti2019slepdur	5e-8	MR-PRESSO	66	Outlier-corrected	NA	NA	NA	NA

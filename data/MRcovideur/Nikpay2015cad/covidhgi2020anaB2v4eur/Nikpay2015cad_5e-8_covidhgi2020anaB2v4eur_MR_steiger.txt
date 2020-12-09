@@ -1,3 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-Vyk7YE	Popcm7	Nikpay2015cad	covidhgi2020anaB2v4eur	0.01650044416007364	0.0020779128023853234	TRUE	0	TRUE	5e-8
-Vyk7YE	Popcm7	Nikpay2015cad	covidhgi2020anaB2v4eur	0.017671996272093475	0.0037061808844840566	TRUE	0	FALSE	5e-8

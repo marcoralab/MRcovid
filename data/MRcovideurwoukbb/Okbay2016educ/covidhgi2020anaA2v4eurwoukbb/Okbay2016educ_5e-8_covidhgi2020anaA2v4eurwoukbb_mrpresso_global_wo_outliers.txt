@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-qWdYNM	NMlFja	covidhgi2020anaA2v4eurwoukbb	Okbay2016educ	5e-8	TRUE	1	81.7013685225295	0.1883

@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-NPxTUS	8bSJGF	covidhgi2020anaC2v4eurwoukbb	Willer2013hdl	5e-8	MR-PRESSO	87	Raw	-0.03763933891469544	0.041285952031385555	-0.9116742393655362	0.3644886915587282
-NPxTUS	8bSJGF	covidhgi2020anaC2v4eurwoukbb	Willer2013hdl	5e-8	MR-PRESSO	87	Outlier-corrected	NA	NA	NA	NA
+H1mD4R	R5Nb47	covidhgi2020anaC2v4eurwoukbb	Willer2013hdl	5e-8	MR-PRESSO	87	Raw	-0.03763933891469544	0.041285952031385555	-0.9116742393655362	0.3644886915587282
+H1mD4R	R5Nb47	covidhgi2020anaC2v4eurwoukbb	Willer2013hdl	5e-8	MR-PRESSO	87	Outlier-corrected	NA	NA	NA	NA

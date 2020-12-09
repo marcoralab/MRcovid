@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-GxBSDL	q1eOq7	covidhgi2020anaC2v4eur	Yengo2018bmi	5e-8	MR-PRESSO	504	Raw	0.21628601229116348	0.048199963488392485	4.48726506490507	8.949795016486141e-6
-GxBSDL	q1eOq7	covidhgi2020anaC2v4eur	Yengo2018bmi	5e-8	MR-PRESSO	504	Outlier-corrected	NA	NA	NA	NA

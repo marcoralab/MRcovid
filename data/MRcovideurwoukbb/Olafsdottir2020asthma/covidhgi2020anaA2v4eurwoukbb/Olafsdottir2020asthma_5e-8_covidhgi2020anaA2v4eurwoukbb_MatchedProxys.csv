@@ -1,7 +1,0 @@
-target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
-rs6846348,rs7677679,0.849689,1,AT/GA,NA,4,123275434,A,T,0.3058,-0.011413,0.03386,-0.3370643827525103,0.7361,261481,very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb,A,T,G,A,A,G,TRUE
-rs7936070,rs7936312,1,1,TT/GG,NA,11,76293726,G,T,0.4196,-0.057005999999999994,0.031132,-1.83110625722729,0.06709,261481,very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb,T,T,G,G,T,G,TRUE
-rs11178649,rs10879261,1,1,TG/GT,NA,12,71520761,T,G,0.366,-0.015266,0.031589,-0.4832694925448732,0.6289,261481,very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb,T,G,G,T,T,G,TRUE
-rs169365,rs5758343,0.994171,1,GA/AT,NA,22,41816652,A,T,0.7766,0.031160000000000004,0.057097,0.5457379547086537,0.5853,12714,very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb,G,A,A,T,A,G,TRUE
-rs2230624,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-rs6926894,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

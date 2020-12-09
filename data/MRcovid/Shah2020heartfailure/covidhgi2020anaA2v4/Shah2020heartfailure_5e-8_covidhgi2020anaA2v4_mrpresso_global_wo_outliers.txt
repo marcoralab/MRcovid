@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-2pcWWx	y5QM8o	covidhgi2020anaA2v4	Shah2020heartfailure	5e-8	TRUE	1	10.203897967149741	0.4353

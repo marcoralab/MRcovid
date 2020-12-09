@@ -1,7 +1,7 @@
 ---
 title: "Mendelian Randomization Analysis"
 author: "Dr. Shea Andrews"
-date: "2020-11-12"
+date: "2020-11-14"
 output:
   html_document:
     df_print: paged
@@ -147,7 +147,7 @@ Table 6 presents the MR causal estimates of genetically predicted Moderate-Vigou
 **Table 6** MR causaul estimates for Moderate-Vigours Physical Activity on COVID: B2
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"Inverse variance weighted (fixed effects)","6":"21","7":"0.26383844","8":"0.4377862","9":"0.5467316"},{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"Weighted median","6":"21","7":"0.03847355","8":"0.6217671","9":"0.9506602"},{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"Weighted mode","6":"21","7":"-0.22149671","8":"1.1282965","9":"0.8463480"},{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"MR Egger","6":"21","7":"1.98365272","8":"1.4869391","9":"0.1979580"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"Inverse variance weighted (fixed effects)","6":"21","7":"0.26383844","8":"0.4377862","9":"0.5467316"},{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"Weighted median","6":"21","7":"0.03847355","8":"0.6224115","9":"0.9507112"},{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"Weighted mode","6":"21","7":"-0.22149671","8":"1.1485378","9":"0.8490205"},{"1":"sy3xoC","2":"DZLWcM","3":"covidhgi2020anaB2v4eur","4":"Klimentidis2018mvpa","5":"MR Egger","6":"21","7":"1.98365272","8":"1.4869391","9":"0.1979580"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <br>

@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-PDOILt	fz69mB	covidhgi2020anaB2v4eurwoukbb	Okbay2016educ	5e-8	TRUE	0	NA	NA
+27dbr2	LHqp6n	covidhgi2020anaB2v4eurwoukbb	Okbay2016educ	5e-8	TRUE	0	NA	NA

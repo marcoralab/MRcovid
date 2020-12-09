@@ -1,11 +1,9 @@
 ## ================================================================================ ##
 ##                                Misc functions                                    ##
 
-outcomes = c("covidhgi2020anaA2v3", "covidhgi2020anaB1v3", "covidhgi2020anaB2v3",
-             "covidhgi2020anaC1v3", "covidhgi2020anaC2v3", "covidhgi2020anaD1v3")
-
-## Exposures to include in the results
-exposures = c("Campos2020snor", "Dashti2019slepdur", "Day2018sociso", "Evangelou2018dbp", "Evangelou2018pp", "Evangelou2018sbp", "Grasby2020surfarea", "Grasby2020thickness", "Hilbar2017hipv", "Howard2018dep", "Jansen2018insom", "Klimentidis2018mvpa", "Kunkle2019load", "Lee2018educ", "Ligthart2018crp", "Liu2019drnkwk", "Liu2019smkaoi", "Liu2019smkces", "Liu2019smkcpd", "Liu2019smkint", "Locke2015bmi", "Nalls2019pd", "Niarchou2020fish", "Niarchou2020meat", "Okada2014rartis", "Okbay2016educ", "Revez2020vit250hd", "Wells2019hdiff", "Willer2013hdl", "Willer2013ldl", "Willer2013tc", "Willer2013tg", "Wood2014height", "Xue2018diab", "Yengo2018bmi", "Yengo2018height")
+exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', "Barban2016afb")
+outcomes = c("covidhgi2020anaB2v4eur", "covidhgi2020anaB2v4eur23andMe", "covidhgi2020anaB2v4eurwoukbb")
+outcomes = c("covidhgi2020anaA2v4", "covidhgi2020anaB1v4", "covidhgi2020anaB2v4", "covidhgi2020anaC2v4")
 
 ## Sample Sizes
 samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~ncase, ~ncontrol, ~prevelance,
@@ -25,35 +23,36 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Yengo2018bmi", "Health", "BMI", 30124842, FALSE, 690495, NA, NA, NA,
                   "Locke2015bmi", "Health", "BMI, Locke", 25673413, FALSE, 339224, NA, NA, NA,
                   "Xue2018diab", "Health", "Type 2 Diabetes", 30054458, TRUE, 659316, 62892, 596424, 0.085,
-                  "Niarchou2020meat", "Lifestyle", "Meat diet", 32066663, FALSE, 335576, NA, NA, NA,
-                  "Niarchou2020fish", "Lifestyle", "Fish and Plant diet", 32066663, FALSE, 335576, NA, NA, NA,
+                  "Niarchou2020meat", "Behavioural", "Meat diet", 32066663, FALSE, 335576, NA, NA, NA,
+                  "Niarchou2020fish", "Behavioural", "Fish and Plant diet", 32066663, FALSE, 335576, NA, NA, NA,
                   "Wells2019hdiff", "Health", "Hearing Difficulties", 31564434, FALSE, 250389, 87056, 163333, 0.35,
                   "Willer2013hdl", "Health", "High-density lipoproteins", 24097068, FALSE, 188577, NA, NA, NA,
                   "Willer2013ldl", "Health", "Low-density lipoproteins", 24097068, FALSE, 188577, NA, NA, NA,
-                  "Willer2013tc", "Health", "Total Cholesterol", 24097068, FALSE, 188577, NA, NA, NA,                  "Willer2013tg", "Health", "Triglycerides", 24097068, FALSE, 188577, NA, NA, NA,
-                  "Dashti2019slepdur",  "Psychosocial", "Sleep Duration", 30846698, FALSE, 446118, NA, NA, NA,
-                  "Campos2020snor",  "Psychosocial", "Snoring", 32060260, FALSE, 408317, NA, NA, NA,
-                  "Day2018sociso", "Psychosocial", "Social Isolation", 29970889, FALSE, 452302, NA, NA, NA,
-                  "Klimentidis2018mvpa", "Lifestyle", "Moderate-to-vigorous PA", 29899525, FALSE, 377234, NA, NA, NA,
+                  "Willer2013tc", "Health", "Total Cholesterol", 24097068, FALSE, 188577, NA, NA, NA,
+                  "Willer2013tg", "Health", "Triglycerides", 24097068, FALSE, 188577, NA, NA, NA,
+                  "Dashti2019slepdur",  "Health", "Sleep Duration", 30846698, FALSE, 446118, NA, NA, NA,
+                  "Campos2020snor",  "Health", "Snoring", 32060260, FALSE, 408317, NA, NA, NA,
+                  "Day2018sociso", "Neurpsychatric", "Social Isolation", 29970889, FALSE, 452302, NA, NA, NA,
+                  "Klimentidis2018mvpa", "Behavioural", "Moderate-to-vigorous PA", 29899525, FALSE, 377234, NA, NA, NA,
                   "Evangelou2018dbp", "Health", "Diastolic Blood Pressure", 30224653, FALSE, 757601, NA, NA, NA,
                   "Evangelou2018sbp", "Health", "Systolic Blood Pressure", 30224653, FALSE, 757601, NA, NA, NA,
                   "Evangelou2018pp", "Health", "Pulse Pressure", 30224653, FALSE, 757601, NA, NA, NA,
-                  "Liu2019drnkwk23andMe", "Lifestyle", "Alcohol Consumption", 30643251, FALSE, 941280, NA, NA, NA,
-                  "Liu2019drnkwk", "Lifestyle", "Alcohol Consumption", 30643251, FALSE, 537349,  NA, NA, NA,
-                  "Liu2019smkcpd23andMe", "Lifestyle", "Cigarettes per Day", 30643251, FALSE, 337334, NA, NA, NA,
-                  "Liu2019smkcpd", "Lifestyle", "Cigarettes per Day", 30643251, FALSE, 263954, NA, NA, NA,
-                  "Liu2019smkint23andMe", "Lifestyle", "Smoking Initiation", 30643251, TRUE, 1232091, 557337, 674754, 0.45,
-                  "Liu2019smkint", "Lifestyle", "Smoking Initiation", 30643251, TRUE, 632802, 311628, 321174, 0.45,
-                  "Liu2019smkaoi", "Lifestyle", "Smoking AOI", 30643251, FALSE, 262990, NA, NA, NA,
-                  "Liu2019smkces", "Lifestyle", "Smoking cessation", 30643251, TRUE, 312821, 139453, 407766, 0.44,
-                  "Jansen2018insomnia23andMe", "Psychosocial", "Insomnia Symptoms", 30804565, TRUE, 1331010, 397972, 933038, 0.29,
-                  "Jansen2018insom", "Psychosocial", "Insomnia Symptoms", 30804565, TRUE, 386533, 108229, 278304, 0.28,
-                  "Howard2019dep23andMe", "Psychosocial", "Depression", 30718901, TRUE, 807553, 246363, 561190, 0.32,
-                  "Howard2018dep", "Psychosocial", "Depression", 30718901, TRUE, 322580, 113769, 208811, 0.35,
-                  "SanchezRoige2019auditt23andMe", "Lifestyle", "AUDIT", 30336701, FALSE, 141932, NA, NA, NA,
-                  "Lee2018education23andMe", "Psychosocial", "Educational Attainment", 30038396, FALSE, 1131881, NA, NA, NA,
-                  "Lee2018educ", "Psychosocial", "Educational Attainment", 30038396, FALSE, 775120, NA, NA, NA,
-                  "Okbay2016educ", "Psychosocial", "Education, Okbay", 27225129, FALSE, 293723, NA, NA, NA,
+                  "Liu2019drnkwk23andMe", "Behavioural", "Alcohol Consumption", 30643251, FALSE, 941280, NA, NA, NA,
+                  "Liu2019drnkwk", "Behavioural", "Alcohol Consumption", 30643251, FALSE, 537349,  NA, NA, NA,
+                  "Liu2019smkcpd23andMe", "Behavioural", "Cigarettes per Day", 30643251, FALSE, 337334, NA, NA, NA,
+                  "Liu2019smkcpd", "Behavioural", "Cigarettes per Day", 30643251, FALSE, 263954, NA, NA, NA,
+                  "Liu2019smkint23andMe", "Behavioural", "Smoking Initiation", 30643251, TRUE, 1232091, 557337, 674754, 0.45,
+                  "Liu2019smkint", "Behavioural", "Smoking Initiation", 30643251, TRUE, 632802, 311628, 321174, 0.45,
+                  "Liu2019smkaoi", "Behavioural", "Smoking AOI", 30643251, FALSE, 262990, NA, NA, NA,
+                  "Liu2019smkces", "Behavioural", "Smoking cessation", 30643251, TRUE, 312821, 139453, 407766, 0.44,
+                  "Jansen2018insomnia23andMe", "Neurpsychatric", "Insomnia Symptoms", 30804565, TRUE, 1331010, 397972, 933038, 0.29,
+                  "Jansen2018insom", "Neurpsychatric", "Insomnia Symptoms", 30804565, TRUE, 386533, 108229, 278304, 0.28,
+                  "Howard2019dep23andMe", "Neurpsychatric", "Depression", 30718901, TRUE, 807553, 246363, 561190, 0.32,
+                  "Howard2018dep", "Neurpsychatric", "Depression", 30718901, TRUE, 322580, 113769, 208811, 0.35,
+                  "SanchezRoige2019auditt23andMe", "Behavioural", "AUDIT", 30336701, FALSE, 141932, NA, NA, NA,
+                  "Lee2018education23andMe", "Behavioural", "Educational Attainment", 30038396, FALSE, 1131881, NA, NA, NA,
+                  "Lee2018educ", "Behavioural", "Educational Attainment", 30038396, FALSE, 775120, NA, NA, NA,
+                  "Okbay2016educ", "Behavioural", "Education, Okbay", 27225129, FALSE, 293723, NA, NA, NA,
                   "Chauhan2019bi", "Neuropathology", "Brain Infarcts", 30651383, TRUE, 21682, 3726, 17956, 0.2,
                   "Revez2020vit250hd", "Health", "25 hydroxyvitamin D", 32242144, FALSE, 417580, NA, NA, NA,
                   "Okada2014rartis", "Diagnosis", "Rheumatoid Arthritis", 24390342, TRUE, 58284, 14361, 43923, 0.005,
@@ -61,7 +60,7 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Huang2017aaos", "Diagnosis", "AAOS", 28628103, TRUE, 40255, 14406, 25849, 0.31,
                   "Ligthart2018crp", "Health", "CRP", 30388399, FALSE, 204402, NA, NA, NA,
                   "Yengo2018height", "Health", "Height", 30124842, FALSE, 693529, NA, NA, NA,
-                  "Wood2014height", "Health", "Height, Wood", 25282103, FALSE, 253288, NA, NA, NA,
+                  "Wood2014height", "Health", "Height", 25282103, FALSE, 253288, NA, NA, NA,
                   "Betham2015lupus", "Diagnosis", "Lupus", 26502338, TRUE, 23210, 7219, 15991, 0.0024,
                   "Beecham2013multscler", "Diagnosis", "Multiple Sclerosis", 24076602, TRUE, 38589, 14498, 24091, 0.0045,
                   "Patsopoulos2019multscler", "Diagnosis", "Multiple Sclerosis", 31604244, TRUE, 115803, 47429, 68374, 0.0045,
@@ -73,38 +72,42 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "Olafsdottir2020asthma", "Diagnosis", "Asthma", 31959851, TRUE, 771388, 69189, 702199, 0.09,
                   "Allen2020ipf", "Diagnosis", "IPF", 31710517, TRUE, 11259, 2668, 8591, 0.0002,
                   "Nicolas2018als", "Diagnosis", "ALS", 29566793, TRUE, 80610, 20806, 59804, 0.005,
+                  # "code", "domain", "trait", pmid, logistic, samplesize, ncase, ncontrol, prevelance,
+                  "Linner2019risk", "Neurpsychatric", "Risk tolerance", 30643258, FALSE, 466571, NA, NA, NA,
+                  "Demontis2018adhd", "Neurpsychatric", "ADHD", 30478444, TRUE, 53293, 19099, 34194, 0.05,
+                  "Ripke2014scz", "Neurpsychatric", "Schizophrenia", 25056061, TRUE, 77096, 33640, 43456, 0.01,
+                  "Ripke2014sczall", "Neurpsychatric", "Schizophrenia", 25056061, TRUE, 150064, 36989, 113075, 0.01,
+                  "Stahl2019bip", "Neurpsychatric", "Bipolar Disorder", 31043756, TRUE, 51710, 20352, 31358, 0.01,
+                  "Grove2019asd", "Neurpsychatric", "ASD", 30804558, TRUE, 46351, 18382, 27969, 0.02,
+                  "Astel2016rbc", "Health", "RBC", 27863252, FALSE, 173480, NA, NA, NA,
+                  "Astel2016wbc", "Health", "WBC", 27863252, FALSE, 173480, NA, NA, NA,
+                  "Astel2016plt", "Health", "PLT", 27863252, FALSE, 173480, NA, NA, NA,
+                  "Barban2016afb", "Behavioural", "Age at first birth", 27798627, FALSE, 251151, NA, NA, NA,
+                  "Mahajan2018t2d", "Diagnosis", "Diabetes", 30297969, TRUE, 898130, 74124, 824006, 0.085,
                   # Datafreez v4
                   "covidhgi2020anaA2v4", "Diagnosis", "COVID: A2", 9999, TRUE, 628238, 4336, 623902, 0.007,
                   "covidhgi2020anaA2v4eurwoukbb", "Diagnosis", "COVID: A2", 9999, TRUE, 22770, 3503, 19267, 0.15,
                   "covidhgi2020anaB1v4", "Diagnosis", "COVID: B1", 9999, TRUE, 10908, 2430, 8478,  0.22,
                   "covidhgi2020anaB2v4", "Diagnosis", "COVID: B2", 9999, TRUE, 969689, 7885, 961804,  0.008,
-                  "covidhgi2020anaB2v4eur", "Diagnosis", "COVID: B2, EUR", 9999, TRUE, 908494, 6406, 902088,  0.007,
-                  "covidhgi2020anaB2v4eurwoukbb", "Diagnosis", "COVID: B2, EUR", 9999, TRUE, 543388, 5641, 537747,  0.01,
+                  "covidhgi2020anaB2v4eur23andMe", "Diagnosis", "COVID: B2, EUR", 9999, TRUE, 1589523, 7019, 1582504, 0.004,
+                  "covidhgi2020anaB2v4eur", "Diagnosis", "COVID: B2, EUR w/o 23andMe", 9999, TRUE, 908494, 6406, 902088,  0.007,
+                  "covidhgi2020anaB2v4eurwoukbb", "Diagnosis", "COVID: B2, EUR w/o 23andMe, UKB", 9999, TRUE, 543388, 5641, 537747,  0.01,
                   "covidhgi2020anaC1v4", "Diagnosis", "COVID: C1", 9999, TRUE, 127879, 11085, 116794,  0.086,
                   "covidhgi2020anaC2v4", "Diagnosis", "COVID: C2", 9999, TRUE, 1388512, 17965, 1370547,  0.013,
-                  "covidhgi2020anaC2v4eur", "Diagnosis", "COVID: C2, EUR", 9999, TRUE, 1299010, 14134, 1284876,  0.01,
-                  "covidhgi2020anaC2v4eurwoukbb", "Diagnosis", "COVID: C2, EUR", 9999, TRUE, 927103, 12829, 914274,  0.01,
+                  "covidhgi2020anaC2v4eur23andMe", "Diagnosis", "COVID: C2, EUR", 9999, TRUE, 1393995, 24047,  1369948,  0.017,
+                  "covidhgi2020anaC2v4eur", "Diagnosis", "COVID: C2, EUR w/o 23andMe", 9999, TRUE, 1299010, 14134, 1284876, 0.01,
+                  "covidhgi2020anaC2v4eurwoukbb", "Diagnosis", "COVID: C2, EUR w/o 23andMe, UKB", 9999, TRUE, 927103, 12829, 914274,  0.01,
                   "covidhgi2020anaD1v4", "Diagnosis", "COVID: D1", 9999, TRUE, 38932, 3204, 35728,  0.082,
-                  # Datafreez v3
-                  # "covidhgi2020anaA2v3", "Diagnosis", "COVID: A2", 9999, TRUE, 287444, 2972, 284472,  0.01,
-                  # "covidhgi2020anaB1v3", "Diagnosis", "COVID: B1", 9999, TRUE, 7268, 1389, 5879, 0.19,
-                  # "covidhgi2020anaB2v3", "Diagnosis", "COVID: B2", 9999, TRUE, 1019301, 6492, 1012809, 0.0063,
-                  # "covidhgi2020anaC1v3", "Diagnosis", "COVID: C1", 9999, TRUE, 127637, 11181, 116456, 0.087,
-                  # "covidhgi2020anaC2v3", "Diagnosis", "COVID: C2", 9999, TRUE, 1362941, 17607, 1362941, 0.012,
-                  # "covidhgi2020anaD1v3", "Diagnosis", "COVID: D1", 9999, TRUE, 20672, 1777, 18895, 0.09,
-                  # Datafreez v2
-                  # "covidhgi2020anaA2v2", "Diagnosis", "very severe respiratory confirmed covid vs. population", 9999, TRUE, 329927, 536, 329391, 0.00162,
-                  # "covidhgi2020anaB1v2", "Diagnosis", "hospitalized covid vs. not hospitalized covid", 9999, TRUE, 2956, 928, 2028, 0.314,
-                  # "covidhgi2020anaB2v2", "Diagnosis", "hospitalized covid vs. population", 9999, TRUE, 900687, 3199, 897488, 0.00355,
-                  # "covidhgi2020anaC1v2", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE, 40157, 3523, 36634, 0.0877,
-                  # "covidhgi2020anaC2v2", "Diagnosis", "covid vs. population", 9999, TRUE, 1079768, 6696, 1073072, 0.00620,
-                  # "covidhgi2020anaD1v2", "Diagnosis", "predicted covid from self-reported symptoms vs. predicted or self-reported non-covid", 9999, TRUE, 31039, 1865, 29174, 0.0601,
-                  # "covidhgi2020anaA2v2woUKBB", "Diagnosis", "very severe respiratory confirmed covid vs. population wo/ UKBB", 9999, TRUE, 4422, 428, 3994, 0.096,
-                  # "covidhgi2020anaB1v2woUKBB", "Diagnosis", "hospitalized covid vs. not hospitalized covid wo/ UKBB", 9999, TRUE,  1766, 144, 1622, 0.081,
-                  # "covidhgi2020anaB2v2woUKBB", "Diagnosis", "hospitalized covid vs. population wo/ UKBB", 9999, TRUE,  480156, 2415, 477741, 0.005,
-                  # "covidhgi2020anaC1v2woUKBB", "Diagnosis", "covid vs. lab/self-reported negative", 9999, TRUE,  33580, 2213, 31367, 0.065,
-                  # "covidhgi2020anaC2v2woUKBB", "Diagnosis", "covid vs. population wo/ UKBB", 9999, TRUE,  643725, 5386, 638339, 0.0083
                   )
+
+ieugwas <- read_csv(here::here("data", "raw", "ieugwas_201020.csv"))
+
+samplesize <- bind_rows(samplesize,
+          ieugwas %>%
+            select(code = id, domain = category, trait, pmid, samplesize = sample_size, ncase, ncontrol) %>%
+            mutate(logistic = ifelse(domain == "Binary", TRUE, FALSE),
+                   prevelance = ncase/samplesize)
+          )
 
 ## negate
 `%nin%` = Negate(`%in%`)

@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-xgvqrW	Q6GeUs	covidhgi2020anaB2v4eur	Kunkle2019load	5e-8	MR-PRESSO	21	Raw	0.021496935293853537	0.033416052827595445	0.643311626443835	0.5273299542779929
-xgvqrW	Q6GeUs	covidhgi2020anaB2v4eur	Kunkle2019load	5e-8	MR-PRESSO	21	Outlier-corrected	NA	NA	NA	NA

@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-a1W2lj	MKQRLI	covidhgi2020anaC2v4eurwoukbb	Wood2014height	5e-8	MR-PRESSO_wo_outliers	NA	NA	NA	NA	NA	NA
+ImIaYB	7tJ05s	covidhgi2020anaC2v4eurwoukbb	Wood2014height	5e-8	MR-PRESSO_wo_outliers	NA	NA	NA	NA	NA	NA

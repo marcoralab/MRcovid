@@ -1,5 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
-wQewuR	smsYrp	covidhgi2020anaA2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	Inverse variance weighted (fixed effects)	10	0	-0.3390109824393766	0.22626816628440255	0.13406291205785897
-wQewuR	smsYrp	covidhgi2020anaA2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	Weighted median	10	0	-0.534905430499846	0.3096385502203251	0.08407510328410546
-wQewuR	smsYrp	covidhgi2020anaA2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	Weighted mode	10	0	-0.5766472581001199	0.3582780945332072	0.1419685740861747
-wQewuR	smsYrp	covidhgi2020anaA2v4eurwoukbb	Shah2020heartfailure	5e-8	FALSE	MR Egger	10	0	-1.0374633265353201	0.8217723924060907	0.24233616216051673

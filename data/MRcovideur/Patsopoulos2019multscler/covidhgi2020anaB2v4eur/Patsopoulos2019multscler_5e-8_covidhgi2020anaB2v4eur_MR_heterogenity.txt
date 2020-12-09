@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-Be2NWV	L1cRF8	covidhgi2020anaB2v4eur	Patsopoulos2019multscler	5e-8	FALSE	MR Egger	102.32315530140772	68	0.004503858850220328
-Be2NWV	L1cRF8	covidhgi2020anaB2v4eur	Patsopoulos2019multscler	5e-8	FALSE	Inverse variance weighted	103.0117492661093	69	0.004985321819491345

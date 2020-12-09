@@ -18,18 +18,64 @@ z_col = snakemake@params[["z_col"]]
 n_col = snakemake@params[["n_col"]]
 trait_col = snakemake@params[["trait_col"]]
 
-suppressMessages(library(tidyverse))
-message('\n', 'Columns names are: ', 'SNP: ', snp_col, ', CHROM: ', chrom_col, ', POS: ', pos_col, ', REF: ', ref_col, ', ALT: ', alt_col, ', AF: ', af_col, ', BETA: ', beta_col, ', SE: ', se_col, ', P: ', p_col, ', Z: ', z_col, ', N: ', n_col, ', TRAIT: ', trait_col, '\n')
+library(gwasvcf)
+library(VariantAnnotation)
+library(tidyverse)
+library(magrittr)
 
-trait.gwas <- suppressMessages(read_tsv(infile_gwas, comment = '#', guess_max = 11000000))
+message('\n', 'Columns names are: ', 'SNP: ', snp_col, ', CHROM: ', chrom_col,
+        ', POS: ', pos_col, ', REF: ', ref_col, ', ALT: ', alt_col, ', AF: ', af_col,
+        ', BETA: ', beta_col, ', SE: ', se_col, ', P: ', p_col, ', Z: ', z_col,
+        ', N: ', n_col, ', TRAIT: ', trait_col, '\n')
 
-out <- trait.gwas %>%
-  rename(SNP = snp_col, CHROM = chrom_col, POS = pos_col, REF = ref_col, ALT = alt_col, AF = af_col, BETA = beta_col, SE = se_col, Z = z_col, P = p_col, N = n_col, TRAIT = trait_col) %>%
-  filter(nchar(REF) == 1) %>%
-  filter(nchar(ALT) == 1) %>%
-  select(SNP, CHROM, POS, REF, ALT, AF, BETA, SE, Z, P, N, TRAIT) %>%
-  drop_na %>%
-  distinct(SNP, .keep_all = TRUE) %>%
-  write_tsv(gzfile(outfile))
+if(str_detect(infile_gwas, ".vcf.gz")){
+  ## Formating for IEU OPEN GWAS .vcf files
+  message("IEU OPEN GWAS FORMAT")
+
+  vcf <- readVcf(infile_gwas)
+  trait.gwas <- vcf_to_tibble(vcf)
+  traitID = tolower(samples(header(vcf)))
+
+  ieugwas <- read_csv("data/raw/ieugwas_201020.csv")
+  trait_meta <- select(ieugwas, id, trait, sample_size, ncase, ncontrol) %>% filter(id == traitID)
+
+  out <- trait.gwas %>%
+    mutate(EZ = ES/SE,
+           P = 10^-LP,
+           TRAIT = pull(trait_meta, trait),
+           N = pull(trait_meta, sample_size),
+           NCASE = pull(trait_meta, ncase),
+           NCTRL = pull(trait_meta, ncontrol)) %>%
+    filter(nchar(REF) == 1) %>%
+    filter(nchar(ALT) == 1) %>%
+    mutate(Z = ifelse(BETA == 0 & SE == 0, 0, Z)) %>%
+    select(SNP = ID, CHROM = seqnames, POS = start, REF = REF, ALT = ALT, AF = AF,
+           BETA = ES, SE, Z = EZ, P, N, TRAIT, NCASE, NCTRL) %>%
+    distinct(SNP, .keep_all = TRUE)
+
+  out %>%
+    write_tsv(gzfile(outfile))
+
+} else if(str_detect(infile_gwas, ".chrall.CPRA_b37.tsv.gz")){
+  ## Formating for MSSM files
+  message("MSSM GWAS FORMAT")
+
+  trait.gwas <- suppressMessages(read_tsv(infile_gwas, comment = '#', guess_max = 11000000))
+
+  out <- trait.gwas %>%
+    rename(SNP = snp_col, CHROM = chrom_col, POS = pos_col, REF = ref_col,
+           ALT = alt_col, AF = af_col, BETA = beta_col, SE = se_col, Z = z_col,
+           P = p_col, N = n_col, TRAIT = trait_col) %>%
+    filter(nchar(REF) == 1) %>%
+    filter(nchar(ALT) == 1) %>%
+    mutate(Z = ifelse(BETA == 0 & SE == 0, 0, Z)) %>%
+    select(SNP, CHROM, POS, REF, ALT, AF, BETA, SE, Z, P, N, TRAIT) %>%
+    drop_na %>%
+    distinct(SNP, .keep_all = TRUE)
+
+  out %>%
+    write_tsv(gzfile(outfile))
+
+}
 
 message('\n', 'SNPs in orginal file: ', nrow(trait.gwas), '; SNPs in formated file: ', pos_col, ', REF: ', nrow(out), '\n')

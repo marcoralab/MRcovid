@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-s1rLoR	o3cmLR	covidhgi2020anaC2v4	Shah2020heartfailure	5e-8	FALSE	0.017110365938457012	0.021430651552579203	0.44768571715252914
-s1rLoR	o3cmLR	covidhgi2020anaC2v4	Shah2020heartfailure	5e-8	TRUE	0.007095236290425643	0.014955759073296993	0.6496467147087833

@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-D9ICM6	OmAUFk	covidhgi2020anaB2v4	Howard2018dep	5e-8	TRUE	0	NA	NA

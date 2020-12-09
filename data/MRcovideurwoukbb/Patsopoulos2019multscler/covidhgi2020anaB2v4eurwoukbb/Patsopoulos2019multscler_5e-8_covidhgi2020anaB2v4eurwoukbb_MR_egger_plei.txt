@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-ubbono	GAOd62	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	0.004785504790571211	0.008325682443690426	0.5673313660850661
-ubbono	GAOd62	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	TRUE	0.006593803976717339	0.0077236590638870934	0.3963049032474395
+KXOa60	CMAjZm	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	0.004785504790571211	0.008325682443690426	0.5673313660850661
+KXOa60	CMAjZm	covidhgi2020anaB2v4eurwoukbb	Patsopoulos2019multscler	5e-8	TRUE	0.006593803976717339	0.0077236590638870934	0.3963049032474395

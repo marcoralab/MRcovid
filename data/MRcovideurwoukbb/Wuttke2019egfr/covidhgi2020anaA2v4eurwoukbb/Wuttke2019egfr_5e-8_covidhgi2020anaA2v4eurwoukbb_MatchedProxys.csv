@@ -1,3 +1,0 @@
-target_snp,proxy_snp,ld.r2,Dprime,PHASE,X12,CHROM,POS,REF.proxy,ALT.proxy,AF,BETA,SE,Z,P,N,TRAIT,ref,ref.proxy,alt,alt.proxy,ALT,REF,proxy.outcome
-rs4668134,rs75193630,1,1,TA/AC,NA,2,170208605,C,A,0.01234,0.10337,0.12888,0.8020639354438238,0.4225,261078,very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb,T,A,A,C,T,A,TRUE
-rs2252281,rs2453578,1,1,CC/TT,NA,17,19430645,T,C,0.2867,-0.052432000000000006,0.048422,-1.0828135971252737,0.2789,251425,very_severe_respiratory_confirmed_covid_vs._population__eur_wo_ukbb,C,C,T,T,C,T,TRUE

@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-7GWEON	JfQyq1	covidhgi2020anaC2v4eur	Nalls2019pd	5e-8	FALSE	-0.010952063974168109	0.013810295515646116	0.43868536180244233
-7GWEON	JfQyq1	covidhgi2020anaC2v4eur	Nalls2019pd	5e-8	TRUE	-0.002682843119557333	0.010277782048154105	0.7976166904042683

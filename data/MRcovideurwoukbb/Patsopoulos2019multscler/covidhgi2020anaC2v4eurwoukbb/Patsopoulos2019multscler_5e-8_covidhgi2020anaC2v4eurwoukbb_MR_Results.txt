@@ -1,5 +1,5 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
-sVeRbL	KSWaRU	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	Inverse variance weighted (fixed effects)	70	0	-1.7882625302463294e-4	0.013181998563176789	0.9891762747992863
-sVeRbL	KSWaRU	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	Weighted median	70	0	-0.021066313548892504	0.020495272358011823	0.3040147028510241
-sVeRbL	KSWaRU	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	Weighted mode	70	0	-0.0200041430077309	0.021076725593364348	0.3458768681259847
-sVeRbL	KSWaRU	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	MR Egger	70	0	-0.014197446094973618	0.022717342399183573	0.5340884442579954
+cEsQvV	aDjAFS	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	Inverse variance weighted (fixed effects)	70	0	-1.7882625302463294e-4	0.013181998563176789	0.9891762747992863
+cEsQvV	aDjAFS	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	Weighted median	70	0	-0.021066313548892504	0.0200219456756715	0.29272561675845876
+cEsQvV	aDjAFS	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	Weighted mode	70	0	-0.0200041430077309	0.021501344676081405	0.3554247546202465
+cEsQvV	aDjAFS	covidhgi2020anaC2v4eurwoukbb	Patsopoulos2019multscler	5e-8	FALSE	MR Egger	70	0	-0.014197446094973618	0.022717342399183573	0.5340884442579954

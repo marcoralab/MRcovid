@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-Xj90qN	663zeM	covidhgi2020anaC2v4	Yengo2018bmi	5e-8	TRUE	1	544.8968620167686	0.10632

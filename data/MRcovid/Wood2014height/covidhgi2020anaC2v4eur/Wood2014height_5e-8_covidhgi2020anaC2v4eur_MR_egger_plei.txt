@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval	method
-xn0lGP	m6VxaV	covidhgi2020anaC2v4eur	Wood2014height	5e-8	FALSE	-9.463839891509879e-4	0.002410811180958779	0.6948761317546137	NA

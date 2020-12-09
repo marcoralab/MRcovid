@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	egger_intercept	se	pval
-dBb2UO	uzejkb	covidhgi2020anaB2v4	Revez2020vit250hd	5e-8	FALSE	-0.004228287287169657	0.004976218311338005	0.39740756574111047
-dBb2UO	uzejkb	covidhgi2020anaB2v4	Revez2020vit250hd	5e-8	TRUE	-0.0026331501805285915	0.004549478823607618	0.5639767035245808

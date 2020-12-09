@@ -81,18 +81,18 @@ mrpresso.dat <- tibble(id.exposure = as.character(mrdat[1,'id.exposure']),
                        pval = mrpresso.p)
 
 # Write MR-PRESSO results out
-mrpresso.res <- extract2(mrpresso.out, 1) %>% 
-  as_tibble() %>% 
+mrpresso.res <- extract2(mrpresso.out, 1) %>%
+  as_tibble() %>%
   mutate(id.exposure = as.character(mrdat[1,'id.exposure']),
          id.outcome = as.character(mrdat[1,'id.outcome']),
          outcome = as.character(mrdat[1,'outcome']),
          exposure = as.character(mrdat[1,'exposure']),
-         pt = mrdat.raw %>% slice(1) %>% pull(pt), 
-         method = "MR-PRESSO", 
-         nsnp	= c(nrow(mrdat), sum(mrdat.out$mrpresso_keep == T, na.rm = T))
+         pt = mrdat.raw %>% slice(1) %>% pull(pt),
+         method = "MR-PRESSO",
+         nsnp = c(nrow(mrdat), nrow(filter(mrdat.out, mr_keep == T, pleitropy_keep == T, mrpresso_keep == T)))
   ) %>%
   select(id.exposure, id.outcome, outcome, exposure,	pt, method, nsnp,
-         outliers_removed = `MR Analysis`, b = `Causal Estimate`, sd = Sd, t.stat = `T-stat`, pval = `P-value`) 
+         outliers_removed = `MR Analysis`, b = `Causal Estimate`, sd = Sd, t.stat = `T-stat`, pval = `P-value`)
 
 ### ===== EXPORTING ===== ###
 message("\n EXPORTING REPORTS \n")

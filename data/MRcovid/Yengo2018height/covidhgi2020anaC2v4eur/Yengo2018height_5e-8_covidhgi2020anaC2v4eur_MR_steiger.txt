@@ -1,2 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-pE37gl	j7kuPO	Yengo2018height	covidhgi2020anaC2v4eur	0.20101251084356606	0.016640707059249932	TRUE	0	FALSE	5e-8

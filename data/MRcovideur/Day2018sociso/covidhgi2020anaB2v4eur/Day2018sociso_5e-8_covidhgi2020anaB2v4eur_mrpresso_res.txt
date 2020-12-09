@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-oebJua	OXb8kj	covidhgi2020anaB2v4eur	Day2018sociso	5e-8	MR-PRESSO	15	Raw	0.6057541993069104	0.4815156665441689	1.25801555669912	0.22896407210652378
-oebJua	OXb8kj	covidhgi2020anaB2v4eur	Day2018sociso	5e-8	MR-PRESSO	15	Outlier-corrected	NA	NA	NA	NA
