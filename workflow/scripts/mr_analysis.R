@@ -6,6 +6,8 @@
 ## LOAD packages
 library(tidyverse)
 library(TwoSampleMR) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/
+library(here)
+source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
 
 ## Path to input/output
 input = snakemake@input[["mrdat"]] # Harmonized MR data
@@ -35,17 +37,24 @@ mr_heterogenity <- mr_heterogeneity(mrdat, method_list=c("mr_egger_regression", 
   mutate(pt = pt) %>%
   select(id.exposure, id.outcome, outcome, exposure, pt, outliers_removed, method, Q, Q_df, Q_pval)
 
+## MR Egger I2_Gx
+isq <- Isq_gx(mrdat)
+
 ## MR Egger Test of Pliotropy
 mr_plei <- mr_pleiotropy_test(mrdat) %>%
   as_tibble() %>%
   mutate(outliers_removed = FALSE) %>%
-  mutate(pt = pt) %>%
-  select(id.exposure, id.outcome, outcome, exposure, pt, outliers_removed, egger_intercept, se, pval)
+  mutate(pt = pt,
+         Isq = isq) %>%
+  select(id.exposure, id.outcome, outcome, exposure, pt, outliers_removed, Isq, egger_intercept, se, pval)
 
 ## ================= w/o outliers ================= ##
 if(n_outliers >= 1){
   ## Remove outliers
   mrdat_mrpresso <- filter(mrdat, mrpresso_keep == T)
+
+  ## MR Egger I2_Gx
+  mrpresso_isq <- Isq_gx(mrdat_mrpresso)
 
   ## MR, Heterogenity, and Pleitorpy Tests
   mrpresso_res <- mr(mrdat_mrpresso, method_list = c("mr_ivw_fe", "mr_weighted_median", "mr_weighted_mode", "mr_egger_regression")) %>%
@@ -62,8 +71,9 @@ if(n_outliers >= 1){
   mrpresso_plei <- mr_pleiotropy_test(mrdat_mrpresso) %>%
     as_tibble() %>%
     mutate(outliers_removed = TRUE) %>%
-    mutate(pt = pt) %>%
-    select(id.exposure, id.outcome, outcome, exposure, pt, outliers_removed, egger_intercept, se, pval)
+    mutate(pt = pt,
+           Isq = mrpresso_isq) %>%
+    select(id.exposure, id.outcome, outcome, exposure, pt, outliers_removed, Isq, egger_intercept, se, pval)
 
 }else{
   ## If no outliers are removed, make empty dataframes
@@ -97,7 +107,7 @@ if(n_outliers >= 1){
     exposure = as.character(mrdat[1,'exposure']),
     pt = pt,
     outliers_removed = NA,
-    method = 'mrpresso',
+    Isq = NA,
     egger_intercept = NA,
     se = NA,
     pval = NA)

@@ -459,6 +459,8 @@ rule html_Report:
         kbthreshold = kb,
         Exposure = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['NAME'],
         Outcome = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['NAME']
+    log:
+        'data/{Project}/logs/{ExposureCode}_{Pthreshold}_{OutcomeCode}_html_Report.log',
     # conda: "../envs/r.yaml"
     script: "../scripts/mr_RenderReport.R"
 
@@ -490,5 +492,7 @@ rule aggregate_Report:
         output_dir = "results/{Project}/All/",
         exposures = EXPOSURES.index,
         outcomes = OUTCOMES.index
+    log:
+        'data/{Project}/logs/{DATE}_aggregate_Report.log',
     # conda: "../envs/r.yaml"
     script: "../scripts/mr_RenderFinalReport.R"

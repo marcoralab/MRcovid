@@ -1,12 +1,18 @@
 # Render hmtl_report.Rmd to generate html report of output
 ## Input script for rule html_Report
 
+log_path = snakemake@log[[1]]
+
+## Logging messages
+con <- file(log_path, open = "wt")
+sink(con, type = "message")
+
 rmarkdown::render(
   input = snakemake@input[["markdown"]],
-  clean = TRUE, 
-  intermediates_dir = snakemake@params[["output_dir"]], 
-  output_file = snakemake@output[["outfile"]], 
-  output_dir = snakemake@params[["output_dir"]], 
+  clean = TRUE,
+  intermediates_dir = snakemake@params[["output_dir"]],
+  output_file = snakemake@output[["outfile"]],
+  output_dir = snakemake@params[["output_dir"]],
   output_format = "all",
   params = list(
     rwd = snakemake@params[["rwd"]],

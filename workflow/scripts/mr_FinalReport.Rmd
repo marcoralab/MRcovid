@@ -31,28 +31,6 @@ params:
 editor_options:
   chunk_output_type: console
 ---
-```{r sandbox, eval=F}
-# model <- "MRcovid"
-# model <- "MRcovideur"
-# model <- "MRcovideurwoukbb"
-# DATE = "2020-11-14"
-rwd = "/sc/arion/projects/LOAD/shea/Projects/MRcovid"
-DATE = Sys.Date()
-setwd(rwd)
-
-MR_results.path = glue("results/{model}/All/MRresults.txt")
-MRdat.path = glue("results/{model}/All/mrpresso_MRdat.csv")
-mrpresso_res.path = glue("results/{model}/All/res_mrpresso.txt")
-mrpresso_global.path = glue("results/{model}/All/global_mrpresso.txt")
-mrpresso_global_wo_outliers.path = glue("results/{model}/All/global_mrpresso_wo_outliers.txt")
-egger_comb.path = glue("results/{model}/All/pleiotropy.txt")
-power.path = glue("results/{model}/All/power.txt")
-steiger.path = glue("results/{model}/All/steiger.txt")
-exposures = c('Yengo2018bmi', 'Locke2015bmi', 'Xue2018diab', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Okbay2016educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt')
-outcomes = c("covidhgi2020anaB2v4eur", "covidhgi2020anaB2v4eur23andMe", "covidhgi2020anaB2v4eurwoukbb")
-outcomes = c("covidhgi2020anaA2v4", "covidhgi2020anaB1v4", "covidhgi2020anaB2v4", "covidhgi2020anaC2v4")
-```
-
 ```{r setup, echo=FALSE, message = FALSE, warning = FALSE}
 message("Setup \n")
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
@@ -67,6 +45,30 @@ library(qvalue)
 library(here)
 source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
 
+```
+
+```{r sandbox, eval=F}
+# model <- "MRcovid"
+model <- "MRcovideur"
+# model <- "MRcovideurwoukbb"
+
+rwd = "/sc/arion/projects/LOAD/shea/Projects/MRcovid"
+setwd(rwd)
+DATE = Sys.Date()
+DATE = "2021-01-15"
+
+
+MR_results.path = glue("results/{model}/All/MRresults.txt")
+MRdat.path = glue("results/{model}/All/mrpresso_MRdat.csv")
+mrpresso_res.path = glue("results/{model}/All/res_mrpresso.txt")
+mrpresso_global.path = glue("results/{model}/All/global_mrpresso.txt")
+mrpresso_global_wo_outliers.path = glue("results/{model}/All/global_mrpresso_wo_outliers.txt")
+egger_comb.path = glue("results/{model}/All/pleiotropy.txt")
+power.path = glue("results/{model}/All/power.txt")
+steiger.path = glue("results/{model}/All/steiger.txt")
+exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', 'Mills2021afb')
+outcomes = c("covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur")
+# outcomes = c("covidhgi2020A2v5alleurLeaveUKBB", "covidhgi2020B2v5alleurLeaveUKBB", "covidhgi2020C2v5alleurLeaveUKBB")
 ```
 
 ```{r snakemake-input}
@@ -102,7 +104,7 @@ MRdat.raw <- read_csv(MRdat.path, guess_max = 100000) %>%
 
 message(glue("\n Loading: ", mrpresso_res.path))
 mrpresso_res <- read_tsv(mrpresso_res.path) %>%
-  filter(exposure %in% exposures, outcome %in% outcomes) 
+  filter(exposure %in% exposures, outcome %in% outcomes)
 
 message(glue("\n Loading: ", mrpresso_global.path))
 mrpresso_global <- read_tsv(mrpresso_global.path) %>%
@@ -427,7 +429,9 @@ mr_res <- MRsummary %>%
   ungroup()
 
 ## Generate FDR values
-qobj <- qvalue(p = mr_res$MR.pval, fdr.level = 0.1)
+qobj <- try(qvalue(p = mr_res$MR.pval, fdr.level = 0.1))
+if (inherits(qobj, "try-error")) qobj <- qvalue_truncp(p = mr_res$MR.pval, fdr.level = 0.1)
+
 qvales.df <- tibble(pvalues = qobj$pvalues, lfdr = qobj$lfdr,
                     qval = qobj$qvalues, significant = qobj$significant)
 
@@ -466,17 +470,6 @@ mr_best <- mr_res %>%
   left_join(select(samplesize, code, domain), by = c("exposure" = "code")) %>%
   left_join(select(samplesize, code, domain), by = c("outcome" = "code")) %>%
   rename(domain.exposure = domain.x, domain.outcome = domain.y)
-
-
-if(model == "MR_ADbidir"){
-  mr_best <- mr_best %>%
-  mutate(domain.outcome = fct_relevel(domain.outcome, "Psychosocial", "Health", "Lifestyle"),
-         domain.exposure = fct_relevel(domain.exposure, "Diagnosis", "CSF", "Neuropathology", "Neuroimaging"))
-} else if(str_detect(model, "MR_ADphenome")){
-  mr_best <- mr_best %>%
-  mutate(domain.exposure = fct_relevel(domain.exposure, "Psychosocial", "Health", "Lifestyle"),
-         domain.outcome = fct_relevel(domain.outcome, "Diagnosis", "CSF", "Neuropathology", "Neuroimaging"))
-}
 
 ```
 
@@ -541,10 +534,17 @@ write_csv(out.final, glue("results/{model}/All/{model}_PublicationRes_{DATE}.csv
 dat.plot <- exposures_outcomes %>%
   left_join(mr_best) %>%
   mutate(q_signif = as.character(signif.num(qval))) %>%
-  mutate(z = IVW_b/IVW_se) %>%
+  mutate(z = IVW_b/IVW_se, 
+         p_cat = case_when(
+           IVW_MR.pval <= 0.05 ~ 1,
+           IVW_MR.pval <= 0.1 ~ 0.75,
+           IVW_MR.pval <= 0.5 ~ 0.5,
+           TRUE ~ 0.25,
+           ) 
+         ) %>%
   mutate(out = ifelse(qval < 0.1, paste0(round(IVW_b, 3), '\n', '(', round_sci(qval), ')'), " ")) %>%
-  select(outcome, exposure, exposure.name, outcome.name, domain.exposure, domain.outcome, 
-         z, IVW_b, IVW_se, q_signif, out, pass, pass_0.1) %>%
+  select(outcome, exposure, exposure.name, outcome.name, domain.exposure, domain.outcome,
+         z, IVW_b, IVW_se, p_cat, q_signif, out, pass, pass_0.1) %>%
   arrange(domain.exposure, desc(domain.outcome), outcome.name, exposure.name) %>%
   mutate(outcome.name = fct_inorder(outcome.name)) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
@@ -558,26 +558,40 @@ dat.plot <- exposures_outcomes %>%
 ```
 
 ```{r heatmap,  fig.fullwidth=TRUE}
+the_palette = "RdBu"
+
 p1 <- ggplot(dat.plot) +
-  geom_raster(aes(x = exposure.name, y = outcome.name, fill = IVW_b)) +
   facet_grid(domain.outcome ~ domain.exposure, scales = "free", space = "free", switch = "y") +
-  geom_text(data = dat.plot, size = 4, aes(label = q_signif, x = exposure.name, y = outcome.name)) +
-  scale_fill_gradient2(low="steelblue", high="firebrick", mid = "white", na.value = "grey75", name = "logOR") +
-#  coord_fixed() +
+  # geom_raster(data = filter(dat.long, !is.na(rg)), aes(x = exposure.name, y = outcome.name, fill = rg)) + 
+  geom_tile(aes(x = exposure.name, y = outcome.name, fill = z, height=p_cat, width=p_cat)) + 
+  geom_text(data = dat.plot, vjust = 0.75, size = 4, aes(label = q_signif, x = exposure.name, y = outcome.name)) +
+  scale_fill_distiller(palette = rev(the_palette)) +
   theme_classic() +
-  geom_vline(xintercept=seq(0.5, 23.5, 1),color="white") +
-  geom_hline(yintercept=seq(0.5, 11.5, 1),color="white") +
+  geom_vline(xintercept=seq(0.5, 43.5, 1),color="grey90") +
+  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") + 
   geom_rect(data=filter(dat.plot, pass_0.1 == TRUE), size=0.5, fill=NA, colour="orange",
             aes(xmin=exposure1 - 0.5, xmax=exposure1 + 0.5, ymin=outcome1 - 0.5, ymax=outcome1 + 0.5)) +
   geom_rect(data = filter(dat.plot, pass == TRUE), size=0.5, fill=NA, colour="red",
             aes(xmin=exposure1 - 0.5, xmax=exposure1 + 0.5,
                 ymin=outcome1 - 0.5, ymax=outcome1 + 0.5)) +
-  theme(legend.position = 'right', legend.key.height = unit(1, "line"),
-        axis.text.x = element_text(angle = 35, hjust = 0), aspect.ratio=1,
-        legend.text = element_text(hjust = 1.5), text = element_text(size=10),
-        axis.title.x = element_blank(), axis.title.y = element_blank()) +
+  theme(legend.position = 'right', 
+        legend.key.width = unit(0.5, "line"),
+        legend.key.height = unit(1, "line"),
+        axis.text.x = element_text(angle = 35, hjust = 0), 
+        aspect.ratio=1,
+        # legend.text = element_text(hjust = 1.5), 
+        axis.title.x = element_blank(), 
+        axis.title.y = element_blank(), 
+        plot.margin=margin(10,40,10,10, 'pt'), 
+        text = element_text(size=8),
+        strip.text.y = element_text(size = 6),
+        strip.background = element_blank(),
+        # panel.border = element_rect(colour = "black", fill = NA)
+        # legend.key.height = unit(0.75, "line"),
+        # legend.spacing.y = unit(-0.75, "line"), 
+        # plot.margin=grid::unit(c(0,0,0,0), "mm")
+  ) +
   scale_x_discrete(position = "top")
-p1
 
 ```
 

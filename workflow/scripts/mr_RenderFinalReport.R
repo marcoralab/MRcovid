@@ -2,6 +2,12 @@
 ## Input script for rule html_Report
 .libPaths(c(snakemake@params[["rlib"]], .libPaths()))
 
+log_path = snakemake@log[[1]]
+
+## Logging messages
+con <- file(log_path, open = "wt")
+sink(con, type = "message")
+
 message("Render Final Report",
         "\n markdown: ", snakemake@input[["markdown"]],
         "\n intermediates_dir: ", snakemake@params[["output_dir"]],

@@ -1,0 +1,15 @@
+channels:
+    - bioconda
+dependencies:
+    - python=2.7
+    - bitarray=0.8
+    - nose=1.3
+    - pybedtools=0.7
+    - numpy=1.11
+    - scipy=0.18
+    - pandas=0.20
+    - scikit-learn=0.18
+# - pip:
+#     - scipy==0.18
+#     - pandas==0.20
+#     - numpy==1.16

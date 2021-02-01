@@ -35,22 +35,22 @@ editor_options:
 ```{r test, include=FALSE, eval= FALSE}
 ## For testing code
 params <- tibble(
-  rwd = "/sc/arion/projects/LOAD/shea/Projects/MR_ADPhenome", 
+  rwd = "/sc/arion/projects/LOAD/shea/Projects/MR_ADPhenome",
   dataout = "data/MR_ADbidir/",
-  exposure.code = "Kunkle2019load", 
+  exposure.code = "Kunkle2019load",
   Exposure = "LOAD",
   outcome.code = "Klimentidis2018mvpa",
   Outcome = "MVPA",
-  p.threshold = "5e-8", 
-  r2.threshold = 0.001, 
-  kb.threshold = 10000, 
-  exposure.snps = glue(dataout, "{exposure.code}/{exposure.code}_{p.threshold}_SNPs.txt"), 
-  outcome.snps = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_SNPs.txt"), 
-  proxy.snps = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_MatchedProxys.csv"), 
+  p.threshold = "5e-8",
+  r2.threshold = 0.001,
+  kb.threshold = 10000,
+  exposure.snps = glue(dataout, "{exposure.code}/{exposure.code}_{p.threshold}_SNPs.txt"),
+  outcome.snps = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_SNPs.txt"),
+  proxy.snps = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_MatchedProxys.csv"),
   harmonized.dat = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_mrpresso_MRdat.csv"),
   mrpresso_global = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_mrpresso_global.txt"),
   mrpresso_global_wo_outliers = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_mrpresso_global_wo_outliers.txt"),
-  power = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_MR_power.txt") 
+  power = glue(dataout, "{exposure.code}/{outcome.code}/{exposure.code}_{p.threshold}_{outcome.code}_MR_power.txt")
 )
 ```
 
@@ -62,6 +62,8 @@ library(tidyverse)   ## For data wrangling
 library(TwoSampleMR) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/
 library(RadialMR)    ## For Radial MR plots
 library(ggplot2)     ## For plotting
+library(here)
+source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
 
 message(params)
 ```
@@ -150,6 +152,19 @@ mr.power <- mr.power.raw %>% select(outliers_removed, pve.exposure, F, Alpha, NC
 as.data.frame(mr.power)
 ```
 
+The I2_GX statistic can be used to quantify the strength of the NOME violation for MR-Egger regression and should be used to evalute potential bias in the MR-Egger causal estimate, with values less then 90% indicating that causal estimated should interpreted with caution due to regression diluation.
+
+```{r isq_stat, echo=F}
+isq_dat <- tribble(
+  ~outliers_removed, ~Isq_gx,
+  FALSE, Isq_gx(mrdat),
+  TRUE, ifelse(sum(!mrdat$mrpresso_keep) >= 1, mrdat %>% filter(mrpresso_keep) %>% Isq_gx(.), NA)
+)
+
+as.data.frame(isq_dat)
+```
+
+
 ##  MR Results
 To obtain an overall estimate of causal effect, the SNP-exposure and SNP-outcome coefficients were combined in 1) a fixed-effects meta-analysis using an inverse-variance weighted approach (IVW); 2) a Weighted Median approach; 3) Weighted Mode approach and 4) Egger Regression.
 
@@ -230,7 +245,7 @@ if(class(radial.ivw) == "IVW"){plot_radial(radial.ivw, radial_scale = F)}
 ```
 <br>
 
-The intercept of the MR-Regression model captures the average pleitropic affect across all genetic variants (Table 8).
+The intercept of the MR-Egger Regression model captures the average pleitropic affect across all genetic variants (Table 8).
 <br>
 
 **Table 8:** MR Egger test for directional pleitropy
