@@ -1,7 +1,7 @@
 ---
 title: "Mendelian Randomization Analysis"
 author: "Dr. Shea Andrews"
-date: "2020-12-07"
+date: "2020-12-18"
 output:
   html_document:
     df_print: paged
@@ -132,6 +132,15 @@ To ensure that the first assumption of MR is not violated (Non-zero effect assum
   </script>
 </div>
 
+The I2_GX statistic can be used to quantify the strength of the NOME violation for MR-Egger regression and should be used to evalute potential bias in the MR-Egger causal estimate, with values less then 90% indicating that causal estimated should interpreted with caution due to regression diluation.
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["outliers_removed"],"name":[1],"type":["lgl"],"align":["right"]},{"label":["Isq_gx"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"FALSE","2":"0.8332641"},{"1":"TRUE","2":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
 ##  MR Results
 To obtain an overall estimate of causal effect, the SNP-exposure and SNP-outcome coefficients were combined in 1) a fixed-effects meta-analysis using an inverse-variance weighted approach (IVW); 2) a Weighted Median approach; 3) Weighted Mode approach and 4) Egger Regression.
 
@@ -147,7 +156,7 @@ Table 6 presents the MR causal estimates of genetically predicted ALS on COVID: 
 **Table 6** MR causaul estimates for ALS on COVID: C2, w/o 23andMe, UKB
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"Inverse variance weighted (fixed effects)","6":"6","7":"-0.15695325","8":"0.06611140","9":"0.0175931"},{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"Weighted median","6":"6","7":"-0.05253930","8":"0.08668887","9":"0.5444700"},{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"Weighted mode","6":"6","7":"-0.03825012","8":"0.10226148","9":"0.7237100"},{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"MR Egger","6":"6","7":"0.14440079","8":"0.15709542","9":"0.4100095"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"Inverse variance weighted (fixed effects)","6":"6","7":"-0.15695325","8":"0.06611140","9":"0.0175931"},{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"Weighted median","6":"6","7":"-0.05253930","8":"0.08479823","9":"0.5355342"},{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"Weighted mode","6":"6","7":"-0.03825012","8":"0.09792245","9":"0.7121689"},{"1":"2ChARq","2":"nnPyev","3":"covidhgi2020anaC2v4eurwoukbb","4":"Nicolas2018als","5":"MR Egger","6":"6","7":"0.14440079","8":"0.15709542","9":"0.4100095"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <br>
@@ -199,7 +208,7 @@ Figure 3 shows a [Radial Plots](https://github.com/WSpiller/RadialMR) can be use
 </div>
 <br>
 
-The intercept of the MR-Regression model captures the average pleitropic affect across all genetic variants (Table 8).
+The intercept of the MR-Egger Regression model captures the average pleitropic affect across all genetic variants (Table 8).
 <br>
 
 **Table 8:** MR Egger test for directional pleitropy

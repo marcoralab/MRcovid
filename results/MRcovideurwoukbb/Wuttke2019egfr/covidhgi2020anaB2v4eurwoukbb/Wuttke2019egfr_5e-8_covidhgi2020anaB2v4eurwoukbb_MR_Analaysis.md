@@ -1,7 +1,7 @@
 ---
 title: "Mendelian Randomization Analysis"
 author: "Dr. Shea Andrews"
-date: "2020-12-07"
+date: "2020-12-18"
 output:
   html_document:
     df_print: paged
@@ -132,6 +132,15 @@ To ensure that the first assumption of MR is not violated (Non-zero effect assum
   </script>
 </div>
 
+The I2_GX statistic can be used to quantify the strength of the NOME violation for MR-Egger regression and should be used to evalute potential bias in the MR-Egger causal estimate, with values less then 90% indicating that causal estimated should interpreted with caution due to regression diluation.
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["outliers_removed"],"name":[1],"type":["lgl"],"align":["right"]},{"label":["Isq_gx"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"FALSE","2":"0.9111582"},{"1":"TRUE","2":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+
+
 ##  MR Results
 To obtain an overall estimate of causal effect, the SNP-exposure and SNP-outcome coefficients were combined in 1) a fixed-effects meta-analysis using an inverse-variance weighted approach (IVW); 2) a Weighted Median approach; 3) Weighted Mode approach and 4) Egger Regression.
 
@@ -147,7 +156,7 @@ Table 6 presents the MR causal estimates of genetically predicted eGFR on COVID:
 **Table 6** MR causaul estimates for eGFR on COVID: B2, w/o 23andMe, UKB
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Inverse variance weighted (fixed effects)","6":"194","7":"-0.6916355","8":"0.6891803","9":"0.3155896"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted median","6":"194","7":"-0.5686654","8":"1.0700155","9":"0.5951033"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted mode","6":"194","7":"-0.2076422","8":"2.0091142","9":"0.9177924"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"MR Egger","6":"194","7":"0.1584292","8":"1.7726079","9":"0.9288760"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Inverse variance weighted (fixed effects)","6":"194","7":"-0.6916355","8":"0.6891803","9":"0.3155896"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted median","6":"194","7":"-0.5686654","8":"1.0799601","9":"0.5984982"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted mode","6":"194","7":"-0.2076422","8":"2.0922052","9":"0.9210463"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"MR Egger","6":"194","7":"0.1584292","8":"1.7726079","9":"0.9288760"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <br>
@@ -199,7 +208,7 @@ Figure 3 shows a [Radial Plots](https://github.com/WSpiller/RadialMR) can be use
 </div>
 <br>
 
-The intercept of the MR-Regression model captures the average pleitropic affect across all genetic variants (Table 8).
+The intercept of the MR-Egger Regression model captures the average pleitropic affect across all genetic variants (Table 8).
 <br>
 
 **Table 8:** MR Egger test for directional pleitropy
@@ -225,7 +234,7 @@ Pleiotropy was also assesed using Mendelian Randomization Pleiotropy RESidual Su
 **Table 10:** MR Estimates after MR-PRESSO outlier removal
 <div data-pagedtable="false">
   <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Inverse variance weighted (fixed effects)","6":"194","7":"-0.6916355","8":"0.6891803","9":"0.3155896"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted median","6":"194","7":"-0.5686654","8":"1.0832171","9":"0.5995984"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted mode","6":"194","7":"-0.2076422","8":"2.1612841","9":"0.9235619"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"MR Egger","6":"194","7":"0.1584292","8":"1.7726079","9":"0.9288760"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id.exposure"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id.outcome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["outcome"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["exposure"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["method"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["nsnp"],"name":[6],"type":["int"],"align":["right"]},{"label":["b"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["se"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pval"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Inverse variance weighted (fixed effects)","6":"194","7":"-0.6916355","8":"0.6891803","9":"0.3155896"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted median","6":"194","7":"-0.5686654","8":"1.1123004","9":"0.6091749"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"Weighted mode","6":"194","7":"-0.2076422","8":"1.9553330","9":"0.9155397"},{"1":"FDZmyH","2":"sInDVJ","3":"covidhgi2020anaB2v4eurwoukbb","4":"Wuttke2019egfr","5":"MR Egger","6":"194","7":"0.1584292","8":"1.7726079","9":"0.9288760"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <br>

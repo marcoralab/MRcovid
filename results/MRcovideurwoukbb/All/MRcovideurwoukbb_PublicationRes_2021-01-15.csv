@@ -1,0 +1,66 @@
+outcome,exposure,outcome.name,exposure.name,pt,nsnp,n_outliers,snp_r2.exposure,snp_r2.outcome,correct_causal_direction,steiger_pval,IVW,qval,MR-Egger,Weighted median,Weighted mode,MRPRESSO.pval,Egger.pval,pass
+covidhgi2020A2v5alleurLeaveUKBB,Yengo2018bmi,"COVID: A2, EUR w/o UKB",BMI,5e-8,504,0,0.05346677579354122,0.036531477716075234,TRUE,0,"0.33
+(0.086)",0.002,"0.33
+(0.23) ","0.33
+(0.16)*","0.22
+(0.23) ",0.11424,0.99,TRUE
+covidhgi2020A2v5alleurLeaveUKBB,Nikpay2015cad,"COVID: A2, EUR w/o UKB",coronary artery disease,5e-8,39,1,0.0168844185573832,0.002976462254591728,TRUE,0,"-0.16
+(0.058)",0.047,"-0.27
+(0.14).","-0.22
+(0.09)*","-0.22
+(0.091)*",0.3576,0.4,TRUE
+covidhgi2020A2v5alleurLeaveUKBB,Lee2018educ,"COVID: A2, EUR w/o UKB",Educational Attainment,5e-8,303,1,0.01913233453429062,0.02279835208106927,FALSE,0,"-0.57
+(0.14)",0.001,"-1.1
+(0.57)*","-0.54
+(0.21)*","-0.5
+(0.57) ",0.09988,0.29,TRUE
+covidhgi2020A2v5alleurLeaveUKBB,Allen2020ipf,"COVID: A2, EUR w/o UKB",IPF,5e-8,15,5,0.04992489419397448,9.675778916301718e-4,TRUE,0,"0.091
+(0.034)",0.05,"0.085
+(0.13) ","0.069
+(0.045) ","0.059
+(0.076) ",0.5277,0.96,TRUE
+covidhgi2020A2v5alleurLeaveUKBB,Betham2015lupus,"COVID: A2, EUR w/o UKB",Lupus,5e-8,42,0,0.2216556681990348,0.00409847672055217,TRUE,0,"-0.045
+(0.016)",0.049,"-0.047
+(0.039) ","-0.048
+(0.024)*","-0.045
+(0.033) ",0.1109,0.95,TRUE
+covidhgi2020B2v5alleurLeaveUKBB,Mills2021afb,"COVID: B2, EUR w/o UKB",Age at first birth,5e-8,66,0,0.004772728878750288,0.0031256748829369325,TRUE,0,"-0.13
+(0.048)",0.049,"-0.42
+(0.21)*","-0.13
+(0.071).","-0.12
+(0.15) ",0.493,0.16,TRUE
+covidhgi2020B2v5alleurLeaveUKBB,Yengo2018bmi,"COVID: B2, EUR w/o UKB",BMI,5e-8,504,0,0.05346677579354122,0.021113443177882434,TRUE,0,"0.27
+(0.066)",0.001,"0.25
+(0.18) ","0.15
+(0.12) ","0.048
+(0.21) ",0.04932,0.93,FALSE
+covidhgi2020B2v5alleurLeaveUKBB,Allen2020ipf,"COVID: B2, EUR w/o UKB",IPF,5e-8,15,4,0.05426960990573338,8.835771984037739e-4,TRUE,0,"0.1
+(0.025)",0.001,"0.04
+(0.099) ","0.1
+(0.034)**","0.096
+(0.048).",0.6656,0.53,TRUE
+covidhgi2020B2v5alleurLeaveUKBB,Nalls2019pd,"COVID: B2, EUR w/o UKB",Parkinsons Disease,5e-8,19,0,0.02680533692503822,0.0014116925422601033,TRUE,0,"0.14
+(0.037)",0.003,"0.14
+(0.11) ","0.11
+(0.054)*","0.049
+(0.088) ",0.0859,0.96,TRUE
+covidhgi2020C2v5alleurLeaveUKBB,Nicolas2018als,"COVID: C2, EUR w/o UKB",ALS,5e-8,6,0,0.005148088959459539,1.4124249389778088e-4,TRUE,0,"-0.1
+(0.037)",0.05,"-0.059
+(0.13) ","-0.088
+(0.052).","-0.042
+(0.067) ",0.0735,0.74,TRUE
+covidhgi2020C2v5alleurLeaveUKBB,Wood2014height,"COVID: C2, EUR w/o UKB",Height,5e-8,364,0,0.11773469484951841,0.0026322258892648113,TRUE,0,"0.076
+(0.018)",0.001,"0.13
+(0.049)**","0.086
+(0.028)**","0.098
+(0.055).",0.66604,0.21,TRUE
+covidhgi2020C2v5alleurLeaveUKBB,Allen2020ipf,"COVID: C2, EUR w/o UKB",IPF,5e-8,15,4,0.05426960990573338,1.3440073742817103e-4,TRUE,0,"0.034
+(0.011)",0.016,"-0.0043
+(0.046) ","0.042
+(0.015)**","0.042
+(0.018)*",0.4018,0.4,TRUE
+covidhgi2020C2v5alleurLeaveUKBB,Betham2015lupus,"COVID: C2, EUR w/o UKB",Lupus,5e-8,42,0,0.2216556681990348,4.545343583497677e-4,TRUE,0,"-0.014
+(0.0053)",0.061,"-0.01
+(0.014) ","-0.0093
+(0.0084) ","-0.0085
+(0.014) ",0.0424,0.78,FALSE
