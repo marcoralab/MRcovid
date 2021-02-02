@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+yBdAox	NbMTt0	covidhgi2020C2v5alleurLeaveUKBB	Ripke2014scz	5e-8	FALSE	0	103.74375832138001	0.0419

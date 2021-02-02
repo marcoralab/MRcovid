@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	0	-0.0017602075956687287	0.006530038473129553	0.7883694629660403

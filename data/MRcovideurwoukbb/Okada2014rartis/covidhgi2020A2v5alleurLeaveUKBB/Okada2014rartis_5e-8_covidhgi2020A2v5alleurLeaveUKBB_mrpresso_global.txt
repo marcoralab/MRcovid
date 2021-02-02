@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+5b10nh	tXz91E	covidhgi2020A2v5alleurLeaveUKBB	Okada2014rartis	5e-8	FALSE	1	87.96016800583553	3e-4

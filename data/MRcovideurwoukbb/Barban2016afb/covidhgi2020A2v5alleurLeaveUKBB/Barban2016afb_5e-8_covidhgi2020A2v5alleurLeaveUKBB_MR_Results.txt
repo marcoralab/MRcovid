@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+wZu7DU	9oHTzM	covidhgi2020A2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	Inverse variance weighted (fixed effects)	7	0	-2.0071263662385226	0.9074949945356879	0.02698590061932831
+wZu7DU	9oHTzM	covidhgi2020A2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	Weighted median	7	0	-2.4046218459656648	1.1630883496239184	0.0386921888390648
+wZu7DU	9oHTzM	covidhgi2020A2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	Weighted mode	7	0	-2.7404437294148307	1.7394331523133024	0.16621486445889222
+wZu7DU	9oHTzM	covidhgi2020A2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	MR Egger	7	0	-5.869033191189046	7.724034224164469	0.4816199080212435

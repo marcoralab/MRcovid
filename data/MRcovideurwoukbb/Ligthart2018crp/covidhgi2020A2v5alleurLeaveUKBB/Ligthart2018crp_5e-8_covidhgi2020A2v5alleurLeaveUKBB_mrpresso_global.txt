@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+WGI8NL	X8Y30z	covidhgi2020A2v5alleurLeaveUKBB	Ligthart2018crp	5e-8	FALSE	1	71.13606134203341	0.0202

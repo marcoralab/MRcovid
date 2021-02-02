@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+wZu7DU	9oHTzM	covidhgi2020A2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	0.4920588975995454	0.04866992774312171	0.09666844925129789	0.6360235917019668

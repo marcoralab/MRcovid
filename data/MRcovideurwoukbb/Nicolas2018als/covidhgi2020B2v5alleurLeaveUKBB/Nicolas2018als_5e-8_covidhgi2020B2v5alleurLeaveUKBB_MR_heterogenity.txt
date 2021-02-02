@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+awTaSX	dSPItR	covidhgi2020B2v5alleurLeaveUKBB	Nicolas2018als	5e-8	FALSE	MR Egger	0.7469601800826927	4	0.9454139932017812
+awTaSX	dSPItR	covidhgi2020B2v5alleurLeaveUKBB	Nicolas2018als	5e-8	FALSE	Inverse variance weighted	3.2694563116405027	5	0.6585210532860987

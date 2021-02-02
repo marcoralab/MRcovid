@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+Qu1kwN	FPYQ1X	covidhgi2020B2v5alleurLeaveUKBB	Ligthart2018crp	5e-8	FALSE	MR Egger	73.0859778026261	44	0.003820407541439236
+Qu1kwN	FPYQ1X	covidhgi2020B2v5alleurLeaveUKBB	Ligthart2018crp	5e-8	FALSE	Inverse variance weighted	80.16395232646381	45	9.789660590681993e-4
+Qu1kwN	FPYQ1X	covidhgi2020B2v5alleurLeaveUKBB	Ligthart2018crp	5e-8	TRUE	MR Egger	45.74081265530535	43	0.35901673633357856
+Qu1kwN	FPYQ1X	covidhgi2020B2v5alleurLeaveUKBB	Ligthart2018crp	5e-8	TRUE	Inverse variance weighted	48.20475345678751	44	0.30667661836840027

@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	Inverse variance weighted (fixed effects)	66	0	0.004851105666880107	0.02031005175752192	0.8112199961026534
+LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	Weighted median	66	0	-0.0064426265957376735	0.03178088862208139	0.8393537706100083
+LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	Weighted mode	66	0	-0.05085243605474188	0.07367616159902789	0.49251581830407754
+LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	MR Egger	66	0	0.030325553799897792	0.09723231235655737	0.7561397536856782

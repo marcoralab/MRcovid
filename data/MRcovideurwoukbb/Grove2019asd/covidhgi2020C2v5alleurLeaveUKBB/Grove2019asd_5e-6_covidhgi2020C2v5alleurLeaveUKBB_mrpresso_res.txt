@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+l4sYg4	3bm5ux	covidhgi2020C2v5alleurLeaveUKBB	Grove2019asd	5e-6	MR-PRESSO	36	Raw	-0.01076305058531716	0.02361377177979395	-0.4557954860276488	0.6513525120035282
+l4sYg4	3bm5ux	covidhgi2020C2v5alleurLeaveUKBB	Grove2019asd	5e-6	MR-PRESSO	36	Outlier-corrected	NA	NA	NA	NA

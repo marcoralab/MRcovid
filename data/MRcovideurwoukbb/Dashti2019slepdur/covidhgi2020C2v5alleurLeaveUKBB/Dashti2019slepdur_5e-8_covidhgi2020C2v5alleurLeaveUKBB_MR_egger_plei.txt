@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+AvprtX	HmbsID	covidhgi2020C2v5alleurLeaveUKBB	Dashti2019slepdur	5e-8	FALSE	0.7580774317953399	0.00308441827895588	0.005188160040622292	0.5542663548520477

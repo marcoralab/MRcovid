@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+xodPH2	0WS8Hs	covidhgi2020A2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	0	83.89412689798714	0.0835

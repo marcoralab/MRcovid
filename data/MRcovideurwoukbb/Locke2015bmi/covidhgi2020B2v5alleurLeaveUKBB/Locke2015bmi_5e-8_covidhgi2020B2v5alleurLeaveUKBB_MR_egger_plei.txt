@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+QE47j5	bmxixr	covidhgi2020B2v5alleurLeaveUKBB	Locke2015bmi	5e-8	FALSE	0.8143625938593282	-0.007141080591400601	0.00941092050999849	0.45071037635363687

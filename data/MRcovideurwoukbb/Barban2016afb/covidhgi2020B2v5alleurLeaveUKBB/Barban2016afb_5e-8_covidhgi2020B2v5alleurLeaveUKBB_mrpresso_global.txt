@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+squOY9	g7hhX8	covidhgi2020B2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	0	10.395283239973212	0.2746

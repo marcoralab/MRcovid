@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+JWgqzy	TMlgDS	covidhgi2020C2v5alleurLeaveUKBB	Xue2018diab	5e-8	FALSE	1	237.67860495063607	<1e-04

@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+NL4XsC	9RTVus	covidhgi2020A2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	MR-PRESSO	504	Raw	0.32686777259138267	0.08900560936420243	3.6724401408665273	2.659755651971899e-4
+NL4XsC	9RTVus	covidhgi2020A2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	MR-PRESSO	504	Outlier-corrected	NA	NA	NA	NA

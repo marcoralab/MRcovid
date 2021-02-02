@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+AvprtX	HmbsID	covidhgi2020C2v5alleurLeaveUKBB	Dashti2019slepdur	5e-8	FALSE	MR Egger	67.59661396177908	64	0.35538186181054915
+AvprtX	HmbsID	covidhgi2020C2v5alleurLeaveUKBB	Dashti2019slepdur	5e-8	FALSE	Inverse variance weighted	67.9699197943358	65	0.3764154054077241

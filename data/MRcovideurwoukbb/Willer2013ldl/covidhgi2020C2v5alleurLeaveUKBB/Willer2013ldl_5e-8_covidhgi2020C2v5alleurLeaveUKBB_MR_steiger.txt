@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+5EoOv4	WV6gbz	Willer2013ldl	covidhgi2020C2v5alleurLeaveUKBB	0.053663788453685315	4.833003257312544e-4	TRUE	0	TRUE	5e-8
+5EoOv4	WV6gbz	Willer2013ldl	covidhgi2020C2v5alleurLeaveUKBB	0.0558793848513732	9.254167243975111e-4	TRUE	0	FALSE	5e-8

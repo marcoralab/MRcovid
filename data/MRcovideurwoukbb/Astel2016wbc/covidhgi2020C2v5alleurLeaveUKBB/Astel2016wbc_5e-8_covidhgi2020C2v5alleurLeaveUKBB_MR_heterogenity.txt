@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+9ejEJX	7CHCCV	covidhgi2020C2v5alleurLeaveUKBB	Astel2016wbc	5e-8	FALSE	MR Egger	264.9347473687577	158	2.071023193389298e-7
+9ejEJX	7CHCCV	covidhgi2020C2v5alleurLeaveUKBB	Astel2016wbc	5e-8	FALSE	Inverse variance weighted	265.202570616123	159	2.5619695368803194e-7
+9ejEJX	7CHCCV	covidhgi2020C2v5alleurLeaveUKBB	Astel2016wbc	5e-8	TRUE	MR Egger	182.21418077867315	157	0.08221513179368017
+9ejEJX	7CHCCV	covidhgi2020C2v5alleurLeaveUKBB	Astel2016wbc	5e-8	TRUE	Inverse variance weighted	182.3436448750605	158	0.08981823728098065

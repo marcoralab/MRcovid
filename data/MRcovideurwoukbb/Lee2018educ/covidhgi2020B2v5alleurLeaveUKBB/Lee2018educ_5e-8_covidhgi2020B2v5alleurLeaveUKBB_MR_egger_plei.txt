@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+omH59j	vXA6Tn	covidhgi2020B2v5alleurLeaveUKBB	Lee2018educ	5e-8	FALSE	0.6409399448276513	0.012041130226156244	0.006339733365156734	0.05848576547898975

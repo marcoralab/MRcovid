@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+BsKJwF	edmgLV	covidhgi2020C2v5alleurLeaveUKBB	Betham2015lupus	5e-8	FALSE	Inverse variance weighted (fixed effects)	42	0	-0.01378522357988902	0.005316633209580905	0.009518473499801854
+BsKJwF	edmgLV	covidhgi2020C2v5alleurLeaveUKBB	Betham2015lupus	5e-8	FALSE	Weighted median	42	0	-0.009251423594184308	0.008446552973492845	0.2733896803377391
+BsKJwF	edmgLV	covidhgi2020C2v5alleurLeaveUKBB	Betham2015lupus	5e-8	FALSE	Weighted mode	42	0	-0.008481683913913879	0.01403659532897572	0.5490033912696514
+BsKJwF	edmgLV	covidhgi2020C2v5alleurLeaveUKBB	Betham2015lupus	5e-8	FALSE	MR Egger	42	0	-0.01047282371742982	0.01359401595650686	0.4455894727527634

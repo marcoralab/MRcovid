@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+bc4P15	9aQgcM	covidhgi2020A2v5alleurLeaveUKBB	Demontis2018adhd	5e-8	FALSE	MR Egger	13.908787613279419	7	0.05282764028413702
+bc4P15	9aQgcM	covidhgi2020A2v5alleurLeaveUKBB	Demontis2018adhd	5e-8	FALSE	Inverse variance weighted	15.372628523288952	8	0.05229226804569045

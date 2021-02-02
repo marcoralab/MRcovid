@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+L9J8RQ	Stwqgs	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	TRUE	3	56.46423309420331	0.8308

@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+gkjXGZ	DgOO1p	covidhgi2020B2v5alleurLeaveUKBB	Linner2019risk	5e-8	FALSE	MR Egger	29.88132814186727	24	0.1887161906461966
+gkjXGZ	DgOO1p	covidhgi2020B2v5alleurLeaveUKBB	Linner2019risk	5e-8	FALSE	Inverse variance weighted	35.043471510734086	25	0.08741957123442658

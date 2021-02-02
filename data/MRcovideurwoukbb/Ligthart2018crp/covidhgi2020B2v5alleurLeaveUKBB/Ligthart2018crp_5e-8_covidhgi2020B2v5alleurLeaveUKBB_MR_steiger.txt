@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+Qu1kwN	FPYQ1X	Ligthart2018crp	covidhgi2020B2v5alleurLeaveUKBB	0.030380839395348115	0.0017400775296877503	TRUE	0	TRUE	5e-8
+Qu1kwN	FPYQ1X	Ligthart2018crp	covidhgi2020B2v5alleurLeaveUKBB	0.030878815877904423	0.0027362593227688373	TRUE	0	FALSE	5e-8

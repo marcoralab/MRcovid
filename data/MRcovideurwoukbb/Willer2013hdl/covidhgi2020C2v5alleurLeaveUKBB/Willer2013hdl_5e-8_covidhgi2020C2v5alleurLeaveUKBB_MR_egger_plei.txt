@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+AZTyY8	JYSeuq	covidhgi2020C2v5alleurLeaveUKBB	Willer2013hdl	5e-8	FALSE	0.9710642759606475	9.991451105205232e-4	0.0020310404221464792	0.6240315618320325

@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+dzuJSw	pJkDGU	covidhgi2020B2v5alleurLeaveUKBB	Willer2013tc	5e-8	FALSE	MR Egger	110.2709115661468	84	0.028877764785081746
+dzuJSw	pJkDGU	covidhgi2020B2v5alleurLeaveUKBB	Willer2013tc	5e-8	FALSE	Inverse variance weighted	111.0889347074252	85	0.0302948917274094
+dzuJSw	pJkDGU	covidhgi2020B2v5alleurLeaveUKBB	Willer2013tc	5e-8	TRUE	MR Egger	90.07826373102924	83	0.27896732945748504
+dzuJSw	pJkDGU	covidhgi2020B2v5alleurLeaveUKBB	Willer2013tc	5e-8	TRUE	Inverse variance weighted	90.66832581434765	84	0.2902725616882724

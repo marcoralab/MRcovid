@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+0ATVoN	HS4mBp	covidhgi2020A2v5alleurLeaveUKBB	Day2018sociso	5e-8	FALSE	MR Egger	13.136313581670214	13	0.43733844442441894
+0ATVoN	HS4mBp	covidhgi2020A2v5alleurLeaveUKBB	Day2018sociso	5e-8	FALSE	Inverse variance weighted	13.236988747224501	14	0.5079536708308842
