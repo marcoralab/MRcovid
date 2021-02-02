@@ -1,0 +1,12 @@
+# snakejob  -s workflow/rules/rg.smk --configfile config/config_rg_covid.yaml -j 400 --use-conda --keep-going --notemp
+# snakemake -s workflow/rules/rg.smk --configfile config/config_rg_covid.yaml -j 1 --use-conda --keep-going --notemp
+
+TRAITS_PATH: "data/RGcovid/traits.csv"
+PROJECT: "RGcovid"
+EXCLUSION:
+    -
+        NAME: MHC
+        NOTE: "Remove all variants on chromosome 6 in the region 26MB to 34MB (the MHC region)"
+        CHROM: 6
+        START: 26000000
+        STOP: 34000000
