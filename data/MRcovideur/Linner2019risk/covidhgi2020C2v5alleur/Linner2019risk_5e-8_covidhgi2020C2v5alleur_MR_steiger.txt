@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+kqgFVH	oWzVAc	Linner2019risk	covidhgi2020C2v5alleur	0.00227464242881277	2.3259711130398537e-4	TRUE	0	FALSE	5e-8

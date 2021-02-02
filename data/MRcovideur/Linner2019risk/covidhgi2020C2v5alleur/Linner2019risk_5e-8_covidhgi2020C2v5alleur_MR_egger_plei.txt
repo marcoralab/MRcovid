@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+kqgFVH	oWzVAc	covidhgi2020C2v5alleur	Linner2019risk	5e-8	FALSE	0.32329652616035603	0.012599030917231597	0.009409674656170548	0.19313368266987244

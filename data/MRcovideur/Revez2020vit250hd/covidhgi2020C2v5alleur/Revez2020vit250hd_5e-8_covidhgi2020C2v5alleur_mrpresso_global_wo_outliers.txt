@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+OyNmZ9	aanCBg	covidhgi2020C2v5alleur	Revez2020vit250hd	5e-8	TRUE	1	148.6693105937126	0.0067

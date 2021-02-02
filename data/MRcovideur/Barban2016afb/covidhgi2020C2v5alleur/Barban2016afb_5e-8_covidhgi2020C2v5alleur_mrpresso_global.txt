@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+P5Qfjf	1T3mVt	covidhgi2020C2v5alleur	Barban2016afb	5e-8	FALSE	0	16.924146623644837	0.0535

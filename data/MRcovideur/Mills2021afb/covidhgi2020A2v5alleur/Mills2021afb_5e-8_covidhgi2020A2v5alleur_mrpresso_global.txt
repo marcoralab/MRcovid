@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+39pp1S	amitQn	covidhgi2020A2v5alleur	Mills2021afb	5e-8	FALSE	0	87.99884182391446	0.047

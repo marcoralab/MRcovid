@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+2zNCB5	mJ5BOn	covidhgi2020C2v5alleur	Wood2014height	5e-8	FALSE	0.8978410281457327	-0.001731474358345602	0.0013322197796496113	0.19453383558718032

@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+QdGDtn	P4slTg	covidhgi2020B2v5alleur	Wuttke2019egfr	5e-8	FALSE	0.9036834112556617	-3.424695749166933e-4	0.003787513137243358	0.9280466814531325

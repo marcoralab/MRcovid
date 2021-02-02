@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+k61blG	bUBA29	covidhgi2020B2v5alleur	Demontis2018adhd	5e-8	MR-PRESSO	9	Raw	0.1923862692929588	0.10156573773287576	1.8942044195942012	0.09481028825529089
+k61blG	bUBA29	covidhgi2020B2v5alleur	Demontis2018adhd	5e-8	MR-PRESSO	9	Outlier-corrected	NA	NA	NA	NA

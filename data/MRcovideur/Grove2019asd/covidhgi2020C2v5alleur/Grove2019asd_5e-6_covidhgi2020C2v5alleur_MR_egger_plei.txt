@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+iYDCyI	IO2sho	covidhgi2020C2v5alleur	Grove2019asd	5e-6	FALSE	0	-0.002382673251793384	0.0051133342035285245	0.6442066881497845

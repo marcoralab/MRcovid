@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+om2bC9	R24kZc	covidhgi2020B2v5alleur	Yengo2018bmi	5e-8	FALSE	0.8987035485292193	0.0019391264491819271	0.002663691739565005	0.46696245452747465

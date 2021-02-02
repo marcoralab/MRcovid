@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+39pp1S	amitQn	covidhgi2020A2v5alleur	Mills2021afb	5e-8	MR-PRESSO	66	Raw	-0.09494905929307258	0.06814910192509054	-1.393254740134955	0.16828917207157915
+39pp1S	amitQn	covidhgi2020A2v5alleur	Mills2021afb	5e-8	MR-PRESSO	66	Outlier-corrected	NA	NA	NA	NA

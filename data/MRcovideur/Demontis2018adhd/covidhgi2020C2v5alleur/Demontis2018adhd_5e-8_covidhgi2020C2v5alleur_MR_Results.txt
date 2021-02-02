@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+lqd46n	CpKTww	covidhgi2020C2v5alleur	Demontis2018adhd	5e-8	FALSE	Inverse variance weighted (fixed effects)	9	0	0.02050900147328988	0.03480579712549222	0.5556996407636362
+lqd46n	CpKTww	covidhgi2020C2v5alleur	Demontis2018adhd	5e-8	FALSE	Weighted median	9	0	0.060563356438566	0.048613755406545445	0.21283526167113734
+lqd46n	CpKTww	covidhgi2020C2v5alleur	Demontis2018adhd	5e-8	FALSE	Weighted mode	9	0	0.09195646023750681	0.0751930996367875	0.25615389066275557
+lqd46n	CpKTww	covidhgi2020C2v5alleur	Demontis2018adhd	5e-8	FALSE	MR Egger	9	0	0.05836528503060042	0.207528894771837	0.7866586112668157

@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+KvUQWB	qakrGo	covidhgi2020B2v5alleur	Grove2019asd	5e-6	FALSE	Inverse variance weighted (fixed effects)	36	0	-0.026766612083228735	0.045155270171148086	0.5533362349680886
+KvUQWB	qakrGo	covidhgi2020B2v5alleur	Grove2019asd	5e-6	FALSE	Weighted median	36	0	-0.07094894771332652	0.06173402784865367	0.25044545551941244
+KvUQWB	qakrGo	covidhgi2020B2v5alleur	Grove2019asd	5e-6	FALSE	Weighted mode	36	0	-0.11812766581445966	0.14219544235565543	0.41175098340330896
+KvUQWB	qakrGo	covidhgi2020B2v5alleur	Grove2019asd	5e-6	FALSE	MR Egger	36	0	0.09652588487582849	0.12584896808134965	0.4483762897272431

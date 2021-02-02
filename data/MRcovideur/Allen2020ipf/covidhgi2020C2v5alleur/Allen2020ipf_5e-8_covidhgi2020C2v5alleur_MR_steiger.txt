@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+ALKjfM	VLuYPN	Allen2020ipf	covidhgi2020C2v5alleur	0.048539361934330456	5.9284745599065944e-5	TRUE	0	TRUE	5e-8
+ALKjfM	VLuYPN	Allen2020ipf	covidhgi2020C2v5alleur	0.12382685286484957	3.0779270057524965e-4	TRUE	0	FALSE	5e-8

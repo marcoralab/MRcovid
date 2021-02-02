@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+3esPar	ncdOT5	covidhgi2020B2v5alleur	Nicolas2018als	5e-8	FALSE	0	9.129913185426862	0.284

@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+GE9ncI	qH3srK	covidhgi2020A2v5alleur	Demontis2018adhd	5e-8	MR-PRESSO	9	Raw	0.15385259626789205	0.17181940665736337	0.8954320077166827	0.39669798909936527
+GE9ncI	qH3srK	covidhgi2020A2v5alleur	Demontis2018adhd	5e-8	MR-PRESSO	9	Outlier-corrected	NA	NA	NA	NA

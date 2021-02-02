@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+ak4UHX	GVjhHQ	covidhgi2020A2v5alleur	Barban2016afb	5e-8	FALSE	0.41254420272892556	0.05677336678100073	0.09119174578156082	0.5608560156610884

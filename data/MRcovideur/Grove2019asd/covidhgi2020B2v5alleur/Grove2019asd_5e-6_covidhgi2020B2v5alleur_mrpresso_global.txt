@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+KvUQWB	qakrGo	covidhgi2020B2v5alleur	Grove2019asd	5e-6	FALSE	0	23.587181730646606	0.9527

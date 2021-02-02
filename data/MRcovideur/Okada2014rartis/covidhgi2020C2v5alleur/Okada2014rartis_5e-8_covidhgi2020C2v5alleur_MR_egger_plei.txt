@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+iTt9QC	bdpGtn	covidhgi2020C2v5alleur	Okada2014rartis	5e-8	FALSE	0.9897438001995669	-7.524490974344248e-5	0.0024215781363557936	0.9753587739206586

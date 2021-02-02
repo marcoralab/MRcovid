@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+AH96mk	av6bTL	Betham2015lupus	covidhgi2020A2v5alleur	0.2216556681990348	0.003817051520783395	TRUE	0	FALSE	5e-8

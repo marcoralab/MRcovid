@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+TD0JPy	LtcVPf	covidhgi2020B2v5alleur	Astel2016plt	5e-8	MR-PRESSO	213	Raw	-0.009669484896438315	0.03550451228488172	-0.27234523935583554	0.7856216435350766
+TD0JPy	LtcVPf	covidhgi2020B2v5alleur	Astel2016plt	5e-8	MR-PRESSO	213	Outlier-corrected	NA	NA	NA	NA

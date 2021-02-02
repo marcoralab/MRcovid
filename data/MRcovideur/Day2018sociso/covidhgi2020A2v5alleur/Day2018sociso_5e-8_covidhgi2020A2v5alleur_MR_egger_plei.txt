@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+ctCf5L	2jvawt	covidhgi2020A2v5alleur	Day2018sociso	5e-8	FALSE	0.4291072976034647	-0.0014844469663604942	0.0382782980526736	0.9696547111193952

@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+6tIKhH	XVoLrb	covidhgi2020B2v5alleur	Nalls2019pd	5e-8	FALSE	1	42.59247376646388	0.0034
