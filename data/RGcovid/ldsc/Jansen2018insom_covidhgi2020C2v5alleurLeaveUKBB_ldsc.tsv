@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Jansen2018insom.sumstats.gz	data/formated/ldsc/covidhgi2020C2v5alleurLeaveUKBB.sumstats.gz	0.0772	0.0725	1.0641	0.2873	0.0014	0.0003	1.0165	0.0063	0.0016	0.0045	1116884

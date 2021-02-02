@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Astel2016plt.sumstats.gz	data/formated/ldsc/covidhgi2020B2v5alleur.sumstats.gz	0.054	0.0516	1.0478	0.2947	0.0013	0.0004	1.0044	0.008	-0.009	0.0055	1141678
