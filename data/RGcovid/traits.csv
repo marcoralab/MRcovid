@@ -23,120 +23,120 @@ Willer2013ldl,Low-density lipoproteins,188577,covidhgi2020C2v5alleur,"COVID: C2,
 Willer2013ldl,Low-density lipoproteins,188577,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Willer2013ldl,Low-density lipoproteins,188577,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Willer2013ldl,Low-density lipoproteins,188577,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Willer2013tc,Total Cholesterol,188577,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Willer2013tc,Total Cholesterol,188577,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Willer2013tc,Total Cholesterol,188577,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Willer2013tc,Total Cholesterol,188577,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Willer2013tc,Total Cholesterol,188577,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Willer2013tc,Total Cholesterol,188577,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Willer2013tc,Total cholesterol,188577,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Willer2013tc,Total cholesterol,188577,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Willer2013tc,Total cholesterol,188577,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Willer2013tc,Total cholesterol,188577,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Willer2013tc,Total cholesterol,188577,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Willer2013tc,Total cholesterol,188577,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Willer2013tg,Triglycerides,188577,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Willer2013tg,Triglycerides,188577,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Willer2013tg,Triglycerides,188577,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Willer2013tg,Triglycerides,188577,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Willer2013tg,Triglycerides,188577,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Willer2013tg,Triglycerides,188577,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Dashti2019slepdur,Sleep Duration,446118,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Dashti2019slepdur,Sleep Duration,446118,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Dashti2019slepdur,Sleep Duration,446118,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Dashti2019slepdur,Sleep Duration,446118,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Dashti2019slepdur,Sleep Duration,446118,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Dashti2019slepdur,Sleep Duration,446118,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Day2018sociso,Social Isolation,452302,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Day2018sociso,Social Isolation,452302,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Day2018sociso,Social Isolation,452302,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Day2018sociso,Social Isolation,452302,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Day2018sociso,Social Isolation,452302,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Day2018sociso,Social Isolation,452302,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Evangelou2018dbp,Diastolic Blood Pressure,757601,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Evangelou2018dbp,Diastolic Blood Pressure,757601,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Evangelou2018dbp,Diastolic Blood Pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Evangelou2018dbp,Diastolic Blood Pressure,757601,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Evangelou2018dbp,Diastolic Blood Pressure,757601,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Evangelou2018dbp,Diastolic Blood Pressure,757601,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Evangelou2018sbp,Systolic Blood Pressure,757601,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Evangelou2018sbp,Systolic Blood Pressure,757601,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Evangelou2018sbp,Systolic Blood Pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Evangelou2018sbp,Systolic Blood Pressure,757601,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Evangelou2018sbp,Systolic Blood Pressure,757601,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Evangelou2018sbp,Systolic Blood Pressure,757601,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Evangelou2018pp,Pulse Pressure,757601,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Evangelou2018pp,Pulse Pressure,757601,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Evangelou2018pp,Pulse Pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Evangelou2018pp,Pulse Pressure,757601,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Evangelou2018pp,Pulse Pressure,757601,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Evangelou2018pp,Pulse Pressure,757601,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Lee2018educ,Educational Attainment,775120,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Lee2018educ,Educational Attainment,775120,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Lee2018educ,Educational Attainment,775120,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Lee2018educ,Educational Attainment,775120,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Lee2018educ,Educational Attainment,775120,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Lee2018educ,Educational Attainment,775120,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Howard2018dep,Depression,322580,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Howard2018dep,Depression,322580,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Howard2018dep,Depression,322580,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Howard2018dep,Depression,322580,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Howard2018dep,Depression,322580,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Howard2018dep,Depression,322580,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Jansen2018insom,Insomnia Symptoms,386533,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Jansen2018insom,Insomnia Symptoms,386533,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Jansen2018insom,Insomnia Symptoms,386533,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Jansen2018insom,Insomnia Symptoms,386533,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Jansen2018insom,Insomnia Symptoms,386533,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Jansen2018insom,Insomnia Symptoms,386533,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Liu2019smkint,Smoking Initiation,632802,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Liu2019smkint,Smoking Initiation,632802,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Liu2019smkint,Smoking Initiation,632802,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Liu2019smkint,Smoking Initiation,632802,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Liu2019smkint,Smoking Initiation,632802,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Liu2019smkint,Smoking Initiation,632802,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Liu2019smkcpd,Cigarettes per Day,263954,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Liu2019smkcpd,Cigarettes per Day,263954,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Liu2019smkcpd,Cigarettes per Day,263954,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Liu2019smkcpd,Cigarettes per Day,263954,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Liu2019smkcpd,Cigarettes per Day,263954,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Liu2019smkcpd,Cigarettes per Day,263954,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Liu2019drnkwk,Alcohol Consumption,537349,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Liu2019drnkwk,Alcohol Consumption,537349,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Liu2019drnkwk,Alcohol Consumption,537349,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Liu2019drnkwk,Alcohol Consumption,537349,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Liu2019drnkwk,Alcohol Consumption,537349,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Liu2019drnkwk,Alcohol Consumption,537349,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Kunkle2019load,LOAD,54162,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Kunkle2019load,LOAD,54162,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Kunkle2019load,LOAD,54162,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Kunkle2019load,LOAD,54162,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Kunkle2019load,LOAD,54162,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Kunkle2019load,LOAD,54162,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Day2018sociso,Social isolation,452302,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Day2018sociso,Social isolation,452302,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Day2018sociso,Social isolation,452302,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Day2018sociso,Social isolation,452302,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Day2018sociso,Social isolation,452302,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Day2018sociso,Social isolation,452302,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Lee2018educ,Educational attainment,775120,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Lee2018educ,Educational attainment,775120,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Lee2018educ,Educational attainment,775120,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Lee2018educ,Educational attainment,775120,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Lee2018educ,Educational attainment,775120,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Lee2018educ,Educational attainment,775120,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Howard2018dep,depression,322580,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Howard2018dep,depression,322580,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Howard2018dep,depression,322580,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Howard2018dep,depression,322580,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Howard2018dep,depression,322580,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Howard2018dep,depression,322580,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Liu2019smkint,Smoking initiation,632802,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Liu2019smkint,Smoking initiation,632802,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Liu2019smkint,Smoking initiation,632802,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Liu2019smkint,Smoking initiation,632802,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Liu2019smkint,Smoking initiation,632802,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Liu2019smkint,Smoking initiation,632802,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Okada2014rartis,Rheumatoid Arthritis,58284,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Okada2014rartis,Rheumatoid Arthritis,58284,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Okada2014rartis,Rheumatoid Arthritis,58284,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Okada2014rartis,Rheumatoid Arthritis,58284,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Okada2014rartis,Rheumatoid Arthritis,58284,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Okada2014rartis,Rheumatoid Arthritis,58284,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Nalls2019pd,Parkinsons Disease,1474097,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Nalls2019pd,Parkinsons Disease,1474097,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Nalls2019pd,Parkinsons Disease,1474097,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Nalls2019pd,Parkinsons Disease,1474097,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Nalls2019pd,Parkinsons Disease,1474097,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Nalls2019pd,Parkinsons Disease,1474097,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Nicolas2018als,ALS,80610,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Nicolas2018als,ALS,80610,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Nicolas2018als,ALS,80610,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Nicolas2018als,ALS,80610,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Nicolas2018als,ALS,80610,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Nicolas2018als,ALS,80610,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Ligthart2018crp,CRP,204402,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Ligthart2018crp,CRP,204402,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Ligthart2018crp,CRP,204402,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
@@ -155,54 +155,54 @@ Betham2015lupus,Lupus,23210,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Betham2015lupus,Lupus,23210,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Betham2015lupus,Lupus,23210,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Betham2015lupus,Lupus,23210,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Patsopoulos2019multscler,Multiple Sclerosis,115803,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Patsopoulos2019multscler,Multiple Sclerosis,115803,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Patsopoulos2019multscler,Multiple Sclerosis,115803,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Patsopoulos2019multscler,Multiple Sclerosis,115803,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Patsopoulos2019multscler,Multiple Sclerosis,115803,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Patsopoulos2019multscler,Multiple Sclerosis,115803,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Malik2018as,Stroke,446696,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Malik2018as,Stroke,446696,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Malik2018as,Stroke,446696,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Malik2018as,Stroke,446696,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Malik2018as,Stroke,446696,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Malik2018as,Stroke,446696,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Malik2018as,Any stroke,446696,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Malik2018as,Any stroke,446696,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Malik2018as,Any stroke,446696,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Malik2018as,Any stroke,446696,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Malik2018as,Any stroke,446696,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Malik2018as,Any stroke,446696,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Wuttke2019egfr,eGFR,765286,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Wuttke2019egfr,eGFR,765286,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Wuttke2019egfr,eGFR,765286,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Wuttke2019egfr,eGFR,765286,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Wuttke2019egfr,eGFR,765286,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Wuttke2019egfr,eGFR,765286,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Wuttke2019ckd,CKD,659525,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Wuttke2019ckd,CKD,659525,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Wuttke2019ckd,CKD,659525,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Wuttke2019ckd,CKD,659525,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Wuttke2019ckd,CKD,659525,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Wuttke2019ckd,CKD,659525,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Nikpay2015cad,coronary artery disease,184305,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Nikpay2015cad,coronary artery disease,184305,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Nikpay2015cad,coronary artery disease,184305,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Nikpay2015cad,coronary artery disease,184305,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Nikpay2015cad,coronary artery disease,184305,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Nikpay2015cad,coronary artery disease,184305,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Shah2020heartfailure,Heart Failure,977323,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Shah2020heartfailure,Heart Failure,977323,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Shah2020heartfailure,Heart Failure,977323,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Shah2020heartfailure,Heart Failure,977323,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Shah2020heartfailure,Heart Failure,977323,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Shah2020heartfailure,Heart Failure,977323,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Shah2020heartfailure,Heart failure,977323,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Shah2020heartfailure,Heart failure,977323,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Shah2020heartfailure,Heart failure,977323,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Shah2020heartfailure,Heart failure,977323,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Shah2020heartfailure,Heart failure,977323,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Shah2020heartfailure,Heart failure,977323,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Olafsdottir2020asthma,Asthma,771388,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Olafsdottir2020asthma,Asthma,771388,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Olafsdottir2020asthma,Asthma,771388,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Olafsdottir2020asthma,Asthma,771388,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Olafsdottir2020asthma,Asthma,771388,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Olafsdottir2020asthma,Asthma,771388,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Allen2020ipf,IPF,11259,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Allen2020ipf,IPF,11259,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Allen2020ipf,IPF,11259,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Allen2020ipf,IPF,11259,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Allen2020ipf,IPF,11259,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Allen2020ipf,IPF,11259,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Linner2019risk,Risk tolerance,466571,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Linner2019risk,Risk tolerance,466571,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Linner2019risk,Risk tolerance,466571,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
@@ -215,45 +215,75 @@ Demontis2018adhd,ADHD,53293,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Demontis2018adhd,ADHD,53293,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Demontis2018adhd,ADHD,53293,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Demontis2018adhd,ADHD,53293,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Grove2019asd,ASD,46351,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Grove2019asd,ASD,46351,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Grove2019asd,ASD,46351,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Grove2019asd,ASD,46351,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Grove2019asd,ASD,46351,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Grove2019asd,ASD,46351,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Ripke2014scz,Schizophrenia,77096,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Ripke2014scz,Schizophrenia,77096,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Ripke2014scz,Schizophrenia,77096,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Ripke2014scz,Schizophrenia,77096,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Ripke2014scz,Schizophrenia,77096,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Ripke2014scz,Schizophrenia,77096,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Stahl2019bip,Bipolar Disorder,51710,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Stahl2019bip,Bipolar Disorder,51710,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Stahl2019bip,Bipolar Disorder,51710,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Stahl2019bip,Bipolar Disorder,51710,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Stahl2019bip,Bipolar Disorder,51710,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Stahl2019bip,Bipolar Disorder,51710,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Astel2016rbc,RBC,173480,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Astel2016rbc,RBC,173480,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Astel2016rbc,RBC,173480,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Astel2016rbc,RBC,173480,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Astel2016rbc,RBC,173480,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Astel2016rbc,RBC,173480,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Astel2016wbc,WBC,173480,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Astel2016wbc,WBC,173480,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Astel2016wbc,WBC,173480,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Astel2016wbc,WBC,173480,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Astel2016wbc,WBC,173480,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Astel2016wbc,WBC,173480,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Astel2016plt,PLT,173480,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Astel2016plt,PLT,173480,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Astel2016plt,PLT,173480,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Astel2016plt,PLT,173480,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Astel2016plt,PLT,173480,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Astel2016plt,PLT,173480,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Astel2016rbc,Red blood cell count,173480,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Astel2016rbc,Red blood cell count,173480,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Astel2016rbc,Red blood cell count,173480,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Astel2016rbc,Red blood cell count,173480,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Astel2016rbc,Red blood cell count,173480,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Astel2016rbc,Red blood cell count,173480,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Astel2016wbc,White blood cell count,173480,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Astel2016wbc,White blood cell count,173480,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Astel2016wbc,White blood cell count,173480,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Astel2016wbc,White blood cell count,173480,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Astel2016wbc,White blood cell count,173480,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Astel2016wbc,White blood cell count,173480,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Astel2016plt,Platelet count,173480,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Astel2016plt,Platelet count,173480,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Astel2016plt,Platelet count,173480,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Astel2016plt,Platelet count,173480,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Astel2016plt,Platelet count,173480,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Astel2016plt,Platelet count,173480,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Mills2021afb,Age at first birth,542901,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Mills2021afb,Age at first birth,542901,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Mills2021afb,Age at first birth,542901,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 Mills2021afb,Age at first birth,542901,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Mills2021afb,Age at first birth,542901,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Mills2021afb,Age at first birth,542901,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506

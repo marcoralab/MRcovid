@@ -83,6 +83,9 @@ VCbudh	EWUEyw	covidhgi2020C2v5alleur	Patsopoulos2019multscler	5e-8	TRUE	0	NA	NA
 QkzK6j	xAujha	covidhgi2020A2v5alleur	Malik2018as	5e-8	TRUE	0	NA	NA
 eNvZIu	b0RQSa	covidhgi2020B2v5alleur	Malik2018as	5e-8	TRUE	0	NA	NA
 2PPEj2	hHDmfg	covidhgi2020C2v5alleur	Malik2018as	5e-8	TRUE	0	NA	NA
+0JB0uu	juOR5n	covidhgi2020A2v5alleur	Malik2018ais	5e-8	TRUE	0	NA	NA
+YAfyKp	VJ0syx	covidhgi2020B2v5alleur	Malik2018ais	5e-8	TRUE	0	NA	NA
+FRqzgF	idI0FV	covidhgi2020C2v5alleur	Malik2018ais	5e-8	TRUE	0	NA	NA
 tcCIf6	o8EtiK	covidhgi2020A2v5alleur	Wuttke2019egfr	5e-8	TRUE	0	NA	NA
 QdGDtn	P4slTg	covidhgi2020B2v5alleur	Wuttke2019egfr	5e-8	TRUE	0	NA	NA
 jlOqz9	P4DQxn	covidhgi2020C2v5alleur	Wuttke2019egfr	5e-8	TRUE	0	NA	NA

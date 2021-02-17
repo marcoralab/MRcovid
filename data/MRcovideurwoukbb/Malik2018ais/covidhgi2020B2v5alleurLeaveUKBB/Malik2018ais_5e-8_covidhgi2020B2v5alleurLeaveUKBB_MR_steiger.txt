@@ -1,0 +1,2 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+Fto6i8	tXiSIh	Malik2018ais	covidhgi2020B2v5alleurLeaveUKBB	0.0021542764809426877	2.5524833959222665e-4	TRUE	2.8453262755944174e-71	FALSE	5e-8

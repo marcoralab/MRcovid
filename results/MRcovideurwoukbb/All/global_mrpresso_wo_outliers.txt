@@ -2,6 +2,9 @@ id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pv
 NL4XsC	9RTVus	covidhgi2020A2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	TRUE	0	NA	NA
 4POekY	So2Tn3	covidhgi2020B2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	TRUE	0	NA	NA
 elQ72X	xbgc9V	covidhgi2020C2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	TRUE	0	NA	NA
+R1zIIA	Z5Al7O	covidhgi2020A2v5alleurLeaveUKBB	Mahajan2018t2d	5e-8	TRUE	1	227.9565551809731	0.0527
+rIIfWH	9EvMcc	covidhgi2020B2v5alleurLeaveUKBB	Mahajan2018t2d	5e-8	TRUE	1	230.3575047158267	0.041
+Jxl8KZ	y5cSDl	covidhgi2020C2v5alleurLeaveUKBB	Mahajan2018t2d	5e-8	TRUE	1	226.90930729119032	0.056
 NOr5mG	XQmntx	covidhgi2020A2v5alleurLeaveUKBB	Willer2013hdl	5e-8	TRUE	0	NA	NA
 FSbLje	Xsh8SE	covidhgi2020B2v5alleurLeaveUKBB	Willer2013hdl	5e-8	TRUE	0	NA	NA
 AZTyY8	JYSeuq	covidhgi2020C2v5alleurLeaveUKBB	Willer2013hdl	5e-8	TRUE	0	NA	NA
@@ -80,6 +83,9 @@ kqCST8	tft4Q0	covidhgi2020C2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	TRUE
 Ju0mIn	4HLxN2	covidhgi2020A2v5alleurLeaveUKBB	Malik2018as	5e-8	TRUE	0	NA	NA
 wsNwFB	6pabuF	covidhgi2020B2v5alleurLeaveUKBB	Malik2018as	5e-8	TRUE	0	NA	NA
 e3Lo3M	sSB98x	covidhgi2020C2v5alleurLeaveUKBB	Malik2018as	5e-8	TRUE	0	NA	NA
+OloG0w	ZRonET	covidhgi2020A2v5alleurLeaveUKBB	Malik2018ais	5e-8	TRUE	0	NA	NA
+Fto6i8	tXiSIh	covidhgi2020B2v5alleurLeaveUKBB	Malik2018ais	5e-8	TRUE	0	NA	NA
+YVRqG5	NAuL46	covidhgi2020C2v5alleurLeaveUKBB	Malik2018ais	5e-8	TRUE	0	NA	NA
 13VbuZ	lCkOQR	covidhgi2020A2v5alleurLeaveUKBB	Wuttke2019egfr	5e-8	TRUE	0	NA	NA
 PkCj1S	zXOmfB	covidhgi2020B2v5alleurLeaveUKBB	Wuttke2019egfr	5e-8	TRUE	0	NA	NA
 PtqBOZ	5bvQbu	covidhgi2020C2v5alleurLeaveUKBB	Wuttke2019egfr	5e-8	TRUE	0	NA	NA
@@ -125,6 +131,3 @@ vfpaPb	fqhwy1	covidhgi2020B2v5alleurLeaveUKBB	Astel2016plt	5e-8	TRUE	0	NA	NA
 xodPH2	0WS8Hs	covidhgi2020A2v5alleurLeaveUKBB	Mills2021afb	5e-8	TRUE	0	NA	NA
 UJJLVK	4DxtqJ	covidhgi2020B2v5alleurLeaveUKBB	Mills2021afb	5e-8	TRUE	0	NA	NA
 LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	TRUE	0	NA	NA
-R1zIIA	Z5Al7O	covidhgi2020A2v5alleurLeaveUKBB	Mahajan2018t2d	5e-8	TRUE	1	227.9565551809731	0.0527
-rIIfWH	9EvMcc	covidhgi2020B2v5alleurLeaveUKBB	Mahajan2018t2d	5e-8	TRUE	1	230.3575047158267	0.041
-Jxl8KZ	y5cSDl	covidhgi2020C2v5alleurLeaveUKBB	Mahajan2018t2d	5e-8	TRUE	1	226.90930729119032	0.056
