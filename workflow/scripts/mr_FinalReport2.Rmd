@@ -45,17 +45,17 @@ library(ggallin)
 library(ggpubr)
 library(qvalue)
 library(here)
-source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
-
 ```
 
 ```{r sandbox, eval=F}
 model <- "MRcovideurwoukbb"
 # model <- "MRcovideur"
 DATE = Sys.Date()
-DATE = "2021-01-15"
+DATE = "2021-02-15"
 rwd = "/sc/arion/projects/LOAD/shea/Projects/MRcovid"
 setwd(rwd)
+
+source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
 
 MR_results.path = glue("results/{model}/All/MRresults.txt")
 MRdat.path = glue("results/{model}/All/mrpresso_MRdat.csv")
@@ -160,14 +160,16 @@ power <- read_tsv(power.path) %>%
          F = round(F, 2),
          Power = round(Power, 2))
 
-rg <- read_tsv(rg.path) %>% 
+rg.raw <- read_tsv(rg.path) %>% 
   rename(se_rg = se, rg.p = p) %>%
   mutate(rg.lci = rg - (1.96 * se_rg), 
          rg.uci = rg + (1.96 * se_rg), 
          p1 = str_replace(p1, "\\.sumstats.gz", ""), 
          p1 = str_replace(p1, "data/formated/ldsc/", ""), 
          p2 = str_replace(p2, "data/formated/ldsc/", ""), 
-         p2 = str_replace(p2, ".sumstats.gz", "")) %>%
+         p2 = str_replace(p2, ".sumstats.gz", "")) 
+
+rg <- rg.raw  %>%
   filter(p1 %in% exposures) %>% 
   filter(p2 %in% outcomes) %>% 
   mutate(rg.fdr = p.adjust(rg.p, "fdr")) %>% 
@@ -175,6 +177,10 @@ rg <- read_tsv(rg.path) %>%
   left_join(select(exposures_outcomes, exposures.name, outcomes.name, exposure.name, outcome.name), 
             by = c("p1" = "exposures.name", "p2" = "outcomes.name"))
 
+rg_covid <- rg.raw %>%
+  filter(p1 %in% outcomes) %>% 
+  filter(p2 %in% outcomes) %>% 
+  nanny::lower_triangular(p1, p2, rg)
 ```
 
 ## Genetic Correlations 
@@ -188,6 +194,9 @@ rg %>%
          se_rg = signif(se_rg, 2),
         ) %>%
 write_csv(., glue("docs/{model}_LDSC_rgRes_{DATE}.csv"))
+
+rg_covid %>% 
+  select(p1, p2, nsnps, rg, se_rg, rg.lci, rg.uci, z, rg.p) 
 ```
 
 ## Harmonized exposure-outcome SNP dataset

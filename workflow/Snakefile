@@ -3,6 +3,7 @@
 
 from datetime import date
 today_date = date.today()
+# shell.prefix('module load plink/1.90 R/3.6.3; ')
 shell.prefix('module load plink/1.90 R/3.6.3; ')
 
 # subworkflow test:

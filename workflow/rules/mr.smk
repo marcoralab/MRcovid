@@ -6,7 +6,8 @@ import pandas as pd
 from datetime import date
 RWD = os.getcwd()
 
-shell.prefix('module load R/3.6.3; ')
+# shell.prefix('module load R/3.6.3; ')
+shell.prefix('module load R/4.0.3; ')
 
 
 REF = config['REF']

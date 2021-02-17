@@ -5,7 +5,8 @@ from itertools import product
 import pandas as pd
 from datetime import date
 
-shell.prefix('module list R/3.6.3; ')
+# shell.prefix('module list R/3.6.3; ')
+shell.prefix('module load R/4.0.3; ')
 
 today_date = date.today()
 traits = pd.read_csv(config['TRAITS_PATH'])
