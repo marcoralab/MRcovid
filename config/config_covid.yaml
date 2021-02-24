@@ -2,7 +2,6 @@
 # snakejob -s workflow/rules/mr.smk --configfile config/config_covid.yaml --use-conda -j 1000 --keep-going --notemp
 
 PROJECT: "MRcovid"
-RLIB: "renv/library/R-3.6/x86_64-pc-linux-gnu"
 
 REF: 'data/raw/EUR_All_Chr'
 clumpr2: 0.001 ## Default in TwoSample MR

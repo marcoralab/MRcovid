@@ -1,8 +1,7 @@
-# snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml -j 1 --use-conda --keep-going --notemp
+# snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml --use-conda -j 1 --keep-going --notemp
 # snakejob -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml --use-conda -j 1000 --keep-going --notemp
 
 PROJECT: "MRcovideurwoukbb"
-RLIB: # "renv/library/R-3.6/x86_64-pc-linux-gnu"
 
 REF: 'data/raw/EUR_All_Chr'
 clumpr2: 0.001 ## Default in TwoSample MR
@@ -36,7 +35,7 @@ missing: [
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
-   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
+   # {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018ais", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020A2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
@@ -83,7 +82,7 @@ missing: [
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
-   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
+   # {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018ais", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020B2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
@@ -130,7 +129,7 @@ missing: [
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
-   {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
+   # {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018as", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Malik2018ais", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
    {"Project" : "MRcovideurwoukbb", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020C2v5alleurLeaveUKBB", "Pthreshold" : "5e-6"},
@@ -656,23 +655,23 @@ EXPOSURES:
       Z: Z
       N: N
       TRAIT: TRAIT
-  -
-    CODE: Malik2018as
-    NAME: 'Stroke'
-    FILE: data/raw/GWAS/Malik2018as.chrall.CPRA_b37.tsv.gz
-    COLUMNS:
-      SNP: DBSNP_ID
-      CHROM: CHROM
-      POS: POS
-      REF: REF
-      ALT: ALT
-      AF: AF
-      BETA: BETA
-      SE: SE
-      P: P
-      Z: Z
-      N: N
-      TRAIT: TRAIT
+  # -
+  #   CODE: Malik2018as
+  #   NAME: 'Stroke'
+  #   FILE: data/raw/GWAS/Malik2018as.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
   -
     CODE: Malik2018ais
     NAME: 'Ischemic Stroke'
