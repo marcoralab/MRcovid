@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-RAbNr7	mR9TX1	covidhgi2020A2v5alleurLeaveUKBB	Stahl2019bip	5e-8	TRUE	0	NA	NA
+IV9Voc	XlTcaW	covidhgi2020A2v5alleurLeaveUKBB	Stahl2019bip	5e-8	TRUE	0	NA	NA

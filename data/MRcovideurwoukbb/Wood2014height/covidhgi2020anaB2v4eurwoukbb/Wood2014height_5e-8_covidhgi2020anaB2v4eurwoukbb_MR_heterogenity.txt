@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-f21pK1	SGzEpe	covidhgi2020anaB2v4eurwoukbb	Wood2014height	5e-8	FALSE	MR Egger	419.7984488110896	361	0.01768531330161272
-f21pK1	SGzEpe	covidhgi2020anaB2v4eurwoukbb	Wood2014height	5e-8	FALSE	Inverse variance weighted	419.99724013093714	362	0.019016758784354607

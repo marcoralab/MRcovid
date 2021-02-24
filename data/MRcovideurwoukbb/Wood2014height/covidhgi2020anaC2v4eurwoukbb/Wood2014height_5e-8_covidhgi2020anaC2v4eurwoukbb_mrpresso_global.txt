@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-ImIaYB	7tJ05s	covidhgi2020anaC2v4eurwoukbb	Wood2014height	5e-8	FALSE	0	355.4615343097993	0.63232

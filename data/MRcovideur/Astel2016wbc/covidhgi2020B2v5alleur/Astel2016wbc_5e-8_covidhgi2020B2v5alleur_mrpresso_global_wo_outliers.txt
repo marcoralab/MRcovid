@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-OL2FSl	yqlNrN	covidhgi2020B2v5alleur	Astel2016wbc	5e-8	TRUE	2	172.1590859695588	0.2501
+sOv1HS	iqlpWK	covidhgi2020B2v5alleur	Astel2016wbc	5e-8	TRUE	1	185.07142731562308	0.0954

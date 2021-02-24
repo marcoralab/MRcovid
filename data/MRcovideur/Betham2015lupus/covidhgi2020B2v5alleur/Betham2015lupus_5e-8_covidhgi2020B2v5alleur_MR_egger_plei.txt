@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
-FDsck6	Mq6wJe	covidhgi2020B2v5alleur	Betham2015lupus	5e-8	FALSE	0.929722658859709	-0.00558591712873023	0.00913687365894212	0.5444204851237595
+lJhGHH	q5T3kJ	covidhgi2020B2v5alleur	Betham2015lupus	5e-8	FALSE	0.929722658859709	-0.005585917128730229	0.00913687365894212	0.5444204851237595

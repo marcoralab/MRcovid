@@ -1,9 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	FALSE	Inverse variance weighted (fixed effects)	45	1	0.24211331677535183	0.08450877008408017	0.004170764013365237
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	FALSE	Weighted median	45	1	0.1031976194015182	0.12795244955187118	0.41993673048530045
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	FALSE	Weighted mode	45	1	0.04821674412209731	0.11436308587363263	0.6753616563957443
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	FALSE	MR Egger	45	1	0.02258952518592804	0.1742431517120735	0.8974528915829219
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	TRUE	Inverse variance weighted (fixed effects)	44	1	0.20628992391180428	0.0848021012693771	0.014990689131682397
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	TRUE	Weighted median	44	1	0.1024203818389621	0.1356862367267756	0.45034948830844707
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	TRUE	Weighted mode	44	1	0.03815762455968619	0.11854174207797875	0.749094279938633
-MoVcM0	JkHkUl	covidhgi2020anaB2v4eurwoukbb	Ligthart2018crp	5e-8	TRUE	MR Egger	44	1	0.08570126053031536	0.15002952983154116	0.570888501918501

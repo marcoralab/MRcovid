@@ -1,2 +1,0 @@
-p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
-data/formated/ldsc/covidhgi2020B2v5alleur.sumstats.gz	data/formated/ldsc/covidhgi2020C2v5alleurLeaveUKBB.sumstats.gz	0.9137	0.1116	8.1842	2.7409e-16	0.0014	0.0003	1.0165	0.0065	0.3261	0.0055	1136339

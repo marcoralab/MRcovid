@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-K6lzyT	ykO4lx	Evangelou2018dbp	covidhgi2020A2v5alleur	0.046372101831625274	0.03277406324177298	TRUE	0	TRUE	5e-8
-K6lzyT	ykO4lx	Evangelou2018dbp	covidhgi2020A2v5alleur	0.04814799282109344	0.03547731723988647	TRUE	0	FALSE	5e-8
+LjLIkQ	YBOTvo	Evangelou2018dbp	covidhgi2020A2v5alleur	0.046372101831625274	0.03277406324177298	TRUE	5.834814488795318e-138	TRUE	5e-8
+LjLIkQ	YBOTvo	Evangelou2018dbp	covidhgi2020A2v5alleur	0.04814799282109344	0.03547731723988647	TRUE	4.579776312390375e-114	FALSE	5e-8

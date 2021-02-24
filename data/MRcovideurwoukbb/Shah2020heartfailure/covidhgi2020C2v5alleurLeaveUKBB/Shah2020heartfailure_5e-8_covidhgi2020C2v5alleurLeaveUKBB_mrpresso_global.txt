@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-6CzoLq	B5sLgG	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	FALSE	1	94.43413176774041	<1e-04
+31KjKq	5tD43h	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	FALSE	1	94.43413176774041	<1e-04

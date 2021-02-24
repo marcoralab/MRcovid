@@ -1,5 +1,5 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-6CzoLq	B5sLgG	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	FALSE	MR Egger	72.4804268549298	8	1.573677560733984e-12
-6CzoLq	B5sLgG	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	FALSE	Inverse variance weighted	78.60359090375117	9	3.0593968368784316e-13
-6CzoLq	B5sLgG	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	TRUE	MR Egger	3.9163433197085427	7	0.7893610801335201
-6CzoLq	B5sLgG	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	TRUE	Inverse variance weighted	4.5215620261623215	8	0.8072720370312466
+31KjKq	5tD43h	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	FALSE	MR Egger	72.4804268549298	8	1.573677560733984e-12
+31KjKq	5tD43h	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	FALSE	Inverse variance weighted	78.60359090375117	9	3.0593968368784316e-13
+31KjKq	5tD43h	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	TRUE	MR Egger	3.9163433197085427	7	0.7893610801335201
+31KjKq	5tD43h	covidhgi2020C2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	TRUE	Inverse variance weighted	4.5215620261623215	8	0.8072720370312466

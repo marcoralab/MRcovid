@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-t6iOIv	xoGvDJ	covidhgi2020C2v5alleur	Nicolas2018als	5e-8	TRUE	0	NA	NA
+XpbCDD	hcq4Up	covidhgi2020C2v5alleur	Nicolas2018als	5e-8	TRUE	1	16.698106390061636	0.0601

@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-ctCf5L	2jvawt	Day2018sociso	covidhgi2020A2v5alleur	0.0012764604247813773	4.7080484754677876e-4	TRUE	2.220446049250313e-16	FALSE	5e-8
+ixnL9C	emvIHR	Day2018sociso	covidhgi2020A2v5alleur	0.0012764604247813773	4.7080484754677876e-4	TRUE	2.378919867809463e-16	FALSE	5e-8

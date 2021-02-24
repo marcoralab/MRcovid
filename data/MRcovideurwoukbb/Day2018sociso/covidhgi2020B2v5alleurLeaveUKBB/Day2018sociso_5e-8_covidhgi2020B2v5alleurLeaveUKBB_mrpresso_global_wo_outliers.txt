@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-mq7MLE	XKNCd2	covidhgi2020B2v5alleurLeaveUKBB	Day2018sociso	5e-8	TRUE	0	NA	NA
+GU8KMI	0QCcta	covidhgi2020B2v5alleurLeaveUKBB	Day2018sociso	5e-8	TRUE	0	NA	NA

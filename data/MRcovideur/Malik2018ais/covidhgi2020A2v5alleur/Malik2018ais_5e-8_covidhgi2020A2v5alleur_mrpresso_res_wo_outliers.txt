@@ -1,2 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-0JB0uu	juOR5n	covidhgi2020A2v5alleur	Malik2018ais	5e-8	MR-PRESSO_wo_outliers	NA	NA	NA	NA	NA	NA
+QKCgx3	zkKKLn	covidhgi2020A2v5alleur	Malik2018ais	5e-8	MR-PRESSO_wo_outliers	8	Raw	-0.15137833287955918	0.21958563415536908	-0.6893817688112082	0.5127795885924091
+QKCgx3	zkKKLn	covidhgi2020A2v5alleur	Malik2018ais	5e-8	MR-PRESSO_wo_outliers	8	Outlier-corrected	NA	NA	NA	NA

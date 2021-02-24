@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-elQ72X	xbgc9V	covidhgi2020C2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	MR-PRESSO	504	Raw	0.06774889570007867	0.029830553939492247	2.271124292143528	0.023561236549018066
-elQ72X	xbgc9V	covidhgi2020C2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	MR-PRESSO	504	Outlier-corrected	NA	NA	NA	NA
+3Mtu9Q	xpM9cv	covidhgi2020C2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	MR-PRESSO	504	Raw	0.06774889570007868	0.02983055393949224	2.2711242921435293	0.023561236549018007
+3Mtu9Q	xpM9cv	covidhgi2020C2v5alleurLeaveUKBB	Yengo2018bmi	5e-8	MR-PRESSO	504	Outlier-corrected	NA	NA	NA	NA

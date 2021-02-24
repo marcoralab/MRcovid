@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-W2qVL7	uytpcs	covidhgi2020A2v5alleurLeaveUKBB	Wood2014height	5e-8	FALSE	0	381.4720716421975	0.267
+OnB5xU	C6y9hm	covidhgi2020A2v5alleurLeaveUKBB	Wood2014height	5e-8	FALSE	0	381.4720716421975	0.26704

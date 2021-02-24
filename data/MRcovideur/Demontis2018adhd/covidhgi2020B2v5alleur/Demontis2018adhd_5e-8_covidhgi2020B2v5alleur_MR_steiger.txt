@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-k61blG	bUBA29	Demontis2018adhd	covidhgi2020B2v5alleur	0.004043897471358367	5.015913321174396e-4	TRUE	0	FALSE	5e-8
+buFoFZ	iBSrQk	Demontis2018adhd	covidhgi2020B2v5alleur	0.004043897471358367	5.015913321174396e-4	TRUE	5.6142750494271484e-21	FALSE	5e-8

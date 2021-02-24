@@ -1,0 +1,61 @@
+outcome,exposure,outcome.name,exposure.name,pt,nsnp,n_outliers,snp_r2.exposure,snp_r2.outcome,correct_causal_direction,steiger_pval,IVW,qval,MR-Egger,Weighted median,Weighted mode,MRPRESSO.pval,Egger.pval,pass
+covidhgi2020A2v5alleurLeaveUKBB,Yengo2018bmi,"COVID: A2, EUR w/o UKB",BMI,5e-8,504,0,0.05346677579354122,0.036531477716075234,TRUE,3.4250134753173975e-162,"0.33
+(0.086)",0.002,"0.33
+(0.23) ","0.33
+(0.15)*","0.22
+(0.22) ",0.11416,0.99,TRUE
+covidhgi2020A2v5alleurLeaveUKBB,Nikpay2015cad,"COVID: A2, EUR w/o UKB",Coronary artery disease,5e-8,39,1,0.0168844185573832,0.002976462254591728,TRUE,1.4769787499034487e-199,"-0.16
+(0.058)",0.044,"-0.27
+(0.14).","-0.22
+(0.09)*","-0.22
+(0.091)*",0.3576,0.4,TRUE
+covidhgi2020A2v5alleurLeaveUKBB,Lee2018educ,"COVID: A2, EUR w/o UKB",Educational attainment,5e-8,303,1,0.01913233453429062,0.02279835208106927,FALSE,4.760637925476058e-18,"-0.57
+(0.14)",9.50e-04,"-1.1
+(0.57)*","-0.54
+(0.21)**","-0.5
+(0.53) ",0.1002,0.29,TRUE
+covidhgi2020A2v5alleurLeaveUKBB,Allen2020ipf,"COVID: A2, EUR w/o UKB",Idiopathic pulmonary fibrosis,5e-8,15,5,0.04992489419397448,9.675778916301718e-4,TRUE,3.363204924305638e-95,"0.091
+(0.034)",0.051,"0.085
+(0.13) ","0.069
+(0.048) ","0.059
+(0.081) ",0.5465,0.96,FALSE
+covidhgi2020A2v5alleurLeaveUKBB,Betham2015lupus,"COVID: A2, EUR w/o UKB",Lupus,5e-8,42,0,0.2216556681990348,0.00409847672055217,TRUE,0,"-0.045
+(0.016)",0.046,"-0.047
+(0.039) ","-0.048
+(0.024)*","-0.045
+(0.033) ",0.1129,0.95,TRUE
+covidhgi2020B2v5alleurLeaveUKBB,Mills2021afb,"COVID: B2, EUR w/o UKB",Age at first birth,5e-8,66,0,0.004772728878750288,0.0031256748829369325,TRUE,4.7401268928893275e-17,"-0.13
+(0.048)",0.046,"-0.42
+(0.21)*","-0.13
+(0.07).","-0.12
+(0.14) ",0.4931,0.16,TRUE
+covidhgi2020B2v5alleurLeaveUKBB,Yengo2018bmi,"COVID: B2, EUR w/o UKB",BMI,5e-8,504,0,0.05346677579354122,0.021113443177882434,TRUE,0,"0.27
+(0.066)",9.50e-04,"0.25
+(0.18) ","0.15
+(0.12) ","0.048
+(0.2) ",0.0494,0.93,FALSE
+covidhgi2020B2v5alleurLeaveUKBB,Allen2020ipf,"COVID: B2, EUR w/o UKB",Idiopathic pulmonary fibrosis,5e-8,15,4,0.05426960990573338,8.835771984037739e-4,TRUE,9.877809431696627e-107,"0.1
+(0.025)",9.50e-04,"0.04
+(0.099) ","0.1
+(0.033)**","0.096
+(0.048).",0.671,0.53,TRUE
+covidhgi2020B2v5alleurLeaveUKBB,Nalls2019pd,"COVID: B2, EUR w/o UKB",Parkinsons disease,5e-8,19,0,0.02680533692503822,0.0014116925422601033,TRUE,0,"0.14
+(0.037)",0.003,"0.14
+(0.11) ","0.11
+(0.054)*","0.049
+(0.087) ",0.095,0.96,TRUE
+covidhgi2020C2v5alleurLeaveUKBB,Wood2014height,"COVID: C2, EUR w/o UKB",Height,5e-8,364,0,0.11773469484951841,0.002632225889264811,TRUE,0,"0.076
+(0.018)",9.50e-04,"0.13
+(0.049)**","0.086
+(0.029)**","0.098
+(0.054).",0.66604,0.21,TRUE
+covidhgi2020C2v5alleurLeaveUKBB,Allen2020ipf,"COVID: C2, EUR w/o UKB",Idiopathic pulmonary fibrosis,5e-8,15,4,0.05426960990573338,1.3440073742817103e-4,TRUE,1.0505714774140099e-125,"0.034
+(0.011)",0.015,"-0.0043
+(0.046) ","0.042
+(0.014)**","0.042
+(0.019).",0.4073,0.4,TRUE
+covidhgi2020C2v5alleurLeaveUKBB,Betham2015lupus,"COVID: C2, EUR w/o UKB",Lupus,5e-8,42,0,0.2216556681990348,4.545343583497677e-4,TRUE,0,"-0.014
+(0.0053)",0.062,"-0.01
+(0.014) ","-0.0093
+(0.0081) ","-0.0085
+(0.013) ",0.044,0.78,FALSE

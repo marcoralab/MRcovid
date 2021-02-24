@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-DrGBSN	Zynj4z	Allen2020ipf	covidhgi2020B2v5alleurLeaveUKBB	0.05426960990573338	8.835771984037739e-4	TRUE	0	TRUE	5e-8
-DrGBSN	Zynj4z	Allen2020ipf	covidhgi2020B2v5alleurLeaveUKBB	0.12382685286484957	0.0037707204453459315	TRUE	0	FALSE	5e-8
+k4vvpi	bXGMy3	Allen2020ipf	covidhgi2020B2v5alleurLeaveUKBB	0.05426960990573338	8.835771984037739e-4	TRUE	9.877809431696627e-107	TRUE	5e-8
+k4vvpi	bXGMy3	Allen2020ipf	covidhgi2020B2v5alleurLeaveUKBB	0.12382685286484957	0.0037707204453459315	TRUE	9.9129649508677e-230	FALSE	5e-8

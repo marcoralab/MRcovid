@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-awTaSX	dSPItR	covidhgi2020B2v5alleurLeaveUKBB	Nicolas2018als	5e-8	FALSE	0	4.449802332849926	0.6905
+rcRtH2	zuz7mf	covidhgi2020B2v5alleurLeaveUKBB	Nicolas2018als	5e-8	FALSE	0	7.928840259640361	0.3833

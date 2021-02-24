@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-3esPar	ncdOT5	Nicolas2018als	covidhgi2020B2v5alleur	0.005148088959459539	2.0112145743237666e-4	TRUE	0	FALSE	5e-8
+TRhGM9	NwyB43	Nicolas2018als	covidhgi2020B2v5alleur	0.005148088959459541	2.011214574323766e-4	TRUE	6.692484862721495e-58	FALSE	5e-8

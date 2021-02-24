@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-UJJLVK	4DxtqJ	covidhgi2020B2v5alleurLeaveUKBB	Mills2021afb	5e-8	TRUE	0	NA	NA
+CQXGnb	ckqVYB	covidhgi2020B2v5alleurLeaveUKBB	Mills2021afb	5e-8	TRUE	0	NA	NA

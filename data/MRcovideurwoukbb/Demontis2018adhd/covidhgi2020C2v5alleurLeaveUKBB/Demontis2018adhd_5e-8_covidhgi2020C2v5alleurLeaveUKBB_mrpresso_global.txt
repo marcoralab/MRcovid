@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-dZbyAx	bUEW0f	covidhgi2020C2v5alleurLeaveUKBB	Demontis2018adhd	5e-8	FALSE	0	16.216834940022025	0.1154
+rDilRL	jpPCM6	covidhgi2020C2v5alleurLeaveUKBB	Demontis2018adhd	5e-8	FALSE	0	16.21683494002202	0.1296

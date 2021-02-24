@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-ongEme	bsMP9m	Wood2014height	covidhgi2020A2v5alleur	0.11773469484951841	0.021492447309025383	TRUE	0	FALSE	5e-8
+7WJMtG	rNJ2m2	Wood2014height	covidhgi2020A2v5alleur	0.11773469484951841	0.021492447309025383	TRUE	0	FALSE	5e-8

@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-gW1eO7	kQPDlA	covidhgi2020C2v5alleur	Ligthart2018crp	5e-8	TRUE	1	52.92519584918638	0.2597
+ZavoHz	0kHhfW	covidhgi2020C2v5alleur	Ligthart2018crp	5e-8	TRUE	1	52.92519584918637	0.2671

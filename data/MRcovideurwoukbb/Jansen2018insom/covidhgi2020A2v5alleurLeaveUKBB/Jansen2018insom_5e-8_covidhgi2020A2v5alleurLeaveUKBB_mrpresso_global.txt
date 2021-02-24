@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-SW0nx0	kWzruE	covidhgi2020A2v5alleurLeaveUKBB	Jansen2018insom	5e-8	FALSE	0	22.834916861423046	0.0818
+x5u4FZ	KKNfdG	covidhgi2020A2v5alleurLeaveUKBB	Jansen2018insom	5e-8	FALSE	0	22.834916861423054	0.0898

@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-4e5bir	QxFuEX	Ligthart2018crp	covidhgi2020B2v5alleur	0.030380839395348115	0.0014520058740028945	TRUE	0	TRUE	5e-8
-4e5bir	QxFuEX	Ligthart2018crp	covidhgi2020B2v5alleur	0.030878815877904423	0.0024058071288024707	TRUE	0	FALSE	5e-8
+QFkT9f	DtCTWr	Ligthart2018crp	covidhgi2020B2v5alleur	0.030380839395348115	0.0014520058740028945	TRUE	0	TRUE	5e-8
+QFkT9f	DtCTWr	Ligthart2018crp	covidhgi2020B2v5alleur	0.030878815877904423	0.0024058071288024707	TRUE	0	FALSE	5e-8

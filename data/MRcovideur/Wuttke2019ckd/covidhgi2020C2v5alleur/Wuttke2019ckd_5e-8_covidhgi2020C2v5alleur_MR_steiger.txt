@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-CfJcZx	iHUlWp	Wuttke2019ckd	covidhgi2020C2v5alleur	0.009889435372081451	8.310453321741689e-5	TRUE	0	FALSE	5e-8
+J7mlyK	zWlxB6	Wuttke2019ckd	covidhgi2020C2v5alleur	0.009889435372081451	8.310453321741689e-5	TRUE	0	FALSE	5e-8

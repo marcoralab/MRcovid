@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-S37ct1	ksZISY	covidhgi2020A2v5alleur	Shah2020heartfailure	5e-8	TRUE	1	11.248179165881583	0.361
+a9epUw	E3eW53	covidhgi2020A2v5alleur	Shah2020heartfailure	5e-8	TRUE	1	11.248179165881583	0.3899

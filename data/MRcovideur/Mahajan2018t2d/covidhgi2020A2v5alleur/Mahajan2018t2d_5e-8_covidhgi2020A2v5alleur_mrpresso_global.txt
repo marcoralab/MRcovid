@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-1HSUQQ	wfWiD8	covidhgi2020A2v5alleur	Mahajan2018t2d	5e-8	FALSE	1	238.60114699272575	0.0255
+47ZMiM	GkcKJJ	covidhgi2020A2v5alleur	Mahajan2018t2d	5e-8	FALSE	1	238.60114699272572	0.0254

@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-XjcSjO	4LZivH	Patsopoulos2019multscler	covidhgi2020B2v5alleurLeaveUKBB	0.11507420419812786	0.003027160166550001	TRUE	0	TRUE	5e-8
-XjcSjO	4LZivH	Patsopoulos2019multscler	covidhgi2020B2v5alleurLeaveUKBB	0.11704304966108163	0.0034923480718399807	TRUE	0	FALSE	5e-8
+XIqsRN	OF6SES	Patsopoulos2019multscler	covidhgi2020B2v5alleurLeaveUKBB	0.11507420419812786	0.0030271601665500004	TRUE	0	TRUE	5e-8
+XIqsRN	OF6SES	Patsopoulos2019multscler	covidhgi2020B2v5alleurLeaveUKBB	0.11704304966108163	0.0034923480718399807	TRUE	0	FALSE	5e-8

@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-C4Nqyy	FB8EQJ	covidhgi2020B2v5alleur	Day2018sociso	5e-8	TRUE	0	NA	NA
+MEEiWe	3VePXt	covidhgi2020B2v5alleur	Day2018sociso	5e-8	TRUE	0	NA	NA

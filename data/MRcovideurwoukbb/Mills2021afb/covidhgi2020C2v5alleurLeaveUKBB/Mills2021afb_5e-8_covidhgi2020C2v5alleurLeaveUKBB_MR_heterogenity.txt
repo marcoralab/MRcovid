@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	MR Egger	81.1215657919162	64	0.07297995786651211
-LuzgP1	MnoX01	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	Inverse variance weighted	81.21366431211142	65	0.08443041647221923
+A0nqBf	O1lzN4	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	MR Egger	81.1215657919162	64	0.07297995786651211
+A0nqBf	O1lzN4	covidhgi2020C2v5alleurLeaveUKBB	Mills2021afb	5e-8	FALSE	Inverse variance weighted	81.21366431211142	65	0.08443041647221923

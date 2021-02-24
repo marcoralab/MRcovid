@@ -1,9 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	FALSE	Inverse variance weighted (fixed effects)	15	2	0.012770184621243148	0.01235053160467034	0.3011461963497201
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	FALSE	Weighted median	15	2	-0.024059023327843453	0.017739275994207607	0.17501730266621776
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	FALSE	Weighted mode	15	2	-0.02607467380941128	0.01699361725613953	0.1472211158805855
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	FALSE	MR Egger	15	2	-0.05653408677602106	0.029763001850092192	0.07991529047427155
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	TRUE	Inverse variance weighted (fixed effects)	13	2	0.04527543396752093	0.01745583345980094	0.009494552041366044
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	TRUE	Weighted median	13	2	0.029304084924281208	0.025969384153699784	0.2591472591639738
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	TRUE	Weighted mode	13	2	0.010496047508162465	0.037945181622839365	0.7867856782226761
-0FAhja	cppLwz	covidhgi2020anaC2v4eurwoukbb	Allen2020ipf	5e-8	TRUE	MR Egger	13	2	-0.06291121402037711	0.10058028591294876	0.5444126846413229

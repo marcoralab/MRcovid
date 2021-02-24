@@ -1,2 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-1WCm3x	pUXX38	covidhgi2020B2v5alleurLeaveUKBB	Xue2018diab	5e-8	TRUE	1	131.76382031448577	0.1641

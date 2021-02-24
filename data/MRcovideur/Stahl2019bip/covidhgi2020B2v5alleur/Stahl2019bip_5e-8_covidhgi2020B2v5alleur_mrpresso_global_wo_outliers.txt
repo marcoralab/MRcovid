@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-IuDV1c	MBOXbt	covidhgi2020B2v5alleur	Stahl2019bip	5e-8	TRUE	0	NA	NA
+hBlAY6	gfLFit	covidhgi2020B2v5alleur	Stahl2019bip	5e-8	TRUE	0	NA	NA

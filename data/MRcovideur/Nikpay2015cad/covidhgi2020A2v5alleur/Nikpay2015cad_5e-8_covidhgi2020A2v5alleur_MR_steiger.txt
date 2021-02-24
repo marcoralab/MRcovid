@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-WG1MFS	oDXYWk	Nikpay2015cad	covidhgi2020A2v5alleur	0.0168844185573832	0.003090277623532089	TRUE	0	TRUE	5e-8
-WG1MFS	oDXYWk	Nikpay2015cad	covidhgi2020A2v5alleur	0.017671996272093475	0.00466340452669728	TRUE	0	FALSE	5e-8
+pechRt	ci1mjZ	Nikpay2015cad	covidhgi2020A2v5alleur	0.0168844185573832	0.003090277623532089	TRUE	3.3333183649224835e-201	TRUE	5e-8
+pechRt	ci1mjZ	Nikpay2015cad	covidhgi2020A2v5alleur	0.017671996272093475	0.00466340452669728	TRUE	4.808531759000981e-153	FALSE	5e-8

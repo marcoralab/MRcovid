@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-h4p4PO	dmVdzJ	covidhgi2020B2v5alleur	Dashti2019slepdur	5e-8	FALSE	2	97.1778032673289	0.0117
+6ILVRr	kpsJGL	covidhgi2020B2v5alleur	Dashti2019slepdur	5e-8	FALSE	2	97.1778032673289	0.0117

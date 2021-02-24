@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-2DOh1I	0fC1lo	covidhgi2020B2v5alleurLeaveUKBB	Kunkle2019load	5e-8	FALSE	0	42.66641978672492	0.01
+OlblPP	sp3lKI	covidhgi2020B2v5alleurLeaveUKBB	Kunkle2019load	5e-8	FALSE	0	42.66641978672493	0.0776

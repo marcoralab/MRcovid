@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-nh8yv9	70x9R0	covidhgi2020C2v5alleur	Ripke2014scz	5e-8	FALSE	0	91.07135057738341	0.1889
+Z9FFuH	OWpcnY	covidhgi2020C2v5alleur	Ripke2014scz	5e-8	FALSE	0	91.07135057738341	0.189

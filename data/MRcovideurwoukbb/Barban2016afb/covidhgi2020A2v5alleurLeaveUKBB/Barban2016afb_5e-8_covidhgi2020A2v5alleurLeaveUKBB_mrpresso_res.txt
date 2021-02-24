@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-wZu7DU	9oHTzM	covidhgi2020A2v5alleurLeaveUKBB	Barban2016afb	5e-8	MR-PRESSO	7	Raw	-2.0071263662385226	0.6427362118313616	-3.122784011997046	0.02051208060005126
-wZu7DU	9oHTzM	covidhgi2020A2v5alleurLeaveUKBB	Barban2016afb	5e-8	MR-PRESSO	7	Outlier-corrected	NA	NA	NA	NA

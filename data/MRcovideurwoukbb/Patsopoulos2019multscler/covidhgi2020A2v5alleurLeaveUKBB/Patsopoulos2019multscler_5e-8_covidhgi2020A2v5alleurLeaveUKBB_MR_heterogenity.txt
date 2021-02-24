@@ -1,5 +1,5 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-L9J8RQ	Stwqgs	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	FALSE	MR Egger	99.58775821082445	68	0.007530826465436466
-L9J8RQ	Stwqgs	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	FALSE	Inverse variance weighted	100.01534767563497	69	0.008679821922499276
-L9J8RQ	Stwqgs	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	TRUE	MR Egger	54.656698531588624	65	0.8162027497600056
-L9J8RQ	Stwqgs	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	TRUE	Inverse variance weighted	54.779787643616025	66	0.8362682547262021
+Ygq2rw	mHKvGn	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	FALSE	MR Egger	99.58775821082448	68	0.007530826465436411
+Ygq2rw	mHKvGn	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	FALSE	Inverse variance weighted	100.01534767563501	69	0.008679821922499211
+Ygq2rw	mHKvGn	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	TRUE	MR Egger	54.656698531588624	65	0.8162027497600056
+Ygq2rw	mHKvGn	covidhgi2020A2v5alleurLeaveUKBB	Patsopoulos2019multscler	5e-8	TRUE	Inverse variance weighted	54.779787643616025	66	0.8362682547262021

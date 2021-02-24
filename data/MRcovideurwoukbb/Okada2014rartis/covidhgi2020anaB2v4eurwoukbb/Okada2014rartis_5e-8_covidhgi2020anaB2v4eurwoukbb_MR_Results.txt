@@ -1,9 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	FALSE	Inverse variance weighted (fixed effects)	45	1	-0.02165964516907056	0.02609801575526115	0.4065757848769807
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	FALSE	Weighted median	45	1	0.009459968349192863	0.0398341187928433	0.8122812820339317
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	FALSE	Weighted mode	45	1	0.0015568666583085644	0.04038424039268059	0.969422485330103
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	FALSE	MR Egger	45	1	-0.0835173634883683	0.06592112451028803	0.2120000612961085
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	TRUE	Inverse variance weighted (fixed effects)	44	1	0.006308316559312582	0.02647827510812473	0.8116910795417229
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	TRUE	Weighted median	44	1	0.015290687734396432	0.0401355271396602	0.7032207771902441
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	TRUE	Weighted mode	44	1	0.0018220966885214018	0.03713205331608047	0.9610901585390041
-pAHhrW	FXpkWR	covidhgi2020anaB2v4eurwoukbb	Okada2014rartis	5e-8	TRUE	MR Egger	44	1	-0.03578045436981691	0.05233615205377754	0.49794070424248216

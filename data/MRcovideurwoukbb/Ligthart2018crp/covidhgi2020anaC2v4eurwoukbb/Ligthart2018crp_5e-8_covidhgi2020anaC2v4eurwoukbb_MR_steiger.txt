@@ -1,3 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-Qjmk7Q	UVJ7E2	Ligthart2018crp	covidhgi2020anaC2v4eurwoukbb	0.030886393378887076	0.0010363140588888846	TRUE	0	TRUE	5e-8
-Qjmk7Q	UVJ7E2	Ligthart2018crp	covidhgi2020anaC2v4eurwoukbb	0.031384369861443384	0.0016270900323314547	TRUE	0	FALSE	5e-8

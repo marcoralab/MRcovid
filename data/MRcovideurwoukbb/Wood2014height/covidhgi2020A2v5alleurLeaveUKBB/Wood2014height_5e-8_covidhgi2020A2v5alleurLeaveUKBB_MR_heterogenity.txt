@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-W2qVL7	uytpcs	covidhgi2020A2v5alleurLeaveUKBB	Wood2014height	5e-8	FALSE	MR Egger	378.7995562650031	362	0.2612062470315347
-W2qVL7	uytpcs	covidhgi2020A2v5alleurLeaveUKBB	Wood2014height	5e-8	FALSE	Inverse variance weighted	379.42782602133053	363	0.26585904701451163
+OnB5xU	C6y9hm	covidhgi2020A2v5alleurLeaveUKBB	Wood2014height	5e-8	FALSE	MR Egger	378.7995562650031	362	0.2612062470315347
+OnB5xU	C6y9hm	covidhgi2020A2v5alleurLeaveUKBB	Wood2014height	5e-8	FALSE	Inverse variance weighted	379.42782602133053	363	0.26585904701451163

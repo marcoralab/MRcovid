@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-RAbNr7	mR9TX1	covidhgi2020A2v5alleurLeaveUKBB	Stahl2019bip	5e-8	FALSE	0	7.03934229192517	0.8807
+IV9Voc	XlTcaW	covidhgi2020A2v5alleurLeaveUKBB	Stahl2019bip	5e-8	FALSE	0	7.039342291925174	0.8831

@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-6NTdcv	A9qN3V	covidhgi2020C2v5alleur	Betham2015lupus	5e-8	MR-PRESSO	42	Raw	-0.012593328509678337	0.0049084946646483305	-2.5656192723152502	0.014053065456174312
-6NTdcv	A9qN3V	covidhgi2020C2v5alleur	Betham2015lupus	5e-8	MR-PRESSO	42	Outlier-corrected	NA	NA	NA	NA
+eDPMFH	0YaI07	covidhgi2020C2v5alleur	Betham2015lupus	5e-8	MR-PRESSO	42	Raw	-0.012593328509678337	0.0049084946646483305	-2.5656192723152502	0.014053065456174312
+eDPMFH	0YaI07	covidhgi2020C2v5alleur	Betham2015lupus	5e-8	MR-PRESSO	42	Outlier-corrected	NA	NA	NA	NA

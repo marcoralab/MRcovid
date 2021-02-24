@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-Wh9F6v	ByxPTf	covidhgi2020B2v5alleur	Linner2019risk	5e-8	TRUE	1	33.74680336217591	0.1487
+ZrQ59f	HWsg6f	covidhgi2020B2v5alleur	Linner2019risk	5e-8	TRUE	1	33.74680336217591	0.1503

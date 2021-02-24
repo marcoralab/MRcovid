@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-rGktFS	BgpyJO	covidhgi2020A2v5alleur	Stahl2019bip	5e-8	MR-PRESSO	12	Raw	-0.021654591221718873	0.0679378462269041	-0.318741208683525	0.7558932093915607
-rGktFS	BgpyJO	covidhgi2020A2v5alleur	Stahl2019bip	5e-8	MR-PRESSO	12	Outlier-corrected	NA	NA	NA	NA
+ao5tPl	ZuQuof	covidhgi2020A2v5alleur	Stahl2019bip	5e-8	MR-PRESSO	12	Raw	-0.021654591221718873	0.0679378462269041	-0.318741208683525	0.7558932093915607
+ao5tPl	ZuQuof	covidhgi2020A2v5alleur	Stahl2019bip	5e-8	MR-PRESSO	12	Outlier-corrected	NA	NA	NA	NA

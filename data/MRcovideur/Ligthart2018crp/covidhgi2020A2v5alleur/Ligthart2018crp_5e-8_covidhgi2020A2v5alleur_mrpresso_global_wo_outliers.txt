@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-VB3NzW	wgV3pa	covidhgi2020A2v5alleur	Ligthart2018crp	5e-8	TRUE	1	46.5040659728489	0.4863
+REtbum	iuICbx	covidhgi2020A2v5alleur	Ligthart2018crp	5e-8	TRUE	1	46.50406597284889	0.4876

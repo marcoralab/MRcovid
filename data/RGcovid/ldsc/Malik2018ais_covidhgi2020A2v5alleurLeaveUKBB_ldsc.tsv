@@ -1,2 +1,2 @@
 p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
-data/formated/ldsc/Malik2018ais.sumstats.gz	data/formated/ldsc/covidhgi2020A2v5alleurLeaveUKBB.sumstats.gz	0.4177	0.1234	3.3849	0.0007	0.0019	0.0005	1.0085	0.0063	-0.0086	0.0042	1142302
+data/formated/ldsc/Malik2018ais.sumstats.gz	data/formated/ldsc/covidhgi2020A2v5alleurLeaveUKBB.sumstats.gz	0.3606	0.1135	3.1779	0.0015	0.0019	0.0005	1.0084	0.0063	-0.0042	0.0042	1142578

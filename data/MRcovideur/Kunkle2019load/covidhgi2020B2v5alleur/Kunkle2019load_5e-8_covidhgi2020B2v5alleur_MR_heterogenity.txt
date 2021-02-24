@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-236tHq	RiQ5Al	covidhgi2020B2v5alleur	Kunkle2019load	5e-8	FALSE	MR Egger	23.43566387606557	18	0.17439896050765666
-236tHq	RiQ5Al	covidhgi2020B2v5alleur	Kunkle2019load	5e-8	FALSE	Inverse variance weighted	28.212392693408813	19	0.07942549717993266
+2AZJ6F	EnadZe	covidhgi2020B2v5alleur	Kunkle2019load	5e-8	FALSE	MR Egger	23.43566387606557	18	0.17439896050765666
+2AZJ6F	EnadZe	covidhgi2020B2v5alleur	Kunkle2019load	5e-8	FALSE	Inverse variance weighted	28.212392693408813	19	0.07942549717993266

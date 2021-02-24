@@ -1,5 +1,5 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-KM1Fek	qLgP3H	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	FALSE	MR Egger	53.668919113849725	35	0.022638439308941546
-KM1Fek	qLgP3H	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	FALSE	Inverse variance weighted	56.24080198077239	36	0.016998264944738745
-KM1Fek	qLgP3H	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	TRUE	MR Egger	36.5077184401211	34	0.35293493845486507
-KM1Fek	qLgP3H	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	TRUE	Inverse variance weighted	37.65887806997971	35	0.34849503291382683
+wzqnmd	B7VavW	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	FALSE	MR Egger	53.668919113849725	35	0.022638439308941546
+wzqnmd	B7VavW	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	FALSE	Inverse variance weighted	56.24080198077239	36	0.016998264944738745
+wzqnmd	B7VavW	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	TRUE	MR Egger	36.5077184401211	34	0.35293493845486507
+wzqnmd	B7VavW	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	TRUE	Inverse variance weighted	37.65887806997971	35	0.34849503291382683

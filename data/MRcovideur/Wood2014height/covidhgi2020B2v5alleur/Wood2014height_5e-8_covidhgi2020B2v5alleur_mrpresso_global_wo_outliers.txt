@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-B1GUqP	OABZvY	covidhgi2020B2v5alleur	Wood2014height	5e-8	TRUE	0	NA	NA
+EP0zwc	RxEfaA	covidhgi2020B2v5alleur	Wood2014height	5e-8	TRUE	0	NA	NA

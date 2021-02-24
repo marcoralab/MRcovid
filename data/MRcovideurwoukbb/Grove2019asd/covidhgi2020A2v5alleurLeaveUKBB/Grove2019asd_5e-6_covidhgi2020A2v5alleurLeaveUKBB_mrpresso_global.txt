@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-vZfgam	7VJP85	covidhgi2020A2v5alleurLeaveUKBB	Grove2019asd	5e-6	FALSE	0	44.68836190734656	0.1891
+CLPJEE	6xidvW	covidhgi2020A2v5alleurLeaveUKBB	Grove2019asd	5e-6	FALSE	0	44.68836190734657	0.1908

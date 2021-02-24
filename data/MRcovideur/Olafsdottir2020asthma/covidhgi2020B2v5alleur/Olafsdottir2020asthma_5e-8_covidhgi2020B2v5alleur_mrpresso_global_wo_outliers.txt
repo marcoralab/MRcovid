@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-qtlTEU	OWdVpY	covidhgi2020B2v5alleur	Olafsdottir2020asthma	5e-8	TRUE	0	NA	NA
+e5owQ3	DJcveP	covidhgi2020B2v5alleur	Olafsdottir2020asthma	5e-8	TRUE	0	NA	NA

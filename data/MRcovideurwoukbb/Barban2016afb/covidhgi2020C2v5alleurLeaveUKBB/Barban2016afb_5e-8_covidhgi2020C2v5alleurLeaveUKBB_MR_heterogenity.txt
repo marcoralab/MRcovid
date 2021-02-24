@@ -1,3 +1,0 @@
-id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-6xTdTm	P2LZ7B	covidhgi2020C2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	MR Egger	13.053466193464091	5	0.022882850639069068
-6xTdTm	P2LZ7B	covidhgi2020C2v5alleurLeaveUKBB	Barban2016afb	5e-8	FALSE	Inverse variance weighted	17.76898000432742	6	0.0068362195545567436

@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-qKQ60w	jUMMlq	Astel2016wbc	covidhgi2020C2v5alleur	0.06806940534062442	0.0010290796015077256	TRUE	0	TRUE	5e-8
-qKQ60w	jUMMlq	Astel2016wbc	covidhgi2020C2v5alleur	0.0710299041794107	0.0016065205875371755	TRUE	0	FALSE	5e-8
+cZ9tXl	g9D42m	Astel2016wbc	covidhgi2020C2v5alleur	0.06806940534062442	0.0010290796015077256	TRUE	0	TRUE	5e-8
+cZ9tXl	g9D42m	Astel2016wbc	covidhgi2020C2v5alleur	0.0710299041794107	0.001606520587537175	TRUE	0	FALSE	5e-8

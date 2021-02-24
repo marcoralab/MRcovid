@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-rubgQQ	SjbXut	covidhgi2020B2v5alleurLeaveUKBB	Demontis2018adhd	5e-8	TRUE	0	NA	NA
+YYuTzA	pWxutI	covidhgi2020B2v5alleurLeaveUKBB	Demontis2018adhd	5e-8	TRUE	0	NA	NA

@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-dzuJSw	pJkDGU	covidhgi2020B2v5alleurLeaveUKBB	Willer2013tc	5e-8	FALSE	1	112.93857927031169	0.035
+V8QKom	DZSyWn	covidhgi2020B2v5alleurLeaveUKBB	Willer2013tc	5e-8	FALSE	1	112.93857927031169	0.0355

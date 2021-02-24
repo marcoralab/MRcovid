@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-f0InS0	Ukknri	Jansen2018insom	covidhgi2020C2v5alleur	0.0010970778674235361	1.0739233731360643e-4	TRUE	0	FALSE	5e-8
+d4jpEH	Utlw90	Jansen2018insom	covidhgi2020C2v5alleur	0.0010970778674235361	1.0739233731360643e-4	TRUE	2.503481123590702e-37	FALSE	5e-8

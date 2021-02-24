@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-fdx3tV	mtgXD9	covidhgi2020B2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	MR-PRESSO_wo_outliers	9	Raw	-0.16205543492731497	0.15971268029845445	-1.0146685574650844	0.3399650760218813
-fdx3tV	mtgXD9	covidhgi2020B2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	MR-PRESSO_wo_outliers	9	Outlier-corrected	NA	NA	NA	NA
+4CM7Xr	jA9MTe	covidhgi2020B2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	MR-PRESSO_wo_outliers	9	Raw	-0.162055434927315	0.15971268029845445	-1.0146685574650844	0.3399650760218813
+4CM7Xr	jA9MTe	covidhgi2020B2v5alleurLeaveUKBB	Shah2020heartfailure	5e-8	MR-PRESSO_wo_outliers	9	Outlier-corrected	NA	NA	NA	NA

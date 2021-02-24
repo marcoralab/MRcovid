@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-vfpaPb	fqhwy1	covidhgi2020B2v5alleurLeaveUKBB	Astel2016plt	5e-8	FALSE	0	235.362382166059	0.1219
+ExUTWJ	mV7tUL	covidhgi2020B2v5alleurLeaveUKBB	Astel2016plt	5e-8	FALSE	0	235.362382166059	0.122

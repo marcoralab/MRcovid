@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-13VbuZ	lCkOQR	covidhgi2020A2v5alleurLeaveUKBB	Wuttke2019egfr	5e-8	MR-PRESSO	195	Raw	-0.9011632448795001	0.7328276044066572	-1.2297070135740014	0.22029607378135577
-13VbuZ	lCkOQR	covidhgi2020A2v5alleurLeaveUKBB	Wuttke2019egfr	5e-8	MR-PRESSO	195	Outlier-corrected	NA	NA	NA	NA
+bKP5bZ	7HoYzV	covidhgi2020A2v5alleurLeaveUKBB	Wuttke2019egfr	5e-8	MR-PRESSO	195	Raw	-0.9011632448794997	0.7328276044066572	-1.229707013574001	0.2202960737813558
+bKP5bZ	7HoYzV	covidhgi2020A2v5alleurLeaveUKBB	Wuttke2019egfr	5e-8	MR-PRESSO	195	Outlier-corrected	NA	NA	NA	NA

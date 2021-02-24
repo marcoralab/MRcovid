@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-VUqZdc	GmfmA6	Okada2014rartis	covidhgi2020B2v5alleur	0.09150209607606895	0.0012342522644010127	TRUE	0	TRUE	5e-8
-VUqZdc	GmfmA6	Okada2014rartis	covidhgi2020B2v5alleur	0.09397965860390138	0.0022299715963740277	TRUE	0	FALSE	5e-8
+8Ze5M9	CPoE0e	Okada2014rartis	covidhgi2020B2v5alleur	0.09150209607606895	0.0012342522644010127	TRUE	0	TRUE	5e-8
+8Ze5M9	CPoE0e	Okada2014rartis	covidhgi2020B2v5alleur	0.09397965860390138	0.0022299715963740277	TRUE	0	FALSE	5e-8

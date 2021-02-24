@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-S37ct1	ksZISY	Shah2020heartfailure	covidhgi2020A2v5alleur	0.0018024410365324246	5.035932575989825e-4	TRUE	0	TRUE	5e-8
-S37ct1	ksZISY	Shah2020heartfailure	covidhgi2020A2v5alleur	0.0024006278586506343	0.0018012605904170996	TRUE	6.537323584687726e-7	FALSE	5e-8
+a9epUw	E3eW53	Shah2020heartfailure	covidhgi2020A2v5alleur	0.0018024410365324246	5.035932575989825e-4	TRUE	5.275741880601251e-52	TRUE	5e-8
+a9epUw	E3eW53	Shah2020heartfailure	covidhgi2020A2v5alleur	0.0024006278586506343	0.0018012605904170996	TRUE	6.537323585240491e-7	FALSE	5e-8

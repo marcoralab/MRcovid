@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
-eM3Oy8	QeVsak	covidhgi2020B2v5alleurLeaveUKBB	Astel2016rbc	5e-8	MR-PRESSO	170	Raw	-0.08114771177178788	0.05058630893550748	-1.604143759040478	0.11054954557829558
-eM3Oy8	QeVsak	covidhgi2020B2v5alleurLeaveUKBB	Astel2016rbc	5e-8	MR-PRESSO	170	Outlier-corrected	NA	NA	NA	NA
+PvQtRT	8sND4E	covidhgi2020B2v5alleurLeaveUKBB	Astel2016rbc	5e-8	MR-PRESSO	170	Raw	-0.08114771177178787	0.05058630893550749	-1.6041437590404772	0.11054954557829572
+PvQtRT	8sND4E	covidhgi2020B2v5alleurLeaveUKBB	Astel2016rbc	5e-8	MR-PRESSO	170	Outlier-corrected	NA	NA	NA	NA

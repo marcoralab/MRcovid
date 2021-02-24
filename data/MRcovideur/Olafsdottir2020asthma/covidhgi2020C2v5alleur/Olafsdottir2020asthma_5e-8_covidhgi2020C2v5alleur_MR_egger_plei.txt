@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
-9GWW6c	MABCBp	covidhgi2020C2v5alleur	Olafsdottir2020asthma	5e-8	FALSE	0.8804176861606308	-4.3574383357748665e-4	0.002830637336171817	0.8780365214412112
+vxkHDa	RMkOZd	covidhgi2020C2v5alleur	Olafsdottir2020asthma	5e-8	FALSE	0.8804176861606308	-4.3574383357748616e-4	0.002830637336171817	0.8780365214412114

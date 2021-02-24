@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-zKVOo4	rfrS0a	Howard2018dep	covidhgi2020A2v5alleur	5.676406645635427e-5	0.0015427125246226109	FALSE	0	FALSE	5e-8
+7cl98m	FHoGMY	Howard2018dep	covidhgi2020A2v5alleur	5.676406645635427e-5	0.0015427125246226109	FALSE	2.209411678066263e-59	FALSE	5e-8

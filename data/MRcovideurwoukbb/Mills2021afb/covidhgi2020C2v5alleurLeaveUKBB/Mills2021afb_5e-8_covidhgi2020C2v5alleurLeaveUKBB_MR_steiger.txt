@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-LuzgP1	MnoX01	Mills2021afb	covidhgi2020C2v5alleurLeaveUKBB	0.004772728878750288	5.943636082846362e-4	TRUE	0	FALSE	5e-8
+A0nqBf	O1lzN4	Mills2021afb	covidhgi2020C2v5alleurLeaveUKBB	0.004772728878750288	5.94363608284636e-4	TRUE	4.804461962642299e-171	FALSE	5e-8

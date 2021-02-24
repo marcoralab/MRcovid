@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-t7fB0U	jVD2vT	covidhgi2020A2v5alleurLeaveUKBB	Betham2015lupus	5e-8	FALSE	0	55.00918816475056	0.1109
+ZRCAoU	afsgp7	covidhgi2020A2v5alleurLeaveUKBB	Betham2015lupus	5e-8	FALSE	0	55.00918816475056	0.1129

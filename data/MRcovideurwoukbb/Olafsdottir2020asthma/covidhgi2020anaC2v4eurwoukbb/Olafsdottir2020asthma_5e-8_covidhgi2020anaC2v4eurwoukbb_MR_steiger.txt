@@ -1,2 +1,0 @@
-id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-n0GDbt	z9hjvu	Olafsdottir2020asthma	covidhgi2020anaC2v4eurwoukbb	0.01764029670950632	0.002195125451791472	TRUE	0	FALSE	5e-8

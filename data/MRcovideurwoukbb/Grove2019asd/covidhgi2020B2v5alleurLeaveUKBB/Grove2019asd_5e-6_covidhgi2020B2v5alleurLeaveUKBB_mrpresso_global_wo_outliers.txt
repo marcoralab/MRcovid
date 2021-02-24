@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-9EPSKU	aJ5O1T	covidhgi2020B2v5alleurLeaveUKBB	Grove2019asd	5e-6	TRUE	0	NA	NA
+JypgdQ	SM7ghg	covidhgi2020B2v5alleurLeaveUKBB	Grove2019asd	5e-6	TRUE	0	NA	NA

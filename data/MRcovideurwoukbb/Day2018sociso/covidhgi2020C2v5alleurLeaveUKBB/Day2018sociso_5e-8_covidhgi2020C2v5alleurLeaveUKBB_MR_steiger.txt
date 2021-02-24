@@ -1,2 +1,2 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-1wLScu	G2XZN2	Day2018sociso	covidhgi2020C2v5alleurLeaveUKBB	0.0012764604247813773	1.234467420417228e-4	TRUE	0	FALSE	5e-8
+FPaQBS	OcpbOR	Day2018sociso	covidhgi2020C2v5alleurLeaveUKBB	0.0012764604247813773	1.2344674204172276e-4	TRUE	1.3207353840588935e-46	FALSE	5e-8

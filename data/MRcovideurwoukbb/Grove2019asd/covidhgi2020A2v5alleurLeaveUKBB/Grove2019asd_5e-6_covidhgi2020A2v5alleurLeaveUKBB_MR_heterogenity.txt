@@ -1,3 +1,3 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
-vZfgam	7VJP85	covidhgi2020A2v5alleurLeaveUKBB	Grove2019asd	5e-6	FALSE	MR Egger	42.05894926379799	34	0.16139653780380503
-vZfgam	7VJP85	covidhgi2020A2v5alleurLeaveUKBB	Grove2019asd	5e-6	FALSE	Inverse variance weighted	42.10117167280727	35	0.19055843468492673
+CLPJEE	6xidvW	covidhgi2020A2v5alleurLeaveUKBB	Grove2019asd	5e-6	FALSE	MR Egger	42.05894926379799	34	0.16139653780380503
+CLPJEE	6xidvW	covidhgi2020A2v5alleurLeaveUKBB	Grove2019asd	5e-6	FALSE	Inverse variance weighted	42.10117167280728	35	0.19055843468492598

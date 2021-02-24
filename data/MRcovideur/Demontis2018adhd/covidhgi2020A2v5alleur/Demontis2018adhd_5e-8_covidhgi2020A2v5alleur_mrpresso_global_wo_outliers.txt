@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-GE9ncI	qH3srK	covidhgi2020A2v5alleur	Demontis2018adhd	5e-8	TRUE	0	NA	NA
+p4ejyy	gnQNZ2	covidhgi2020A2v5alleur	Demontis2018adhd	5e-8	TRUE	1	15.739424529811801	0.1161

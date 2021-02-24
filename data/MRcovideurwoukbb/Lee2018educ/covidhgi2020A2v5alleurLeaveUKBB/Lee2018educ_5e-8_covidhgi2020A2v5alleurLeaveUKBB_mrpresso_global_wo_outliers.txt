@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-j8E9wW	6uDqPt	covidhgi2020A2v5alleurLeaveUKBB	Lee2018educ	5e-8	TRUE	1	335.2407664936021	0.09988
+0E4FM9	eD27hM	covidhgi2020A2v5alleurLeaveUKBB	Lee2018educ	5e-8	TRUE	1	335.2407664936021	0.1002

@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
-WG1MFS	oDXYWk	covidhgi2020A2v5alleur	Nikpay2015cad	5e-8	TRUE	1	53.58726640782864	0.0696
+pechRt	ci1mjZ	covidhgi2020A2v5alleur	Nikpay2015cad	5e-8	TRUE	1	53.58726640782864	0.071

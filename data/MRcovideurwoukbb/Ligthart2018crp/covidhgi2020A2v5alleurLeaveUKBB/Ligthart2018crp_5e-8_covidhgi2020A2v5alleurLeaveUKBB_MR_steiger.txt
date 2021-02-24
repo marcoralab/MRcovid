@@ -1,3 +1,3 @@
 id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
-WGI8NL	X8Y30z	Ligthart2018crp	covidhgi2020A2v5alleurLeaveUKBB	0.030886393378887076	0.003127345620799347	TRUE	0	TRUE	5e-8
-WGI8NL	X8Y30z	Ligthart2018crp	covidhgi2020A2v5alleurLeaveUKBB	0.031384369861443384	0.004282104524545972	TRUE	0	FALSE	5e-8
+HKdM8Y	gkEXvQ	Ligthart2018crp	covidhgi2020A2v5alleurLeaveUKBB	0.030886393378887076	0.0031273456207993465	TRUE	0	TRUE	5e-8
+HKdM8Y	gkEXvQ	Ligthart2018crp	covidhgi2020A2v5alleurLeaveUKBB	0.031384369861443384	0.00428210452454597	TRUE	0	FALSE	5e-8

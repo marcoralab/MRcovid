@@ -1,2 +1,2 @@
 id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
-RAbNr7	mR9TX1	covidhgi2020A2v5alleurLeaveUKBB	Stahl2019bip	5e-8	FALSE	0	-0.0989462205385313	0.05864722349563273	0.1224692232005289
+IV9Voc	XlTcaW	covidhgi2020A2v5alleurLeaveUKBB	Stahl2019bip	5e-8	FALSE	0	-0.09894622053853122	0.05864722349563271	0.12246922320052904

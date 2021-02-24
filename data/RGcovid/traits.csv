@@ -161,12 +161,12 @@ Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020C2v5alleur,"COVID
 Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Malik2018as,Any stroke,446696,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Malik2018as,Any stroke,446696,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Malik2018as,Any stroke,446696,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Malik2018as,Any stroke,446696,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Malik2018as,Any stroke,446696,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Malik2018as,Any stroke,446696,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
+Malik2018ais,Ischemic stroke,440328,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
+Malik2018ais,Ischemic stroke,440328,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
+Malik2018ais,Ischemic stroke,440328,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
+Malik2018ais,Ischemic stroke,440328,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
+Malik2018ais,Ischemic stroke,440328,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
+Malik2018ais,Ischemic stroke,440328,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Wuttke2019egfr,eGFR,765286,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Wuttke2019egfr,eGFR,765286,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Wuttke2019egfr,eGFR,765286,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
@@ -259,31 +259,7 @@ Mills2021afb,Age at first birth,542901,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B
 Mills2021afb,Age at first birth,542901,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
