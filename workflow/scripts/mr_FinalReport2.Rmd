@@ -35,7 +35,13 @@ editor_options:
 message("Setup \n")
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_knit$set(root.dir = params$rwd)
-.libPaths(c(params$rlib, .libPaths()))
+
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
 
 library(tidyverse)
 library(glue)
@@ -45,35 +51,35 @@ library(ggallin)
 library(ggpubr)
 library(qvalue)
 library(here)
+source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
+
 ```
 
 ```{r sandbox, eval=F}
-model <- "MRcovideurwoukbb"
-# model <- "MRcovideur"
-DATE = Sys.Date()
-DATE = "2021-02-15"
+# model <- "MRcovideurwoukbb"
+model <- "MRcovideur"
+# DATE = Sys.Date() %>% str_replace_all(., '[[:punct:]]', "")
+DATE = "20210224"
 rwd = "/sc/arion/projects/LOAD/shea/Projects/MRcovid"
 setwd(rwd)
 
-source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
+MR_results.path = glue("results/{model}/All/{DATE}/MRresults.txt")
+MRdat.path = glue("results/{model}/All/{DATE}/mrpresso_MRdat.csv")
+mrpresso_res.path = glue("results/{model}/All/{DATE}/res_mrpresso.txt")
+mrpresso_global.path = glue("results/{model}/All/{DATE}/global_mrpresso.txt")
+mrpresso_global_wo_outliers.path = glue("results/{model}/All/{DATE}/global_mrpresso_wo_outliers.txt")
+egger_comb.path = glue("results/{model}/All/{DATE}/pleiotropy.txt")
+power.path = glue("results/{model}/All/{DATE}/power.txt")
+steiger.path = glue("results/{model}/All/{DATE}/steiger.txt")
+rg.path <- glue("results/RGcovid/ldsc/{DATE}/all_results_ldsc.tsv")
 
-MR_results.path = glue("results/{model}/All/MRresults.txt")
-MRdat.path = glue("results/{model}/All/mrpresso_MRdat.csv")
-mrpresso_res.path = glue("results/{model}/All/res_mrpresso.txt")
-mrpresso_global.path = glue("results/{model}/All/global_mrpresso.txt")
-mrpresso_global_wo_outliers.path = glue("results/{model}/All/global_mrpresso_wo_outliers.txt")
-egger_comb.path = glue("results/{model}/All/pleiotropy.txt")
-power.path = glue("results/{model}/All/power.txt")
-steiger.path = glue("results/{model}/All/steiger.txt")
-rg.path <- glue("results/RGcovid/ldsc/all_results_ldsc_{DATE}.tsv")
-
-exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', 'Mills2021afb')
+exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018ais', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', 'Mills2021afb')
 
 if(model == "MRcovideur"){
   outcomes = c("covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur")
 } else if(model == "MRcovideurwoukbb"){
   outcomes = c("covidhgi2020A2v5alleurLeaveUKBB", "covidhgi2020B2v5alleurLeaveUKBB", "covidhgi2020C2v5alleurLeaveUKBB")
-} 
+}
 
 ```
 
@@ -104,8 +110,8 @@ exposures_outcomes <- expand_grid(exposures, outcomes) %>%
   left_join(select(samplesize, code, trait, domain), by = c('exposures.name' = 'code')) %>%
   rename(exposure.name = trait, domain.exposure = domain) %>%
   left_join(select(samplesize, code, trait, domain), by = c('outcomes.name' = 'code')) %>%
-  rename(outcome.name = trait, domain.outcome = domain) %>% 
-  mutate(domain.exposure = str_replace(domain.exposure, "Diagnosis", "Disease Liability"), 
+  rename(outcome.name = trait, domain.outcome = domain) %>%
+  mutate(domain.exposure = str_replace(domain.exposure, "Diagnosis", "Disease Liability"),
          domain.exposure = str_replace(domain.exposure, "Neurpsychatric", "Neuropsychiatric"))
 
 ## Files
@@ -131,16 +137,16 @@ mrpresso_global_comb <- bind_rows(mrpresso_global, mrpresso_global_wo_outliers)
 
 message(glue("\n Loading: ", mrpresso_res.path))
 mrpresso_res <- read_tsv(mrpresso_res.path) %>%
-  filter(exposure %in% exposures, outcome %in% outcomes) %>% 
-  mutate(outliers_removed = str_replace(outliers_removed, "Outlier-", ""), 
+  filter(exposure %in% exposures, outcome %in% outcomes) %>%
+  mutate(outliers_removed = str_replace(outliers_removed, "Outlier-", ""),
          method = str_replace(method, "-", ""),
-         method = paste(method, outliers_removed, sep = "_"), 
-         outliers_removed = FALSE) %>% 
-  rename(se = sd, MR.pval = pval) %>% 
-  select(-t.stat) %>% 
+         method = paste(method, outliers_removed, sep = "_"),
+         outliers_removed = FALSE) %>%
+  rename(se = sd, MR.pval = pval) %>%
+  select(-t.stat) %>%
   group_by(outcome, exposure) %>%
-  mutate(n_outliers = max(nsnp) - min(nsnp), 
-         nsnp = max(nsnp)) %>% 
+  mutate(n_outliers = max(nsnp) - min(nsnp),
+         nsnp = max(nsnp)) %>%
   ungroup()
 
 message(glue("\n Loading: ", egger_comb.path))
@@ -160,43 +166,42 @@ power <- read_tsv(power.path) %>%
          F = round(F, 2),
          Power = round(Power, 2))
 
-rg.raw <- read_tsv(rg.path) %>% 
+rg.raw <- read_tsv(rg.path) %>%
   rename(se_rg = se, rg.p = p) %>%
-  mutate(rg.lci = rg - (1.96 * se_rg), 
-         rg.uci = rg + (1.96 * se_rg), 
-         p1 = str_replace(p1, "\\.sumstats.gz", ""), 
-         p1 = str_replace(p1, "data/formated/ldsc/", ""), 
-         p2 = str_replace(p2, "data/formated/ldsc/", ""), 
-         p2 = str_replace(p2, ".sumstats.gz", "")) 
+  mutate(rg.lci = rg - (1.96 * se_rg),
+         rg.uci = rg + (1.96 * se_rg),
+         p1 = str_replace(p1, "\\.sumstats.gz", ""),
+         p1 = str_replace(p1, "data/formated/ldsc/", ""),
+         p2 = str_replace(p2, "data/formated/ldsc/", ""),
+         p2 = str_replace(p2, ".sumstats.gz", ""))
 
 rg <- rg.raw  %>%
-  filter(p1 %in% exposures) %>% 
-  filter(p2 %in% outcomes) %>% 
-  mutate(rg.fdr = p.adjust(rg.p, "fdr")) %>% 
+  filter(p1 %in% exposures) %>%
+  filter(p2 %in% outcomes) %>%
+  mutate(rg.fdr = p.adjust(rg.p, "fdr")) %>%
   arrange(p2, rg.fdr)  %>%
-  left_join(select(exposures_outcomes, exposures.name, outcomes.name, exposure.name, outcome.name), 
+  left_join(select(exposures_outcomes, exposures.name, outcomes.name, exposure.name, outcome.name),
             by = c("p1" = "exposures.name", "p2" = "outcomes.name"))
 
 rg_covid <- rg.raw %>%
-  filter(p1 %in% outcomes) %>% 
-  filter(p2 %in% outcomes) %>% 
-  nanny::lower_triangular(p1, p2, rg)
+  filter(p1 %in% outcomes) %>%
+  filter(p2 %in% outcomes) 
 ```
 
-## Genetic Correlations 
+## Genetic Correlations
 
 ```{r}
-rg %>% 
-  select(p1, p2, exposure.name, nsnps, rg, se_rg, rg.p, rg.fdr, everything()) %>% 
-  mutate(rg.fdr = round_sci(rg.fdr), 
-         rg.p = round_sci(rg.p), 
+rg %>%
+  select(p1, p2, exposure.name, nsnps, rg, se_rg, rg.p, rg.fdr, everything()) %>%
+  mutate(rg.fdr = round_sci(rg.fdr),
+         rg.p = round_sci(rg.p),
          rg = signif(rg, 2),
          se_rg = signif(se_rg, 2),
         ) %>%
-write_csv(., glue("docs/{model}_LDSC_rgRes_{DATE}.csv"))
+write_csv(., glue("docs/{DATE}/{model}_LDSC_rgRes.csv"))
 
-rg_covid %>% 
-  select(p1, p2, nsnps, rg, se_rg, rg.lci, rg.uci, z, rg.p) 
+rg_covid %>%
+  select(p1, p2, nsnps, rg, se_rg, rg.lci, rg.uci, z, rg.p)
 ```
 
 ## Harmonized exposure-outcome SNP dataset
@@ -225,7 +230,7 @@ MRdat <- MRdat.raw  %>%
 ```
 
 ```{r write-harmonized-data, echo=FALSE, eval=TRUE}
-write_csv(MRdat, glue("docs/{model}_HarmonizedDatasets_{DATE}.csv"))
+write_csv(MRdat, glue("docs/{DATE}/{model}_HarmonizedDatasets.csv"))
 ```
 
 
@@ -239,7 +244,7 @@ MRsummary <- MR_results %>%
          method = str_replace(method, "Weighted median", 'WME'),
          method = str_replace(method, "Weighted mode", 'WMBE')) %>%
   rename(MR.pval = pval) %>%
-  ## Join MR-PRESSO Results 
+  ## Join MR-PRESSO Results
   bind_rows(mrpresso_res) %>%
   ## Join MR-PRESSO Global results
   left_join(select(mrpresso_global_comb, outcome, exposure, pt, RSSobs, pval, outliers_removed),
@@ -263,12 +268,12 @@ MRsummary <- MR_results %>%
          exposure.domain = domain) %>%
   left_join(select(samplesize, code, trait, domain), by = c('outcome' = 'code')) %>%
   rename(outcome.name = trait,
-         outcome.domain = domain) 
-  
+         outcome.domain = domain)
+
 ```
 
 ```{r, eval=TRUE}
-write_csv(MRsummary, glue("docs/{model}_MRsummary_{DATE}.csv"))
+write_csv(MRsummary, glue("docs/{DATE}/{model}_MRsummary.csv"))
 ```
 
 ```{r spread-res}
@@ -288,12 +293,12 @@ mrresults.methods <- MRsummary %>%
          egger_se = signif(egger_se, 2),
          Egger.pval = signif(Egger.pval, 2)) %>%
   tidyr::pivot_wider(names_from = method, names_glue = "{method}_{.value}", values_from = c(b, se, or, or_lci95, or_uci95, MR.pval)) %>%
-  mutate(fdr = p.adjust(IVW_MR.pval, method = "fdr"), 
+  mutate(fdr = p.adjust(IVW_MR.pval, method = "fdr"),
          IVW_Signif = as.character(signif.num(IVW_MR.pval)),
          Egger_Signif = as.character(signif.num(Egger_MR.pval)),
          WME_Signif = as.character(signif.num(WME_MR.pval)),
-         WMBE_Signif = as.character(signif.num(WMBE_MR.pval)), 
-         MRPRESSO_Raw_Signif = as.character(signif.num(MRPRESSO_Raw_MR.pval)), 
+         WMBE_Signif = as.character(signif.num(WMBE_MR.pval)),
+         MRPRESSO_Raw_Signif = as.character(signif.num(MRPRESSO_Raw_MR.pval)),
          MRPRESSO_corrected_Signif = as.character(signif.num(MRPRESSO_corrected_MR.pval)))
 
 ## Spread by outlier removal MR-PRESSO
@@ -334,7 +339,7 @@ WideMRResults <- mrresults.methods %>%
 ```
 
 ```{r, eval=TRUE}
-write_csv(WideMRResults, glue("results/{model}/All/{model}_WideMRResults_{DATE}.csv"))
+write_csv(WideMRResults, glue("results/{model}/All/{DATE}/{model}_WideMRResults.csv"))
 ```
 
 
@@ -368,15 +373,15 @@ mr_best <- mrresults.methods %>%
       mutate(pass = ifelse(pass == FALSE, FALSE, passfunc(IVW_MR.pval, IVW_b,
                                                           Egger_MR.pval, Egger_b,
                                                           WME_MR.pval, WME_b,
-                                                          WMBE_MR.pval, WMBE_b, 
+                                                          WMBE_MR.pval, WMBE_b,
                                                           MRPRESSO_corrected_MR.pval, MRPRESSO_corrected_b)),
              )
-  })  
+  })
 
 ```
 
 ```{r, write-MRbest, eval=TRUE}
-write_csv(mr_best, glue("docs/{model}_MRbest_{DATE}.csv"))
+write_csv(mr_best, glue("docs/{DATE}/{model}_MRbest.csv"))
 ```
 
 ```{r, mr-out}
@@ -389,59 +394,59 @@ out.final <- mr_best %>%
   mutate(Egger_I = paste0(egger_intercept, ' (', egger_se, ')')) %>%
   select(outcome, exposure, outcome.name, exposure.name, pt, nsnp, n_outliers, F, Isq,
          IVW, IVW_MR.pval, fdr,
-         `MR-Egger`, Egger_MR.pval, 
+         `MR-Egger`, Egger_MR.pval,
          `Weighted median`, WME_MR.pval,
-         `Weighted mode`, WMBE_MR.pval, 
+         `Weighted mode`, WMBE_MR.pval,
          MRPRESSO, MRPRESSO_corrected_MR.pval,
-         Egger_I, Egger.pval, 
-         RSSobs, MRPRESSO.pval, pass) %>% 
-  arrange(outcome.name, fdr) %>% 
-  # filter(outcome != "covidhgi2020A2v5alleur") %>% 
+         Egger_I, Egger.pval,
+         RSSobs, MRPRESSO.pval, pass) %>%
+  arrange(outcome.name, fdr) %>%
+  # filter(outcome != "covidhgi2020A2v5alleur") %>%
   # mutate(fdr = p.adjust(IVW_MR.pval, "fdr")) %>%
-  mutate(Egger.pval = round_sci(Egger.pval), 
-         fdr = round_sci(fdr), 
-         Isq = round(Isq, 2))  %>% 
-  map_dfr(., str_replace, "NA \\(NA, NA\\)", "") %>% 
-  map_dfr(., replace_na, "") 
+  mutate(Egger.pval = round_sci(Egger.pval),
+         fdr = round_sci(fdr),
+         Isq = round(Isq, 2))  %>%
+  map_dfr(., str_replace, "NA \\(NA, NA\\)", "") %>%
+  map_dfr(., replace_na, "")
 
-out.final %>% filter(as.numeric(fdr) < 0.05) %>% 
+out.final %>% filter(as.numeric(fdr) < 0.05) %>%
   split(.$outcome)
 
 ```
 
 ```{r, write-publication-results, echo=FALSE, eval=TRUE}
-write_csv(out.final, glue("docs/{model}_PublicationRes_{DATE}.csv"))
+write_csv(out.final, glue("docs/{DATE}/{model}_PublicationRes.csv"))
 ```
 
-## Combined Plots 
+## Combined Plots
 
 ```{r dat-plot}
 
-## Phenotype descriptions 
+## Phenotype descriptions
 a2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'A2')) %>% pull(outcome.name)
 b2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'B2')) %>% pull(outcome.name)
 c2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'C2')) %>% pull(outcome.name)
 
 ## Dataframe for ploting
 dat.plot <- exposures_outcomes %>%
-  # filter(!str_detect(outcomes.name, "eurLeaveUKBB")) %>%  
+  # filter(!str_detect(outcomes.name, "eurLeaveUKBB")) %>%
   left_join(mr_best) %>%
   left_join(select(rg, p1, p2, rg, se_rg, rg.p, rg.fdr, rg.lci, rg.uci), by = c("exposure" = "p1", "outcome"= "p2")) %>%
-  mutate(fdr_signif = ifelse(fdr <= 0.05, "*", " "), 
+  mutate(fdr_signif = ifelse(fdr <= 0.05, "*", " "),
          mr.p_cat = case_when(
            IVW_MR.pval <= 0.05 ~ 1,
            IVW_MR.pval <= 0.1 ~ 0.75,
            IVW_MR.pval <= 0.5 ~ 0.5,
            TRUE ~ 0.25,
-           ), 
-         rg.fdr_signif = ifelse(rg.fdr <= 0.05, "*", " "), 
+           ),
+         rg.fdr_signif = ifelse(rg.fdr <= 0.05, "*", " "),
          rg.p_cat = case_when(
            rg.p <= 0.05 ~ 1,
            rg.p <= 0.1 ~ 0.75,
            rg.p <= 0.5 ~ 0.5,
            TRUE ~ 0.25,
-           )) %>% 
-  mutate(z = IVW_b/IVW_se, 
+           )) %>%
+  mutate(z = IVW_b/IVW_se,
          z = DescTools::Winsorize(z, maxval = 6)) %>%
   mutate(out = ifelse(fdr < 0.05, paste0(round(IVW_b, 3), '\n', '(', round_sci(fdr), ')'), " ")) %>%
   select(outcome, exposure, exposure.name, outcome.name, domain.exposure, domain.outcome,
@@ -455,48 +460,49 @@ dat.plot <- exposures_outcomes %>%
   mutate(exposure.name = fct_inorder(fct_drop(exposure.name))) %>%
   mutate(outcome1 = as.integer(fct_inorder(fct_drop(outcome.name)))) %>%
   mutate(exposure1 = as.integer(fct_inorder(fct_drop(exposure.name)))) %>%
-  ungroup() %>% 
-  # mutate(outcome.name = fct_recode(outcome.name, 
-  #                                  A2 = "COVID: A2, EUR", 
-  #                                  B2 = "COVID: B2, EUR", 
-  #                                  C2 = "COVID: C2, EUR")) 
-  mutate(outcome.name = fct_recode(outcome.name, 
-                                   "Critical illness" = a2_pheno, 
-                                   Hospitalisation = b2_pheno, 
-                                   "Reported infection" = c2_pheno)) 
+  ungroup() %>%
+  # mutate(outcome.name = fct_recode(outcome.name,
+  #                                  A2 = "COVID: A2, EUR",
+  #                                  B2 = "COVID: B2, EUR",
+  #                                  C2 = "COVID: C2, EUR"))
+  mutate(outcome.name = fct_recode(outcome.name,
+                                   "Critical illness" = a2_pheno,
+                                   Hospitalisation = b2_pheno,
+                                   "Reported infection" = c2_pheno))
 
-dat.long <- dat.plot %>% 
-  pivot_longer(c(z, rg), names_to = 'method', values_to = 'estimate') %>% 
-  mutate(mr = ifelse(method == 'z', estimate, NA), 
-         rg = ifelse(method == 'rg', estimate, NA), 
+dat.long <- dat.plot %>%
+  pivot_longer(c(z, rg), names_to = 'method', values_to = 'estimate') %>%
+  mutate(mr = ifelse(method == 'z', estimate, NA),
+         rg = ifelse(method == 'rg', estimate, NA),
          method = fct_recode(method, "Genetic \nCorrelation" = "rg", "Mendelian \nRandomization" = "z"))
 
-mrdat.p <- MRsummary %>% 
+mrdat.p <- MRsummary %>%
   generate_odds_ratios(.) %>%
-  filter(outliers_removed == FALSE) %>% 
+  filter(outliers_removed == FALSE) %>%
   filter(method != "MRPRESSO_Raw") %>%
   group_by(method) %>%
   mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
   ungroup() %>%
-  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"), 
+  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"),
          method = fct_recode(method, "MR-PRESSO" = "MRPRESSO_corrected",  "MR Egger" =  "Egger")) %>%
-  arrange(method, b) %>% 
-  mutate(exposure.name = fct_inorder(exposure.name), 
-         outcome.name = fct_recode(outcome.name, 
-                                   "Critical illness" = a2_pheno, 
-                                   Hospitalisation = b2_pheno, 
+  arrange(method, b) %>%
+  mutate(exposure.name = fct_inorder(exposure.name),
+         outcome.name = fct_recode(outcome.name,
+                                   "Critical illness" = a2_pheno,
+                                   Hospitalisation = b2_pheno,
                                    "Reported infection" = c2_pheno)
   )
 
-mrdat.p.ls <- mrdat.p %>% 
+mrdat.p.ls <- mrdat.p %>%
   semi_join(filter(mrdat.p, method == "IVW" & fdr < 0.05), by = c("exposure", "outcome")) %>%
-  mutate(exposure.name = fct_recode(exposure.name, 
-                                    "Education" = "Educational attainment", 
-                                    "RBC" = "Red blood cell count", 
+  mutate(exposure.name = fct_recode(exposure.name,
+                                    "Education" = "Educational attainment",
+                                    "RBC" = "Red blood cell count",
                                     "ALS" = "Amyotrophic lateral sclerosis",
-                                    "Age first birth" = "Age at first birth", 
-                                    "Parkinson's" = "Parkinsons disease", 
-                                    "Smoking" = "Smoking initiation")) %>%
+                                    "Age first birth" = "Age at first birth",
+                                    "Parkinson's" = "Parkinsons disease",
+                                    "Smoking" = "Smoking initiation", 
+                                    "Mult. sclerosis" = "Multiple sclerosis")) %>%
   split(., .$outcome)
 
 ggblank <- ggplot() + theme_void()
@@ -504,17 +510,17 @@ ggblank <- ggplot() + theme_void()
 ```
 
 ```{r}
-# Plotting variables 
+# Plotting variables
 
-## Colour Palatte 
+## Colour Palatte
 the_palette = "RdBu"
 
 ## Colour range
 fun_color_range <- colorRampPalette(rev(RColorBrewer::brewer.pal(11, the_palette)))
 my_colors <- fun_color_range(1001)
-df = tibble(x = -500:500, y = rep(1,1001), z = my_colors) 
+df = tibble(x = -500:500, y = rep(1,1001), z = my_colors)
 
-## Limites 
+## Limites
 rg_lim = c(-1, 1)
 mr_lim = c(max(abs(dat.plot$z))*-1, max(abs(dat.plot$z)))
 
@@ -524,7 +530,7 @@ library(ggnewscale)
 # new_scale <- function(new_aes) {
 #    structure(ggplot2::standardise_aes_names(new_aes), class = "new_aes")
 # }
-# 
+#
 # ggplot_add.new_aes <- function(object, plot, object_name) {
 #    plot$layers <- lapply(plot$layers, bump_aes, new_aes = object)
 #    plot$scales$scales <- lapply(plot$scales$scales, bump_aes, new_aes = object)
@@ -541,61 +547,61 @@ library(ggnewscale)
 ## geom_tile to use size of tile to represent significance
 p3 <- ggplot(dat.long) +
   facet_grid(method ~ domain.exposure, scales = "free", space = "free", switch = "y") +
-  # geom_raster(data = filter(dat.long, !is.na(rg)), aes(x = exposure.name, y = outcome.name, fill = rg)) + 
-  geom_tile(data = filter(dat.long, !is.na(rg)), 
-            aes(x = exposure.name, y = outcome.name, fill = rg, height=rg.p_cat, width=rg.p_cat)) + 
-  geom_text(data = filter(dat.long, !is.na(rg)), 
+  # geom_raster(data = filter(dat.long, !is.na(rg)), aes(x = exposure.name, y = outcome.name, fill = rg)) +
+  geom_tile(data = filter(dat.long, !is.na(rg)),
+            aes(x = exposure.name, y = outcome.name, fill = rg, height=rg.p_cat, width=rg.p_cat)) +
+  geom_text(data = filter(dat.long, !is.na(rg)),
             aes(label = rg.fdr_signif, x = exposure.name, y = outcome.name), vjust = 0.75, size = 4) +
   scale_fill_distiller(palette = rev(the_palette), limits = c(-1,1)) +
   new_scale("fill") +
-  # geom_raster(data = filter(dat.long, !is.na(mr)), aes(x = exposure.name, y = outcome.name, fill = mr)) + 
-  geom_tile(data = filter(dat.long, !is.na(mr)), 
-            aes(x = exposure.name, y = outcome.name, fill = mr, height=mr.p_cat, width=mr.p_cat)) + 
+  # geom_raster(data = filter(dat.long, !is.na(mr)), aes(x = exposure.name, y = outcome.name, fill = mr)) +
+  geom_tile(data = filter(dat.long, !is.na(mr)),
+            aes(x = exposure.name, y = outcome.name, fill = mr, height=mr.p_cat, width=mr.p_cat)) +
   scale_fill_distiller(palette = rev(the_palette), limits = c(-6,6)) +
-  geom_text(data = filter(dat.long, !is.na(mr)), 
-            aes(label = fdr_signif, x = exposure.name, y = outcome.name), vjust = 0.75, size = 4) +  
+  geom_text(data = filter(dat.long, !is.na(mr)),
+            aes(label = fdr_signif, x = exposure.name, y = outcome.name), vjust = 0.75, size = 4) +
   theme_classic() +
   geom_vline(xintercept=seq(0.5, 43.5, 1),color="grey90") +
-  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") + 
+  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") +
   theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 35, hjust = 0), 
+        axis.text.x = element_text(angle = 35, hjust = 0),
         aspect.ratio=1,
-        legend.text = element_text(hjust = 1.5), 
-        axis.title.x = element_blank(), 
-        axis.title.y = element_blank(), 
-        plot.margin=margin(10,40,10,10, 'pt'), 
+        legend.text = element_text(hjust = 1.5),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.margin=margin(10,40,10,10, 'pt'),
         text = element_text(size=8),
         strip.text.y = element_text(size = 6),
         strip.background = element_blank(),
         # panel.border = element_rect(colour = "black", fill = NA)
         # legend.key.height = unit(0.75, "line"),
-        # legend.spacing.y = unit(-0.75, "line"), 
+        # legend.spacing.y = unit(-0.75, "line"),
         # plot.margin=grid::unit(c(0,0,0,0), "mm")
   ) +
-  scale_x_discrete(position = "top") + 
+  scale_x_discrete(position = "top") +
   ylim(rev(levels(dat.long$outcome.name)))
 # p3
 
 ## Use geom_point to hack togeather a legend
 p.leg <- ggplot(df, aes(x = x, y = y, color = as.factor(x))) +
   geom_point(size = 1, shape = 15) +
-  scale_color_manual(values = my_colors) + 
+  scale_color_manual(values = my_colors) +
   theme_void() +
   theme(legend.position = 'none') +
-  annotate("segment", x = -50, y = 0.95, xend = -500, yend = 0.95, arrow=arrow(length=unit(2.5,"pt"), type = "closed")) + 
-  annotate("segment", x = 50, y = 0.95, xend = 500, yend = 0.95, arrow=arrow(length=unit(2.5,"pt"), type = "closed")) + 
-  annotate("text", x = -450, y = 0.91, label = "Negative/Protective", size = 2) + 
-  annotate("text", x = 465, y = 0.91, label = "Positive/Risk", size = 2) + 
-  annotate("text", x = 0, y = 0.91, label = "rg/MR", size = 2) + 
-  theme(legend.position = 'none', 
-        # aspect.ratio=1/10, 
+  annotate("segment", x = -50, y = 0.95, xend = -500, yend = 0.95, arrow=arrow(length=unit(2.5,"pt"), type = "closed")) +
+  annotate("segment", x = 50, y = 0.95, xend = 500, yend = 0.95, arrow=arrow(length=unit(2.5,"pt"), type = "closed")) +
+  annotate("text", x = -450, y = 0.91, label = "Negative/Protective", size = 2) +
+  annotate("text", x = 465, y = 0.91, label = "Positive/Risk", size = 2) +
+  annotate("text", x = 0, y = 0.91, label = "rg/MR", size = 2) +
+  theme(legend.position = 'none',
+        # aspect.ratio=1/10,
         text = element_text(size=8),
-        plot.margin=margin(0,0,0,0, 'pt'), 
-        ) + 
-    expand_limits(y = c(0.8, 1.1)) 
+        plot.margin=margin(0,0,0,0, 'pt'),
+        ) +
+    expand_limits(y = c(0.8, 1.1))
 
-## Put some padding around the legend 
-p.leg_out <- ggarrange(ggblank, p.leg, ggblank, 
+## Put some padding around the legend
+p.leg_out <- ggarrange(ggblank, p.leg, ggblank,
                       nrow = 1, ncol = 3, widths = c(0.1, 1, 0.025))
 
 ## combine heatmap and legend
@@ -625,46 +631,52 @@ mrforrest_plot <- function(x){
     arrange(method, out) %>%
     filter(method == "IVW" & out == "Egger.out" | method == "WME" & out == "MRPRESSO.out")
 
-  ggplot(x, 
+  ggplot(x,
          # aes(y = method, x = or)
          aes(y = method, x = b)
-  ) + 
-    # geom_vline(xintercept = 1, linetype = 2) + 
-    geom_vline(xintercept = 0, linetype = 2) + 
-    facet_grid(exposure.name ~ outcome.name, scales = "free_x", space = "free") + 
+  ) +
+    # geom_vline(xintercept = 1, linetype = 2) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    facet_grid(exposure.name ~ outcome.name, scales = "free_x", space = "free") +
     geom_point() +
-    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) + 
-    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-    theme_bw() + 
-    labs(title = " ", x = "logOR (95%CI)") + 
+    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) +
+    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+    theme_bw() +
+    labs(title = " ", x = "logOR (95%CI)") +
     theme(legend.position = "none",
-          axis.title.y=element_blank(), 
+          axis.title.y=element_blank(),
           axis.title.x=element_text(size=8),
-          panel.grid.minor.x  = element_blank(), 
+          panel.grid.minor.x  = element_blank(),
           text = element_text(size=8),
         strip.background = element_blank(),
-        panel.border = element_rect(colour = "black", fill = NA)) + 
-    expand_limits(y = 6) + 
+        panel.border = element_rect(colour = "black", fill = NA)) +
+    expand_limits(y = 6) +
     geom_label(
       data    = mr_labels,
       mapping = aes(x = or, y = method, label = value, alpha = 0),
       nudge_x = 0,
       nudge_y = 0.5,
-      size = 1.5, 
-      hjust = "inward", 
+      size = 1.5,
+      hjust = "inward",
       label.size = NA
     )
-}  
+}
 
 p.ls <- map(mrdat.p.ls, mrforrest_plot)
 
-p4 <- ggarrange(p.ls[[1]], ggblank, 
-                nrow = 2, ncol = 1, heights = c(1, 1.01))
-p6 <- ggarrange(p.ls[[3]], ggblank, nrow = 2, ncol = 1, heights = c(4.9, 1))
+p4 <- ggarrange(p.ls[[1]], ggblank, nrow = 2, ncol = 1, heights = c(1.98, 1))
+# p6 <- ggarrange(p.ls[[3]], ggblank, nrow = 2, ncol = 1, heights = c(4.9, 1))
 
-p.mr_sig <- ggarrange(ggblank, p4, p.ls[[2]], p6, ggblank, 
+p.mr_sig <- ggarrange(ggblank, p4, p.ls[[2]], p.ls[[3]], ggblank,
                       nrow = 1, ncol = 5, widths = c(0.07, 1, 1, 1, 0.09))
-# p.mr_sig <- ggarrange(ggblank, p.ls[[1]], p.ls[[2]], p.ls[[3]], ggblank, 
+
+# p4 <- ggarrange(p.ls[[1]], ggblank,
+#                 nrow = 2, ncol = 1, heights = c(1, 1.01))
+# p6 <- ggarrange(p.ls[[3]], ggblank, nrow = 2, ncol = 1, heights = c(4.9, 1))
+# 
+# p.mr_sig <- ggarrange(ggblank, p4, p.ls[[2]], p6, ggblank,
+#                       nrow = 1, ncol = 5, widths = c(0.07, 1, 1, 1, 0.09))
+# p.mr_sig <- ggarrange(ggblank, p.ls[[1]], p.ls[[2]], p.ls[[3]], ggblank,
 #                       nrow = 1, ncol = 5, widths = c(0.07, 1, 1, 1, 0.09))
 # p.mr_sig
 
@@ -675,10 +687,10 @@ p.mr_sig <- ggarrange(ggblank, p4, p.ls[[2]], p6, ggblank,
 p.comb <- ggarrange(p.heatmap, p.mr_sig, nrow = 2, ncol = 1,  heights = c(1, 1.5))
 # p.comb
 
-# ggsave(glue("docs/{model}_MR_RG_heatmap{DATE}.png"), plot = p3, width = 11, height = 5, units = "in")
-ggsave(glue("docs/{model}_resplot_{DATE}.png"), plot = p.comb, height = 190, width = 240, units = 'mm')
-ggsave(glue("docs/{model}_resplot_{DATE}.tiff"), plot = p.comb, height = 190, width = 240, units = 'mm')
-ggsave(glue("docs/{model}_resplot_{DATE}.pdf"), plot = p.comb, height = 190, width = 240, units = 'mm')
+# ggsave(glue("docs/{DATE}/{model}_MR_RG_heatmap{DATE}.png"), plot = p3, width = 11, height = 5, units = "in")
+ggsave(glue("docs/{DATE}/{model}_resplot.png"), plot = p.comb, height = 190, width = 240, units = 'mm')
+ggsave(glue("docs/{DATE}/{model}_resplot.tiff"), plot = p.comb, height = 190, width = 240, units = 'mm')
+ggsave(glue("docs/{DATE}/{model}_resplot.pdf"), plot = p.comb, height = 190, width = 240, units = 'mm')
 ```
 
 ## Heatmap
@@ -687,13 +699,13 @@ ggsave(glue("docs/{model}_resplot_{DATE}.pdf"), plot = p.comb, height = 190, wid
 # rg
 p1 <- ggplot(dat.plot) +
   facet_grid(. ~ domain.exposure, scales = "free", space = "free", switch = "y") +
-  geom_tile(aes(x = exposure.name, y = outcome.name, fill = rg, height=rg.p_cat, width=rg.p_cat)) + 
+  geom_tile(aes(x = exposure.name, y = outcome.name, fill = rg, height=rg.p_cat, width=rg.p_cat)) +
   geom_text(data = dat.plot, vjust = 0.75, size = 4, aes(label = rg.fdr_signif, x = exposure.name, y = outcome.name)) +
   scale_fill_distiller(palette = rev(the_palette), limits = rg_lim) +
   theme_classic() +
   scale_x_discrete(position = "top") +
   geom_vline(xintercept=seq(0.5, 43.5, 1),color="grey90") +
-  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") + 
+  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") +
   theme(legend.position = 'right',
         legend.title=element_blank(),
         legend.text = element_text(hjust = 1.5), text = element_text(size=10),
@@ -701,26 +713,26 @@ p1 <- ggplot(dat.plot) +
         # axis.text.x = element_blank(),
         # axis.ticks.x = element_blank(),
         # strip.text.x = element_blank(),
-        axis.title.x = element_blank(), axis.title.y = element_blank(), 
+        axis.title.x = element_blank(), axis.title.y = element_blank(),
         aspect.ratio=1,
         legend.key.width = unit(0.5, "line"),
         legend.key.height = unit(0.75, "line"),
-        legend.spacing.y = unit(-0.75, "line"), 
-        # plot.margin=grid::unit(c(0,0,0,0), "mm"), 
+        legend.spacing.y = unit(-0.75, "line"),
+        # plot.margin=grid::unit(c(0,0,0,0), "mm"),
          strip.background = element_blank()
-        ) 
+        )
 p1
 
 # MR
 p2 <- ggplot(dat.plot) +
   facet_grid(. ~ domain.exposure, scales = "free", space = "free", switch = "y") +
-  geom_tile(aes(x = exposure.name, y = outcome.name, fill = z, height=mr.p_cat, width=mr.p_cat)) + 
+  geom_tile(aes(x = exposure.name, y = outcome.name, fill = z, height=mr.p_cat, width=mr.p_cat)) +
   geom_text(data = dat.plot, vjust = 0.75, size = 4, aes(label = fdr_signif, x = exposure.name, y = outcome.name)) +
   scale_fill_distiller(palette = rev(the_palette), limits = mr_lim) +
   theme_classic() +
   scale_x_discrete(position = "top") +
   geom_vline(xintercept=seq(0.5, 43.5, 1),color="grey90") +
-  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") + 
+  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") +
   geom_rect(data = filter(dat.plot, pass == TRUE), size=0.5, fill=NA, colour="black",
             aes(xmin=exposure1 - 0.5, xmax=exposure1 + 0.5,
                 ymin=outcome1 - 0.5, ymax=outcome1 + 0.5)) +
@@ -731,21 +743,21 @@ p2 <- ggplot(dat.plot) +
         # axis.text.x = element_blank(),
         # axis.ticks.x = element_blank(),
         # strip.text.x = element_blank(),
-        axis.title.x = element_blank(), axis.title.y = element_blank(), 
+        axis.title.x = element_blank(), axis.title.y = element_blank(),
         aspect.ratio=1,
         legend.key.width = unit(0.5, "line"),
         legend.key.height = unit(0.75, "line"),
-        legend.spacing.y = unit(-0.75, "line"), 
-        # plot.margin=grid::unit(c(0,0,0,0), "mm"), 
+        legend.spacing.y = unit(-0.75, "line"),
+        # plot.margin=grid::unit(c(0,0,0,0), "mm"),
          strip.background = element_blank()
-        ) 
+        )
 p2
 
 ```
 
 ```{r}
-ggsave(glue("docs/{model}_MRheatmap_{DATE}.png"), plot = p2, width = 11, height = 5, units = "in")
-ggsave(glue("docs/{model}_RGheatmap_{DATE}.png"), plot = p1, width = 11, height = 5, units = "in")
+ggsave(glue("docs/{DATE}/{model}_MRheatmap.png"), plot = p2, width = 11, height = 5, units = "in")
+ggsave(glue("docs/{DATE}/{model}_RGheatmap.png"), plot = p1, width = 11, height = 5, units = "in")
 ```
 
 
@@ -753,34 +765,34 @@ ggsave(glue("docs/{model}_RGheatmap_{DATE}.png"), plot = p1, width = 11, height 
 ### Including UKB
 
 ```{r}
-## Format datasets 
+## Format datasets
 forrest_dat.p <- bind_rows(
-  rg %>% 
+  rg %>%
     mutate(method = 'rg') %>%
-    rename(exposure = p1, outcome = p2, b = rg, p = rg.p, lo_ci = rg.lci, up_ci = rg.uci, fdr = rg.fdr) %>% 
-    select(outcome, exposure, exposure.name, outcome.name, method, b, lo_ci, up_ci, p, fdr), 
-  
-  MRsummary %>% 
-    filter(method == "IVW") %>% 
+    rename(exposure = p1, outcome = p2, b = rg, p = rg.p, lo_ci = rg.lci, up_ci = rg.uci, fdr = rg.fdr) %>%
+    select(outcome, exposure, exposure.name, outcome.name, method, b, lo_ci, up_ci, p, fdr),
+
+  MRsummary %>%
+    filter(method == "IVW") %>%
     generate_odds_ratios(.) %>%
-    filter(outliers_removed == FALSE) %>% 
+    filter(outliers_removed == FALSE) %>%
     mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
     select(outcome, exposure, exposure.name, outcome.name, method, b, lo_ci, up_ci, p = MR.pval, fdr)
-) %>% 
-  mutate(signif = case_when(p > 0.05 ~ "NS", 
-                            p < 0.05 & fdr > 0.05 ~ "Nominal", 
-                            p <= 0.05 ~ "Significant"), 
-         signif = fct_relevel(signif, "NS", "Nominal", "Significant"), 
+) %>%
+  mutate(signif = case_when(p > 0.05 ~ "NS",
+                            p < 0.05 & fdr > 0.05 ~ "Nominal",
+                            p <= 0.05 ~ "Significant"),
+         signif = fct_relevel(signif, "NS", "Nominal", "Significant"),
          method = fct_rev(method)
-  ) %>% 
-  left_join(rg %>% 
-              mutate(rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"), 
-                     rg_panel = replace_na(rg_panel, "FALSE"), 
-                     rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE")) %>% 
+  ) %>%
+  left_join(rg %>%
+              mutate(rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"),
+                     rg_panel = replace_na(rg_panel, "FALSE"),
+                     rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE")) %>%
               select(outcome = p2, exposure = p1, exposure.name, outcome.name, rg_panel)
-            ) %>% 
-  split(.$outcome) %>% 
-  map(., arrange, method, b) %>% 
+            ) %>%
+  split(.$outcome) %>%
+  map(., arrange, method, b) %>%
   map(., mutate, exposure.name = fct_inorder(exposure.name))
 
 ```
@@ -789,547 +801,547 @@ forrest_dat.p <- bind_rows(
 ```{r}
 ## Plot forrest plot
 forrest.p <- map(forrest_dat.p, function(x){
-  ggplot(x, aes(y = exposure.name, x = b, colour = signif)) + 
-  geom_vline(xintercept = 0, linetype = 2) + 
-  facet_grid(rg_panel ~ method, scales = "free", space = "free_y", 
-             switch="both", 
+  ggplot(x, aes(y = exposure.name, x = b, colour = signif)) +
+  geom_vline(xintercept = 0, linetype = 2) +
+  facet_grid(rg_panel ~ method, scales = "free", space = "free_y",
+             switch="both",
              labeller = as_labeller(
-               c(IVW = "Mendelian Randomization \nlogOR (95%CI)", 
+               c(IVW = "Mendelian Randomization \nlogOR (95%CI)",
                  rg = "Genetic Correlation \nrg (95%CI)")
                )
-             ) + 
-  geom_point() + 
-  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-  scale_color_manual(values = c("grey75", "black", "red")) + 
-  theme_bw() + 
+             ) +
+  geom_point() +
+  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+  scale_color_manual(values = c("grey75", "black", "red")) +
+  theme_bw() +
   theme(legend.position = "bottom",
         legend.title = element_blank(),
-        axis.title=element_blank(), 
+        axis.title=element_blank(),
         strip.background = element_blank(),
-        strip.text.y = element_blank(), 
+        strip.text.y = element_blank(),
         strip.placement = "outside",
-        panel.grid.minor.x  = element_blank()) 
+        panel.grid.minor.x  = element_blank())
 })
 
-## Arrange and align MR sensetivity plots 
+## Arrange and align MR sensetivity plots
 forrest_out.p <- map2(forrest.p, p.ls, function(x, y){
   p1 = x
-  p2 = y + theme(strip.text.x = element_blank()) 
-  cowplot::plot_grid(plotlist = list(p1,p2), nrow = 1, ncol = 2,  align = 'h',  axis = "bt", rel_widths = c(1.5, 1)) 
+  p2 = y + theme(strip.text.x = element_blank())
+  cowplot::plot_grid(plotlist = list(p1,p2), nrow = 1, ncol = 2,  align = 'h',  axis = "bt", rel_widths = c(1.5, 1))
   }
 )
 ```
 
 
 ```{r}
-ggsave(glue("~/Downloads/{model}_covidhgi2020A2v5alleur_forrest_{DATE}.png"), 
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020A2v5alleur_forrest.png"),
        plot = forrest_out.p[[1]], width = 12, height = 6, units = "in")
 
-ggsave(glue("~/Downloads/{model}_covidhgi2020B2v5alleur_forrest_{DATE}.png"), 
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020B2v5alleur_forrest.png"),
        plot = forrest_out.p[[1]], width = 12, height = 6, units = "in")
 
-ggsave(glue("~/Downloads/{model}_covidhgi2020C2v5alleur_forrest_{DATE}.png"), 
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020C2v5alleur_forrest.png"),
        plot = forrest_out.p[[1]], width = 12, height = 6, units = "in")
 
 ```
 
 
-### Excluding UKB 
+### Excluding UKB
 #### COVID-A2
 ```{r}
-mrdatA2.p <- MRsummary %>% 
+mrdatA2.p <- MRsummary %>%
   generate_odds_ratios(.) %>%
-  filter(outliers_removed == FALSE) %>% 
+  filter(outliers_removed == FALSE) %>%
   group_by(method) %>%
   mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
   ungroup() %>%
   left_join(select(rg, p1, p2, rg, se_rg, rg.p, rg.fdr, rg.lci, rg.uci), by = c("exposure" = "p1", "outcome"= "p2")) %>%
   filter(outcome == "covidhgi2020A2v5alleurLeaveUKBB") %>%
   filter(method != "MRPRESSO_Raw") %>%
-  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"), 
+  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"),
          method = fct_recode(method, "MR-PRESSO" = "MRPRESSO_corrected",  "MR Egger" =  "Egger")) %>%
-  arrange(method, b) %>% 
-  mutate(exposure.name = fct_inorder(exposure.name), 
-         rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"), 
-         rg_panel = replace_na(rg_panel, "FALSE"), 
-         rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE"), 
-         rg_signif = case_when(rg.p > 0.05 ~ "NS", 
-                               rg.p < 0.05 & rg.fdr > 0.05 ~ "Nominal", 
-                               rg.fdr < 0.05 ~ "Significant"), 
-         rg_signif = replace_na(rg_signif, "NS"), 
-         rg_signif = fct_relevel(rg_signif, "NS", "Nominal", "Significant"), 
-         mr_signif = case_when(MR.pval > 0.05 ~ "NS", 
-                               MR.pval < 0.05 & fdr > 0.05 ~ "Nominal", 
-                               fdr < 0.05 ~ "Significant"), 
+  arrange(method, b) %>%
+  mutate(exposure.name = fct_inorder(exposure.name),
+         rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"),
+         rg_panel = replace_na(rg_panel, "FALSE"),
+         rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE"),
+         rg_signif = case_when(rg.p > 0.05 ~ "NS",
+                               rg.p < 0.05 & rg.fdr > 0.05 ~ "Nominal",
+                               rg.fdr < 0.05 ~ "Significant"),
+         rg_signif = replace_na(rg_signif, "NS"),
+         rg_signif = fct_relevel(rg_signif, "NS", "Nominal", "Significant"),
+         mr_signif = case_when(MR.pval > 0.05 ~ "NS",
+                               MR.pval < 0.05 & fdr > 0.05 ~ "Nominal",
+                               fdr < 0.05 ~ "Significant"),
          mr_signif = fct_relevel(mr_signif, "NS", "Nominal", "Significant"),
          up_ci_arrow = ifelse(up_ci > 5, 5, NA),
          lo_ci_arrow = ifelse(lo_ci < -5, -5, NA),
-         lo_ci = ifelse(lo_ci < -5, -5, lo_ci), 
-         up_ci = ifelse(up_ci > 5, 5, up_ci), 
-         ) 
+         lo_ci = ifelse(lo_ci < -5, -5, lo_ci),
+         up_ci = ifelse(up_ci > 5, 5, up_ci),
+         )
 
-rgA2.p <- mrdatA2.p %>% 
-  arrange(method, rg) %>% 
+rgA2.p <- mrdatA2.p %>%
+  arrange(method, rg) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
-  ggplot(., aes(y = exposure.name, x = rg, colour = rg_signif)) + 
-    geom_vline(xintercept = 0, linetype = 2) + 
-    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") + 
-    geom_point() + 
-    geom_linerange(aes(xmin = rg.lci, xmax = rg.uci)) + 
-    scale_color_manual(values = c("grey75", "black", "red")) + 
-    theme_bw() + 
-    labs(title = "Genetic correlation", x = "rg (95%CI)") + 
+  ggplot(., aes(y = exposure.name, x = rg, colour = rg_signif)) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") +
+    geom_point() +
+    geom_linerange(aes(xmin = rg.lci, xmax = rg.uci)) +
+    scale_color_manual(values = c("grey75", "black", "red")) +
+    theme_bw() +
+    labs(title = "Genetic correlation", x = "rg (95%CI)") +
     theme(legend.position = "bottom",
           legend.title = element_blank(),
-          axis.title.y=element_blank(), 
+          axis.title.y=element_blank(),
           strip.background = element_blank(),
-          strip.text.y = element_blank(), 
-          panel.grid.minor.x  = element_blank()) 
+          strip.text.y = element_blank(),
+          panel.grid.minor.x  = element_blank())
 
-mrA2.p <- mrdatA2.p %>% 
+mrA2.p <- mrdatA2.p %>%
   filter(method == "IVW") %>%
-  arrange(method, rg) %>% 
+  arrange(method, rg) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
-  ggplot(., 
+  ggplot(.,
          # aes(y = exposure.name, x = or, colour = mr_signif)
          aes(y = exposure.name, x = b, colour = mr_signif)
-         ) + 
-    # geom_vline(xintercept = 1, linetype = 2) + 
-    geom_vline(xintercept = 0, linetype = 2) + 
-    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") + 
-    geom_point() + 
-    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) + 
-    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-    scale_color_manual(values = c("grey75", "black", "red")) + 
-    # scale_x_continuous(trans='log2') + 
-    # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-4, -2, -1, 1, 2)) + 
+         ) +
+    # geom_vline(xintercept = 1, linetype = 2) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") +
+    geom_point() +
+    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) +
+    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+    scale_color_manual(values = c("grey75", "black", "red")) +
+    # scale_x_continuous(trans='log2') +
+    # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-4, -2, -1, 1, 2)) +
     expand_limits(x = 2.5) +
-    theme_bw() + 
-    labs(title = "Mendelian randomization (IVW)", x = "logOR (95%CI)") + 
-    # labs(title = "Mendealian randomization", x = "OR (95%CI)") + 
+    theme_bw() +
+    labs(title = "Mendelian randomization (IVW)", x = "logOR (95%CI)") +
+    # labs(title = "Mendealian randomization", x = "OR (95%CI)") +
     theme(legend.position = "bottom",
           legend.title = element_blank(),
           axis.title.y=element_blank(),
           axis.text.y=element_blank(),
-          axis.ticks.y=element_blank(), 
+          axis.ticks.y=element_blank(),
           strip.background = element_blank(),
-          strip.text.y = element_blank(), 
-          panel.grid.minor.x  = element_blank())  
+          strip.text.y = element_blank(),
+          panel.grid.minor.x  = element_blank())
 
-ann_textA2 <- mrdatA2.p %>% 
+ann_textA2 <- mrdatA2.p %>%
   filter(exposure %in% c("Yengo2018bmi", "Lee2018educ")) %>%
-  filter(method %in% c("IVW", "WME")) %>% 
-  select(outcome, exposure, exposure.name, method, Egger.pval, MRPRESSO.pval, or) %>% 
-  mutate(exposure.name = fct_recode(exposure.name, 
-                                    "Education" = "Educational Attainment", 
-                                    # "AFB" = "Age at first birth", 
-                                    "Smoking" = "Smoking Initiation"), 
-         Egger.pval = signif(Egger.pval, 2), 
-         Egger.out = glue("Egger Intercept, p = {Egger.pval}"), 
-         MRPRESSO.out = glue("MR-PRESSO GT, p = {MRPRESSO.pval}"), 
+  filter(method %in% c("IVW", "WME")) %>%
+  select(outcome, exposure, exposure.name, method, Egger.pval, MRPRESSO.pval, or) %>%
+  mutate(exposure.name = fct_recode(exposure.name,
+                                    "Education" = "Educational Attainment",
+                                    # "AFB" = "Age at first birth",
+                                    "Smoking" = "Smoking Initiation"),
+         Egger.pval = signif(Egger.pval, 2),
+         Egger.out = glue("Egger Intercept, p = {Egger.pval}"),
+         MRPRESSO.out = glue("MR-PRESSO GT, p = {MRPRESSO.pval}"),
          # out = glue("{Egger.out}, \n{MRPRESSO.out}"),
          or = 2.5
          ) %>%
-  pivot_longer(c("Egger.out", "MRPRESSO.out"), names_to = "out") %>% 
+  pivot_longer(c("Egger.out", "MRPRESSO.out"), names_to = "out") %>%
   arrange(method, out) %>%
   filter(method == "IVW" & out == "Egger.out" | method == "WME" & out == "MRPRESSO.out")
- 
 
-mrA2.sig <- mrdatA2.p %>% 
+
+mrA2.sig <- mrdatA2.p %>%
   filter(exposure %in% c("Yengo2018bmi", "Lee2018educ")) %>%
-    mutate(exposure.name = fct_recode(exposure.name, 
-                                    "Education" = "Educational Attainment", 
-                                    # "AFB" = "Age at first birth", 
+    mutate(exposure.name = fct_recode(exposure.name,
+                                    "Education" = "Educational Attainment",
+                                    # "AFB" = "Age at first birth",
                                     "Smoking" = "Smoking Initiation")) %>%
-  ggplot(., 
+  ggplot(.,
          # aes(y = method, x = or)
          aes(y = method, x = b)
-  ) + 
-  # geom_vline(xintercept = 1, linetype = 2) + 
-  geom_vline(xintercept = 0, linetype = 2) + 
-  facet_grid(exposure.name ~ ., scales = "free_x", space = "free") + 
+  ) +
+  # geom_vline(xintercept = 1, linetype = 2) +
+  geom_vline(xintercept = 0, linetype = 2) +
+  facet_grid(exposure.name ~ ., scales = "free_x", space = "free") +
   geom_point() +
-  # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) + 
-  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-  geom_segment(aes(xend = up_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) + 
-  geom_segment(aes(xend = lo_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) + 
-  scale_color_manual(values = c("grey50", "black", "red")) + 
-  # scale_x_continuous(trans='log2') + 
-  # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-10, -5, -1, 1, 5, 10)) + 
+  # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) +
+  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+  geom_segment(aes(xend = up_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) +
+  geom_segment(aes(xend = lo_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) +
+  scale_color_manual(values = c("grey50", "black", "red")) +
+  # scale_x_continuous(trans='log2') +
+  # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-10, -5, -1, 1, 5, 10)) +
   geom_label(
     data    = ann_textA2,
     mapping = aes(x = or, y = method, label = value),
     nudge_x = 0,
     nudge_y = 0.5,
-    size = 2, 
-    hjust = "inward", 
+    size = 2,
+    hjust = "inward",
     label.size = NA
-  ) + 
-  theme_bw() + 
-  # labs(title = " ", x = "OR (95%CI)") + 
-  labs(title = " ", x = "logOR (95%CI)") + 
+  ) +
+  theme_bw() +
+  # labs(title = " ", x = "OR (95%CI)") +
+  labs(title = " ", x = "logOR (95%CI)") +
   theme(legend.position = "none",
-        axis.title.y=element_blank(), 
-        panel.grid.minor.x  = element_blank()) + 
-  expand_limits(y = 6) + 
+        axis.title.y=element_blank(),
+        panel.grid.minor.x  = element_blank()) +
+  expand_limits(y = 6) +
   coord_cartesian(xlim = c(-2.5, 2.5))
 
- 
-ggarrange(rgA2.p, mrA2.p, mrA2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom")  %>% 
-  annotate_figure(., top = text_grob("COVID-A2, EUR w/o UKB", face = "bold", size = 14))  
-ggsave(glue("docs/{model}_covidhgi2020A2v5alleurLeaveUKBB_forrest_{DATE}.png"), width = 12, height = 6, units = "in")
+
+ggarrange(rgA2.p, mrA2.p, mrA2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom")  %>%
+  annotate_figure(., top = text_grob("COVID-A2, EUR w/o UKB", face = "bold", size = 14))
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020A2v5alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
 ```
 
 
 #### COVID-B2
 ```{r}
-mrdatB2.p <- MRsummary %>% 
+mrdatB2.p <- MRsummary %>%
   generate_odds_ratios(.) %>%
-  filter(outliers_removed == FALSE) %>% 
+  filter(outliers_removed == FALSE) %>%
   group_by(method) %>%
   mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
   ungroup() %>%
   left_join(select(rg, p1, p2, rg, se_rg, rg.p, rg.fdr, rg.lci, rg.uci), by = c("exposure" = "p1", "outcome"= "p2")) %>%
   filter(outcome == "covidhgi2020B2v5alleurLeaveUKBB") %>%
   filter(method != "MRPRESSO_Raw") %>%
-  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"), 
+  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"),
          method = fct_recode(method, "MR-PRESSO" = "MRPRESSO_corrected",  "MR Egger" =  "Egger")) %>%
-  arrange(method, b) %>% 
-  mutate(exposure.name = fct_inorder(exposure.name), 
-         rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"), 
-         rg_panel = replace_na(rg_panel, "FALSE"), 
-         rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE"), 
-         rg_signif = case_when(rg.p > 0.05 ~ "NS", 
-                               rg.p < 0.05 & rg.fdr > 0.05 ~ "Nominal", 
-                               rg.fdr < 0.05 ~ "Significant"), 
-         rg_signif = replace_na(rg_signif, "NS"), 
-         rg_signif = fct_relevel(rg_signif, "NS", "Nominal", "Significant"), 
-         mr_signif = case_when(MR.pval > 0.05 ~ "NS", 
-                               MR.pval < 0.05 & fdr > 0.05 ~ "Nominal", 
-                               fdr < 0.05 ~ "Significant"), 
+  arrange(method, b) %>%
+  mutate(exposure.name = fct_inorder(exposure.name),
+         rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"),
+         rg_panel = replace_na(rg_panel, "FALSE"),
+         rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE"),
+         rg_signif = case_when(rg.p > 0.05 ~ "NS",
+                               rg.p < 0.05 & rg.fdr > 0.05 ~ "Nominal",
+                               rg.fdr < 0.05 ~ "Significant"),
+         rg_signif = replace_na(rg_signif, "NS"),
+         rg_signif = fct_relevel(rg_signif, "NS", "Nominal", "Significant"),
+         mr_signif = case_when(MR.pval > 0.05 ~ "NS",
+                               MR.pval < 0.05 & fdr > 0.05 ~ "Nominal",
+                               fdr < 0.05 ~ "Significant"),
          mr_signif = fct_relevel(mr_signif, "NS", "Nominal", "Significant"),
          up_ci_arrow = ifelse(up_ci > 5, 5, NA),
          lo_ci_arrow = ifelse(lo_ci < -5, -5, NA),
-         lo_ci = ifelse(lo_ci < -5, -5, lo_ci), 
-         up_ci = ifelse(up_ci > 5, 5, up_ci), 
-         ) 
+         lo_ci = ifelse(lo_ci < -5, -5, lo_ci),
+         up_ci = ifelse(up_ci > 5, 5, up_ci),
+         )
 
-rgB2.p <- mrdatB2.p %>% 
-  arrange(method, rg) %>% 
+rgB2.p <- mrdatB2.p %>%
+  arrange(method, rg) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
-  ggplot(., aes(y = exposure.name, x = rg, colour = rg_signif)) + 
-    geom_vline(xintercept = 0, linetype = 2) + 
-    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") + 
-    geom_point() + 
-    geom_linerange(aes(xmin = rg.lci, xmax = rg.uci)) + 
-    scale_color_manual(values = c("grey75", "black", "red")) + 
-    theme_bw() + 
-    labs(title = "Genetic correlation", x = "rg (95%CI)") + 
+  ggplot(., aes(y = exposure.name, x = rg, colour = rg_signif)) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") +
+    geom_point() +
+    geom_linerange(aes(xmin = rg.lci, xmax = rg.uci)) +
+    scale_color_manual(values = c("grey75", "black", "red")) +
+    theme_bw() +
+    labs(title = "Genetic correlation", x = "rg (95%CI)") +
     theme(legend.position = "bottom",
           legend.title = element_blank(),
-          axis.title.y=element_blank(), 
+          axis.title.y=element_blank(),
           strip.background = element_blank(),
-          strip.text.y = element_blank(), 
-          panel.grid.minor.x  = element_blank()) 
+          strip.text.y = element_blank(),
+          panel.grid.minor.x  = element_blank())
 
-mrB2.p <- mrdatB2.p %>% 
+mrB2.p <- mrdatB2.p %>%
   filter(method == "IVW") %>%
-  arrange(method, rg) %>% 
+  arrange(method, rg) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
-  ggplot(., 
+  ggplot(.,
          # aes(y = exposure.name, x = or, colour = mr_signif)
          aes(y = exposure.name, x = b, colour = mr_signif)
-         ) + 
-    # geom_vline(xintercept = 1, linetype = 2) + 
-    geom_vline(xintercept = 0, linetype = 2) + 
-    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") + 
-    geom_point() + 
-    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) + 
-    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-    scale_color_manual(values = c("grey75", "black", "red")) + 
-    # scale_x_continuous(trans='log2') + 
-    # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-4, -2, -1, 1, 2)) + 
+         ) +
+    # geom_vline(xintercept = 1, linetype = 2) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") +
+    geom_point() +
+    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) +
+    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+    scale_color_manual(values = c("grey75", "black", "red")) +
+    # scale_x_continuous(trans='log2') +
+    # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-4, -2, -1, 1, 2)) +
     expand_limits(x = 2.5) +
-    theme_bw() + 
-    labs(title = "Mendelian randomization (IVW)", x = "logOR (95%CI)") + 
-    # labs(title = "Mendealian randomization", x = "OR (95%CI)") + 
+    theme_bw() +
+    labs(title = "Mendelian randomization (IVW)", x = "logOR (95%CI)") +
+    # labs(title = "Mendealian randomization", x = "OR (95%CI)") +
     theme(legend.position = "bottom",
           legend.title = element_blank(),
           axis.title.y=element_blank(),
           axis.text.y=element_blank(),
-          axis.ticks.y=element_blank(), 
+          axis.ticks.y=element_blank(),
           strip.background = element_blank(),
-          strip.text.y = element_blank(), 
-          panel.grid.minor.x  = element_blank())  
+          strip.text.y = element_blank(),
+          panel.grid.minor.x  = element_blank())
 
-ann_textB2 <- mrdatB2.p %>% 
+ann_textB2 <- mrdatB2.p %>%
   filter(exposure %in% c("Yengo2018bmi", "Lee2018educ", "Liu2019smkint", "Mills2021afb", "Nalls2019pd")) %>%
-  filter(method %in% c("IVW", "WME")) %>% 
-  select(outcome, exposure, exposure.name, method, Egger.pval, MRPRESSO.pval, or) %>% 
-  mutate(exposure.name = fct_recode(exposure.name, 
-                                    "Education" = "Educational Attainment", 
-                                    # "AFB" = "Age at first birth", 
-                                    "Smoking" = "Smoking Initiation"), 
-         Egger.pval = signif(Egger.pval, 2), 
-         Egger.out = glue("Egger Intercept, p = {Egger.pval}"), 
-         MRPRESSO.out = glue("MR-PRESSO GT, p = {MRPRESSO.pval}"), 
+  filter(method %in% c("IVW", "WME")) %>%
+  select(outcome, exposure, exposure.name, method, Egger.pval, MRPRESSO.pval, or) %>%
+  mutate(exposure.name = fct_recode(exposure.name,
+                                    "Education" = "Educational Attainment",
+                                    # "AFB" = "Age at first birth",
+                                    "Smoking" = "Smoking Initiation"),
+         Egger.pval = signif(Egger.pval, 2),
+         Egger.out = glue("Egger Intercept, p = {Egger.pval}"),
+         MRPRESSO.out = glue("MR-PRESSO GT, p = {MRPRESSO.pval}"),
          # out = glue("{Egger.out}, \n{MRPRESSO.out}"),
          or = 2.5
          ) %>%
-  pivot_longer(c("Egger.out", "MRPRESSO.out"), names_to = "out") %>% 
+  pivot_longer(c("Egger.out", "MRPRESSO.out"), names_to = "out") %>%
   arrange(method, out) %>%
   filter(method == "IVW" & out == "Egger.out" | method == "WME" & out == "MRPRESSO.out")
- 
 
-mrB2.sig <- mrdatB2.p %>% 
+
+mrB2.sig <- mrdatB2.p %>%
   filter(exposure %in% c("Yengo2018bmi", "Lee2018educ", "Liu2019smkint", "Mills2021afb", "Nalls2019pd")) %>%
-    mutate(exposure.name = fct_recode(exposure.name, 
-                                    "Education" = "Educational Attainment", 
-                                    # "AFB" = "Age at first birth", 
+    mutate(exposure.name = fct_recode(exposure.name,
+                                    "Education" = "Educational Attainment",
+                                    # "AFB" = "Age at first birth",
                                     "Smoking" = "Smoking Initiation")) %>%
-  ggplot(., 
+  ggplot(.,
          # aes(y = method, x = or)
          aes(y = method, x = b)
-  ) + 
-  # geom_vline(xintercept = 1, linetype = 2) + 
-  geom_vline(xintercept = 0, linetype = 2) + 
-  facet_grid(exposure.name ~ ., scales = "free_x", space = "free") + 
+  ) +
+  # geom_vline(xintercept = 1, linetype = 2) +
+  geom_vline(xintercept = 0, linetype = 2) +
+  facet_grid(exposure.name ~ ., scales = "free_x", space = "free") +
   geom_point() +
-  # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) + 
-  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-  geom_segment(aes(xend = up_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) + 
-  geom_segment(aes(xend = lo_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) + 
-  scale_color_manual(values = c("grey50", "black", "red")) + 
-  # scale_x_continuous(trans='log2') + 
-  # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-10, -5, -1, 1, 5, 10)) + 
+  # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) +
+  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+  geom_segment(aes(xend = up_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) +
+  geom_segment(aes(xend = lo_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) +
+  scale_color_manual(values = c("grey50", "black", "red")) +
+  # scale_x_continuous(trans='log2') +
+  # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-10, -5, -1, 1, 5, 10)) +
   geom_label(
     data    = ann_textB2,
     mapping = aes(x = or, y = method, label = value),
     nudge_x = 0,
     nudge_y = 0.5,
-    size = 2, 
-    hjust = "inward", 
+    size = 2,
+    hjust = "inward",
     label.size = NA
-  ) + 
-  theme_bw() + 
-  # labs(title = " ", x = "OR (95%CI)") + 
-  labs(title = " ", x = "logOR (95%CI)") + 
+  ) +
+  theme_bw() +
+  # labs(title = " ", x = "OR (95%CI)") +
+  labs(title = " ", x = "logOR (95%CI)") +
   theme(legend.position = "none",
-        axis.title.y=element_blank(), 
-        panel.grid.minor.x  = element_blank()) + 
-  expand_limits(y = 6) + 
+        axis.title.y=element_blank(),
+        panel.grid.minor.x  = element_blank()) +
+  expand_limits(y = 6) +
   coord_cartesian(xlim = c(-3, 3))
 
- 
-ggarrange(rgB2.p, mrB2.p, mrB2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom") %>% 
-  annotate_figure(., top = text_grob("COVID-B2, EUR w/o UKB", face = "bold", size = 14))  
-ggsave(glue("docs/{model}_covidhgi2020B2v5alleurLeaveUKBB_forrest_{DATE}.png"), width = 12, height = 6, units = "in")
+
+ggarrange(rgB2.p, mrB2.p, mrB2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom") %>%
+  annotate_figure(., top = text_grob("COVID-B2, EUR w/o UKB", face = "bold", size = 14))
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020B2v5alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
 ```
 
 #### COVID-C2
 ```{r}
-mrdatC2.p <- MRsummary %>% 
+mrdatC2.p <- MRsummary %>%
   generate_odds_ratios(.) %>%
-  filter(outliers_removed == FALSE) %>% 
+  filter(outliers_removed == FALSE) %>%
   group_by(method) %>%
   mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
   ungroup() %>%
   left_join(select(rg, p1, p2, rg, se_rg, rg.p, rg.fdr, rg.lci, rg.uci), by = c("exposure" = "p1", "outcome"= "p2")) %>%
   filter(outcome == "covidhgi2020C2v5alleurLeaveUKBB") %>%
   filter(method != "MRPRESSO_Raw") %>%
-  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"), 
+  mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"),
          method = fct_recode(method, "MR-PRESSO" = "MRPRESSO_corrected",  "MR Egger" =  "Egger")) %>%
-  arrange(method, b) %>% 
-  mutate(exposure.name = fct_inorder(exposure.name), 
-         rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"), 
-         rg_panel = replace_na(rg_panel, "FALSE"), 
-         rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE"), 
-         rg_signif = case_when(rg.p > 0.05 ~ "NS", 
-                               rg.p < 0.05 & rg.fdr > 0.05 ~ "Nominal", 
-                               rg.fdr < 0.05 ~ "Significant"), 
-         rg_signif = replace_na(rg_signif, "NS"), 
-         rg_signif = fct_relevel(rg_signif, "NS", "Nominal", "Significant"), 
-         mr_signif = case_when(MR.pval > 0.05 ~ "NS", 
-                               MR.pval < 0.05 & fdr > 0.05 ~ "Nominal", 
-                               fdr < 0.05 ~ "Significant"), 
+  arrange(method, b) %>%
+  mutate(exposure.name = fct_inorder(exposure.name),
+         rg_panel = ifelse(rg.fdr < 0.05, "TRUE", "FALSE"),
+         rg_panel = replace_na(rg_panel, "FALSE"),
+         rg_panel = fct_relevel(rg_panel, "TRUE", "FALSE"),
+         rg_signif = case_when(rg.p > 0.05 ~ "NS",
+                               rg.p < 0.05 & rg.fdr > 0.05 ~ "Nominal",
+                               rg.fdr < 0.05 ~ "Significant"),
+         rg_signif = replace_na(rg_signif, "NS"),
+         rg_signif = fct_relevel(rg_signif, "NS", "Nominal", "Significant"),
+         mr_signif = case_when(MR.pval > 0.05 ~ "NS",
+                               MR.pval < 0.05 & fdr > 0.05 ~ "Nominal",
+                               fdr < 0.05 ~ "Significant"),
          mr_signif = fct_relevel(mr_signif, "NS", "Nominal", "Significant"),
          up_ci_arrow = ifelse(up_ci > 5, 5, NA),
          lo_ci_arrow = ifelse(lo_ci < -5, -5, NA),
-         lo_ci = ifelse(lo_ci < -5, -5, lo_ci), 
-         up_ci = ifelse(up_ci > 5, 5, up_ci), 
-         ) 
+         lo_ci = ifelse(lo_ci < -5, -5, lo_ci),
+         up_ci = ifelse(up_ci > 5, 5, up_ci),
+         )
 
-rgC2.p <- mrdatC2.p %>% 
-  arrange(method, rg) %>% 
+rgC2.p <- mrdatC2.p %>%
+  arrange(method, rg) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
-  ggplot(., aes(y = exposure.name, x = rg, colour = rg_signif)) + 
-    geom_vline(xintercept = 0, linetype = 2) + 
-    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") + 
-    geom_point() + 
-    geom_linerange(aes(xmin = rg.lci, xmax = rg.uci)) + 
-    scale_color_manual(values = c("grey75", "black", "red")) + 
-    theme_bw() + 
-    labs(title = "Genetic correlation", x = "rg (95%CI)") + 
+  ggplot(., aes(y = exposure.name, x = rg, colour = rg_signif)) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") +
+    geom_point() +
+    geom_linerange(aes(xmin = rg.lci, xmax = rg.uci)) +
+    scale_color_manual(values = c("grey75", "black", "red")) +
+    theme_bw() +
+    labs(title = "Genetic correlation", x = "rg (95%CI)") +
     theme(legend.position = "bottom",
           legend.title = element_blank(),
-          axis.title.y=element_blank(), 
+          axis.title.y=element_blank(),
           strip.background = element_blank(),
-          strip.text.y = element_blank(), 
-          panel.grid.minor.x  = element_blank()) 
+          strip.text.y = element_blank(),
+          panel.grid.minor.x  = element_blank())
 
-mrC2.p <- mrdatC2.p %>% 
+mrC2.p <- mrdatC2.p %>%
   filter(method == "IVW") %>%
-  arrange(method, rg) %>% 
+  arrange(method, rg) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
   mutate(exposure.name = fct_inorder(exposure.name)) %>%
-  ggplot(., 
+  ggplot(.,
          # aes(y = exposure.name, x = or, colour = mr_signif)
          aes(y = exposure.name, x = b, colour = mr_signif)
-         ) + 
-    # geom_vline(xintercept = 1, linetype = 2) + 
-    geom_vline(xintercept = 0, linetype = 2) + 
-    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") + 
-    geom_point() + 
-    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) + 
-    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-    scale_color_manual(values = c("grey75", "black", "red")) + 
-    # scale_x_continuous(trans='log2') + 
-    # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-4, -2, -1, 1, 2)) + 
+         ) +
+    # geom_vline(xintercept = 1, linetype = 2) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    facet_grid(rg_panel ~ ., scales = "free_y", space = "free") +
+    geom_point() +
+    # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) +
+    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+    scale_color_manual(values = c("grey75", "black", "red")) +
+    # scale_x_continuous(trans='log2') +
+    # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-4, -2, -1, 1, 2)) +
     expand_limits(x = 1.5) +
-    theme_bw() + 
-    labs(title = "Mendelian randomization (IVW)", x = "logOR (95%CI)") + 
-    # labs(title = "Mendealian randomization", x = "OR (95%CI)") + 
+    theme_bw() +
+    labs(title = "Mendelian randomization (IVW)", x = "logOR (95%CI)") +
+    # labs(title = "Mendealian randomization", x = "OR (95%CI)") +
     theme(legend.position = "bottom",
           legend.title = element_blank(),
           axis.title.y=element_blank(),
           axis.text.y=element_blank(),
-          axis.ticks.y=element_blank(), 
+          axis.ticks.y=element_blank(),
           strip.background = element_blank(),
-          strip.text.y = element_blank(), 
-          panel.grid.minor.x  = element_blank())  
+          strip.text.y = element_blank(),
+          panel.grid.minor.x  = element_blank())
 
-ann_textC2 <- mrdatC2.p %>% 
+ann_textC2 <- mrdatC2.p %>%
   filter(exposure %in% c("Yengo2018bmi", "Wood2014height", "Astel2016rbc", "Nicolas2018als")) %>%
-  filter(method %in% c("IVW", "WME")) %>% 
-  select(outcome, exposure, exposure.name, method, Egger.pval, MRPRESSO.pval, or) %>% 
-  mutate(exposure.name = fct_recode(exposure.name, 
-                                    "Education" = "Educational Attainment", 
-                                    # "AFB" = "Age at first birth", 
-                                    "Smoking" = "Smoking Initiation"), 
-         Egger.pval = signif(Egger.pval, 2), 
-         Egger.out = glue("Egger Intercept, p = {Egger.pval}"), 
-         MRPRESSO.out = glue("MR-PRESSO GT, p = {MRPRESSO.pval}"), 
+  filter(method %in% c("IVW", "WME")) %>%
+  select(outcome, exposure, exposure.name, method, Egger.pval, MRPRESSO.pval, or) %>%
+  mutate(exposure.name = fct_recode(exposure.name,
+                                    "Education" = "Educational Attainment",
+                                    # "AFB" = "Age at first birth",
+                                    "Smoking" = "Smoking Initiation"),
+         Egger.pval = signif(Egger.pval, 2),
+         Egger.out = glue("Egger Intercept, p = {Egger.pval}"),
+         MRPRESSO.out = glue("MR-PRESSO GT, p = {MRPRESSO.pval}"),
          # out = glue("{Egger.out}, \n{MRPRESSO.out}"),
          or = 1
          ) %>%
-  pivot_longer(c("Egger.out", "MRPRESSO.out"), names_to = "out") %>% 
+  pivot_longer(c("Egger.out", "MRPRESSO.out"), names_to = "out") %>%
   arrange(method, out) %>%
   filter(method == "IVW" & out == "Egger.out" | method == "WME" & out == "MRPRESSO.out")
- 
 
-mrC2.sig <- mrdatC2.p %>% 
+
+mrC2.sig <- mrdatC2.p %>%
   filter(exposure %in% c("Yengo2018bmi", "Wood2014height", "Astel2016rbc", "Nicolas2018als")) %>%
-    mutate(exposure.name = fct_recode(exposure.name, 
-                                    "Education" = "Educational Attainment", 
-                                    # "AFB" = "Age at first birth", 
+    mutate(exposure.name = fct_recode(exposure.name,
+                                    "Education" = "Educational Attainment",
+                                    # "AFB" = "Age at first birth",
                                     "Smoking" = "Smoking Initiation")) %>%
-  ggplot(., 
+  ggplot(.,
          # aes(y = method, x = or)
          aes(y = method, x = b)
-  ) + 
-  # geom_vline(xintercept = 1, linetype = 2) + 
-  geom_vline(xintercept = 0, linetype = 2) + 
-  facet_grid(exposure.name ~ ., scales = "free_x", space = "free") + 
+  ) +
+  # geom_vline(xintercept = 1, linetype = 2) +
+  geom_vline(xintercept = 0, linetype = 2) +
+  facet_grid(exposure.name ~ ., scales = "free_x", space = "free") +
   geom_point() +
-  # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) + 
-  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) + 
-  # geom_segment(aes(xend = up_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) + 
-  # geom_segment(aes(xend = lo_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) + 
-  scale_color_manual(values = c("grey50", "black", "red")) + 
-  # scale_x_continuous(trans='log2') + 
-  # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-10, -5, -1, 1, 5, 10)) + 
+  # geom_linerange(aes(xmin = or_lci95, xmax = or_uci95)) +
+  geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+  # geom_segment(aes(xend = up_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) +
+  # geom_segment(aes(xend = lo_ci_arrow, yend = method), arrow = arrow(length = unit(0.2,"cm"))) +
+  scale_color_manual(values = c("grey50", "black", "red")) +
+  # scale_x_continuous(trans='log2') +
+  # scale_x_continuous(trans=pseudolog10_trans, breaks = c(-10, -5, -1, 1, 5, 10)) +
   geom_label(
     data    = ann_textC2,
     mapping = aes(x = or, y = method, label = value),
     nudge_x = 0,
     nudge_y = 0.5,
-    size = 2, 
-    hjust = "inward", 
+    size = 2,
+    hjust = "inward",
     label.size = NA
-  ) + 
-  theme_bw() + 
-  # labs(title = " ", x = "OR (95%CI)") + 
-  labs(title = " ", x = "logOR (95%CI)") + 
+  ) +
+  theme_bw() +
+  # labs(title = " ", x = "OR (95%CI)") +
+  labs(title = " ", x = "logOR (95%CI)") +
   theme(legend.position = "none",
-        axis.title.y=element_blank(), 
-        panel.grid.minor.x  = element_blank()) + 
-  expand_limits(y = 6) + 
+        axis.title.y=element_blank(),
+        panel.grid.minor.x  = element_blank()) +
+  expand_limits(y = 6) +
   coord_cartesian(xlim = c(-1, 1))
 
- 
-ggarrange(rgC2.p, mrC2.p, mrC2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom") %>% 
-  annotate_figure(., top = text_grob("COVID-C2, EUR w/o UKB", face = "bold", size = 14))  
-ggsave(glue("docs/{model}_covidhgi2020C2v5alleurLeaveUKBB_forrest_{DATE}.png"), width = 12, height = 6, units = "in")
+
+ggarrange(rgC2.p, mrC2.p, mrC2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom") %>%
+  annotate_figure(., top = text_grob("COVID-C2, EUR w/o UKB", face = "bold", size = 14))
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020C2v5alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
 ```
 
-## MR Scatter Plots 
+## MR Scatter Plots
 
 ```{r dat_scatter_plots}
 ## Filter MRdat to retain SNPs
-mrdat <- MRdat %>% 
-  mutate(outcome.name = fct_recode(outcome.name, 
-                                   "Critical illness" = a2_pheno, 
-                                   Hospitalisation = b2_pheno, 
+mrdat <- MRdat %>%
+  mutate(outcome.name = fct_recode(outcome.name,
+                                   "Critical illness" = a2_pheno,
+                                   Hospitalisation = b2_pheno,
                                    "Reported infection" = c2_pheno)) %>%
-  filter(mr_keep == TRUE) 
+  filter(mr_keep == TRUE)
 
 ## Split by exposure and outcome
-mrdat.ls <- mrdat %>% 
-  arrange(exposure, outcome) %>% 
+mrdat.ls <- mrdat %>%
+  arrange(exposure, outcome) %>%
   group_by(exposure, outcome) %>%
   group_split()
 
-# mrres <- mrdat %>% 
-#   mr(., method_list = c("mr_ivw_fe", "mr_weighted_median", "mr_weighted_mode", "mr_egger_regression")) %>% 
+# mrres <- mrdat %>%
+#   mr(., method_list = c("mr_ivw_fe", "mr_weighted_median", "mr_weighted_mode", "mr_egger_regression")) %>%
 #   as_tibble() %>%
-#   mutate(outcome = as.character(outcome), 
-#          exposure = as.character(exposure)) %>% 
+#   mutate(outcome = as.character(outcome),
+#          exposure = as.character(exposure)) %>%
 #   arrange(outcome, exposure) %>%
-#   group_by(outcome, exposure) 
+#   group_by(outcome, exposure)
 
 # res.ls <- mrres %>%
 #   left_join(egger.i) %>%
-#   mutate(a = ifelse(is.na(a), 0, a), 
-#          outcome = as.character(outcome), 
-#          exposure = as.character(exposure)) %>% 
+#   mutate(a = ifelse(is.na(a), 0, a),
+#          outcome = as.character(outcome),
+#          exposure = as.character(exposure)) %>%
 #   arrange(outcome, exposure) %>%
-#   group_by(outcome, exposure) %>% 
+#   group_by(outcome, exposure) %>%
 #   group_split()
 
-# Generate MR result list 
+# Generate MR result list
 ## Merge mr results with MR-PRESSO corrected analysis
 ## Merge with egger intercepts, set intercept to 0 for other methods
 ## Format result file
 res.ls <- MR_results %>%
-  filter(outliers_removed == FALSE) %>% 
+  filter(outliers_removed == FALSE) %>%
   bind_rows(
-    mrpresso_res %>% 
-      filter(method == "MRPRESSO_corrected") %>% 
+    mrpresso_res %>%
+      filter(method == "MRPRESSO_corrected") %>%
       filter(!is.na(b)) %>%
       rename(pval = MR.pval)
-  ) %>% 
+  ) %>%
   arrange(exposure, outcome, method) %>%
-  left_join(egger_comb %>% 
-              mutate(method = "MR Egger") %>% 
-              rename(a = egger_intercept) %>% 
+  left_join(egger_comb %>%
+              mutate(method = "MR Egger") %>%
+              rename(a = egger_intercept) %>%
               select(., -Isq, -egger_se, -pval)
   ) %>%
   mutate(method = str_replace(method, "Inverse variance weighted \\(fixed effects\\)", 'IVW'),
          method = str_replace(method, "MR Egger", 'Egger'),
          method = str_replace(method, "Weighted median", 'WME'),
-         method = str_replace(method, "Weighted mode", 'WMBE'), 
+         method = str_replace(method, "Weighted mode", 'WMBE'),
          method = str_replace(method, "MRPRESSO_corrected", 'MRPRESSO'),
          method = fct_relevel(method, "IVW", "Egger", "WME", "WMBE", "MRPRESSO")) %>%
   mutate(a = ifelse(is.na(a), 0, a)) %>%
@@ -1343,78 +1355,78 @@ res.ls <- MR_results %>%
 mr_scatter_plot2 <- function(mrdat,res){
   message("Plotting Scatters: ", mrdat$exposure.name[1], " - ", mrdat$outcome.name[1])
 
-  ## reoriante effect direction of negative exposure values 
-  d <- mrdat %>% 
-    mutate(beta.outcome = ifelse(beta.exposure < 0, beta.outcome * -1, beta.outcome), 
+  ## reoriante effect direction of negative exposure values
+  d <- mrdat %>%
+    mutate(beta.outcome = ifelse(beta.exposure < 0, beta.outcome * -1, beta.outcome),
            beta.exposure = ifelse(beta.exposure < 0, beta.exposure * -1, beta.exposure))
-  
+
   ## Make scater plot
-  ggplot(data = d, aes(x = beta.exposure, y = beta.outcome)) + 
-    geom_errorbar(aes(ymin = beta.outcome - se.outcome, ymax = beta.outcome + se.outcome), 
+  ggplot(data = d, aes(x = beta.exposure, y = beta.outcome)) +
+    geom_errorbar(aes(ymin = beta.outcome - se.outcome, ymax = beta.outcome + se.outcome),
                   colour = "grey", width = 0) +
-    geom_errorbarh(aes(xmin = beta.exposure - se.exposure, xmax = beta.exposure + se.exposure), 
-                   colour = "grey", height = 0) + 
-    geom_point(aes(colour = !mrpresso_keep)) + 
-    scale_colour_manual(values = c("black", "#CD534CFF")) + 
+    geom_errorbarh(aes(xmin = beta.exposure - se.exposure, xmax = beta.exposure + se.exposure),
+                   colour = "grey", height = 0) +
+    geom_point(aes(colour = !mrpresso_keep)) +
+    scale_colour_manual(values = c("black", "#CD534CFF")) +
     new_scale_color() +
-    geom_abline(data = res, aes(intercept = a, slope = b, color = method, linetype = method), show.legend = TRUE) + 
+    geom_abline(data = res, aes(intercept = a, slope = b, color = method, linetype = method), show.legend = TRUE) +
     scale_color_brewer(palette = "Set1") +
-    labs(x = paste("SNP effect on\n", d$exposure.name[1]), 
-         y = paste("SNP effect on\n", d$outcome.name[1])) + 
-    theme_bw() + 
+    labs(x = paste("SNP effect on\n", d$exposure.name[1]),
+         y = paste("SNP effect on\n", d$outcome.name[1])) +
+    theme_bw() +
     theme(legend.position = "bottom",
-          legend.direction = "horizontal", 
-          text = element_text(size=8)) + 
-    guides(linetype = guide_legend(nrow = 1), 
-           colour_new = FALSE)  
+          legend.direction = "horizontal",
+          text = element_text(size=8)) +
+    guides(linetype = guide_legend(nrow = 1),
+           colour_new = FALSE)
 }
 
 # mr_scatter_plot(res.ls[[1]], mrdat.ls[[1]])
 # mr_scatter_plot2(mrdat.ls[[1]], res.ls[[1]])
 
-## Apply plot across all results 
+## Apply plot across all results
 plots.ls <- map2(mrdat.ls, res.ls, mr_scatter_plot2)
 
 ## Combine all plots and export to pdf file
-# p.out <- ggpubr::ggarrange(plotlist = plots.ls, nrow=3, ncol=2, 
+# p.out <- ggpubr::ggarrange(plotlist = plots.ls, nrow=3, ncol=2,
 #                   common.legend = TRUE, legend = 'bottom')
-# p.out %>% 
-#   ggpubr::ggexport(filename = glue("docs/{model}_MRScatterPlots{DATE}.pdf"),  pointsize = 8, verbose = T)
+# p.out %>%
+#   ggpubr::ggexport(filename = glue("docs/{DATE}/{model}_MRScatterPlots{DATE}.pdf"),  pointsize = 8, verbose = T)
 
 ```
 
 
-## MR Funnel Plots 
+## MR Funnel Plots
 
 ```{r dat_funnel_plots}
 
-# run twosample MR on each SNP individualy 
-res_single.ls <- mrdat.ls %>% 
+# run twosample MR on each SNP individualy
+res_single.ls <- mrdat.ls %>%
   map(., mr_singlesnp, all_method=c("mr_ivw_fe", "mr_weighted_median", "mr_weighted_mode", "mr_egger_regression"))
 
 ## merge single snp with snp meta data (only want MR-PRESSO really)
-mrres_single.ls <- bind_rows(res_single.ls) %>% 
+mrres_single.ls <- bind_rows(res_single.ls) %>%
   as_tibble() %>%
   bind_rows(
-    mrpresso_res %>% 
-      filter(method == "MRPRESSO_corrected") %>% 
+    mrpresso_res %>%
+      filter(method == "MRPRESSO_corrected") %>%
       filter(!is.na(b)) %>%
-      rename(p = MR.pval, SNP = method) %>% 
+      rename(p = MR.pval, SNP = method) %>%
       select(exposure, outcome, id.exposure, id.outcome, SNP, b, se, p)
-  ) %>% 
-  bind_rows() %>% 
+  ) %>%
+  bind_rows() %>%
   mutate(SNP = str_replace(SNP, "MRPRESSO_corrected", 'All - MRPRESSO_corrected'),
-         method = ifelse(str_detect(SNP, "All"), SNP, NA), 
-         SNP = ifelse(str_detect(SNP, "All"), NA, SNP), 
+         method = ifelse(str_detect(SNP, "All"), SNP, NA),
+         SNP = ifelse(str_detect(SNP, "All"), NA, SNP),
          method = str_replace(method, "All - Inverse variance weighted \\(fixed effects\\)", 'All - IVW'),
          method = str_replace(method, "All - MR Egger", 'All - Egger'),
          method = str_replace(method, "All - Weighted median", 'All - WME'),
-         method = str_replace(method, "All - Weighted mode", 'All - WMBE'), 
-         method = str_replace(method, "All - MRPRESSO_corrected", 'All - MRPRESSO'), 
-         method = fct_relevel(method, "All - IVW", "All - Egger", "All - WME", "All - WMBE", 'All - MRPRESSO')) %>% 
-  arrange(exposure, outcome, SNP, method) %>% 
+         method = str_replace(method, "All - Weighted mode", 'All - WMBE'),
+         method = str_replace(method, "All - MRPRESSO_corrected", 'All - MRPRESSO'),
+         method = fct_relevel(method, "All - IVW", "All - Egger", "All - WME", "All - WMBE", 'All - MRPRESSO')) %>%
+  arrange(exposure, outcome, SNP, method) %>%
   fill(samplesize) %>%
-  left_join(., bind_rows(mrdat.ls), 
+  left_join(., bind_rows(mrdat.ls),
               by = c("outcome", "exposure", "id.exposure", "id.outcome", "SNP"))  %>%
       group_by(exposure, outcome) %>%
       group_split()
@@ -1424,32 +1436,32 @@ mrres_single.ls <- bind_rows(res_single.ls) %>%
 
 ```{r plot_funnel_plots}
 ## Hacked TwoSampleMR::mr_funnel_plot to display MRPRESSO outliers
-mr_funnel_plot2 <- function(singlesnp_results) 
+mr_funnel_plot2 <- function(singlesnp_results)
 {
   requireNamespace("ggplot2", quietly = TRUE)
   requireNamespace("plyr", quietly = TRUE)
-  
+
   exposure = singlesnp_results$exposure.name[1]
   outcome = as.character(singlesnp_results$outcome.name[1])
   message("Plotting Funnels: ", exposure, " - ", outcome)
-  
-  d <- singlesnp_results %>% 
-    mutate(method = str_replace(method, "All - ", ""), 
+
+  d <- singlesnp_results %>%
+    mutate(method = str_replace(method, "All - ", ""),
            method = fct_relevel(method, "IVW", "Egger", "WME", "WMBE", 'MRPRESSO'))
-  out <- ggplot(subset(d, !is.na(SNP)), aes(y = 1/se, x = b, color = !mrpresso_keep)) + 
-    geom_point() + 
-    scale_colour_manual(values = c("black", "#CD534CFF")) + 
+  out <- ggplot(subset(d, !is.na(SNP)), aes(y = 1/se, x = b, color = !mrpresso_keep)) +
+    geom_point() +
+    scale_colour_manual(values = c("black", "#CD534CFF")) +
     new_scale_color() +
     geom_vline(data = subset(d, !is.na(method)), aes(xintercept = b, color = method, linetype = method)) +
     scale_color_brewer(palette = "Set1") +
-    theme_bw() + 
-    theme(legend.position = "bottom", 
+    theme_bw() +
+    theme(legend.position = "bottom",
           legend.direction = "horizontal",
-          text = element_text(size=8), 
-          plot.title = element_text(size=8)) + 
-    guides(linetype = guide_legend(nrow = 1), 
-           colour_new = FALSE) + 
-    labs(title = glue(exposure, " - ", outcome), 
+          text = element_text(size=8),
+          plot.title = element_text(size=8)) +
+    guides(linetype = guide_legend(nrow = 1),
+           colour_new = FALSE) +
+    labs(title = glue(exposure, " - ", outcome),
          y = expression(1/SE[IV]),
          x = expression(beta[IV]),
          linetype = "method")
@@ -1462,10 +1474,10 @@ mr_funnel_plot2 <- function(singlesnp_results)
 funnel_plots.ls <- map(mrres_single.ls, mr_funnel_plot2)
 
 ## Combine all plots and export to pdf file
-# funnel_p.out <- ggpubr::ggarrange(plotlist = funnel_plots.ls, nrow=3, ncol=2, 
+# funnel_p.out <- ggpubr::ggarrange(plotlist = funnel_plots.ls, nrow=3, ncol=2,
 #                            common.legend = TRUE, legend = 'bottom')
-# funnel_p.out %>% 
-#   ggpubr::ggexport(filename = glue("docs/{model}_MRFunnelPlots{DATE}.pdf"),  pointsize = 8, verbose = T)
+# funnel_p.out %>%
+#   ggpubr::ggexport(filename = glue("docs/{DATE}/{model}_MRFunnelPlots{DATE}.pdf"),  pointsize = 8, verbose = T)
 
 ```
 
@@ -1476,37 +1488,9 @@ scatter_funnel <- (c(plots.ls, funnel_plots.ls))[idx]
 
 scatter_funnel.out <- ggpubr::ggarrange(plotlist = scatter_funnel, nrow=3, ncol=2, align = "h",
                           common.legend = TRUE, legend = 'bottom')
-scatter_funnel.out %>% 
-  ggpubr::ggexport(filename = glue("docs/{model}_MRScatterFunnelPlots_{DATE}.pdf"),  
+scatter_funnel.out %>%
+  ggpubr::ggexport(filename = glue("docs/{DATE}/{model}_MRScatterFunnelPlots.pdf"),
                    pointsize = 8, verbose = T)
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

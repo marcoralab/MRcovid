@@ -3,7 +3,12 @@
 ## Use TwoSampleMR to harmonize exposure and outcome datasets
 ## ========================================================================== ##
 
-.libPaths(c(snakemake@params[["rlib"]], .libPaths()))
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
 
 message("Begining Harmonization \n")
 ### ===== Command Line Arguments ===== ##

@@ -2,6 +2,12 @@
 ## ========================================================================== ##
 ## Concat Harmonized MR datasets
 ## ========================================================================== ##
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
 
 library(tidyverse)
 

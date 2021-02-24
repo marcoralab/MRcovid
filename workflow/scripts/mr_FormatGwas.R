@@ -18,8 +18,15 @@ z_col = snakemake@params[["z_col"]]
 n_col = snakemake@params[["n_col"]]
 trait_col = snakemake@params[["trait_col"]]
 
-library(gwasvcf)
-library(VariantAnnotation)
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
+# library(gwasvcf)
+# library(VariantAnnotation)
 library(tidyverse)
 library(magrittr)
 
@@ -32,8 +39,8 @@ if(str_detect(infile_gwas, ".vcf.gz")){
   ## Formating for IEU OPEN GWAS .vcf files
   message("IEU OPEN GWAS FORMAT")
 
-  vcf <- readVcf(infile_gwas)
-  trait.gwas <- vcf_to_tibble(vcf)
+  vcf <- VariantAnnotation::readVcf(infile_gwas)
+  trait.gwas <- gwasvcf::vcf_to_tibble(vcf)
   traitID = tolower(samples(header(vcf)))
 
   ieugwas <- read_csv("data/raw/ieugwas_201020.csv")
@@ -60,7 +67,7 @@ if(str_detect(infile_gwas, ".vcf.gz")){
   ## Formating for MSSM files
   message("MSSM GWAS FORMAT")
 
-  trait.gwas <- suppressMessages(read_tsv(infile_gwas, comment = '#', guess_max = 11000000))
+  trait.gwas <- suppressMessages(vroom::vroom(infile_gwas, comment = '#', guess_max = 11000000))
 
   out <- trait.gwas %>%
     rename(SNP = snp_col, CHROM = chrom_col, POS = pos_col, REF = ref_col,

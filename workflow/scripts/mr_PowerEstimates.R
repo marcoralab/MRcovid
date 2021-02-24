@@ -2,11 +2,19 @@
 ## MR: Estimate power to detect to observed effect
 ## ========================================================================== ##
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 ## Load librarys and functions
 library(tidyverse)
 library(TwoSampleMR)
-source('workflow/scripts/mr_PowerFunctions.R', chdir = TRUE)
-source('workflow/scripts/miscfunctions.R', chdir = TRUE)
+library(here)
+source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
+source(here("workflow", "scripts", "mr_PowerFunctions.R"), chdir = TRUE)
 
 infile = snakemake@input[["infile"]]
 outfile = snakemake@output[["outfile"]]

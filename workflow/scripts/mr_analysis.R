@@ -3,6 +3,13 @@
 ## Run MR analysis and Senstivity analysis for w/ outliers retained and removed
 ## ========================================================================== ##
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 ## LOAD packages
 library(tidyverse)
 library(TwoSampleMR) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/

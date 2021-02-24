@@ -2,6 +2,13 @@
 ## MR: Extract proxy SNPs from outcome GWAS
 ## ========================================================================== ##
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 ## ==== Load required packages ==== ##
 suppressMessages(library(plyr))
 suppressMessages(library(tidyverse))

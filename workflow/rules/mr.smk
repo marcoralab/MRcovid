@@ -3,26 +3,19 @@
 import os
 from itertools import product
 import pandas as pd
-from datetime import date
+from datetime import datetime
 RWD = os.getcwd()
-
-# shell.prefix('module load R/3.6.3; ')
-shell.prefix('module load R/4.0.3; ')
-
 
 REF = config['REF']
 r2 = config['clumpr2']
 kb = config['clumpkb']
-RLIB = config['RLIB']
 EXPOSURES = pd.DataFrame.from_records(config["EXPOSURES"], index = "CODE")
 OUTCOMES = pd.DataFrame.from_records(config["OUTCOMES"], index = "CODE")
 EXCLUSION = pd.DataFrame.from_records(config["EXCLUSION"], index = "NAME")
 Pthreshold = config['Pthreshold']
 Project = config['PROJECT']
-today_date = date.today()
-# today_date = '2020-07-27'
-
-localrules: all, html_Report, aggregate_Report
+now = datetime.now() # current date and time
+today_date = now.strftime("%Y%m%d")
 
 # Filter forbidden wild card combinations
 ## https://stackoverflow.com/questions/41185567/how-to-use-expand-in-snakemake-when-some-particular-combinations-of-wildcards-ar
@@ -50,20 +43,20 @@ rule all:
         expand('results/formated/Manhattan/{ExposureCode}_ManhattanPlot.png',
             filtered_product,
             ExposureCode=EXPOSURES.index.tolist(), Project = Project),
-        expand("results/{Project}/All/{Project}_MR_Analaysis_{DATE}.html", Project = Project, DATE = today_date),
-        # expand('results/{Project}/All/mrpresso_MRdat.csv', Project = Project),
-        # expand('results/{Project}/All/global_mrpresso.txt', Project = Project),
-        # expand('results/{Project}/All/heterogenity.txt', Project = Project),
-        # expand('results/{Project}/All/pleiotropy.txt', Project = Project),
-        # expand('results/{Project}/All/MRresults.txt', Project = Project),
-        # expand('results/{Project}/All/global_mrpresso_wo_outliers.txt', Project = Project),
-        # expand('results/{Project}/All/power.txt', Project = Project),
-        # expand('results/{Project}/All/steiger.txt', Project = Project),
-        # expand("results/{Project}/All/{Project}_MRsummary_{DATE}.csv", Project = Project, DATE = today_date),
-        # expand("results/{Project}/All/{Project}_WideMRResults_{DATE}.csv", Project = Project, DATE = today_date),
-        # expand("results/{Project}/All/{Project}_MRbest_{DATE}.csv", Project = Project, DATE = today_date),
-        # expand("results/{Project}/All/{Project}_PublicationRes_{DATE}.csv", Project = Project, DATE = today_date),
-        # expand("results/{Project}/All/{Project}_heatmap{DATE}.png", Project = Project, DATE = today_date),
+        expand("results/{Project}/All/{DATE}/{Project}_MR_Analaysis.html", Project = Project, DATE = today_date),
+        # expand('results/{Project}/All/{DATE}/mrpresso_MRdat.csv', Project = Project),
+        # expand('results/{Project}/All/{DATE}/global_mrpresso.txt', Project = Project),
+        # expand('results/{Project}/All/{DATE}/heterogenity.txt', Project = Project),
+        # expand('results/{Project}/All/{DATE}/pleiotropy.txt', Project = Project),
+        # expand('results/{Project}/All/{DATE}/MRresults.txt', Project = Project),
+        # expand('results/{Project}/All/{DATE}/global_mrpresso_wo_outliers.txt', Project = Project),
+        # expand('results/{Project}/All/{DATE}/power.txt', Project = Project),
+        # expand('results/{Project}/All/{DATE}/steiger.txt', Project = Project),
+        # expand("results/{Project}/All/{DATE}/{Project}_MRsummary.csv", Project = Project, DATE = today_date),
+        # expand("results/{Project}/All/{DATE}/{Project}_WideMRResults.csv", Project = Project, DATE = today_date),
+        # expand("results/{Project}/All/{DATE}/{Project}_MRbest.csv", Project = Project, DATE = today_date),
+        # expand("results/{Project}/All/{DATE}/{Project}_PublicationRes.csv", Project = Project, DATE = today_date),
+        # expand("results/{Project}/All/{DATE}/{Project}_heatmap{DATE}.png", Project = Project, DATE = today_date),
 
 ## Read in Exposure summar statistics and format them to input required for pipeline
 ## Formated summary stats are a temp file that is delted as the end
@@ -85,7 +78,7 @@ rule FormatExposure:
         z_col = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['COLUMNS']['Z'],
         n_col = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['COLUMNS']['N'],
         trait_col = lambda wildcards: EXPOSURES.loc[wildcards.ExposureCode]['COLUMNS']['TRAIT']
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_FormatGwas.R'
 
@@ -109,7 +102,7 @@ rule FormatOutcome:
         z_col = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['COLUMNS']['Z'],
         n_col = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['COLUMNS']['N'],
         trait_col = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['COLUMNS']['TRAIT']
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_FormatGwas.R'
 
@@ -144,7 +137,7 @@ rule ExposureSnps:
         out = "data/{Project}/{ExposureCode}/{ExposureCode}_{Pthreshold}_SNPs.txt"
     params:
         Pthreshold = '{Pthreshold}'
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_ExposureData.R'
 
@@ -157,7 +150,7 @@ rule manhattan_plot:
         PlotTitle = "{ExposureCode}"
     output:
         out = 'results/formated/Manhattan/{ExposureCode}_ManhattanPlot.png'
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         "../scripts/manhattan_plot.R"
 
@@ -171,7 +164,7 @@ rule OutcomeSnps:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MissingSNPs.txt",
     params:
         Outcome = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}",
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_OutcomeData.R'
 
@@ -209,7 +202,7 @@ rule ExtractProxySnps:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MatchedProxys.csv",
     params:
         Outcome = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}",
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_ExtractProxySNPs.R'
 
@@ -228,8 +221,7 @@ rule Harmonize:
         regions_chrm = EXCLUSION["CHROM"],
         regions_start = EXCLUSION["START"],
         regions_stop = EXCLUSION["STOP"],
-        rlib = RLIB
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script: "../scripts/mr_DataHarmonization.R"
 
 ## Use MR-PRESSO to conduct a global heterogenity test and
@@ -244,7 +236,7 @@ rule MrPresso:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_MRdat.csv"
     params:
         out = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso"
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_MRPRESSO.R'
 
@@ -257,7 +249,7 @@ rule MRPRESSO_wo_outliers:
         "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_res_wo_outliers.txt",
     params:
         out = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso"
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_MRPRESSO_wo_outliers.R'
 
@@ -271,7 +263,7 @@ rule MR_analysis:
         'data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MR_Results.txt'
     params:
         out = 'data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}'
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script: '../scripts/mr_analysis.R'
 
 rule steiger:
@@ -280,9 +272,8 @@ rule steiger:
     output:
         outfile = 'data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MR_steiger.txt'
     params:
-        rlib = RLIB,
         pt = "{Pthreshold}"
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script: '../scripts/mr_SteigerTest.R'
 
 ## define list of steiger estimates so they can be merged into a single file
@@ -296,13 +287,13 @@ def MR_steiger_input(wildcards):
 
 rule merge_steiger:
     input: mr_steiger = MR_steiger_input
-    output: 'results/{Project}/All/steiger.txt'
+    output: 'results/{Project}/All/{DATE}/steiger.txt'
     shell: "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mr_steiger} > {output}"
 
 rule power:
     input: infile = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_mrpresso_MRdat.csv"
     output: outfile = "data/{Project}/{ExposureCode}/{OutcomeCode}/{ExposureCode}_{Pthreshold}_{OutcomeCode}_MR_power.txt"
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script: '../scripts/mr_PowerEstimates.R'
 
 ## define list of power estimates so they can be merged into a single file
@@ -316,7 +307,7 @@ def MR_power_input(wildcards):
 
 rule merge_power:
     input: mr_power = MR_power_input
-    output: 'results/{Project}/All/power.txt'
+    output: 'results/{Project}/All/{DATE}/power.txt'
     shell: "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mr_power} > {output}"
 
 ## define list of harmonized datasets so they can be merged into a single file
@@ -332,8 +323,8 @@ rule merge_mrpresso_MRdat:
     input:
         dat = mrpresso_MRdat_input,
     output:
-        out = 'results/{Project}/All/mrpresso_MRdat.csv'
-    # conda: "../envs/r.yaml"
+        out = 'results/{Project}/All/{DATE}/mrpresso_MRdat.csv'
+    conda: "../envs/r.yaml"
     script:
         '../scripts/mr_ConcatMRdat.R'
 
@@ -357,7 +348,7 @@ rule merge_mrpresso_global:
     input:
         mrpresso_global = mrpresso_global_input,
     output:
-        'results/{Project}/All/global_mrpresso.txt'
+        'results/{Project}/All/{DATE}/global_mrpresso.txt'
     shell:
         "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mrpresso_global} > {output}"
 
@@ -365,7 +356,7 @@ rule merge_mrpresso_global_wo_outliers:
     input:
         mrpresso_global_wo_outliers = mrpresso_global_wo_outliers_input,
     output:
-        'results/{Project}/All/global_mrpresso_wo_outliers.txt'
+        'results/{Project}/All/{DATE}/global_mrpresso_wo_outliers.txt'
     shell:
         "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mrpresso_global_wo_outliers} > {output}"
 
@@ -381,7 +372,7 @@ rule merge_mrpresso_res:
     input:
         mrpresso_res = mrpresso_res_input,
     output:
-        'results/{Project}/All/res_mrpresso.txt'
+        'results/{Project}/All/{DATE}/res_mrpresso.txt'
     shell:
         "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mrpresso_res} > {output}"
 
@@ -398,7 +389,7 @@ rule merge_heterogenity:
     input:
         mr_heterogenity = MR_heterogenity_input,
     output:
-        'results/{Project}/All/heterogenity.txt'
+        'results/{Project}/All/{DATE}/heterogenity.txt'
     shell:
         "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mr_heterogenity} > {output}"
 
@@ -415,7 +406,7 @@ rule merge_egger:
     input:
         mr_pleiotropy = MR_plei_input,
     output:
-        'results/{Project}/All/pleiotropy.txt'
+        'results/{Project}/All/{DATE}/pleiotropy.txt'
     shell:
         "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mr_pleiotropy} > {output}"
 
@@ -432,7 +423,7 @@ rule merge_mrresults:
     input:
         mr_results = MR_Results_input,
     output:
-        'results/{Project}/All/MRresults.txt'
+        'results/{Project}/All/{DATE}/MRresults.txt'
     shell:
         "awk 'FNR==1 && NR!=1{{next;}}{{print}}' {input.mr_results} > {output}"
 
@@ -462,38 +453,35 @@ rule html_Report:
         Outcome = lambda wildcards: OUTCOMES.loc[wildcards.OutcomeCode]['NAME']
     log:
         'data/{Project}/logs/{ExposureCode}_{Pthreshold}_{OutcomeCode}_html_Report.log',
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script: "../scripts/mr_RenderReport.R"
 
 ## Write a html Rmarkdown report
 rule aggregate_Report:
     input:
         markdown = "workflow/scripts/mr_FinalReport.Rmd",
-        mrresults = "results/{Project}/All/MRresults.txt",
-        mrdat = "results/{Project}/All/mrpresso_MRdat.csv",
-        mrpresso_res = "results/{Project}/All/res_mrpresso.txt",
-        mrpresso_global = "results/{Project}/All/global_mrpresso.txt",
-        mrpresso_global_wo_outliers = "results/{Project}/All/global_mrpresso_wo_outliers.txt",
-        egger = "results/{Project}/All/pleiotropy.txt",
-        power = "results/{Project}/All/power.txt",
-        steiger = "results/{Project}/All/steiger.txt"
+        mrresults = "results/{Project}/All/{DATE}/MRresults.txt",
+        mrdat = "results/{Project}/All/{DATE}/mrpresso_MRdat.csv",
+        mrpresso_res = "results/{Project}/All/{DATE}/res_mrpresso.txt",
+        mrpresso_global = "results/{Project}/All/{DATE}/global_mrpresso.txt",
+        mrpresso_global_wo_outliers = "results/{Project}/All/{DATE}/global_mrpresso_wo_outliers.txt",
+        egger = "results/{Project}/All/{DATE}/pleiotropy.txt",
+        power = "results/{Project}/All/{DATE}/power.txt",
+        steiger = "results/{Project}/All/{DATE}/steiger.txt"
     output:
-        outfile = "results/{Project}/All/{Project}_MR_Analaysis_{DATE}.html",
-        HarmonizedDatasets = "results/{Project}/All/{Project}_HarmonizedDatasets_{DATE}.csv",
-        MRsummary = "results/{Project}/All/{Project}_MRsummary_{DATE}.csv",
-        WideMRResults = "results/{Project}/All/{Project}_WideMRResults_{DATE}.csv",
-        MRbest = "results/{Project}/All/{Project}_MRbest_{DATE}.csv",
-        PublicationRes = "results/{Project}/All/{Project}_PublicationRes_{DATE}.csv",
-        heatmap = "results/{Project}/All/{Project}_heatmap{DATE}.png",
+        outfile = "results/{Project}/All/{DATE}/{Project}_MR_Analaysis.html",
+        HarmonizedDatasets = "results/{Project}/All/{DATE}/{Project}_HarmonizedDatasets.csv",
+        MRsummary = "results/{Project}/All/{DATE}/{Project}_MRsummary.csv",
+        WideMRResults = "results/{Project}/All/{DATE}/{Project}_WideMRResults.csv",
+        MRbest = "results/{Project}/All/{DATE}/{Project}_MRbest.csv",
+        PublicationRes = "results/{Project}/All/{DATE}/{Project}_PublicationRes.csv",
+        heatmap = "results/{Project}/All/{DATE}/{Project}_heatmap.png",
     params:
-        rlib = RLIB,
         rwd = RWD,
         today_date = "{DATE}",
         project = '{Project}',
-        output_dir = "results/{Project}/All/",
+        output_dir = "results/{Project}/All/{DATE}/",
         exposures = EXPOSURES.index,
         outcomes = OUTCOMES.index
-    log:
-        'data/{Project}/logs/{DATE}_aggregate_Report.log',
-    # conda: "../envs/r.yaml"
+    conda: "../envs/r.yaml"
     script: "../scripts/mr_RenderFinalReport.R"

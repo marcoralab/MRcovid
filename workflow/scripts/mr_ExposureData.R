@@ -3,6 +3,13 @@
 ## Extract SNPs to be used as instruments in exposure
 ## ========================================================================== ##
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 ### ===== Command Line Arguments ===== ##
 exposure.summary = snakemake@input[["summary"]] # Exposure summary statistics
 exposure.clump = snakemake@input[["ExposureClump"]]

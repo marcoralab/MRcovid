@@ -58,6 +58,13 @@ params <- tibble(
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = params$rwd)
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 library(tidyverse)   ## For data wrangling
 library(TwoSampleMR) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/
 library(RadialMR)    ## For Radial MR plots
@@ -165,7 +172,7 @@ as.data.frame(isq_dat)
 ```
 
 
-##  MR Results
+## MR Results
 To obtain an overall estimate of causal effect, the SNP-exposure and SNP-outcome coefficients were combined in 1) a fixed-effects meta-analysis using an inverse-variance weighted approach (IVW); 2) a Weighted Median approach; 3) Weighted Mode approach and 4) Egger Regression.
 
 

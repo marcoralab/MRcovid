@@ -1,11 +1,18 @@
 # Render hmtl_report.Rmd to generate html report of output
 ## Input script for rule html_Report
 
-log_path = snakemake@log[[1]]
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
 
-## Logging messages
-con <- file(log_path, open = "wt")
-sink(con, type = "message")
+# log_path = snakemake@log[[1]]
+#
+# ## Logging messages
+# con <- file(log_path, open = "wt")
+# sink(con, type = "message")
 
 rmarkdown::render(
   input = snakemake@input[["markdown"]],

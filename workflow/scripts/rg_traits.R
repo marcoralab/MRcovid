@@ -15,7 +15,7 @@ exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl'
               'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd',
               'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp',
               'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler',
-              'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad',
+              'Malik2018ais', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad',
               'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf',
               'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz',
               'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', "Mills2021afb",

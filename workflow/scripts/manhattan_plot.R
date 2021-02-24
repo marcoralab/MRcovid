@@ -1,5 +1,12 @@
 #!/usr/bin/Rscript
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 ## Load Packages
 suppressMessages(library(tidyverse))
 suppressMessages(library(ggplot2))
@@ -19,12 +26,18 @@ PlotTitle = snakemake@params[["PlotTitle"]]
 message(paste(PlotTitle, '\n'))
 
 ## Read in GWAS and Plink Clumped File
-trait.gwas <- read_tsv(infile_gwas, comment = '##', guess_max = 15000000,
-                       col_types = list(AF = col_number())) %>%
+trait.gwas <- vroom::vroom(infile_gwas, comment = '##',
+                           col_select = c(SNP, CHROM, POS, BETA, AF, P),
+                       col_types = list(SNP = col_character(),
+                                        CHROM = col_double(),
+                                        POS = col_double(),
+                                        AF = col_number(),
+                                        BETA = col_double(),
+                                        P = col_double())) %>%
   mutate(r2 = snp.r2(AF, BETA))
 
 trait.clump <- suppressMessages(read_table2(infile_clump)) %>%
-  filter(!is.na(CHR)) %>%
+  filter(!is.na(CHR)) %>% 
   select(CHR, F, SNP, BP, P, TOTAL, NSIG)
 
 ## Count number of SNPs in clumped dataset

@@ -35,7 +35,13 @@ editor_options:
 message("Setup \n")
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_knit$set(root.dir = params$rwd)
-.libPaths(c(params$rlib, .libPaths()))
+
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
 
 library(tidyverse)
 library(glue)
@@ -58,14 +64,14 @@ DATE = Sys.Date()
 DATE = "2021-01-15"
 
 
-MR_results.path = glue("results/{model}/All/MRresults.txt")
-MRdat.path = glue("results/{model}/All/mrpresso_MRdat.csv")
-mrpresso_res.path = glue("results/{model}/All/res_mrpresso.txt")
-mrpresso_global.path = glue("results/{model}/All/global_mrpresso.txt")
-mrpresso_global_wo_outliers.path = glue("results/{model}/All/global_mrpresso_wo_outliers.txt")
-egger_comb.path = glue("results/{model}/All/pleiotropy.txt")
-power.path = glue("results/{model}/All/power.txt")
-steiger.path = glue("results/{model}/All/steiger.txt")
+MR_results.path = glue("results/{model}/All/{DATE}/MRresults.txt")
+MRdat.path = glue("results/{model}/All/{DATE}/mrpresso_MRdat.csv")
+mrpresso_res.path = glue("results/{model}/All/{DATE}/res_mrpresso.txt")
+mrpresso_global.path = glue("results/{model}/All/{DATE}/global_mrpresso.txt")
+mrpresso_global_wo_outliers.path = glue("results/{model}/All/{DATE}/global_mrpresso_wo_outliers.txt")
+egger_comb.path = glue("results/{model}/All/{DATE}/pleiotropy.txt")
+power.path = glue("results/{model}/All/{DATE}/power.txt")
+steiger.path = glue("results/{model}/All/{DATE}/steiger.txt")
 exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', 'Mills2021afb')
 outcomes = c("covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur")
 # outcomes = c("covidhgi2020A2v5alleurLeaveUKBB", "covidhgi2020B2v5alleurLeaveUKBB", "covidhgi2020C2v5alleurLeaveUKBB")
@@ -234,7 +240,7 @@ MRdat %>%
 ```
 
 ```{r write-harmonized-data, echo=FALSE, eval=TRUE}
-write_csv(MRdat, glue("results/{model}/All/{model}_HarmonizedDatasets_{DATE}.csv"))
+write_csv(MRdat, glue("results/{model}/All/{DATE}/{model}_HarmonizedDatasets.csv"))
 ```
 
 
@@ -286,7 +292,7 @@ MRsummary %>%
 ```
 
 ```{r, eval=TRUE}
-write_csv(MRsummary, glue("results/{model}/All/{model}_MRsummary_{DATE}.csv"))
+write_csv(MRsummary, glue("results/{model}/All/{DATE}/{model}_MRsummary.csv"))
 ```
 
 ```{r spread-res}
@@ -344,7 +350,7 @@ mrresults.methods_presso %>%
   mutate(pt = as.character(pt)) %>%
   knitr::kable(format = "html", table.attr = "class='dtable'") %>%
   kableExtra::kable_styling() %>%
-  kableExtra::add_header_above(c(" " = 7, "IVW" = 4, "MR Egger" = 3, "WME" = 3, "WBE" = 3, " " = 5,  "IVW" = 4, "MR Egger" = 3, "WME" = 3, "WBE" = 3, " " = 5))  %>%
+  # kableExtra::add_header_above(c(" " = 7, "IVW" = 4, "MR Egger" = 3, "WME" = 3, "WBE" = 3, " " = 5,  "IVW" = 4, "MR Egger" = 3, "WME" = 3, "WBE" = 3, " " = 5))  %>%
   kableExtra::scroll_box(width = "100%", height = "500px")
 
 ```
@@ -362,7 +368,7 @@ WideMRResults <- mrresults.methods_presso %>%
 ```
 
 ```{r, eval=TRUE}
-write_csv(WideMRResults, glue("results/{model}/All/{model}_WideMRResults_{DATE}.csv"))
+write_csv(WideMRResults, glue("results/{model}/All/{DATE}/{model}_WideMRResults.csv"))
 ```
 
 
@@ -398,7 +404,7 @@ power_dsc <- mrresults.methods_presso %>%
 ```
 
 ```{r, eval=TRUE}
-write_csv(power_dsc, glue("results/{model}/All/{model}_DescriptivesPower_{DATE}.csv"))
+write_csv(power_dsc, glue("results/{model}/All/{DATE}/{model}_DescriptivesPower.csv"))
 ```
 
 ```{r plot-power}
@@ -474,7 +480,7 @@ mr_best <- mr_res %>%
 ```
 
 ```{r, write-MRbest, eval=TRUE}
-write_csv(mr_best, glue("results/{model}/All/{model}_MRbest_{DATE}.csv"))
+write_csv(mr_best, glue("results/{model}/All/{DATE}/{model}_MRbest.csv"))
 ```
 
 ```{r, mr-out}
@@ -523,7 +529,7 @@ mr_best %>%
 ```
 
 ```{r, write-publication-results, echo=FALSE, eval=TRUE}
-write_csv(out.final, glue("results/{model}/All/{model}_PublicationRes_{DATE}.csv"))
+write_csv(out.final, glue("results/{model}/All/{DATE}/{model}_PublicationRes.csv"))
 ```
 
 ## Heatmap
@@ -534,13 +540,13 @@ write_csv(out.final, glue("results/{model}/All/{model}_PublicationRes_{DATE}.csv
 dat.plot <- exposures_outcomes %>%
   left_join(mr_best) %>%
   mutate(q_signif = as.character(signif.num(qval))) %>%
-  mutate(z = IVW_b/IVW_se, 
+  mutate(z = IVW_b/IVW_se,
          p_cat = case_when(
            IVW_MR.pval <= 0.05 ~ 1,
            IVW_MR.pval <= 0.1 ~ 0.75,
            IVW_MR.pval <= 0.5 ~ 0.5,
            TRUE ~ 0.25,
-           ) 
+           )
          ) %>%
   mutate(out = ifelse(qval < 0.1, paste0(round(IVW_b, 3), '\n', '(', round_sci(qval), ')'), " ")) %>%
   select(outcome, exposure, exposure.name, outcome.name, domain.exposure, domain.outcome,
@@ -562,33 +568,33 @@ the_palette = "RdBu"
 
 p1 <- ggplot(dat.plot) +
   facet_grid(domain.outcome ~ domain.exposure, scales = "free", space = "free", switch = "y") +
-  # geom_raster(data = filter(dat.long, !is.na(rg)), aes(x = exposure.name, y = outcome.name, fill = rg)) + 
-  geom_tile(aes(x = exposure.name, y = outcome.name, fill = z, height=p_cat, width=p_cat)) + 
+  # geom_raster(data = filter(dat.long, !is.na(rg)), aes(x = exposure.name, y = outcome.name, fill = rg)) +
+  geom_tile(aes(x = exposure.name, y = outcome.name, fill = z, height=p_cat, width=p_cat)) +
   geom_text(data = dat.plot, vjust = 0.75, size = 4, aes(label = q_signif, x = exposure.name, y = outcome.name)) +
   scale_fill_distiller(palette = rev(the_palette)) +
   theme_classic() +
   geom_vline(xintercept=seq(0.5, 43.5, 1),color="grey90") +
-  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") + 
+  geom_hline(yintercept=seq(0.5, 11.5, 1),color="grey90") +
   geom_rect(data=filter(dat.plot, pass_0.1 == TRUE), size=0.5, fill=NA, colour="orange",
             aes(xmin=exposure1 - 0.5, xmax=exposure1 + 0.5, ymin=outcome1 - 0.5, ymax=outcome1 + 0.5)) +
   geom_rect(data = filter(dat.plot, pass == TRUE), size=0.5, fill=NA, colour="red",
             aes(xmin=exposure1 - 0.5, xmax=exposure1 + 0.5,
                 ymin=outcome1 - 0.5, ymax=outcome1 + 0.5)) +
-  theme(legend.position = 'right', 
+  theme(legend.position = 'right',
         legend.key.width = unit(0.5, "line"),
         legend.key.height = unit(1, "line"),
-        axis.text.x = element_text(angle = 35, hjust = 0), 
+        axis.text.x = element_text(angle = 35, hjust = 0),
         aspect.ratio=1,
-        # legend.text = element_text(hjust = 1.5), 
-        axis.title.x = element_blank(), 
-        axis.title.y = element_blank(), 
-        plot.margin=margin(10,40,10,10, 'pt'), 
+        # legend.text = element_text(hjust = 1.5),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.margin=margin(10,40,10,10, 'pt'),
         text = element_text(size=8),
         strip.text.y = element_text(size = 6),
         strip.background = element_blank(),
         # panel.border = element_rect(colour = "black", fill = NA)
         # legend.key.height = unit(0.75, "line"),
-        # legend.spacing.y = unit(-0.75, "line"), 
+        # legend.spacing.y = unit(-0.75, "line"),
         # plot.margin=grid::unit(c(0,0,0,0), "mm")
   ) +
   scale_x_discrete(position = "top")
@@ -597,11 +603,11 @@ p1 <- ggplot(dat.plot) +
 
 ```{r, eval=TRUE}
 if(nrow(exposure.df) < nrow(outcome.df)){
-  ggsave(glue("results/{model}/All/{model}_heatmap{DATE}.png"), plot = p1, width = 7, height = 11, units = "in")
-  ggsave(glue("results/{model}/All/{model}_heatmap{DATE}.tiff"), plot = p1, width = 7, height = 11, units = "in")
+  ggsave(glue("results/{model}/All/{DATE}/{model}_heatmap.png"), plot = p1, width = 7, height = 11, units = "in")
+  ggsave(glue("results/{model}/All/{DATE}/{model}_heatmap.tiff"), plot = p1, width = 7, height = 11, units = "in")
 } else if(nrow(exposure.df) > nrow(outcome.df)){
-  ggsave(glue("results/{model}/All/{model}_heatmap{DATE}.png"), plot = p1, width = 11, height = 7, units = "in")
-  ggsave(glue("results/{model}/All/{model}_heatmap{DATE}.tiff"), plot = p1, width = 11, height = 7, units = "in")
+  ggsave(glue("results/{model}/All/{DATE}/{model}_heatmap.png"), plot = p1, width = 11, height = 7, units = "in")
+  ggsave(glue("results/{model}/All/{DATE}/{model}_heatmap.tiff"), plot = p1, width = 11, height = 7, units = "in")
 }
 
 ```

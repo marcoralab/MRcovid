@@ -3,6 +3,13 @@
 ## Extract exposure instruments from outcome gwas
 ## ========================================================================== ##
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 ### ===== Command Line Arguments ===== ##
 exposure.summary = snakemake@input[["ExposureSummary"]] # Exposure summary statistics
 outcome.summary = snakemake@input[["OutcomeSummary"]] # Outcome Summary statistics

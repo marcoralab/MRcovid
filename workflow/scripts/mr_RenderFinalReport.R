@@ -1,12 +1,17 @@
 # Render finalreport.Rmd to generate html report of aggregate MR results from project
 ## Input script for rule html_Report
-.libPaths(c(snakemake@params[["rlib"]], .libPaths()))
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
 
-log_path = snakemake@log[[1]]
-
-## Logging messages
-con <- file(log_path, open = "wt")
-sink(con, type = "message")
+# log_path = snakemake@log[[1]]
+#
+# ## Logging messages
+# con <- file(log_path, open = "wt")
+# sink(con, type = "message")
 
 message("Render Final Report",
         "\n markdown: ", snakemake@input[["markdown"]],

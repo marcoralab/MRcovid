@@ -3,6 +3,13 @@
 ## MR: Identify outliers using MR-PRESSO
 ## ========================================================================== ##
 
+if(any(grepl("conda", .libPaths(), fixed = TRUE))){
+  message("Setting libPaths")
+  df = .libPaths()
+  conda_i = which(grepl("conda", df, fixed = TRUE))
+  .libPaths(c(df[conda_i], df[-conda_i]))
+}
+
 ### ===== Command Line Arguments ===== ##
 infile = snakemake@input[["mrdat"]] # Exposure summary statistics
 out = snakemake@params[["out"]]
