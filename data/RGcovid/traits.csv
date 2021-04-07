@@ -41,18 +41,6 @@ Dashti2019slepdur,Sleep duration,446118,covidhgi2020C2v5alleur,"COVID: C2, EUR",
 Dashti2019slepdur,Sleep duration,446118,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Dashti2019slepdur,Sleep duration,446118,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Dashti2019slepdur,Sleep duration,446118,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Klimentidis2018mvpa,Moderate-to-vigorous PA,377234,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Day2018sociso,Social isolation,452302,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Day2018sociso,Social isolation,452302,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Day2018sociso,Social isolation,452302,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Day2018sociso,Social isolation,452302,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Day2018sociso,Social isolation,452302,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Day2018sociso,Social isolation,452302,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
@@ -71,12 +59,6 @@ Evangelou2018pp,Pulse pressure,757601,covidhgi2020C2v5alleur,"COVID: C2, EUR",16
 Evangelou2018pp,Pulse pressure,757601,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Evangelou2018pp,Pulse pressure,757601,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Evangelou2018pp,Pulse pressure,757601,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Lee2018educ,Educational attainment,775120,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Lee2018educ,Educational attainment,775120,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Lee2018educ,Educational attainment,775120,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Lee2018educ,Educational attainment,775120,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Lee2018educ,Educational attainment,775120,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Lee2018educ,Educational attainment,775120,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Howard2018dep,depression,322580,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Howard2018dep,depression,322580,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Howard2018dep,depression,322580,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
@@ -101,12 +83,6 @@ Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020C2v5alleur,"COVID: C2, EUR",
 Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Liu2019drnkwk,Alcohol consumption,537349,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 Kunkle2019load,Alzheimer's disease,54162,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
 Kunkle2019load,Alzheimer's disease,54162,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 Kunkle2019load,Alzheimer's disease,54162,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
@@ -251,12 +227,6 @@ Astel2016plt,Platelet count,173480,covidhgi2020C2v5alleur,"COVID: C2, EUR",16835
 Astel2016plt,Platelet count,173480,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
 Astel2016plt,Platelet count,173480,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
 Astel2016plt,Platelet count,173480,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
-Mills2021afb,Age at first birth,542901,covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208
-Mills2021afb,Age at first birth,542901,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
-Mills2021afb,Age at first birth,542901,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
-Mills2021afb,Age at first birth,542901,covidhgi2020A2v5alleurLeaveUKBB,"COVID: A2, EUR w/o UKB",1059322
-Mills2021afb,Age at first birth,542901,covidhgi2020B2v5alleurLeaveUKBB,"COVID: B2, EUR w/o UKB",1556506
-Mills2021afb,Age at first birth,542901,covidhgi2020C2v5alleurLeaveUKBB,"COVID: C2, EUR w/o UKB",1348520
 covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753
 covidhgi2020A2v5alleur,"COVID: A2, EUR",1388208,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587
 covidhgi2020B2v5alleur,"COVID: B2, EUR",1886753,covidhgi2020C2v5alleur,"COVID: C2, EUR",1683587

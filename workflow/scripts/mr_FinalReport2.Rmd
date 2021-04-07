@@ -52,7 +52,6 @@ library(ggpubr)
 library(qvalue)
 library(here)
 source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
-
 ```
 
 ```{r sandbox, eval=F}
@@ -73,7 +72,7 @@ power.path = glue("results/{model}/All/{DATE}/power.txt")
 steiger.path = glue("results/{model}/All/{DATE}/steiger.txt")
 rg.path <- glue("results/RGcovid/ldsc/{DATE}/all_results_ldsc.tsv")
 
-exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018ais', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', 'Mills2021afb')
+exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018ais', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt')
 
 if(model == "MRcovideur"){
   outcomes = c("covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur")
@@ -105,14 +104,24 @@ outcomes = params$outcomes
 ## Outcomes to include the results
 
 message(glue("\n Exposure - Outcome Pairs"))
+source(here("workflow", "scripts", "traits.R"), chdir = TRUE)
 exposures_outcomes <- expand_grid(exposures, outcomes) %>%
   magrittr::set_colnames(c("exposures.name", "outcomes.name")) %>%
   left_join(select(samplesize, code, trait, domain), by = c('exposures.name' = 'code')) %>%
   rename(exposure.name = trait, domain.exposure = domain) %>%
   left_join(select(samplesize, code, trait, domain), by = c('outcomes.name' = 'code')) %>%
   rename(outcome.name = trait, domain.outcome = domain) %>%
-  mutate(domain.exposure = str_replace(domain.exposure, "Diagnosis", "Disease Liability"),
+  mutate(domain.exposure = str_replace(domain.exposure, "Diagnosis", "Disease liability"),
          domain.exposure = str_replace(domain.exposure, "Neurpsychatric", "Neuropsychiatric"))
+
+## Phenotype descriptions
+a2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'A2')) %>% pull(outcome.name)
+b2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'B2')) %>% pull(outcome.name)
+c2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'C2')) %>% pull(outcome.name)
+
+a2_pheno_id <- distinct(exposures_outcomes, outcomes.name) %>% filter(str_detect(outcomes.name, 'A2')) %>% pull(outcomes.name)
+b2_pheno_id <- distinct(exposures_outcomes, outcomes.name) %>% filter(str_detect(outcomes.name, 'B2')) %>% pull(outcomes.name)
+c2_pheno_id <- distinct(exposures_outcomes, outcomes.name) %>% filter(str_detect(outcomes.name, 'C2')) %>% pull(outcomes.name)
 
 ## Files
 message(glue("\n Loading: ", MR_results.path))
@@ -185,7 +194,18 @@ rg <- rg.raw  %>%
 
 rg_covid <- rg.raw %>%
   filter(p1 %in% outcomes) %>%
-  filter(p2 %in% outcomes) 
+  filter(p2 %in% outcomes) %>%
+  mutate(rg.fdr = p.adjust(rg.p, "fdr")) %>%
+  arrange(p2, rg.fdr) %>%
+  mutate(outcome.name = fct_recode(p2,
+                                   "Critical illness" = a2_pheno_id,
+                                   Hospitalisation = b2_pheno_id,
+                                   "Reported infection" = c2_pheno_id), 
+         exposure.name = fct_recode(p1,
+                                   "Critical illness" = a2_pheno_id,
+                                   Hospitalisation = b2_pheno_id,
+                                   "Reported infection" = c2_pheno_id))
+
 ```
 
 ## Genetic Correlations
@@ -409,7 +429,9 @@ out.final <- mr_best %>%
   map_dfr(., str_replace, "NA \\(NA, NA\\)", "") %>%
   map_dfr(., replace_na, "")
 
-out.final %>% filter(as.numeric(fdr) < 0.05) %>%
+out.final %>% 
+  filter(as.numeric(fdr) < 0.05) %>%
+  # filter(pass == TRUE) %>%
   split(.$outcome)
 
 ```
@@ -421,12 +443,6 @@ write_csv(out.final, glue("docs/{DATE}/{model}_PublicationRes.csv"))
 ## Combined Plots
 
 ```{r dat-plot}
-
-## Phenotype descriptions
-a2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'A2')) %>% pull(outcome.name)
-b2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'B2')) %>% pull(outcome.name)
-c2_pheno <- distinct(exposures_outcomes, outcome.name) %>% filter(str_detect(outcome.name, 'C2')) %>% pull(outcome.name)
-
 ## Dataframe for ploting
 dat.plot <- exposures_outcomes %>%
   # filter(!str_detect(outcomes.name, "eurLeaveUKBB")) %>%
@@ -474,7 +490,8 @@ dat.long <- dat.plot %>%
   pivot_longer(c(z, rg), names_to = 'method', values_to = 'estimate') %>%
   mutate(mr = ifelse(method == 'z', estimate, NA),
          rg = ifelse(method == 'rg', estimate, NA),
-         method = fct_recode(method, "Genetic \nCorrelation" = "rg", "Mendelian \nRandomization" = "z"))
+         method = fct_recode(method, "Genetic \nCorrelation" = "rg", "Mendelian \nRandomization" = "z"), 
+         domain.exposure = fct_relevel(domain.exposure, "Risk factor", "Biomarker", 'Disease liability'))
 
 mrdat.p <- MRsummary %>%
   generate_odds_ratios(.) %>%
@@ -496,10 +513,10 @@ mrdat.p <- MRsummary %>%
 mrdat.p.ls <- mrdat.p %>%
   semi_join(filter(mrdat.p, method == "IVW" & fdr < 0.05), by = c("exposure", "outcome")) %>%
   mutate(exposure.name = fct_recode(exposure.name,
-                                    "Education" = "Educational attainment",
+                                    # "Education" = "Educational attainment",
                                     "RBC" = "Red blood cell count",
                                     "ALS" = "Amyotrophic lateral sclerosis",
-                                    "Age first birth" = "Age at first birth",
+                                    # "Age first birth" = "Age at first birth",
                                     "Parkinson's" = "Parkinsons disease",
                                     "Smoking" = "Smoking initiation", 
                                     "Mult. sclerosis" = "Multiple sclerosis")) %>%
@@ -602,10 +619,10 @@ p.leg <- ggplot(df, aes(x = x, y = y, color = as.factor(x))) +
 
 ## Put some padding around the legend
 p.leg_out <- ggarrange(ggblank, p.leg, ggblank,
-                      nrow = 1, ncol = 3, widths = c(0.1, 1, 0.025))
+                       nrow = 1, ncol = 3, widths = c(0.1, 1, 0.026))
 
 ## combine heatmap and legend
-p.heatmap <- ggarrange(p3, p.leg_out, nrow = 2, ncol = 1, heights = c(1,0.25))
+p.heatmap <- ggarrange(p3, p.leg_out, nrow = 2, ncol = 1, heights = c(1,0.15))
 # p.heatmap
 ```
 
@@ -664,21 +681,12 @@ mrforrest_plot <- function(x){
 
 p.ls <- map(mrdat.p.ls, mrforrest_plot)
 
-p4 <- ggarrange(p.ls[[1]], ggblank, nrow = 2, ncol = 1, heights = c(1.98, 1))
-# p6 <- ggarrange(p.ls[[3]], ggblank, nrow = 2, ncol = 1, heights = c(4.9, 1))
+p4 <- ggarrange(p.ls[[1]], ggblank, nrow = 2, ncol = 1, heights = c(1, 1.65))
+p5 <- ggarrange(p.ls[[2]], ggblank, nrow = 2, ncol = 1, heights = c(3.75, 1))
 
-p.mr_sig <- ggarrange(ggblank, p4, p.ls[[2]], p.ls[[3]], ggblank,
-                      nrow = 1, ncol = 5, widths = c(0.07, 1, 1, 1, 0.09))
+p.mr_sig <- ggarrange(ggblank, p4, p5, p.ls[[3]], ggblank,
+                      nrow = 1, ncol = 5, widths = c(0.19, 1, 1, 1, 0.09))
 
-# p4 <- ggarrange(p.ls[[1]], ggblank,
-#                 nrow = 2, ncol = 1, heights = c(1, 1.01))
-# p6 <- ggarrange(p.ls[[3]], ggblank, nrow = 2, ncol = 1, heights = c(4.9, 1))
-# 
-# p.mr_sig <- ggarrange(ggblank, p4, p.ls[[2]], p6, ggblank,
-#                       nrow = 1, ncol = 5, widths = c(0.07, 1, 1, 1, 0.09))
-# p.mr_sig <- ggarrange(ggblank, p.ls[[1]], p.ls[[2]], p.ls[[3]], ggblank,
-#                       nrow = 1, ncol = 5, widths = c(0.07, 1, 1, 1, 0.09))
-# p.mr_sig
 
 ```
 
@@ -756,10 +764,65 @@ p2
 ```
 
 ```{r}
+## Put some padding around the legend
+p.leg_out2 <- ggarrange(ggblank, p.leg, ggblank,
+                       nrow = 1, ncol = 3, widths = c(0.075, 1, 0.012))
+
+## combine heatmap and legend
+p.heatmap2 <- ggarrange(p3, p.leg_out2, nrow = 2, ncol = 1, heights = c(1,0.15))
+ggsave(glue("docs/{DATE}/{model}_MR_RGheatmap.png"), plot = p.heatmap2, width = 11, height = 3.5, units = "in")
+
 ggsave(glue("docs/{DATE}/{model}_MRheatmap.png"), plot = p2, width = 11, height = 5, units = "in")
 ggsave(glue("docs/{DATE}/{model}_RGheatmap.png"), plot = p1, width = 11, height = 5, units = "in")
 ```
 
+## RG forrest plots 
+```{r}
+rg_covid_comp <- bind_rows(
+  rg_covid, 
+  rg_covid %>% rename(p2 = p1, p1 = p2, outcome.name = exposure.name, exposure.name = outcome.name)
+)
+
+forrest_dat.p <- rg %>%
+    bind_rows(rg_covid_comp) %>%
+    mutate(method = 'rg') %>%
+    rename(exposure = p1, outcome = p2, b = rg, p = rg.p, lo_ci = rg.lci, up_ci = rg.uci, fdr = rg.fdr) %>%
+    select(outcome, exposure, exposure.name, outcome.name, method, b, lo_ci, up_ci, p, fdr) %>%
+    mutate(signif = case_when(p > 0.05 ~ "NS",
+                            p < 0.05 & fdr > 0.05 ~ "Nominal",
+                            p <= 0.05 ~ "Significant"),
+         signif = fct_relevel(signif, "NS", "Nominal", "Significant"),
+         method = fct_rev(method)
+  ) %>%
+  split(.$outcome) %>%
+  map(., arrange, method, b) %>%
+  map(., mutate, exposure.name = fct_inorder(exposure.name)) %>% 
+  bind_rows() %>%
+  mutate(outcome.name = fct_recode(outcome.name,
+                                   "Critical illness" = a2_pheno,
+                                   Hospitalisation = b2_pheno,
+                                   "Reported infection" = c2_pheno)) %>% 
+  mutate(covid_panel = ifelse(exposure.name %in% c("Critical illness", "Hospitalisation", "Reported infection"), 1, 2))
+
+
+rg_forrest_plot <- ggplot(forrest_dat.p, aes(y = exposure.name, x = b, colour = signif)) +
+    geom_vline(xintercept = 0, linetype = 2) +
+    geom_point() +
+    geom_linerange(aes(xmin = lo_ci, xmax = up_ci)) +
+    scale_color_manual(values = c("grey75", "black", "red")) +
+    theme_bw() +
+    facet_grid(covid_panel ~ outcome.name, scales = "free", space = "free_y") +
+    theme(legend.position = "bottom",
+          legend.title = element_blank(),
+          axis.title=element_blank(),
+          strip.background = element_blank(),
+          strip.text.y = element_blank(),
+          strip.placement = "outside",
+          panel.grid.minor.x  = element_blank())
+
+ggsave(glue("docs/{DATE}/{model}_rg_forrest_plot.png"), plot = rg_forrest_plot, height = 190, width = 240, units = 'mm')
+
+```
 
 ## Forrest plots
 ### Including UKB
@@ -838,10 +901,10 @@ ggsave(glue("docs/{DATE}/{model}_covidhgi2020A2v5alleur_forrest.png"),
        plot = forrest_out.p[[1]], width = 12, height = 6, units = "in")
 
 ggsave(glue("docs/{DATE}/{model}_covidhgi2020B2v5alleur_forrest.png"),
-       plot = forrest_out.p[[1]], width = 12, height = 6, units = "in")
+       plot = forrest_out.p[[2]], width = 12, height = 6, units = "in")
 
 ggsave(glue("docs/{DATE}/{model}_covidhgi2020C2v5alleur_forrest.png"),
-       plot = forrest_out.p[[1]], width = 12, height = 6, units = "in")
+       plot = forrest_out.p[[3]], width = 12, height = 6, units = "in")
 
 ```
 

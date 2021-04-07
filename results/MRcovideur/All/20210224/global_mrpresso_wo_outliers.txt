@@ -20,12 +20,6 @@ RcXzD5	EH3JB5	covidhgi2020C2v5alleur	Willer2013tg	5e-8	TRUE	0	NA	NA
 KrtCpA	TGvJUM	covidhgi2020A2v5alleur	Dashti2019slepdur	5e-8	TRUE	0	NA	NA
 6ILVRr	kpsJGL	covidhgi2020B2v5alleur	Dashti2019slepdur	5e-8	TRUE	2	64.60475731708482	0.4903
 UeQP9P	zU3540	covidhgi2020C2v5alleur	Dashti2019slepdur	5e-8	TRUE	0	NA	NA
-4Eibzh	O7Ej3z	covidhgi2020A2v5alleur	Klimentidis2018mvpa	5e-8	TRUE	0	NA	NA
-1HFGp0	xzAHxh	covidhgi2020B2v5alleur	Klimentidis2018mvpa	5e-8	TRUE	0	NA	NA
-Gzqa6c	ViZwuM	covidhgi2020C2v5alleur	Klimentidis2018mvpa	5e-8	TRUE	0	NA	NA
-ixnL9C	emvIHR	covidhgi2020A2v5alleur	Day2018sociso	5e-8	TRUE	0	NA	NA
-MEEiWe	3VePXt	covidhgi2020B2v5alleur	Day2018sociso	5e-8	TRUE	0	NA	NA
-1lzCSL	Wl0kWH	covidhgi2020C2v5alleur	Day2018sociso	5e-8	TRUE	0	NA	NA
 LjLIkQ	YBOTvo	covidhgi2020A2v5alleur	Evangelou2018dbp	5e-8	TRUE	1	541.7588238458518	0.0018
 UQG30W	6TGCns	covidhgi2020B2v5alleur	Evangelou2018dbp	5e-8	TRUE	2	505.766568934499	0.02676
 ek9sq4	UwyuCg	covidhgi2020C2v5alleur	Evangelou2018dbp	5e-8	TRUE	2	505.3749872690995	0.02804
@@ -35,9 +29,6 @@ qQunEO	OojPbH	covidhgi2020C2v5alleur	Evangelou2018sbp	5e-8	TRUE	0	NA	NA
 FkjobX	DFXE1I	covidhgi2020A2v5alleur	Evangelou2018pp	5e-8	TRUE	0	NA	NA
 ku1DbA	UZ61Wm	covidhgi2020B2v5alleur	Evangelou2018pp	5e-8	TRUE	0	NA	NA
 lea272	kMYTPO	covidhgi2020C2v5alleur	Evangelou2018pp	5e-8	TRUE	0	NA	NA
-tQvVFV	7YGxPU	covidhgi2020A2v5alleur	Lee2018educ	5e-8	TRUE	0	NA	NA
-cbJ4IB	wRvWJN	covidhgi2020B2v5alleur	Lee2018educ	5e-8	TRUE	1	341.93614145483804	0.06196
-MuVKWo	8KwPcF	covidhgi2020C2v5alleur	Lee2018educ	5e-8	TRUE	0	NA	NA
 7cl98m	FHoGMY	covidhgi2020A2v5alleur	Howard2018dep	5e-8	TRUE	0	NA	NA
 CMHJpC	xUOIbd	covidhgi2020B2v5alleur	Howard2018dep	5e-8	TRUE	0	NA	NA
 SGaAr8	4N0VDv	covidhgi2020C2v5alleur	Howard2018dep	5e-8	TRUE	1	24.25485309747062	0.0678
@@ -50,9 +41,6 @@ s6UJda	Y2Mm2K	covidhgi2020C2v5alleur	Liu2019smkint	5e-8	TRUE	0	NA	NA
 q9wKfM	XYh6fl	covidhgi2020A2v5alleur	Liu2019smkcpd	5e-8	TRUE	0	NA	NA
 KjW6qV	gPUaMi	covidhgi2020B2v5alleur	Liu2019smkcpd	5e-8	TRUE	0	NA	NA
 tby8LO	CxSdUn	covidhgi2020C2v5alleur	Liu2019smkcpd	5e-8	TRUE	0	NA	NA
-wzqnmd	B7VavW	covidhgi2020A2v5alleur	Liu2019drnkwk	5e-8	TRUE	1	39.780189613165476	0.3851
-iTk4IS	BfxA2F	covidhgi2020B2v5alleur	Liu2019drnkwk	5e-8	TRUE	1	44.00443215196803	0.2101
-LPKYtO	GwrYtA	covidhgi2020C2v5alleur	Liu2019drnkwk	5e-8	TRUE	1	42.123081759998406	0.3291
 W8lPFB	zsgGOj	covidhgi2020A2v5alleur	Kunkle2019load	5e-8	TRUE	0	NA	NA
 2AZJ6F	EnadZe	covidhgi2020B2v5alleur	Kunkle2019load	5e-8	TRUE	0	NA	NA
 kpNAlJ	lcBxnF	covidhgi2020C2v5alleur	Kunkle2019load	5e-8	TRUE	0	NA	NA
@@ -125,6 +113,3 @@ cZ9tXl	g9D42m	covidhgi2020C2v5alleur	Astel2016wbc	5e-8	TRUE	1	197.23143564553342
 IkgKcD	LoDc4n	covidhgi2020A2v5alleur	Astel2016plt	5e-8	TRUE	0	NA	NA
 NcrCwQ	Svppmm	covidhgi2020B2v5alleur	Astel2016plt	5e-8	TRUE	0	NA	NA
 snWZML	8HdSwr	covidhgi2020C2v5alleur	Astel2016plt	5e-8	TRUE	0	NA	NA
-YLnEVl	Yx01tl	covidhgi2020A2v5alleur	Mills2021afb	5e-8	TRUE	0	NA	NA
-ZSGuDQ	SPjUWS	covidhgi2020B2v5alleur	Mills2021afb	5e-8	TRUE	2	65.80546552013301	0.4692
-M3aGq9	xpkRcf	covidhgi2020C2v5alleur	Mills2021afb	5e-8	TRUE	0	NA	NA
