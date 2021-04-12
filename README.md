@@ -52,7 +52,7 @@ Configuration files
 Script files
  * `workflow/scripts/mr_*`: script files for implementing spefific rules in MR workflow
 
- ## Results
+## Results
 
  ![Figure 4](docs/20210224/MRcovideur_resplot.png)
 
