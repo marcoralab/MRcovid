@@ -24,7 +24,7 @@ The Snakemake workflow management system was used to implement pipelines for the
 Final output files used in the current publication are avaliable in `docs/20210224`.
 
 ### Genetic Correlation
-Genetic correlations between the exposures and outcomes was estimated using LD Score (LDSC) regression. 
+Genetic correlations between the exposures and outcomes was estimated using LD Score (LDSC) regression.
 
 Snakefile:
  *  `workflow/rules/rg.smk`: workflow for implementing MR anlaysis
@@ -36,10 +36,6 @@ Snakefile:
 
  Script files:
   * `workflow/scripts/mr_*`: script files for implementing spefific rules in the rg workflow
-
-Results:
- * `data/RGcovid` contains intermediatry files generated during rg workflow
- * `results/RGcovid` contains final results for rg analysis
 
 
 ### MR
@@ -56,6 +52,19 @@ Configuration files
 Script files
  * `workflow/scripts/mr_*`: script files for implementing spefific rules in MR workflow
 
-Results
+ ## Results
+
+ ![Figure 4](docs/20210224/MRcovideur_resplot.png)
+
+Genetic correlations and Mendelian randomization causal estimates between 38 traits and COVID-19 Critical Illness, COVID-19 Hospitalization and SARS-CoV-2 reported infection. Blue, negative genetic correlation and protective Mendelian randomization (MR) causal estimates; red, positive genetic correlation and risk MR causal estimates. Larger squares correspond to more significant P values, with genetic correlations or MR causal estimates significantly different from zero at a P < 0.05 shown as a full-sized square. Genetic correlations or causal estimates that are significantly different from zero at a false discovery rate (FDR) of 5% are marked with an asterisk. Forest plots display the causal estimates for each of the sensitivity analyses used in the MR analysis for trait pairs that were significant at an FDR of 5%. Individual scatter and funnel plots for each pair of traits are available in `docs/20210224/MRcovideur_MRScatterFunnelPlots.pdf`.
+
+IVW: Inverse variance weighted analysis; WME: Weighted median estimator; WMBE: weighted mode based estimator; MR-PRESSO: Mendelian Randomization Pleiotropy RESidual Sum and Outlier. RBC: Red blood cell count
+
+
+Genetic correlation results:
+ * `data/RGcovid` contains intermediatry files generated during rg workflow
+ * `results/RGcovid` contains final results for rg analysis
+
+MR results
  * `data/MRcovideur`, and `data/MRcovideurwoukbb` contain intermediatry files generated during MR workflow
  * `results/MRcovideur`, and `results/MRcovideurwoukbb` contain final results for MR analysis
