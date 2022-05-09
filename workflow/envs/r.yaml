@@ -6,3 +6,5 @@ dependencies:
     - r-essentials=4.0
     - r-vroom=1.4.0
     - r-here=1.0.1
+    - r-gridextra=2.3
+    - r-gtools=3.9.2

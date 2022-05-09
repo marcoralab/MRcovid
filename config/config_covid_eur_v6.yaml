@@ -1,0 +1,863 @@
+# snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur_v6.yaml -j 1 --use-conda --keep-going --notemp
+# snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur_v6.yaml --use-conda --use-singularity -j 1000 --keep-going --notemp
+
+PROJECT: "MRcovideurv6"
+
+REF: 'data/raw/EUR_All_Chr'
+clumpr2: 0.001 ## Default in TwoSample MR
+clumpkb: 10000 ## 10 MB, default in TwoSampleMR
+Pthreshold: ['5e-8', '5e-6']
+SAMPLE: ["ukb-b-12948", "ukb-b-19953"]
+EXCLUSION:
+  -
+    NAME: NULL
+    NOTE: NULL
+    CHROM: NULL
+    START: NULL
+    STOP: NULL
+
+
+missing: [
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Locke2015", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Malik2018ais", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Yengo2018", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020A2v6all", "Pthreshold" : "5e-6"},
+
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Locke2015", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Malik2018ais", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020B2v6all", "Pthreshold" : "5e-6"},
+
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Allen2020ipf", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Betham2015lupus", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Dashti2019slepdur", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018dbp", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018pp", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Evangelou2018sbp", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Howard2018dep", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Jansen2018insom", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Kunkle2019load", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Ligthart2018crp", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Liu2019smkcpd", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Liu2019smkint", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Locke2015bmi", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Malik2018ais", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nalls2019pd", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nicolas2018als", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Nikpay2015cad", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Okada2014rartis", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Okbay2016educ", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Olafsdottir2020asthma", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Patsopoulos2019multscler", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Revez2020vit250hd", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Shah2020heartfailure", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013hdl", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013ldl", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013tc", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Willer2013tg", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wood2014height", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wuttke2019ckd", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Wuttke2019egfr", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Yengo2018bmi", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Mahajan2018t2d", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Linner2019risk", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Demontis2018adhd", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Ripke2014scz", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016rbc", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016wbc", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Astel2016plt", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Grove2019asd", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-8"},
+   {"Project" : "MRcovideurv6", "ExposureCode" : "Stahl2019bip", "OutcomeCode" : "covidhgi2020C2v6all", "Pthreshold" : "5e-6"},
+
+   ]
+
+EXPOSURES:
+  -
+    CODE: Yengo2018bmi
+    NAME: BMI
+    FILE: data/raw/GWAS/Yengo2018bmi.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  # -
+  #   CODE: Locke2015bmi
+  #   NAME: "BMI, Locke"
+  #   FILE: data/raw/GWAS/Locke2015bmi.chrall.CPRA_b37.tsv.gz
+  #   COLUMNS:
+  #     SNP: DBSNP_ID
+  #     CHROM: CHROM
+  #     POS: POS
+  #     REF: REF
+  #     ALT: ALT
+  #     AF: AF
+  #     BETA: BETA
+  #     SE: SE
+  #     P: P
+  #     Z: Z
+  #     N: N
+  #     TRAIT: TRAIT
+  -
+    CODE: Mahajan2018t2d
+    NAME: Diabetes
+    FILE: data/raw/GWAS/Mahajan2018t2d.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Willer2013hdl
+    NAME: 'HDL cholesterol'
+    FILE: data/raw/GWAS/Willer2013hdl.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Willer2013ldl
+    NAME: 'LDL cholesterol'
+    FILE: data/raw/GWAS/Willer2013ldl.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Willer2013tc
+    NAME: 'Total cholesterol'
+    FILE: data/raw/GWAS/Willer2013tc.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Willer2013tg
+    NAME: 'Triglycerides'
+    FILE: data/raw/GWAS/Willer2013tg.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Dashti2019slepdur
+    NAME: 'Sleep Duration'
+    FILE: data/raw/GWAS/Dashti2019slepdur.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Evangelou2018dbp
+    NAME: 'Diastolic Blood Pressure'
+    FILE: data/raw/GWAS/Evangelou2018dbp.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Evangelou2018sbp
+    NAME: 'Systolic Blood Pressure'
+    FILE: data/raw/GWAS/Evangelou2018sbp.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Evangelou2018pp
+    NAME: 'Pulse Pressure'
+    FILE: data/raw/GWAS/Evangelou2018pp.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Howard2018dep
+    NAME: 'Depression'
+    FILE: data/raw/GWAS/Howard2018dep.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Jansen2018insom
+    NAME: 'Insomnia'
+    FILE: data/raw/GWAS/Jansen2018insom.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Liu2019smkint
+    NAME: 'Somking Initiation'
+    FILE: data/raw/GWAS/Liu2019smkint.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Liu2019smkcpd
+    NAME: 'Smoking Quantity'
+    FILE: data/raw/GWAS/Liu2019smkcpd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Kunkle2019load
+    NAME: LOAD
+    FILE: data/raw/GWAS/Kunkle2019load.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Revez2020vit250hd
+    NAME: 'Vitamin D'
+    FILE: data/raw/GWAS/Revez2020vit250hd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Okada2014rartis
+    NAME: 'Rheumatoid Arthritis'
+    FILE: data/raw/GWAS/Okada2014rartis.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Nalls2019pd
+    NAME: 'Parkinsons Disease'
+    FILE: data/raw/GWAS/Nalls2019pd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Nicolas2018als
+    NAME: 'ALS'
+    FILE: data/raw/GWAS/Nicolas2018als.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Ligthart2018crp
+    NAME: 'CRP'
+    FILE: data/raw/GWAS/Ligthart2018crp.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Wood2014height
+    NAME: 'Height'
+    FILE: data/raw/GWAS/Wood2014height.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Betham2015lupus
+    NAME: 'Lupus'
+    FILE: data/raw/GWAS/Betham2015lupus.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Patsopoulos2019multscler
+    NAME: 'Multiple Sclerosis'
+    FILE: data/raw/GWAS/Patsopoulos2019multscler.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Malik2018ais
+    NAME: 'Ischemic Stroke'
+    FILE: data/raw/GWAS/Malik2018ais.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Wuttke2019egfr
+    NAME: 'eGFR'
+    FILE: data/raw/GWAS/Wuttke2019egfr.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Wuttke2019ckd
+    NAME: 'CKD'
+    FILE: data/raw/GWAS/Wuttke2019ckd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Nikpay2015cad
+    NAME: 'coronary artery disease'
+    FILE: data/raw/GWAS/Nikpay2015cad.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Shah2020heartfailure
+    NAME: 'Heart Failure'
+    FILE: data/raw/GWAS/Shah2020heartfailure.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Olafsdottir2020asthma
+    NAME: 'Asthma'
+    FILE: data/raw/GWAS/Olafsdottir2020asthma.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Allen2020ipf
+    NAME: 'IPF'
+    FILE: data/raw/GWAS/Allen2020ipf.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Linner2019risk
+    NAME: 'Risk tolerance'
+    FILE: data/raw/GWAS/Linner2019risk.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Demontis2018adhd
+    NAME: 'ADHD'
+    FILE: data/raw/GWAS/Demontis2018adhd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Grove2019asd
+    NAME: 'ASD'
+    FILE: data/raw/GWAS/Grove2019asd.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Ripke2014scz
+    NAME: 'Schizophrenia'
+    FILE: data/raw/GWAS/Ripke2014scz.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Stahl2019bip
+    NAME: 'Bipolar Disorder'
+    FILE: data/raw/GWAS/Stahl2019bip.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Astel2016rbc
+    NAME: 'RBC'
+    FILE: data/raw/GWAS/Astel2016rbc.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Astel2016wbc
+    NAME: 'WBC'
+    FILE: data/raw/GWAS/Astel2016wbc.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: Astel2016plt
+    NAME: 'PLT'
+    FILE: data/raw/GWAS/Astel2016plt.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+
+# datafreeze6
+OUTCOMES:
+  -
+    CODE: covidhgi2020A2v6all
+    NAME: "COVID: A2"
+    FILE: data/raw/GWAS/covidhgi2020A2v6all.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: covidhgi2020B2v6all
+    NAME: "COVID: B2"
+    FILE: data/raw/GWAS/covidhgi2020B2v6all.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT
+  -
+    CODE: covidhgi2020C2v6all
+    NAME: "COVID: C2"
+    FILE: data/raw/GWAS/covidhgi2020C2v6all.chrall.CPRA_b37.tsv.gz
+    COLUMNS:
+      SNP: DBSNP_ID
+      CHROM: CHROM
+      POS: POS
+      REF: REF
+      ALT: ALT
+      AF: AF
+      BETA: BETA
+      SE: SE
+      P: P
+      Z: Z
+      N: N
+      TRAIT: TRAIT

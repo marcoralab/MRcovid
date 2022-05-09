@@ -1,0 +1,12 @@
+# snakemake -s workflow/rules/test.smk --configfile config/test.yaml --use-conda -j 1000 --keep-going --notemp
+
+SAMPLE: ["ukb-b-12948"]
+G1: "ukb-b-12948"
+G2: "ukb-b-19953"
+EXCLUSION:
+    -
+        NAME: MHC
+        NOTE: "Remove all variants on chromosome 6 in the region 26MB to 34MB (the MHC region)"
+        CHROM: 6
+        START: 26000000
+        STOP: 34000000

@@ -10,12 +10,15 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
 }
 
 ## Load librarys and functions
-library(tidyverse)
+.libPaths(c(.libPaths(), "/hpc/users/harern01/miniconda3/envs/py38/lib/R/library"))
+library(tidyr)
+library(dplyr)
+library(readr)
+library(purrr)
 library(TwoSampleMR)
-library(here)
-source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
-source(here("workflow", "scripts", "mr_PowerFunctions.R"), chdir = TRUE)
-
+source("workflow/scripts/miscfunctions.R", chdir = TRUE)
+source("workflow/scripts/traits.R", chdir = TRUE)
+source("workflow/scripts/mr_PowerFunctions.R", chdir = TRUE)
 infile = snakemake@input[["infile"]]
 outfile = snakemake@output[["outfile"]]
 

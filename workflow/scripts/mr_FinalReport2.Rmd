@@ -42,6 +42,8 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   conda_i = which(grepl("conda", df, fixed = TRUE))
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
+}
+.libPaths(c(.libPaths(), "/hpc/users/harern01/.Rlib"))
 
 library(tidyverse)
 library(glue)
@@ -55,8 +57,8 @@ source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
 ```
 
 ```{r sandbox, eval=F}
-# model <- "MRcovideurwoukbb"
-model <- "MRcovideur"
+# model <- "MRcovideurv6woukbb"
+model <- "MRcovideurv6"
 # DATE = Sys.Date() %>% str_replace_all(., '[[:punct:]]', "")
 DATE = "20210224"
 rwd = "/sc/arion/projects/LOAD/shea/Projects/MRcovid"
@@ -74,10 +76,10 @@ rg.path <- glue("results/RGcovid/ldsc/{DATE}/all_results_ldsc.tsv")
 
 exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018ais', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt')
 
-if(model == "MRcovideur"){
-  outcomes = c("covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur")
-} else if(model == "MRcovideurwoukbb"){
-  outcomes = c("covidhgi2020A2v5alleurLeaveUKBB", "covidhgi2020B2v5alleurLeaveUKBB", "covidhgi2020C2v5alleurLeaveUKBB")
+if(model == "MRcovideurv6"){
+  outcomes = c("covidhgi2020A2v6alleur", "covidhgi2020B2v6alleur", "covidhgi2020C2v6alleur")
+} else if(model == "MRcovideurv6woukbb"){
+  outcomes = c("covidhgi2020A2v6alleurLeaveUKBB", "covidhgi2020B2v6alleurLeaveUKBB", "covidhgi2020C2v6alleurLeaveUKBB")
 }
 
 ```
@@ -200,7 +202,7 @@ rg_covid <- rg.raw %>%
   mutate(outcome.name = fct_recode(p2,
                                    "Critical illness" = a2_pheno_id,
                                    Hospitalisation = b2_pheno_id,
-                                   "Reported infection" = c2_pheno_id), 
+                                   "Reported infection" = c2_pheno_id),
          exposure.name = fct_recode(p1,
                                    "Critical illness" = a2_pheno_id,
                                    Hospitalisation = b2_pheno_id,
@@ -421,7 +423,7 @@ out.final <- mr_best %>%
          Egger_I, Egger.pval,
          RSSobs, MRPRESSO.pval, pass) %>%
   arrange(outcome.name, fdr) %>%
-  # filter(outcome != "covidhgi2020A2v5alleur") %>%
+  # filter(outcome != "covidhgi2020A2v6alleur") %>%
   # mutate(fdr = p.adjust(IVW_MR.pval, "fdr")) %>%
   mutate(Egger.pval = round_sci(Egger.pval),
          fdr = round_sci(fdr),
@@ -429,7 +431,7 @@ out.final <- mr_best %>%
   map_dfr(., str_replace, "NA \\(NA, NA\\)", "") %>%
   map_dfr(., replace_na, "")
 
-out.final %>% 
+out.final %>%
   filter(as.numeric(fdr) < 0.05) %>%
   # filter(pass == TRUE) %>%
   split(.$outcome)
@@ -490,7 +492,7 @@ dat.long <- dat.plot %>%
   pivot_longer(c(z, rg), names_to = 'method', values_to = 'estimate') %>%
   mutate(mr = ifelse(method == 'z', estimate, NA),
          rg = ifelse(method == 'rg', estimate, NA),
-         method = fct_recode(method, "Genetic \nCorrelation" = "rg", "Mendelian \nRandomization" = "z"), 
+         method = fct_recode(method, "Genetic \nCorrelation" = "rg", "Mendelian \nRandomization" = "z"),
          domain.exposure = fct_relevel(domain.exposure, "Risk factor", "Biomarker", 'Disease liability'))
 
 mrdat.p <- MRsummary %>%
@@ -518,7 +520,7 @@ mrdat.p.ls <- mrdat.p %>%
                                     "ALS" = "Amyotrophic lateral sclerosis",
                                     # "Age first birth" = "Age at first birth",
                                     "Parkinson's" = "Parkinsons disease",
-                                    "Smoking" = "Smoking initiation", 
+                                    "Smoking" = "Smoking initiation",
                                     "Mult. sclerosis" = "Multiple sclerosis")) %>%
   split(., .$outcome)
 
@@ -776,10 +778,10 @@ ggsave(glue("docs/{DATE}/{model}_MRheatmap.png"), plot = p2, width = 11, height 
 ggsave(glue("docs/{DATE}/{model}_RGheatmap.png"), plot = p1, width = 11, height = 5, units = "in")
 ```
 
-## RG forrest plots 
+## RG forrest plots
 ```{r}
 rg_covid_comp <- bind_rows(
-  rg_covid, 
+  rg_covid,
   rg_covid %>% rename(p2 = p1, p1 = p2, outcome.name = exposure.name, exposure.name = outcome.name)
 )
 
@@ -796,12 +798,12 @@ forrest_dat.p <- rg %>%
   ) %>%
   split(.$outcome) %>%
   map(., arrange, method, b) %>%
-  map(., mutate, exposure.name = fct_inorder(exposure.name)) %>% 
+  map(., mutate, exposure.name = fct_inorder(exposure.name)) %>%
   bind_rows() %>%
   mutate(outcome.name = fct_recode(outcome.name,
                                    "Critical illness" = a2_pheno,
                                    Hospitalisation = b2_pheno,
-                                   "Reported infection" = c2_pheno)) %>% 
+                                   "Reported infection" = c2_pheno)) %>%
   mutate(covid_panel = ifelse(exposure.name %in% c("Critical illness", "Hospitalisation", "Reported infection"), 1, 2))
 
 
@@ -897,13 +899,13 @@ forrest_out.p <- map2(forrest.p, p.ls, function(x, y){
 
 
 ```{r}
-ggsave(glue("docs/{DATE}/{model}_covidhgi2020A2v5alleur_forrest.png"),
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020A2v6alleur_forrest.png"),
        plot = forrest_out.p[[1]], width = 12, height = 6, units = "in")
 
-ggsave(glue("docs/{DATE}/{model}_covidhgi2020B2v5alleur_forrest.png"),
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020B2v6alleur_forrest.png"),
        plot = forrest_out.p[[2]], width = 12, height = 6, units = "in")
 
-ggsave(glue("docs/{DATE}/{model}_covidhgi2020C2v5alleur_forrest.png"),
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020C2v6alleur_forrest.png"),
        plot = forrest_out.p[[3]], width = 12, height = 6, units = "in")
 
 ```
@@ -919,7 +921,7 @@ mrdatA2.p <- MRsummary %>%
   mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
   ungroup() %>%
   left_join(select(rg, p1, p2, rg, se_rg, rg.p, rg.fdr, rg.lci, rg.uci), by = c("exposure" = "p1", "outcome"= "p2")) %>%
-  filter(outcome == "covidhgi2020A2v5alleurLeaveUKBB") %>%
+  filter(outcome == "covidhgi2020A2v6alleurLeaveUKBB") %>%
   filter(method != "MRPRESSO_Raw") %>%
   mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"),
          method = fct_recode(method, "MR-PRESSO" = "MRPRESSO_corrected",  "MR Egger" =  "Egger")) %>%
@@ -1053,7 +1055,7 @@ mrA2.sig <- mrdatA2.p %>%
 
 ggarrange(rgA2.p, mrA2.p, mrA2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom")  %>%
   annotate_figure(., top = text_grob("COVID-A2, EUR w/o UKB", face = "bold", size = 14))
-ggsave(glue("docs/{DATE}/{model}_covidhgi2020A2v5alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020A2v6alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
 ```
 
 
@@ -1066,7 +1068,7 @@ mrdatB2.p <- MRsummary %>%
   mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
   ungroup() %>%
   left_join(select(rg, p1, p2, rg, se_rg, rg.p, rg.fdr, rg.lci, rg.uci), by = c("exposure" = "p1", "outcome"= "p2")) %>%
-  filter(outcome == "covidhgi2020B2v5alleurLeaveUKBB") %>%
+  filter(outcome == "covidhgi2020B2v6alleurLeaveUKBB") %>%
   filter(method != "MRPRESSO_Raw") %>%
   mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"),
          method = fct_recode(method, "MR-PRESSO" = "MRPRESSO_corrected",  "MR Egger" =  "Egger")) %>%
@@ -1200,7 +1202,7 @@ mrB2.sig <- mrdatB2.p %>%
 
 ggarrange(rgB2.p, mrB2.p, mrB2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom") %>%
   annotate_figure(., top = text_grob("COVID-B2, EUR w/o UKB", face = "bold", size = 14))
-ggsave(glue("docs/{DATE}/{model}_covidhgi2020B2v5alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020B2v6alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
 ```
 
 #### COVID-C2
@@ -1212,7 +1214,7 @@ mrdatC2.p <- MRsummary %>%
   mutate(fdr = p.adjust(MR.pval, "fdr")) %>%
   ungroup() %>%
   left_join(select(rg, p1, p2, rg, se_rg, rg.p, rg.fdr, rg.lci, rg.uci), by = c("exposure" = "p1", "outcome"= "p2")) %>%
-  filter(outcome == "covidhgi2020C2v5alleurLeaveUKBB") %>%
+  filter(outcome == "covidhgi2020C2v6alleurLeaveUKBB") %>%
   filter(method != "MRPRESSO_Raw") %>%
   mutate(method = fct_relevel(method, "MRPRESSO_corrected", "Egger",  "WMBE",  "WME", "IVW"),
          method = fct_recode(method, "MR-PRESSO" = "MRPRESSO_corrected",  "MR Egger" =  "Egger")) %>%
@@ -1346,7 +1348,7 @@ mrC2.sig <- mrdatC2.p %>%
 
 ggarrange(rgC2.p, mrC2.p, mrC2.sig, nrow = 1, ncol = 3, widths = c(1.25, 1), common.legend = TRUE, legend = "bottom") %>%
   annotate_figure(., top = text_grob("COVID-C2, EUR w/o UKB", face = "bold", size = 14))
-ggsave(glue("docs/{DATE}/{model}_covidhgi2020C2v5alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
+ggsave(glue("docs/{DATE}/{model}_covidhgi2020C2v6alleurLeaveUKBB_forrest.png"), width = 12, height = 6, units = "in")
 ```
 
 ## MR Scatter Plots

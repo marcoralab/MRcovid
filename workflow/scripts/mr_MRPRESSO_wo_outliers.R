@@ -9,7 +9,7 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   conda_i = which(grepl("conda", df, fixed = TRUE))
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
-
+.libPaths(c(.libPaths(), "/hpc/users/harern01/miniconda3/envs/py38/lib/R/library"))
 ### ===== Command Line Arguments ===== ##
 infile = snakemake@input[["mrdat"]] # Exposure summary statistics
 out = snakemake@params[["out"]]
@@ -18,9 +18,14 @@ out = snakemake@params[["out"]]
 # out = "/Users/sheaandrews/Dropbox/Research/PostDoc-MSSM/2_MR/2_DerivedData/mvpa/load/mvpa_5e-6_load"
 
 ### ===== Load packages ===== ###
-suppressMessages(library(tidyverse))   ## For data wrangling
-suppressMessages(library(magrittr))
-suppressMessages(library(MRPRESSO)) ## For detecting pleitropy
+library(tidyr)   ## For data wrangling
+library(dplyr)  ## For data transformation
+library(magrittr)   ## For data wrangling
+library(readr)
+library(stringi)
+library(stringr)
+library(MRPRESSO) ## For detecting pleitropy
+
 
 ### ===== READ IN DATA ===== ###
 message("\n READING IN HARMONIZED MR DATA \n")

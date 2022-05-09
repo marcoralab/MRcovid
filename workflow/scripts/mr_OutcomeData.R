@@ -16,7 +16,9 @@ outcome.summary = snakemake@input[["OutcomeSummary"]] # Outcome Summary statisti
 out = snakemake@params[["Outcome"]]
 
 ### ===== Load packages ===== ###
-suppressMessages(library(tidyverse))   ## For data wrangling
+library(tidyverse)## For data wrangling
+library(dplyr)
+library(readr)
 #suppressMessages(library(Hmisc))       ## Contains miscillaneous funtions
 
 ### ===== READ IN SNPs ===== ###

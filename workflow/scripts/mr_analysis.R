@@ -11,10 +11,11 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
 }
 
 ## LOAD packages
-library(tidyverse)
+library(tidyr)
+library(readr)
+library(dplyr)
 library(TwoSampleMR) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/
-library(here)
-source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
+source("workflow/scripts/miscfunctions.R", chdir = TRUE)
 
 ## Path to input/output
 input = snakemake@input[["mrdat"]] # Harmonized MR data

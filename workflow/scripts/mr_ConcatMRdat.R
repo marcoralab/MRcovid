@@ -10,6 +10,7 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
 }
 
 library(tidyverse)
+library(plyr)
 
 input = snakemake@input[["dat"]] # Outcome Summary statistics
 output = snakemake@output[["out"]]

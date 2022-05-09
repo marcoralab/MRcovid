@@ -1,3 +1,5 @@
+library(tidyr)
+library(dplyr)
 ## Sample Sizes
 samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~ncase, ~ncontrol, ~prevelance,
                   "Lambert2013load", "Disease liability", "LOAD", 0820047, TRUE, 63926, 21982, 41944, 0.31,
@@ -99,13 +101,20 @@ samplesize = tribble(~code, ~domain, ~trait, ~pmid, ~logistic, ~samplesize, ~nca
                   "covidhgi2020A2v5alleurLeaveUKBB", "Diagnosis", "COVID: A2, EUR w/o UKB", 9999, TRUE, 1059322, 4733, 1054589, 0.00447,
                   "covidhgi2020B2v5alleurLeaveUKBB", "Diagnosis", "COVID: B2, EUR w/o UKB", 9999, TRUE, 1556506, 7998, 1548508, 0.00514,
                   "covidhgi2020C2v5alleurLeaveUKBB", "Diagnosis", "COVID: C2, EUR w/o UKB", 9999, TRUE, 1348520, 32388, 1316132, 0.0240,
-                  )
 
-ieugwas <- read_csv(here::here("data", "raw", "ieugwas_201020.csv"))
+                  ## Datafreeze v6
+                  "covidhgi2020A2v6alleur", "Diagnosis", "COVID: A2, EUR", 9999, TRUE, 1639838, 7641, 1632197, 0.00466,
+                  "covidhgi2020B2v6alleur", "Diagnosis", "COVID: B2, EUR", 9999, TRUE, 2509514, 18605, 2490909, 0.00741,
+                  "covidhgi2020C2v6alleur", "Diagnosis", "COVID: C2, EUR", 9999, TRUE, 2393659, 97783, 2295876, 0.04085,
+                  "covidhgi2020A2v6all", "Diagnosis", "COVID: A2, ALL", 9999, TRUE, 2393659, 9376, 1776645, 0.005249,
+                  "covidhgi2020B2v6all", "Diagnosis", "COVID: B2, ALL", 9999, TRUE, 2861299, 25027, 2836272, 0.00874,
+                  "covidhgi2020C2v6all", "Diagnosis", "COVID: C2, ALL", 9999, TRUE, 2700931, 125584, 2575347, 0.04649)
+                    ## ieugwas
+#ieugwas <- read_csv(here::here("data", "raw", "ieugwas_201020.csv"))
 
-samplesize <- bind_rows(samplesize,
-          ieugwas %>%
-            select(code = id, domain = category, trait, pmid, samplesize = sample_size, ncase, ncontrol) %>%
-            mutate(logistic = ifelse(domain == "Binary", TRUE, FALSE),
-                   prevelance = ncase/samplesize)
-          )
+# samplesize <- bind_rows(samplesize,
+#           ieugwas %>%
+#             select(code = id, domain = category, trait, pmid, samplesize = sample_size, ncase, ncontrol) %>%
+#             mutate(logistic = ifelse(domain == "Binary", TRUE, FALSE),
+#                    prevelance = ncase/samplesize)
+#           )
