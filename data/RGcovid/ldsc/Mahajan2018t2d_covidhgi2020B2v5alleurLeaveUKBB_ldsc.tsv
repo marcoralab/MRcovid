@@ -1,2 +1,0 @@
-p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
-data/formated/ldsc/Mahajan2018t2d.sumstats.gz	data/formated/ldsc/covidhgi2020B2v5alleurLeaveUKBB.sumstats.gz	0.2717	0.0654	4.1576	3.2160e-05	0.0015	0.0005	1.0072	0.008	0.0115	0.0049	1137750
