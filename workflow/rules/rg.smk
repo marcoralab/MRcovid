@@ -8,7 +8,7 @@ from datetime import datetime
 now = datetime.now() # current date and time
 today_date = now.strftime("%Y%m%d")
 
-traits = pd.read_csv(config['TRAITS_PATH'])
+traits = pd.read_csv(config['EXPOSURES'])
 # traits = traits.iloc[0:2]
 G1 = traits["g1"].tolist()
 G2 = traits["g2"].tolist()
