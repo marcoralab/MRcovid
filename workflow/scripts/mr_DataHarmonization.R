@@ -30,10 +30,11 @@ regions_stop = snakemake@params[["regions_stop"]]
 
 ### ===== Load packages ===== ###
 message("Loading packages  \n")
-suppressMessages(library(plyr))
-suppressMessages(library(tidyverse))
-suppressMessages(library(glue))
-suppressMessages(library(TwoSampleMR)) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/
+library(tidyr)
+library(glue)
+library(readr)
+library(dplyr)
+library(TwoSampleMR) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/
 
 
 ### ===== Read In Data ===== ###

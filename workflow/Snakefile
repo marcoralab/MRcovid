@@ -21,7 +21,7 @@ subworkflow mr_covid:
     snakefile:
         "rules/mr.smk"
     configfile:
-        "config/config_covid.yaml"
+        "config/config_covid_eur_v6.yaml"
 
 # snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur.yaml -j 1 --use-conda --keep-going --notemp
 subworkflow mr_covideur:
@@ -30,7 +30,7 @@ subworkflow mr_covideur:
     snakefile:
         "rules/mr.smk"
     configfile:
-        "config/config_covid.yaml"
+        "config/config_covid_eur_v6.yaml"
 
 # snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml -j 1 --use-conda --keep-going --notemp
 subworkflow mr_covideurwoukbb:
@@ -39,7 +39,7 @@ subworkflow mr_covideurwoukbb:
     snakefile:
         "rules/mr.smk"
     configfile:
-        "config/config_covid.yaml"
+        "config/config_covid_eur_v6.yaml"
 
 rule all:
     input:

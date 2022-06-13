@@ -35,7 +35,7 @@ Snakefile:
 
 
  Script files:
-  * `workflow/scripts/mr_*`: script files for implementing spefific rules in the rg workflow
+  * `workflow/scripts/rg_*`: script files for implementing spefific rules in the rg workflow
 
 
 ### MR

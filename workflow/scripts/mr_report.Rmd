@@ -26,6 +26,7 @@ params:
   r2.threshold: NA
   kb.threshold: NA
   mrpresso_global: NA
+  Rlib: NA
   mrpresso_global_wo_outliers: NA
   power: NA
   out: NA
@@ -54,22 +55,27 @@ params <- tibble(
 )
 ```
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = params$rwd)
 
 if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   message("Setting libPaths")
+  message(params$rwd)
   df = .libPaths()
   conda_i = which(grepl("conda", df, fixed = TRUE))
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
-
-library(tidyverse)   ## For data wrangling
+.libPaths(c(.libPaths(), params$Rlib))
+## Load Packages
+library(tidyr)   ## For data wrangling
+library(dplyr)
+library(readr)
 library(TwoSampleMR) ## For conducting MR https://mrcieu.github.io/TwoSampleMR/
 library(RadialMR)    ## For Radial MR plots
 library(ggplot2)     ## For plotting
 library(here)
+
 source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
 
 message(params)

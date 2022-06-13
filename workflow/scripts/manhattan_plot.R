@@ -6,12 +6,12 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   conda_i = which(grepl("conda", df, fixed = TRUE))
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
-
+.libPaths(c(.libPaths(), "/hpc/users/harern01/miniconda3/envs/py38/lib/R/library"))
 ## Load Packages
-suppressMessages(library(tidyverse))
-suppressMessages(library(ggplot2))
-suppressMessages(library(ggman))
-suppressMessages(library(gridExtra))
+library(tidyverse)
+library(ggplot2)
+library(ggman)
+library(gridExtra)
 
 snp.r2 <- function(eaf, beta){
   2*eaf*(1 - eaf)*beta^2
@@ -37,7 +37,7 @@ trait.gwas <- vroom::vroom(infile_gwas, comment = '##',
   mutate(r2 = snp.r2(AF, BETA))
 
 trait.clump <- suppressMessages(read_table2(infile_clump)) %>%
-  filter(!is.na(CHR)) %>% 
+  filter(!is.na(CHR)) %>%
   select(CHR, F, SNP, BP, P, TOTAL, NSIG)
 
 ## Count number of SNPs in clumped dataset

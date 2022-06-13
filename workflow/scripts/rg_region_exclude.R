@@ -1,14 +1,18 @@
 #!/usr/bin/Rscript
-
 if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   message("Setting libPaths")
   df = .libPaths()
   conda_i = which(grepl("conda", df, fixed = TRUE))
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
-
-suppressMessages(library(tidyverse))
-suppressMessages(library(glue))
+.libPaths(c(.libPaths(), "/hpc/users/harern01/miniconda3/envs/py38/lib/R/library"))
+library(tidyr)
+library(readr)
+library(dplyr)
+library(plyr)
+library(glue)
+#suppressMessages(library(tidyverse))
+#suppressMessages(library(glue))
 
 infile_gwas = snakemake@input[["ss"]]
 outfile = snakemake@output[["out"]]

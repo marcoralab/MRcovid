@@ -1,12 +1,12 @@
+#!/usr/bin/Rscript
 library(nanny)
 library(dplyr)
 library(tidyr)
 library(readr)
 library(stringi)
 library(stringr)
-library(here)
-source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
-
+source('workflow/scripts/miscfunctions.R', chdir = TRUE)
+source("workflow/scripts/traits.R", chdir = TRUE)
 
 exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl',
               'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur',
@@ -19,11 +19,10 @@ exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl'
               'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf',
               'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz',
               'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt',
-              "covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur",
-              "covidhgi2020A2v5alleurLeaveUKBB", "covidhgi2020B2v5alleurLeaveUKBB", "covidhgi2020C2v5alleurLeaveUKBB")
+              "covidhgi2020A2v6alleur", "covidhgi2020B2v6alleur", "covidhgi2020C2v6alleur")
 
-outcomes = c("covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur",
-             "covidhgi2020A2v5alleurLeaveUKBB", "covidhgi2020B2v5alleurLeaveUKBB", "covidhgi2020C2v5alleurLeaveUKBB")
+outcomes = c("covidhgi2020A2v6alleur", "covidhgi2020B2v6alleur", "covidhgi2020C2v6alleur")
+
 
 ## generate grid of exposure outcome pairs
 df <- expand_grid(g1 = exposures,
@@ -47,4 +46,4 @@ out <- bind_rows(
  ) %>%
    select(-covid_g1, -LeaveUKBB)
 
-write_csv(out, "data/RGcovid/traits.csv")
+write_csv(out, "data/RGcovidv6/traits.csv")

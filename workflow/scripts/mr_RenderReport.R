@@ -23,6 +23,7 @@ rmarkdown::render(
   output_format = "all",
   params = list(
     rwd = snakemake@params[["rwd"]],
+    Rlib = snakemake@params[["Rlib"]],
     exposure.snps = snakemake@input[["ExposureSnps"]],
     outcome.snps = snakemake@input[["OutcomeSnps"]],
     proxy.snps = snakemake@input[["ProxySnps"]],

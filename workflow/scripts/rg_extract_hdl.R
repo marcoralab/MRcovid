@@ -1,5 +1,8 @@
 #! bin/bash
-library(tidyverse)
+library(tidyr)
+library(readr)
+library(dplyr)
+library(plyr)
 library(magrittr)
 
 args = commandArgs(trailingOnly = TRUE) # Set arguments from the command line

@@ -6,7 +6,7 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   conda_i = which(grepl("conda", df, fixed = TRUE))
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
-
+.libPaths(c(.libPaths(), "/hpc/users/harern01/.Rlib"))
 # log_path = snakemake@log[[1]]
 #
 # ## Logging messages

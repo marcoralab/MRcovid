@@ -1,5 +1,6 @@
 # snakemake -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml --use-conda -j 1 --keep-going --notemp
 # snakejob -s workflow/rules/mr.smk --configfile config/config_covid_eur_wo_ukbb.yaml --use-conda -j 1000 --keep-going --notemp
+# snakejob -s workflow/rules/mr.smk --configfile config/config_covid_eur_v6.yaml --use-conda --use-singularity -j 1000 --keep-going --notemp
 
 PROJECT: "MRcovideurwoukbb"
 

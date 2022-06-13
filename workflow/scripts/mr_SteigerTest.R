@@ -8,11 +8,14 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   conda_i = which(grepl("conda", df, fixed = TRUE))
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
-
+.libPaths(c(.libPaths(), "/hpc/users/harern01/miniconda3/envs/py38/lib/R/library"))
 ## Load Packages
-library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(readr)
 library(TwoSampleMR)
 source('workflow/scripts/miscfunctions.R', chdir = TRUE)
+source("workflow/scripts/traits.R", chdir = TRUE)
 
 ## estimate r for binary or continouse exposures/outcomes
 r_func <- function(x){
@@ -66,7 +69,6 @@ mrdat <- mrdat.raw %>%
 
 logistic.exposure <- mrdat %>% slice(1) %>% pull(logistic.exposure)
 logistic.outcome <- mrdat %>% slice(1) %>% pull(logistic.outcome)
-
 mrdat <- r_func(mrdat)
 
 ## -------------------- Directionality Test -------------------------##

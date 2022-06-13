@@ -43,25 +43,32 @@ if(any(grepl("conda", .libPaths(), fixed = TRUE))){
   .libPaths(c(df[conda_i], df[-conda_i]))
 }
 
+.libPaths(c(.libPaths(), "/hpc/users/harern01/.Rlib"))
 library(tidyverse)
 library(glue)
 library(TwoSampleMR)
 library(gridExtra)
 library(qvalue)
+library(DT)
+library(pals)
+library(mapproj)
+library(dichromat)
 library(here)
+
 source(here("workflow", "scripts", "miscfunctions.R"), chdir = TRUE)
+source(here("workflow", "scripts", "traits.R"), chdir = TRUE)
 
 ```
 
 ```{r sandbox, eval=F}
 # model <- "MRcovid"
-model <- "MRcovideur"
-# model <- "MRcovideurwoukbb"
+model <- "MRcovideurv6"
+# model <- "MRcovideurv6v6woukbb"
 
-rwd = "/sc/arion/projects/LOAD/shea/Projects/MRcovid"
+rwd = "/sc/arion/projects/LOAD/harern01/projects/MRcovid"
 setwd(rwd)
 DATE = Sys.Date()
-DATE = "2021-01-15"
+DATE = "2021-08-20"
 
 
 MR_results.path = glue("results/{model}/All/{DATE}/MRresults.txt")
@@ -72,9 +79,11 @@ mrpresso_global_wo_outliers.path = glue("results/{model}/All/{DATE}/global_mrpre
 egger_comb.path = glue("results/{model}/All/{DATE}/pleiotropy.txt")
 power.path = glue("results/{model}/All/{DATE}/power.txt")
 steiger.path = glue("results/{model}/All/{DATE}/steiger.txt")
-exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma', 'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', 'Mills2021afb')
-outcomes = c("covidhgi2020A2v5alleur", "covidhgi2020B2v5alleur", "covidhgi2020C2v5alleur")
-# outcomes = c("covidhgi2020A2v5alleurLeaveUKBB", "covidhgi2020B2v5alleurLeaveUKBB", "covidhgi2020C2v5alleurLeaveUKBB")
+exposures = c('Yengo2018bmi', 'Mahajan2018t2d', 'Willer2013hdl', 'Willer2013ldl', 'Willer2013tc', 'Willer2013tg', 'Dashti2019slepdur', 'Klimentidis2018mvpa', 'Day2018sociso', 'Evangelou2018dbp', 'Evangelou2018sbp', 'Evangelou2018pp', 'Lee2018educ', 'Howard2018dep', 'Jansen2018insom', 'Liu2019smkint', 'Liu2019smkcpd', 'Liu2019drnkwk', 'Kunkle2019load', 'Revez2020vit250hd', 'Okada2014rartis', 'Nalls2019pd', 'Nicolas2018als', 'Ligthart2018crp', 'Wood2014height', 'Betham2015lupus', 'Patsopoulos2019multscler', 'Malik2018as', 'Wuttke2019egfr', 'Wuttke2019ckd', 'Nikpay2015cad', 'Shah2020heartfailure', 'Olafsdottir2020asthma',
+'Allen2020ipf', 'Linner2019risk', 'Demontis2018adhd', 'Grove2019asd', 'Ripke2014scz', 'Stahl2019bip', 'Astel2016rbc', 'Astel2016wbc', 'Astel2016plt', 'Mills2021afb')
+outcomes = c("covidhgi2020A2v6alleur", "covidhgi2020B2v6alleur", "covidhgi2020C2v6alleur")
+# outcomes = c("covidhgi2020A2v6alleurLeaveUKBB", "covidhgi2020B2v6alleurLeaveUKBB", "covidhgi2020C2v6alleurLeaveUKBB")
+
 ```
 
 ```{r snakemake-input}
@@ -118,7 +127,7 @@ mrpresso_global <- read_tsv(mrpresso_global.path) %>%
   mutate(pval = as.character(pval))
 
 message(glue("\n Loading: ", mrpresso_global_wo_outliers.path))
-mrpresso_global_wo_outliers <- read_tsv(mrpresso_global_wo_outliers.path) %>%
+  mrpresso_global_wo_outliers <-read_tsv(mrpresso_global_wo_outliers.path) %>%
   filter(exposure %in% exposures, outcome %in% outcomes) %>%
   mutate(pval = as.character(pval))
 
@@ -140,7 +149,6 @@ power <- read_tsv(power.path) %>%
   mutate(pve.exposure = round(pve.exposure*100, 2),
          F = round(F, 2),
          Power = round(Power, 2))
-
 message(glue("\n Exposure - Outcome Pairs"))
 exposures_outcomes <- expand_grid(exposures, outcomes) %>%
   magrittr::set_colnames(c("exposures.name", "outcomes.name")) %>%
@@ -158,7 +166,6 @@ Aggregate report of the results of a MR analysis examining the causal effect of 
 The following exposures were included in the analysis.
 ```{r print-exposure}
 exposure.df <- filter(samplesize, code %in% (distinct(MR_results, exposure) %>% pull(exposure)))
-
 exposure.df %>%
   DT::datatable(caption = "Table 1: Exposures",
                 options = list(
@@ -171,7 +178,6 @@ exposure.df %>%
 
 ```{r print-outcome}
 outcome.df <- filter(samplesize, code %in% (distinct(MR_results, outcome) %>% pull(outcome)))
-
 outcome.df %>%
   DT::datatable(caption = "Table 2: Outcomes",
                 options = list(
@@ -199,7 +205,6 @@ MR_results %>%
   )
 
 ```
-
 
 ## Harmonized exposure-outcome SNP dataset
 

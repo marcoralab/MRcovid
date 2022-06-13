@@ -1,6 +1,8 @@
 #! bin/bash
-
-library(tidyverse)
+library(tidyr)
+library(readr)
+library(dplyr)
+library(plyr)
 
 args = commandArgs(trailingOnly = TRUE) # Set arguments from the command line
 input = args[1]
