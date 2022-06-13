@@ -820,7 +820,7 @@ rg_forrest_plot <- ggplot(forrest_dat.p, aes(y = exposure.name, x = b, colour = 
           strip.placement = "outside",
           panel.grid.minor.x  = element_blank())
 
-ggsave(glue("docs/{DATE}/{model}_rg_forrest_plot.png"), plot = rg_forrest_plot, height = 190, width = 240, units = 'mm')
+ggsave(glue("docs/{DATE}/{model}_rg_forrest_plot.tiff"), plot = rg_forrest_plot, height = 180, width = 180, units = 'mm')
 
 ```
 
