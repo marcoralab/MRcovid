@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+QDu2qo	8Qo0i5	covidhgi2020B2v6alleur	Shah2020heartfailure	5e-8	FALSE	0.14364127136245644	0.02057071326638535	0.03585455081641642	0.5819187988028627
+QDu2qo	8Qo0i5	covidhgi2020B2v6alleur	Shah2020heartfailure	5e-8	TRUE	0.22197173353960603	0.0013658385083293067	0.014420067419785508	0.9271932257951746

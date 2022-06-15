@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+99ZphP	CqjFKr	covidhgi2020C2v6alleur	Olafsdottir2020asthma	5e-8	MR-PRESSO	85	Raw	-7.534362563427352e-4	0.009574601097007664	-0.07869113801286255	0.9374654505431333
+99ZphP	CqjFKr	covidhgi2020C2v6alleur	Olafsdottir2020asthma	5e-8	MR-PRESSO	85	Outlier-corrected	NA	NA	NA	NA

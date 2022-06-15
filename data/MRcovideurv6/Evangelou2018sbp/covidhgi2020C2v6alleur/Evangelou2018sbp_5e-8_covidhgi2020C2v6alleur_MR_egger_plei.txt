@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+U4EMd5	psPhkg	covidhgi2020C2v6alleur	Evangelou2018sbp	5e-8	FALSE	0.891313906537647	-5.686524562318892e-4	6.629108658468083e-4	0.39146902059987776
+U4EMd5	psPhkg	covidhgi2020C2v6alleur	Evangelou2018sbp	5e-8	TRUE	0.890194235528671	-8.023509249961317e-4	6.447387086225908e-4	0.21400383385917418

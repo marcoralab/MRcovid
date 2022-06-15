@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	FALSE	0.9431014883664747	-4.2125102378103745e-4	0.008104806303360954	0.9587076512785324
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	TRUE	0.9343172507364961	-3.5020074851160226e-4	0.007664796945286517	0.9636999983023138

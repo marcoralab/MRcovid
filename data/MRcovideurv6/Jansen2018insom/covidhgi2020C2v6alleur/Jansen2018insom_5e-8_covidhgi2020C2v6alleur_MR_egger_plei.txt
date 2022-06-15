@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+4Tw8WL	85OZeH	covidhgi2020C2v6alleur	Jansen2018insom	5e-8	FALSE	0.24227826151768886	0.0014797100215338233	0.00433506487570405	0.7392824132506224

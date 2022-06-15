@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+bN6i2S	VcShVo	covidhgi2020C2v6alleur	Patsopoulos2019multscler	5e-8	FALSE	0.9305891574200597	0.0012122201176729625	0.001087873013481141	0.2690156400081682

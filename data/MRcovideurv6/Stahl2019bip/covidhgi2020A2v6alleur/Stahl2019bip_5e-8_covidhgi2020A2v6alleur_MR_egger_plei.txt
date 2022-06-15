@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+44NyLe	JuHlSI	covidhgi2020A2v6alleur	Stahl2019bip	5e-8	FALSE	0	-0.04093166470085141	0.04282552616454661	0.36171917246543617

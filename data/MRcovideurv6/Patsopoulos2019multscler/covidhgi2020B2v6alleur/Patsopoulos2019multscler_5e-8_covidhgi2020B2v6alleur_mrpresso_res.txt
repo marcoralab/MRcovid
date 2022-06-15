@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+oaW6en	q31O60	covidhgi2020B2v6alleur	Patsopoulos2019multscler	5e-8	MR-PRESSO	70	Raw	0.023831693359926878	0.011084048454480168	2.150089243817237	0.035055352417849656
+oaW6en	q31O60	covidhgi2020B2v6alleur	Patsopoulos2019multscler	5e-8	MR-PRESSO	70	Outlier-corrected	NA	NA	NA	NA

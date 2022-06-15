@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Willer2013tc.sumstats.gz	data/formated/ldsc/covidhgi2020C2v5alleur.sumstats.gz	-0.026	0.055	-0.4731	0.6361	0.0013	0.0003	1.0199	0.0062	0.0043	0.0046	1022329

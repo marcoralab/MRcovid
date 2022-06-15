@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+fX87M8	gPjbCJ	covidhgi2020A2v6alleur	Astel2016plt	5e-8	FALSE	MR Egger	235.19996397304806	213	0.14177492959550925
+fX87M8	gPjbCJ	covidhgi2020A2v6alleur	Astel2016plt	5e-8	FALSE	Inverse variance weighted	235.37363632624402	214	0.15089914821818998

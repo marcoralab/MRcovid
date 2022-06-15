@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+joDf7q	XpNJpw	covidhgi2020A2v6alleur	Malik2018ais	5e-8	TRUE	2	18.43550297227447	0.051

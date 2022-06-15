@@ -1,0 +1,9 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	nsnp	n_outliers	b	se	pval
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	FALSE	Inverse variance weighted (fixed effects)	67	1	-0.07184497211274928	0.10420248339781481	0.4905246124540401
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	FALSE	Weighted median	67	1	0.139001841585336	0.16100830490778018	0.3879610326711764
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	FALSE	Weighted mode	67	1	0.21012880697116287	0.2736335260326475	0.4452732236862972
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	FALSE	MR Egger	67	1	-0.04777481279420915	0.4804778105911207	0.9211013979115601
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	TRUE	Inverse variance weighted (fixed effects)	66	1	-0.06452233843508125	0.10422443925921115	0.535869519837341
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	TRUE	Weighted median	66	1	0.1396351518407583	0.16068896677783728	0.3848592496453095
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	TRUE	Weighted mode	66	1	0.22686218646831913	0.252742447466736	0.37271039982112075
+qXRmmK	mbc32D	covidhgi2020B2v6alleur	Dashti2019slepdur	5e-8	TRUE	MR Egger	66	1	-0.04451232827148829	0.45439180438448135	0.9222700247635833

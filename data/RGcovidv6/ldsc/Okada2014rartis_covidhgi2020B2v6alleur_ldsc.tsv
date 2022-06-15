@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Okada2014rartis.sumstats.gz	data/formated/ldsc/covidhgi2020B2v6alleur.sumstats.gz	0.1532	0.0648	2.3639	0.0181	0.0015	0.0004	1.0162	0.0092	0.0029	0.0045	1159374

@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+MeN30H	djN53L	covidhgi2020C2v6alleur	Evangelou2018pp	5e-8	FALSE	0.8865208682458694	-1.909892857327999e-4	6.801454925898741e-4	0.7790069531554187

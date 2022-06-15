@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Evangelou2018sbp.sumstats.gz	data/formated/ldsc/covidhgi2020B2v6alleur.sumstats.gz	0.0231	0.0346	0.6662	0.5053	0.0015	0.0004	1.0164	0.0091	-0.0067	0.0071	1154659

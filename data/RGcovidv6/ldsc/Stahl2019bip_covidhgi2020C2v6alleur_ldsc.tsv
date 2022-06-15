@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Stahl2019bip.sumstats.gz	data/formated/ldsc/covidhgi2020C2v6alleur.sumstats.gz	-0.0707	0.0577	-1.2249	0.2206	0.0013	0.0002	1.0283	0.0075	0.0148	0.005	610685

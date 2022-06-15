@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Ligthart2018crp.sumstats.gz	data/formated/ldsc/covidhgi2020B2v6alleur.sumstats.gz	0.2133	0.0693	3.077	0.0021	0.0015	0.0004	1.0151	0.0092	0.0104	0.0052	1160480

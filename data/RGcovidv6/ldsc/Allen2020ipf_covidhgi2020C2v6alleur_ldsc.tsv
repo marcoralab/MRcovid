@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Allen2020ipf.sumstats.gz	data/formated/ldsc/covidhgi2020C2v6alleur.sumstats.gz	0.0694	0.1354	0.5128	0.6081	0.0013	0.0002	1.0296	0.0071	0.0024	0.0051	1164458

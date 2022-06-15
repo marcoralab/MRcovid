@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+GUgVAH	D7eGQF	covidhgi2020B2v6alleur	Willer2013ldl	5e-8	FALSE	3	154.88365755725715	<1e-04

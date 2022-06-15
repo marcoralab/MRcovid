@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+UlK4O9	Z5vyIo	covidhgi2020B2v6alleur	Ripke2014scz	5e-8	MR-PRESSO	79	Raw	0.006873488045239801	0.024062369382567884	0.28565300182862863	0.775901120110698
+UlK4O9	Z5vyIo	covidhgi2020B2v6alleur	Ripke2014scz	5e-8	MR-PRESSO	79	Outlier-corrected	NA	NA	NA	NA

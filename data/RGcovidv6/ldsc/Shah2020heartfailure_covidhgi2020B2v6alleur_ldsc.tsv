@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Shah2020heartfailure.sumstats.gz	data/formated/ldsc/covidhgi2020B2v6alleur.sumstats.gz	0.2607	0.0858	3.0378	0.0024	0.0014	0.0003	1.0167	0.0092	0.0133	0.0046	1136069

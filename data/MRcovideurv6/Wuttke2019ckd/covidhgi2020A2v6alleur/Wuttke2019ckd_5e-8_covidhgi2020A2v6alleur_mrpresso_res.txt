@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	method	nsnp	outliers_removed	b	sd	t.stat	pval
+zd7f4x	juonjt	covidhgi2020A2v6alleur	Wuttke2019ckd	5e-8	MR-PRESSO	22	Raw	0.08684693232001714	0.042811031823233495	2.0286110523709784	0.05536813908145291
+zd7f4x	juonjt	covidhgi2020A2v6alleur	Wuttke2019ckd	5e-8	MR-PRESSO	22	Outlier-corrected	NA	NA	NA	NA

@@ -1,0 +1,5 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	method	Q	Q_df	Q_pval
+PZitGA	DngVQf	covidhgi2020A2v6alleur	Linner2019risk	5e-8	FALSE	MR Egger	40.25820255214015	24	0.020060562658648407
+PZitGA	DngVQf	covidhgi2020A2v6alleur	Linner2019risk	5e-8	FALSE	Inverse variance weighted	43.95102396386448	25	0.01098286343341414
+PZitGA	DngVQf	covidhgi2020A2v6alleur	Linner2019risk	5e-8	TRUE	MR Egger	28.116348155881838	23	0.21141386658945002
+PZitGA	DngVQf	covidhgi2020A2v6alleur	Linner2019risk	5e-8	TRUE	Inverse variance weighted	30.25477817183102	24	0.17645041075291884

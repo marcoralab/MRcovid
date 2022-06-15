@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Howard2018dep.sumstats.gz	data/formated/ldsc/covidhgi2020C2v6alleur.sumstats.gz	0.0698	0.0551	1.2672	0.2051	0.0013	0.0002	1.0306	0.0074	0.0074	0.0046	1161346

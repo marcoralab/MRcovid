@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Yengo2018bmi.sumstats.gz	data/formated/ldsc/covidhgi2020A2v6alleur.sumstats.gz	0.2644	0.0874	3.0241	0.0025	0.0013	0.0005	1.0193	0.0101	0.0285	0.0076	988133

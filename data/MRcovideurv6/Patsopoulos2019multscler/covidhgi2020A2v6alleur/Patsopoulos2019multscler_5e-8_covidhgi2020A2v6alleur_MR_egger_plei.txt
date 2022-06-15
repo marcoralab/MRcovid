@@ -1,0 +1,3 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+DP1JEY	Ac3eep	covidhgi2020A2v6alleur	Patsopoulos2019multscler	5e-8	FALSE	0.9313304130845184	-0.003942375193841865	0.005891698123171639	0.5056712497810738
+DP1JEY	Ac3eep	covidhgi2020A2v6alleur	Patsopoulos2019multscler	5e-8	TRUE	0.9321995432860696	-0.0029936325290703942	0.005572851083956081	0.5929218365158262

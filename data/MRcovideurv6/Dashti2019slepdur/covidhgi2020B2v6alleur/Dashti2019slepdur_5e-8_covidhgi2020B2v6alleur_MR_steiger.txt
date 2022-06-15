@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+qXRmmK	mbc32D	Dashti2019slepdur	covidhgi2020B2v6alleur	0.006048993228681327	9.93365545460983e-4	TRUE	3.9841910376641477e-160	TRUE	5e-8
+qXRmmK	mbc32D	Dashti2019slepdur	covidhgi2020B2v6alleur	0.006441499636095464	0.0015822348426518546	TRUE	3.0331758817317085e-123	FALSE	5e-8

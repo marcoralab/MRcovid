@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+AjQVyj	efgtqA	covidhgi2020C2v6alleur	Ripke2014scz	5e-8	FALSE	0.0668395084467724	-0.0016468545842668607	0.0023412954126841782	0.48393136195717346

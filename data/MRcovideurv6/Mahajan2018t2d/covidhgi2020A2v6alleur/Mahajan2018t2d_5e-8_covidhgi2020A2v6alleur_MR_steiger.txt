@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+eFf3VE	kvIVtj	Mahajan2018t2d	covidhgi2020A2v6alleur	0.04621042059691807	0.006335544469844307	TRUE	0	TRUE	5e-8
+eFf3VE	kvIVtj	Mahajan2018t2d	covidhgi2020A2v6alleur	0.04818625047826581	0.008072794291133036	TRUE	0	FALSE	5e-8

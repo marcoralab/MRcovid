@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+dkQHe5	QaNlZG	covidhgi2020A2v6alleur	Demontis2018adhd	5e-8	FALSE	0	-0.013576541946029454	0.06138175639969326	0.8312641205014084

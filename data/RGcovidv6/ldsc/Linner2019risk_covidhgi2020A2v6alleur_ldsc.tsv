@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Linner2019risk.sumstats.gz	data/formated/ldsc/covidhgi2020A2v6alleur.sumstats.gz	0.0947	0.0565	1.6771	0.0935	0.0014	0.0005	1.0156	0.0095	0.0026	0.0047	1142032

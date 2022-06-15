@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+zhHG9G	HVWM6r	covidhgi2020B2v6alleur	Olafsdottir2020asthma	5e-8	FALSE	0	139.53293090925223	3e-4

@@ -1,0 +1,3 @@
+id.exposure	id.outcome	exposure	outcome	snp_r2.exposure	snp_r2.outcome	correct_causal_direction	steiger_pval	outliers_removed	pt
+ewCP4n	Y8Ob9O	Allen2020ipf	covidhgi2020A2v6alleur	0.03781035096872373	2.982124361595203e-4	TRUE	2.1905258350024775e-80	TRUE	5e-8
+ewCP4n	Y8Ob9O	Allen2020ipf	covidhgi2020A2v6alleur	0.12382685286484957	0.005715179590570348	TRUE	7.741965717586987e-209	FALSE	5e-8

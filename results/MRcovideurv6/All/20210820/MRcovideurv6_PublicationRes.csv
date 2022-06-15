@@ -1,0 +1,61 @@
+outcome,exposure,outcome.name,exposure.name,pt,nsnp,n_outliers,snp_r2.exposure,snp_r2.outcome,correct_causal_direction,steiger_pval,IVW,qval,MR-Egger,Weighted median,Weighted mode,MRPRESSO.pval,Egger.pval,pass
+covidhgi2020A2v6alleur,Yengo2018bmi,"COVID: A2, EUR",BMI,5e-8,504,0,0.05333297934174489,0.01920977036828676,TRUE,0,"0.36
+(0.063)",2.30e-07,"0.35
+(0.17)*","0.21
+(0.11).","0.27
+(0.16).",0.13068,0.97,TRUE
+covidhgi2020A2v6alleur,Mahajan2018t2d,"COVID: A2, EUR",Diabetes,5e-8,197,2,0.04621042059691807,0.0063355444698443,TRUE,0,"0.064
+(0.026)",0.079,"-0.0017
+(0.059) ","0.013
+(0.047) ","0.016
+(0.058) ",0.638,0.22,FALSE
+covidhgi2020A2v6alleur,Astel2016rbc,"COVID: A2, EUR",Red blood cell count,5e-8,173,1,0.08176333616986042,0.00796192698288895,TRUE,0,"-0.16
+(0.048)",0.006,"-0.28
+(0.11)*","-0.24
+(0.088)**","-0.23
+(0.092)*",0.0073,0.24,TRUE
+covidhgi2020B2v6alleur,Revez2020vit250hd,"COVID: B2, EUR",25 hydroxyvitamin D,5e-8,108,1,0.02790070956099695,0.00157584414043232,TRUE,0,"0.15
+(0.051)",0.033,"0.13
+(0.089) ","0.18
+(0.086)*","0.12
+(0.085) ",0.106,0.78,TRUE
+covidhgi2020B2v6alleur,Yengo2018bmi,"COVID: B2, EUR",BMI,5e-8,504,0,0.05333297934174489,0.00815865218179269,TRUE,0,"0.35
+(0.038)",5.22e-19,"0.3
+(0.11)**","0.32
+(0.063)***","0.28
+(0.13)*",9.6e-4,0.64,TRUE
+covidhgi2020B2v6alleur,Mahajan2018t2d,"COVID: B2, EUR",Diabetes,5e-8,198,2,0.04611645026206466,0.00294114935764268,TRUE,0,"0.057
+(0.016)",0.004,"-0.02
+(0.039) ","0.058
+(0.029)*","0.051
+(0.037) ",0.0164,0.027,TRUE
+covidhgi2020B2v6alleur,Patsopoulos2019multscler,"COVID: B2, EUR",Multiple sclerosis,5e-8,70,0,0.11704304966108164,0.00106786848368139,TRUE,0,"0.024
+(0.0099)",0.079,"0.023
+(0.019) ","0.016
+(0.017) ","0.01
+(0.016) ",0.0704,0.93,FALSE
+covidhgi2020B2v6alleur,Liu2019smkint,"COVID: B2, EUR",Smoking initiation,5e-8,84,0,7.235703412050839e-4,0.00156524040730431,FALSE,6.352654305641274e-17,"0.45
+(0.13)",0.006,"-0.36
+(0.75) ","0.32
+(0.19).","0.19
+(0.46) ",0.0113,0.27,FALSE
+covidhgi2020C2v6alleur,Yengo2018bmi,"COVID: C2, EUR",BMI,5e-8,504,0,0.05333297934174489,0.00102081820094474,TRUE,0,"0.12
+(0.013)",5.93e-18,"0.12
+(0.04)**","0.12
+(0.022)***","0.084
+(0.043)*",3.6e-4,0.95,TRUE
+covidhgi2020C2v6alleur,Wood2014height,"COVID: C2, EUR",Height,5e-8,365,0,0.11788548364499232,7.232139966456745e-4,TRUE,0,"0.036
+(0.0085)",3.18e-04,"0.056
+(0.026)*","0.024
+(0.013).","0.021
+(0.027) ",3.2e-4,0.4,TRUE
+covidhgi2020C2v6alleur,Allen2020ipf,"COVID: C2, EUR",Idiopathic pulmonary fibrosis,5e-8,15,2,0.06261954192525614,4.7899509077772264e-5,TRUE,2.902636922113147e-152,"0.012
+(0.0048)",0.079,"-0.0078
+(0.031) ","0.0063
+(0.0072) ","0.0071
+(0.011) ",0.0159,0.52,FALSE
+covidhgi2020C2v6alleur,Liu2019smkint,"COVID: C2, EUR",Smoking initiation,5e-8,84,0,7.235703412050839e-4,1.2431859252180291e-4,TRUE,2.8292442564818277e-25,"0.12
+(0.046)",0.079,"-0.059
+(0.22) ","0.093
+(0.066) ","0.098
+(0.17) ",0.7629,0.42,FALSE

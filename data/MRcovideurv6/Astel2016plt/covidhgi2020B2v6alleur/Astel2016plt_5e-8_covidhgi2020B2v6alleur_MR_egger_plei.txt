@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	Isq	egger_intercept	se	pval
+0YeEWY	eFJnXR	covidhgi2020B2v6alleur	Astel2016plt	5e-8	FALSE	0.9528385246810729	6.832987183437591e-4	0.002213309667679743	0.7578328811409563

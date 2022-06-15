@@ -1,0 +1,115 @@
+g1,trait_1,samplesize_1,g2,trait_2,samplesize_2
+Yengo2018bmi,BMI,690495,covidhgi2020A2v5alleur,NA,NA
+Yengo2018bmi,BMI,690495,covidhgi2020B2v5alleur,NA,NA
+Yengo2018bmi,BMI,690495,covidhgi2020C2v5alleur,NA,NA
+Mahajan2018t2d,Diabetes,898130,covidhgi2020A2v5alleur,NA,NA
+Mahajan2018t2d,Diabetes,898130,covidhgi2020B2v5alleur,NA,NA
+Mahajan2018t2d,Diabetes,898130,covidhgi2020C2v5alleur,NA,NA
+Willer2013hdl,High-density lipoproteins,188577,covidhgi2020A2v5alleur,NA,NA
+Willer2013hdl,High-density lipoproteins,188577,covidhgi2020B2v5alleur,NA,NA
+Willer2013hdl,High-density lipoproteins,188577,covidhgi2020C2v5alleur,NA,NA
+Willer2013ldl,Low-density lipoproteins,188577,covidhgi2020A2v5alleur,NA,NA
+Willer2013ldl,Low-density lipoproteins,188577,covidhgi2020B2v5alleur,NA,NA
+Willer2013ldl,Low-density lipoproteins,188577,covidhgi2020C2v5alleur,NA,NA
+Willer2013tc,Total cholesterol,188577,covidhgi2020A2v5alleur,NA,NA
+Willer2013tc,Total cholesterol,188577,covidhgi2020B2v5alleur,NA,NA
+Willer2013tc,Total cholesterol,188577,covidhgi2020C2v5alleur,NA,NA
+Willer2013tg,Triglycerides,188577,covidhgi2020A2v5alleur,NA,NA
+Willer2013tg,Triglycerides,188577,covidhgi2020B2v5alleur,NA,NA
+Willer2013tg,Triglycerides,188577,covidhgi2020C2v5alleur,NA,NA
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020A2v5alleur,NA,NA
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020B2v5alleur,NA,NA
+Dashti2019slepdur,Sleep duration,446118,covidhgi2020C2v5alleur,NA,NA
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020A2v5alleur,NA,NA
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020B2v5alleur,NA,NA
+Evangelou2018dbp,Diastolic blood pressure,757601,covidhgi2020C2v5alleur,NA,NA
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020A2v5alleur,NA,NA
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020B2v5alleur,NA,NA
+Evangelou2018sbp,Systolic blood pressure,757601,covidhgi2020C2v5alleur,NA,NA
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020A2v5alleur,NA,NA
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020B2v5alleur,NA,NA
+Evangelou2018pp,Pulse pressure,757601,covidhgi2020C2v5alleur,NA,NA
+Howard2018dep,depression,322580,covidhgi2020A2v5alleur,NA,NA
+Howard2018dep,depression,322580,covidhgi2020B2v5alleur,NA,NA
+Howard2018dep,depression,322580,covidhgi2020C2v5alleur,NA,NA
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020A2v5alleur,NA,NA
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020B2v5alleur,NA,NA
+Jansen2018insom,Insomnia symptoms,386533,covidhgi2020C2v5alleur,NA,NA
+Liu2019smkint,Smoking initiation,632802,covidhgi2020A2v5alleur,NA,NA
+Liu2019smkint,Smoking initiation,632802,covidhgi2020B2v5alleur,NA,NA
+Liu2019smkint,Smoking initiation,632802,covidhgi2020C2v5alleur,NA,NA
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020A2v5alleur,NA,NA
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020B2v5alleur,NA,NA
+Liu2019smkcpd,Cigarettes per day,263954,covidhgi2020C2v5alleur,NA,NA
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020A2v5alleur,NA,NA
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020B2v5alleur,NA,NA
+Kunkle2019load,Alzheimer's disease,54162,covidhgi2020C2v5alleur,NA,NA
+Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020A2v5alleur,NA,NA
+Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020B2v5alleur,NA,NA
+Revez2020vit250hd,25 hydroxyvitamin D,417580,covidhgi2020C2v5alleur,NA,NA
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020A2v5alleur,NA,NA
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020B2v5alleur,NA,NA
+Okada2014rartis,Rheumatoid arthritis,58284,covidhgi2020C2v5alleur,NA,NA
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020A2v5alleur,NA,NA
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020B2v5alleur,NA,NA
+Nalls2019pd,Parkinsons disease,482730,covidhgi2020C2v5alleur,NA,NA
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020A2v5alleur,NA,NA
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020B2v5alleur,NA,NA
+Nicolas2018als,Amyotrophic lateral sclerosis,80610,covidhgi2020C2v5alleur,NA,NA
+Ligthart2018crp,CRP,204402,covidhgi2020A2v5alleur,NA,NA
+Ligthart2018crp,CRP,204402,covidhgi2020B2v5alleur,NA,NA
+Ligthart2018crp,CRP,204402,covidhgi2020C2v5alleur,NA,NA
+Wood2014height,Height,253288,covidhgi2020A2v5alleur,NA,NA
+Wood2014height,Height,253288,covidhgi2020B2v5alleur,NA,NA
+Wood2014height,Height,253288,covidhgi2020C2v5alleur,NA,NA
+Betham2015lupus,Lupus,23210,covidhgi2020A2v5alleur,NA,NA
+Betham2015lupus,Lupus,23210,covidhgi2020B2v5alleur,NA,NA
+Betham2015lupus,Lupus,23210,covidhgi2020C2v5alleur,NA,NA
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020A2v5alleur,NA,NA
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020B2v5alleur,NA,NA
+Patsopoulos2019multscler,Multiple sclerosis,115803,covidhgi2020C2v5alleur,NA,NA
+Malik2018ais,Ischemic stroke,440328,covidhgi2020A2v5alleur,NA,NA
+Malik2018ais,Ischemic stroke,440328,covidhgi2020B2v5alleur,NA,NA
+Malik2018ais,Ischemic stroke,440328,covidhgi2020C2v5alleur,NA,NA
+Wuttke2019egfr,eGFR,765286,covidhgi2020A2v5alleur,NA,NA
+Wuttke2019egfr,eGFR,765286,covidhgi2020B2v5alleur,NA,NA
+Wuttke2019egfr,eGFR,765286,covidhgi2020C2v5alleur,NA,NA
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020A2v5alleur,NA,NA
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020B2v5alleur,NA,NA
+Wuttke2019ckd,Chronic kidney disease,659525,covidhgi2020C2v5alleur,NA,NA
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020A2v5alleur,NA,NA
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020B2v5alleur,NA,NA
+Nikpay2015cad,Coronary artery disease,184305,covidhgi2020C2v5alleur,NA,NA
+Shah2020heartfailure,Heart failure,977323,covidhgi2020A2v5alleur,NA,NA
+Shah2020heartfailure,Heart failure,977323,covidhgi2020B2v5alleur,NA,NA
+Shah2020heartfailure,Heart failure,977323,covidhgi2020C2v5alleur,NA,NA
+Olafsdottir2020asthma,Asthma,771388,covidhgi2020A2v5alleur,NA,NA
+Olafsdottir2020asthma,Asthma,771388,covidhgi2020B2v5alleur,NA,NA
+Olafsdottir2020asthma,Asthma,771388,covidhgi2020C2v5alleur,NA,NA
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020A2v5alleur,NA,NA
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020B2v5alleur,NA,NA
+Allen2020ipf,Idiopathic pulmonary fibrosis,11259,covidhgi2020C2v5alleur,NA,NA
+Linner2019risk,Risk tolerance,466571,covidhgi2020A2v5alleur,NA,NA
+Linner2019risk,Risk tolerance,466571,covidhgi2020B2v5alleur,NA,NA
+Linner2019risk,Risk tolerance,466571,covidhgi2020C2v5alleur,NA,NA
+Demontis2018adhd,ADHD,53293,covidhgi2020A2v5alleur,NA,NA
+Demontis2018adhd,ADHD,53293,covidhgi2020B2v5alleur,NA,NA
+Demontis2018adhd,ADHD,53293,covidhgi2020C2v5alleur,NA,NA
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020A2v5alleur,NA,NA
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020B2v5alleur,NA,NA
+Grove2019asd,Autism spectrum disorder,46351,covidhgi2020C2v5alleur,NA,NA
+Ripke2014scz,Schizophrenia,77096,covidhgi2020A2v5alleur,NA,NA
+Ripke2014scz,Schizophrenia,77096,covidhgi2020B2v5alleur,NA,NA
+Ripke2014scz,Schizophrenia,77096,covidhgi2020C2v5alleur,NA,NA
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020A2v5alleur,NA,NA
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020B2v5alleur,NA,NA
+Stahl2019bip,Bipolar disorder,51710,covidhgi2020C2v5alleur,NA,NA
+Astel2016rbc,Red blood cell count,173480,covidhgi2020A2v5alleur,NA,NA
+Astel2016rbc,Red blood cell count,173480,covidhgi2020B2v5alleur,NA,NA
+Astel2016rbc,Red blood cell count,173480,covidhgi2020C2v5alleur,NA,NA
+Astel2016wbc,White blood cell count,173480,covidhgi2020A2v5alleur,NA,NA
+Astel2016wbc,White blood cell count,173480,covidhgi2020B2v5alleur,NA,NA
+Astel2016wbc,White blood cell count,173480,covidhgi2020C2v5alleur,NA,NA
+Astel2016plt,Platelet count,173480,covidhgi2020A2v5alleur,NA,NA
+Astel2016plt,Platelet count,173480,covidhgi2020B2v5alleur,NA,NA
+Astel2016plt,Platelet count,173480,covidhgi2020C2v5alleur,NA,NA

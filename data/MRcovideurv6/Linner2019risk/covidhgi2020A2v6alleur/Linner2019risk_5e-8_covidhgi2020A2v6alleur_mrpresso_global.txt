@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	pt	outliers_removed	n_outliers	RSSobs	pval
+PZitGA	DngVQf	covidhgi2020A2v6alleur	Linner2019risk	5e-8	FALSE	1	47.55074038120688	0.0135

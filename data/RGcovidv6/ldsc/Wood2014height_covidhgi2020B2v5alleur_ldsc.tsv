@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Wood2014height.sumstats.gz	data/formated/ldsc/covidhgi2020B2v5alleur.sumstats.gz	0.0246	0.0458	0.5379	0.5907	0.0012	0.0004	1.0046	0.0077	-0.0191	0.0063	1021535

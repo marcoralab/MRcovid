@@ -1,0 +1,2 @@
+p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se	nsnps
+data/formated/ldsc/Klimentidis2018mvpa.sumstats.gz	data/formated/ldsc/covidhgi2020C2v5alleur.sumstats.gz	0.2083	0.0667	3.1221	0.0018	0.0013	0.0003	1.0218	0.0065	-0.0049	0.005	1165528
